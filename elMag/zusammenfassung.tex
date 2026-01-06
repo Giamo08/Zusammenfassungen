@@ -17,6 +17,7 @@
 \usepackage{physics}
 \usepackage{siunitx}
 \usepackage{graphicx}
+\usepackage{qrcode}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{tcolorbox}
@@ -137,12 +138,43 @@ bottom=15mm
 \title{Angewandter Elektromagnetismus -- Zusammenfassung}
 \date{\today}
 \usepackage{hyperref}
+% =========================================================
+% Korrekte Seitenzahlen im TOC bei "2 on 1" (physische Blätter zählen)
+% =========================================================
+\newcounter{sheetpage}
+\setcounter{sheetpage}{1}
+
+% Nach jeder ausgelieferten *geraden* logischen Seite: neues Blatt
+\AddToHook{shipout/after}{%
+  \ifodd\value{page}\else\stepcounter{sheetpage}\fi
+}
+
+% Anzeige und TOC sollen Blattnummern verwenden
+\renewcommand{\thepage}{\arabic{sheetpage}}
+
 \hypersetup{colorlinks=true, linkcolor=accent, urlcolor=accent}
 
+
+
+
+
 \begin{document}
-\setcounter{tocdepth}{2}
 \maketitle
+\begin{center}
+\vspace{1em}
+
+\qrcode[height=2.5cm]{https://github.com/Giamo08/Zusammenfassungen}
+
+\vspace{0.3em}
+
+\href{https://github.com/Giamo08/Zusammenfassungen}{\texttt{github.com/Giamo08/Zusammenfassungen}}
+\end{center}
+
+\setcounter{tocdepth}{2}
 \tableofcontents
+
+
+
 \newpage
 
 
@@ -2640,7 +2672,7 @@ Die Geometrie klärt oft sofort die Vorzeichen und Richtungen.
 \end{taktik}
 % =========================================================
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
-\section{Mathematisches Cheatsheet (erweitert, prüfungsdeckend)}
+\section{Mathematisches Cheatsheet}
 % =========================================================
 
 \begin{merke}
@@ -2701,6 +2733,212 @@ Bei partiellen Ableitungen werden alle anderen Variablen als konstant behandelt.
 \end{schema}
 
 % ---------------------------------------------------------
+% ---------------------------------------------------------
+% 10.X Trigonometrie + Hyperbelfunktionen + komplexe Darstellung (prüfungsrelevant)
+%   Einfügen in Kapitel 10 (Mathematisches Cheatsheet)
+% ---------------------------------------------------------
+\subsection{Trigonometrie, Hyperbelfunktionen und komplexe Darstellung}
+
+\begin{merke}
+In EM tauchen \textbf{sin/cos} und \textbf{sinh/cosh} systematisch als Lösungen von linearen DGLs auf:
+\[
+u'' + k^2 u = 0 \Rightarrow \sin,\cos
+\qquad\qquad
+u'' - k^2 u = 0 \Rightarrow \sinh,\cosh
+\]
+Im Frequenzbereich sind trigonometrische Terme oft nur \textbf{Real-/Imaginärteil} komplexer Exponentialansätze.
+\end{merke}
+
+\subsubsection{Definitionen über Exponentialfunktionen }
+\begin{schema}
+\[
+e^{jx} = \cos x + j\sin x
+\qquad\Rightarrow\qquad
+\cos x = \frac{e^{jx}+e^{-jx}}{2},\;\;
+\sin x = \frac{e^{jx}-e^{-jx}}{2j}
+\]
+\[
+\sinh x = \frac{e^{x}-e^{-x}}{2},\;\;
+\cosh x = \frac{e^{x}+e^{-x}}{2},\;\;
+\tanh x = \frac{\sinh x}{\cosh x}
+\]
+\end{schema}
+
+\begin{checkitem}
+\begin{itemize}
+  \item \imp{Kernintuition:} $\sin/\cos$ sind \textbf{oszillierend}, $\sinh/\cosh$ sind \textbf{wachsend/abklingend}.
+  \item \imp{Für Randverhalten:} exponentiell wachsende Terme werden oft durch Physik/Randbedingungen eliminiert.
+\end{itemize}
+\end{checkitem}
+
+\subsubsection{Ableitungen}
+\begin{schema}
+\[
+\frac{d}{dx}\sin x = \cos x
+\qquad
+\frac{d}{dx}\cos x = -\sin x
+\qquad
+\frac{d}{dx}\tan x = \sec^2 x = \frac{1}{\cos^2 x}
+\]
+\[
+\frac{d}{dx}\sinh x = \cosh x
+\qquad
+\frac{d}{dx}\cosh x = \sinh x
+\qquad
+\frac{d}{dx}\tanh x = \sech^2 x = \frac{1}{\cosh^2 x}
+\]
+\end{schema}
+
+\subsubsection{Integrale }
+\begin{schema}
+\[
+\int \sin x\,dx = -\cos x + C
+\qquad
+\int \cos x\,dx = \sin x + C
+\qquad
+\int \sec^2 x\,dx = \tan x + C
+\]
+\[
+\int \sinh x\,dx = \cosh x + C
+\qquad
+\int \cosh x\,dx = \sinh x + C
+\qquad
+\int \sech^2 x\,dx = \tanh x + C
+\]
+\end{schema}
+
+\begin{schema}
+\imp{Sehr häufig (Substitution):}
+\[
+\int e^{ax}\sin(bx)\,dx
+=
+\frac{e^{ax}}{a^2+b^2}\big(a\sin(bx)-b\cos(bx)\big)+C
+\]
+\[
+\int e^{ax}\cos(bx)\,dx
+=
+\frac{e^{ax}}{a^2+b^2}\big(a\cos(bx)+b\sin(bx)\big)+C
+\]
+\end{schema}
+
+\subsubsection{Identitäten }
+\begin{schema}
+\imp{Trigonometrie:}
+\[
+\sin^2 x+\cos^2 x = 1
+\qquad
+1+\tan^2 x = \sec^2 x
+\]
+\[
+\cos(a\pm b)=\cos a\cos b \mp \sin a\sin b
+\qquad
+\sin(a\pm b)=\sin a\cos b \pm \cos a\sin b
+\]
+\end{schema}
+
+\begin{schema}
+\imp{Hyperbel:}
+\[
+\cosh^2 x-\sinh^2 x = 1
+\qquad
+1-\tanh^2 x = \sech^2 x
+\]
+\[
+\cosh(a\pm b)=\cosh a\cosh b \pm \sinh a\sinh b
+\qquad
+\sinh(a\pm b)=\sinh a\cosh b \pm \cosh a\sinh b
+\]
+\end{schema}
+
+\subsubsection{Komplexe Argumente und Beziehungen zwischen trig und hyperbel}
+\begin{schema}
+\imp{Zentrale Brücke:}
+\[
+\cos(jx)=\cosh x
+\qquad
+\sin(jx)=j\sinh x
+\]
+\[
+\cosh(jx)=\cos x
+\qquad
+\sinh(jx)=j\sin x
+\]
+\end{schema}
+
+\begin{merke}
+Wenn aus einer DGL formal \(\sin(\cdot)\) mit imaginärem Argument entsteht, kannst du sie in \(\sinh/\cosh\) umschreiben.
+Das ist in MQS/Wellen-Übergängen praktisch.
+\end{merke}
+
+\subsubsection{Inverse Funktionen }
+\begin{schema}
+\[
+\frac{d}{dx}\arctan x = \frac{1}{1+x^2}
+\qquad
+\int \frac{1}{1+x^2}\,dx = \arctan x + C
+\]
+\[
+\frac{d}{dx}\operatorname{artanh} x = \frac{1}{1-x^2}\quad (|x|<1)
+\qquad
+\int \frac{1}{1-x^2}\,dx = \operatorname{artanh} x + C
+\]
+\end{schema}
+
+\subsubsection{Phasor-Form (EM-Standard)}
+\begin{schema}
+\imp{Realteil-Konvention:}
+\[
+u(t)=\Re\{\tilde{U}e^{j\omega t}\}
+\]
+\[
+\Re\{Ae^{j\omega t}\}=A\cos(\omega t)
+\qquad
+\Re\{jAe^{j\omega t}\}=-A\sin(\omega t)
+\]
+\end{schema}
+
+
+\begin{checkitem}
+\begin{itemize}
+  \item Vorzeichenfehler passieren beim Wechsel zwischen \(\sin/\cos\) und komplexen Exponentialformen.
+  \item Konsistenzcheck: \(\frac{d}{dt}\cos(\omega t)=-\omega\sin(\omega t)\) muss mit \(j\omega\) im Phasorbereich matchen.
+\end{itemize}
+\end{checkitem}
+
+\subsubsection{Wann trigonometrisch, wann hyperbolisch?}
+
+\begin{schema}
+Ausgangspunkt ist fast immer eine Exponentiallösung:
+\[
+u(x)=Ae^{\gamma x}+Be^{-\gamma x}
+\]
+\end{schema}
+
+\begin{schema}
+\imp{Umschreibung:}
+\[
+Ae^{\gamma x}+Be^{-\gamma x}
+=
+C_1\cosh(\gamma x)+C_2\sinh(\gamma x)
+\]
+\end{schema}
+
+\begin{checkitem}
+\begin{itemize}
+  \item \imp{$\gamma \in \mathbb{R}$:} Diffusion, Dämpfung, Skin-Effekt  
+        $\Rightarrow$ \(\sinh,\cosh\)
+  \item \imp{$\gamma = jk$:} Wellen, Oszillation  
+        $\Rightarrow$ \(\sin,\cos\)
+\end{itemize}
+\end{checkitem}
+
+\begin{merke}
+\begin{itemize}
+  \item \(\cosh\): gerade Funktion, oft bei Symmetrieachsen.
+  \item \(\sinh\): ungerade Funktion, oft bei vorgegebenem Fluss/Feld.
+  \item Exponentiell wachsende Terme werden bei offenen Gebieten verworfen.
+\end{itemize}
+\end{merke}
 \subsection{Gradient, Divergenz, Rotation}
 % ---------------------------------------------------------
 
@@ -2899,7 +3137,6 @@ physikalisch relevant ist immer der Realteil.
 
 % ---------------------------------------------------------
 \subsection{Integralsätze der Vektorrechnung}
-% ---------------------------------------------------------
 
 \subsubsection{Gaußscher Satz}
 
@@ -2922,6 +3159,7 @@ Diese Sätze verbinden lokale und globale Feldgrößen.
 \end{schema}
 
 % ---------------------------------------------------------
+
 \subsection{Delta-Funktion}
 % ---------------------------------------------------------
 
@@ -2940,6 +3178,116 @@ Anwendung:
 \end{itemize}
 
 % ---------------------------------------------------------
+% ---------------------------------------------------------
+% 10.X Konzeptionelles Vorgehen: ODE/DGL lösen (homogen + partikulär)
+%   Einfügen in Kapitel 10 (Mathematisches Cheatsheet)
+%   z.B. nach 10.4 oder vor 10.12
+% ---------------------------------------------------------
+
+\subsection{Konzeptionelles Vorgehen: lineare DGL }
+
+\begin{merke}
+In Prüfungen ist die Lösungslogik standardisiert:
+\[
+u = u_{\text{hom}} + u_{\text{part}}
+\quad\text{mit}\quad
+L[u]=g \Rightarrow
+\begin{cases}
+L[u_{\text{hom}}]=0\\
+L[u_{\text{part}}]=g
+\end{cases}
+\]
+Homogen = Systemstruktur. Partikulär = Antwort auf Quelle. Randbedingungen selektieren die physikalische Lösung.
+\end{merke}
+
+\subsubsection{1 Typ erkennen}
+\begin{schema}
+\begin{itemize}
+  \item \imp{Homogen:} $g(x)=0$ \;\;\;(\,keine Quelle\,)
+  \item \imp{Inhomogen:} $g(x)\neq 0$ \;\;\;(\,Quelle/Anregung vorhanden\,)
+  \item \imp{Linear (Standardform):} $a_n u^{(n)} + \dots + a_1 u' + a_0 u = g(x)$
+\end{itemize}
+\end{schema}
+
+\subsubsection{2 Homogene Lösung $u_{\text{hom}}$ (charakteristische Gleichung)}
+\begin{vorgehen}
+\begin{enumerate}
+  \item Setze \imp{homogene Gleichung} auf:
+  \[
+  a_n u^{(n)} + \dots + a_1 u' + a_0 u = 0
+  \]
+  \item Ansatz (konstante Koeffizienten):
+  \[
+  u = e^{\lambda x}
+  \]
+  \item \imp{Charakteristische Gleichung} $P(\lambda)=0$ lösen.
+\end{enumerate}
+\end{vorgehen}
+
+\begin{schema}
+\imp{Typische Fälle (2. Ordnung):}
+\begin{itemize}
+  \item $\lambda_{1,2}\in\mathbb{R}$:
+  \[
+  u_{\text{hom}} = C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}
+  \]
+  \item $\lambda=\alpha \pm j\beta$:
+  \[
+  u_{\text{hom}} = e^{\alpha x}\left(C_1 \cos(\beta x) + C_2 \sin(\beta x)\right)
+  \]
+\end{itemize}
+\end{schema}
+
+\begin{checkitem}
+\begin{itemize}
+  \item \imp{Physikalische Selektion:} wachsende Terme im Unendlichen verwerfen (falls gefordert).
+  \item Symmetriebedingungen zählen als Randbedingungen.
+\end{itemize}
+\end{checkitem}
+
+\subsubsection{3 Partikuläre Lösung $u_{\text{part}}$ (nur wenn $g\neq 0$)}
+\begin{vorgehen}
+\begin{enumerate}
+  \item Wähle Ansatzform \imp{entsprechend} Quelle $g(x)$.
+  \item Bestimme Koeffizienten durch Einsetzen in die inhomogene DGL.
+  \item \imp{Resonanzregel:} Wenn der Ansatz Teil von $u_{\text{hom}}$ ist, mit $x^s$ multiplizieren, bis linear unabhängig.
+\end{enumerate}
+\end{vorgehen}
+
+\begin{schema}
+\imp{Ansatz-Leitfaden (konstante Koeffizienten):}
+\begin{itemize}
+  \item $g(x)=K$ \;\;\;$\Rightarrow$ Ansatz $u_{\text{part}}=A$
+  \item $g(x)=\sum_{k=0}^m b_k x^k$ \;\;\;$\Rightarrow$ Ansatz Polynom Grad $m$
+  \item $g(x)=e^{ax}$ \;\;\;$\Rightarrow$ Ansatz $u_{\text{part}}=A e^{ax}$
+  \item $g(x)=\cos(\omega x),\sin(\omega x)$ \;\;\;$\Rightarrow$ Ansatz $u_{\text{part}}=A\cos(\omega x)+B\sin(\omega x)$
+  \item $g(x)=e^{ax}\cos(\omega x)$ oder $e^{ax}\sin(\omega x)$ \;\;\;$\Rightarrow$ Ansatz $u_{\text{part}}=e^{ax}(A\cos(\omega x)+B\sin(\omega x))$
+\end{itemize}
+\end{schema}
+
+\subsubsection{4 Gesamtlösung und Konstanten}
+\begin{schema}
+\[
+u(x) = u_{\text{hom}}(x) + u_{\text{part}}(x)
+\]
+\end{schema}
+
+\begin{vorgehen}
+Konstanten $C_i$ bestimmen über:
+\begin{itemize}
+  \item Randbedingungen (Dirichlet/Neumann/Robin),
+  \item Symmetriebedingungen,
+  \item Verhalten im Unendlichen (Abklingen/Endlichkeit).
+\end{itemize}
+\end{vorgehen}
+
+\begin{checkitem}
+\begin{itemize}
+  \item Dimensionscheck und Grenzfallcheck durchführen.
+  \item Stetigkeit an Übergängen prüfen (falls Materialgrenzen).
+\end{itemize}
+\end{checkitem}
+
 \subsection{Grenzwerte und Plausibilitätschecks}
 % ---------------------------------------------------------
 
@@ -2955,6 +3303,7 @@ mathematische Fehler in EM-Aufgaben zu finden.
 \end{merke}
 
 % ---------------------------------------------------------
+
 \subsection{Finale Mathematik-Checkliste}
 % ---------------------------------------------------------
 
@@ -2974,6 +3323,7 @@ Reduziere sie auf Mathematik.
 Fast immer ist es eine Laplace-, Poisson-, Diffusions- oder Wellengleichung.
 \end{taktik}
 % =========================================================
+
 \section{1-seitige Entscheidungs-Matrix für EM-Prüfungen}
 % =========================================================
 \vspace{4pt}

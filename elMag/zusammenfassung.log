@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  5 JAN 2026 20:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  6 JAN 2026 20:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/gianmarconaf/Documents/Gian_Marco/Studium/semester5/Elmag/zusammenfassung/fassung/zusammenfassung.tex
-(/Users/gianmarconaf/Documents/Gian_Marco/Studium/semester5/Elmag/zusammenfassung/fassung/zusammenfassung.tex
+**/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/elMag/zusammenfassung.tex
+(/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/elMag/zusammenfassung.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -436,14 +436,50 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \extratabsurround=\skip57
 \backup@length=\skip58
 \ar@cellbox=\box73
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/enumitem/enumitem.sty
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/qrcode/qrcode.sty
+Package: qrcode 2015/01/08 v1.51 QR code generation
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks36
+\XKV@tempa@toks=\toks37
+)
+\XKV@depth=\count314
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\c@qr@i=\count315
+\c@qr@j=\count316
+\qr@a=\count317
+\qr@b=\count318
+\qr@c=\count319
+\qr@for@depth=\count320
+\qr@for@maxdepth=\count321
+\qr@for@start=\count322
+\qr@for@end=\count323
+\qr@for@step=\count324
+\qr@newforcount=\count325
+\qr@newforcount=\count326
+\qr@desiredheight=\skip59
+\qr@modulesize=\skip60
+\qr@minipagewidth=\skip61
+\c@maski=\count327
+\c@maskj=\count328
+\c@totalones=\count329
+\c@penaltyi=\count330
+\c@penaltyii=\count331
+\c@penaltyiii=\count332
+\c@penaltyiv=\count333
+\c@qr@hexchars=\count334
+\qr@newforcount=\count335
+\c@qr@divisionsremaining=\count336
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip59
+\labelindent=\skip62
 \enit@outerparindent=\dimen265
-\enit@toks=\toks36
+\enit@toks=\toks38
 \enit@inbox=\box74
-\enit@count@id=\count314
-\enitdp@description=\count315
+\enit@count@id=\count337
+\enitdp@description=\count338
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
  (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
@@ -461,8 +497,8 @@ Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks37
-\verbatim@line=\toks38
+\every@verbatim=\toks39
+\verbatim@line=\toks40
 \verbatim@in@stream=\read4
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
@@ -473,9 +509,9 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@upperbox=\box77
 \tcb@lowerbox=\box78
 \tcb@phantombox=\box79
-\c@tcbbreakpart=\count316
-\c@tcblayer=\count317
-\c@tcolorbox@number=\count318
+\c@tcbbreakpart=\count339
+\c@tcblayer=\count340
+\c@tcolorbox@number=\count341
 \l__tcobox_tmpa_box=\box80
 \l__tcobox_tmpa_dim=\dimen268
 \tcb@temp=\box81
@@ -484,23 +520,23 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@temp=\box84
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
 Library (tcolorbox): 'tcbraster.code.tex' version '6.2.0'
-\c@tcbrastercolumn=\count319
-\c@tcbrasterrow=\count320
-\c@tcbrasternum=\count321
-\c@tcbraster=\count322
+\c@tcbrastercolumn=\count342
+\c@tcbrasterrow=\count343
+\c@tcbrasternum=\count344
+\c@tcbraster=\count345
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 Library (tcolorbox): 'tcbskins.code.tex' version '6.2.0'
 (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen269
 \pgffor@skip=\dimen270
-\pgffor@stack=\toks39
-\pgffor@toks=\toks40
+\pgffor@stack=\toks41
+\pgffor@toks=\toks42
 )) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count323
+\pgf@plot@mark@count=\count346
 \pgfplotmarksize=\dimen271
 )
 \tikz@lastx=\dimen272
@@ -515,17 +551,17 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@figbox@bg=\box86
 \tikz@tempbox=\box87
 \tikz@tempbox@bg=\box88
-\tikztreelevel=\count324
-\tikznumberofchildren=\count325
-\tikznumberofcurrentchild=\count326
-\tikz@fig@count=\count327
+\tikztreelevel=\count347
+\tikznumberofchildren=\count348
+\tikznumberofcurrentchild=\count349
+\tikz@fig@count=\count350
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count328
-\pgfmatrixcurrentcolumn=\count329
-\pgf@matrix@numberofcolumns=\count330
+\pgfmatrixcurrentrow=\count351
+\pgfmatrixcurrentcolumn=\count352
+\pgf@matrix@numberofcolumns=\count353
 )
-\tikz@expandcount=\count331
+\tikz@expandcount=\count354
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/local/texlive/2024/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
@@ -555,30 +591,30 @@ Library (tcolorbox): 'tcbfitting.code.tex' version '6.2.0'
 \tcbfitdim=\dimen280
 \tcb@lowerfitdim=\dimen281
 \tcb@upperfitdim=\dimen282
-\tcb@cur@hbadness=\count332
+\tcb@cur@hbadness=\count355
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
 Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.2.0'
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
 Library (tcolorbox): 'tcblistings.code.tex' version '6.2.0'
 (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count333
+\lst@mode=\count356
 \lst@gtempboxa=\box93
-\lst@token=\toks41
-\lst@length=\count334
+\lst@token=\toks43
+\lst@length=\count357
 \lst@currlwidth=\dimen283
-\lst@column=\count335
-\lst@pos=\count336
+\lst@column=\count358
+\lst@pos=\count359
 \lst@lostspace=\dimen284
 \lst@width=\dimen285
-\lst@newlines=\count337
-\lst@lineno=\count338
+\lst@newlines=\count360
+\lst@lineno=\count361
 \lst@maxwidth=\dimen286
  (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
-\c@lstnumber=\count339
-\lst@skipnumbers=\count340
+\c@lstnumber=\count362
+\lst@skipnumbers=\count363
 \lst@framebox=\box94
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/02/21 1.10 listings configuration
@@ -589,7 +625,7 @@ Library (tcolorbox): 'tcblistingscore.code.tex' version '6.2.0'
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
 Library (tcolorbox): 'tcbprocessing.code.tex' version '6.2.0'
 )
-\c@tcblisting=\count341
+\c@tcblisting=\count364
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
 Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/stringenc.sty
@@ -611,11 +647,11 @@ Library (tcolorbox): 'tcbposter.code.tex' version '6.2.0'
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2023/10/27 v2.16 Sectioning titles
 \ttl@box=\box95
-\beforetitleunit=\skip60
-\aftertitleunit=\skip61
+\beforetitleunit=\skip63
+\aftertitleunit=\skip64
 \ttl@plus=\dimen287
 \ttl@minus=\dimen288
-\ttl@toksa=\toks42
+\ttl@toksa=\toks44
 \titlewidth=\dimen289
 \titlewidthlast=\dimen290
 \titlewidthfirst=\dimen291
@@ -624,9 +660,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count342
-\Gm@cntv=\count343
-\c@Gm@tempcnt=\count344
+\Gm@cnth=\count365
+\Gm@cntv=\count366
+\c@Gm@tempcnt=\count367
 \Gm@bindingoffset=\dimen292
 \Gm@wd@mp=\dimen293
 \Gm@odd@mp=\dimen294
@@ -635,7 +671,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen297
 \Gm@layouthoffset=\dimen298
 \Gm@layoutvoffset=\dimen299
-\Gm@dimlist=\toks43
+\Gm@dimlist=\toks45
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
  (/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
@@ -655,11 +691,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
  (/usr/local/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count345
+\c@section@level=\count368
 )
 \@linkdim=\dimen300
-\Hy@linkcounter=\count346
-\Hy@pagecounter=\count347
+\Hy@linkcounter=\count369
+\Hy@pagecounter=\count370
  (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -667,7 +703,7 @@ Now handling font encoding PD1 ...
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count348
+\Hy@SavedSpaceFactor=\count371
  (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -680,7 +716,7 @@ Package hyperref Info: Plain pages OFF on input line 4194.
 Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4446.
-\c@Hy@tempcnt=\count349
+\c@Hy@tempcnt=\count372
  (/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -692,7 +728,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count350
+\Fld@menulength=\count373
 \Field@Width=\dimen302
 \Fld@charsize=\dimen303
 Package hyperref Info: Hyper figures OFF on input line 6063.
@@ -706,9 +742,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6093.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count351
-\c@Item=\count352
-\c@Hfootnote=\count353
+\Hy@abspage=\count374
+\c@Item=\count375
+\c@Hfootnote=\count376
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -717,8 +753,8 @@ File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count354
-\c@bookmark@seq@number=\count355
+\Fld@listcount=\count377
+\c@bookmark@seq@number=\count378
  (/usr/local/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -726,46 +762,48 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip62
+\Hy@SectionHShift=\skip65
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 140.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 142.
+\c@sheetpage=\count379
+Package hyperref Info: Option `colorlinks' set `true' on input line 155.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 161.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./zusammenfassung.aux)
+) (./zusammenfassung.aux <Reading QR code for "https://github.com/Giamo08/Zusammenfassungen" at level 4-Q from aux file.>
+)
 \openout1 = `zusammenfassung.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 161.
+LaTeX Font Info:    ... okay on input line 161.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 161.
+LaTeX Font Info:    ... okay on input line 161.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 161.
+LaTeX Font Info:    ... okay on input line 161.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 161.
+LaTeX Font Info:    ... okay on input line 161.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 161.
+LaTeX Font Info:    ... okay on input line 161.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 161.
+LaTeX Font Info:    ... okay on input line 161.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 161.
+LaTeX Font Info:    ... okay on input line 161.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 161.
+LaTeX Font Info:    ... okay on input line 161.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 161.
+LaTeX Font Info:    ... okay on input line 161.
  (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count356
+\scratchcounter=\count380
 \scratchdimen=\dimen304
 \scratchbox=\box96
-\nofMPsegments=\count357
-\nofMParguments=\count358
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count359
+\nofMPsegments=\count381
+\nofMParguments=\count382
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count383
 \MPscratchDim=\dimen305
-\MPnumerator=\count360
-\makeMPintoPDFobject=\count361
-\everyMPtoPDFconversion=\toks45
+\MPnumerator=\count384
+\makeMPintoPDFobject=\count385
+\everyMPtoPDFconversion=\toks47
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -786,8 +824,8 @@ Package siunitx Warning: Detected the "physics" package:
 (/usr/local/texlive/2024/texmf-dist/tex/latex/translations/translations-basic-dictionary-german.trsl
 File: translations-basic-dictionary-german.trsl (german translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `german'. on input line 142.
-\c@lstlisting=\count362
+Package translations Info: loading dictionary `translations-basic-dictionary' for `german'. on input line 161.
+\c@lstlisting=\count386
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -823,93 +861,203 @@ Package translations Info: loading dictionary `translations-basic-dictionary' fo
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 142.
+Package hyperref Info: Link coloring ON on input line 161.
 (./zusammenfassung.out) (./zusammenfassung.out)
 \@outlinefile=\write4
 \openout4 = `zusammenfassung.out'.
 
-LaTeX Font Info:    Calculating math sizes for size <10.79997> on input line 145.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 145.
+LaTeX Font Info:    Calculating math sizes for size <10.79997> on input line 163.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 163.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 145.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 163.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 145.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 163.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 145.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 163.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.79997> on input line 145.
+(Font)              <10.79997> on input line 163.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.55994> on input line 145.
+(Font)              <7.55994> on input line 163.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.39998> on input line 145.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 145.
+(Font)              <5.39998> on input line 163.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 163.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 145.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 163.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./zusammenfassung.toc
+) 
+
+<QR code requested for "https://github.com/Giamo08/Zusammenfassungen" in version 0-M.>
+<Error-correction level increased from M to Q at no cost.>
+<Copying the QR code for "https://github.com/Giamo08/Zusammenfassungen" in version 4-Q as previously calculated.>
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 3.
+(Font)              <9> on input line 166.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 3.
+(Font)              <6> on input line 166.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 3.
-)
+(Font)              <5> on input line 166.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 170.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (./zusammenfassung.toc)
 \tf@toc=\write5
 \openout5 = `zusammenfassung.toc'.
 
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 167.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 199.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [3
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] [5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [7] [9] [11{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [13] [15] [17] [19] [21] [23] [25] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 2990--2990
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.290 \]
+        {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] [5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.474 
+      ] [7
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.677   \item k
+               eine induktiven Effekte] [9
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.879 \end{itemize}
+                   ] [11
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.1109 ...on{Randwertprobleme und Randbedingungen}
+                                                  {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [13
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.1320 \]
+         ] [15
+pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.1536 \subsubsection{Rotation}
+                               ] [17
+pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.1772 \]
+         ] [19
+pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.1993 \]
+         ] [21
+pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.2196 
+       ] [23
+pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.2426   \item F
+                eldÃ¤nderungen sich mit endlicher Geschwindigkeit ausbreiten.] [25
+pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.2635   \item P
+                hasenverschiebung zwischen $\E$ und $\Hf$.] [27
+pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.2867 
+       ] [29
+pdfTeX warning (ext4): destination with the same identifier (name{page.14}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.3091 \subsection{Komplexe Zahlen und Phasoren}
+                                                ] [31
+pdfTeX warning (ext4): destination with the same identifier (name{page.15}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.3283 
+       ]
+Underfull \hbox (badness 10000) in paragraph at lines 3340--3340
 []|\T1/lmr/m/n/9 Ausbreitung, Pha-sen-ver-
  []
 
 
-Underfull \hbox (badness 2781) in paragraph at lines 3003--3003
+Underfull \hbox (badness 2781) in paragraph at lines 3353--3353
 []|\T1/lmr/m/n/9 Ladungen, Po-ten-tia-le, Di-
  []
 
 
-Underfull \hbox (badness 4634) in paragraph at lines 3005--3005
+Underfull \hbox (badness 4634) in paragraph at lines 3355--3355
 []|\T1/lmr/m/n/9 Ströme trei-ben $[]$, kei-ne
  []
 
-[29] [31] (./zusammenfassung.aux)
+[33
+pdfTeX warning (ext4): destination with the same identifier (name{page.16}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.3460 
+       ] [35
+pdfTeX warning (ext4): destination with the same identifier (name{page.17}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.3467 \end{document}
+                     ] (./zusammenfassung.aux <Reading QR code for "https://github.com/Giamo08/Zusammenfassungen" at level 4-Q from aux file.>
+)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `zusammenfassung.out' has not changed.
-(rerunfilecheck)             Checksum: A8C79A4D8BCFA80215F32AD0D8BF400C;3295.
+(rerunfilecheck)             Checksum: C21CA801B977D1065F63430FE8642AA4;3135.
  ) 
 Here is how much of TeX's memory you used:
- 35849 strings out of 474116
- 751233 string characters out of 5743681
- 1987187 words of memory out of 5000000
- 57391 multiletter control sequences out of 15000+600000
- 609007 words of font info for 78 fonts, out of 8000000 for 9000
+ 37604 strings out of 474116
+ 776328 string characters out of 5743681
+ 2040187 words of memory out of 5000000
+ 59119 multiletter control sequences out of 15000+600000
+ 615302 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,14n,107p,547b,1073s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy9.pfb>
-Output written on zusammenfassung.pdf (15 pages, 376590 bytes).
+ 108i,14n,107p,1357b,1072s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on zusammenfassung.pdf (17 pages, 443082 bytes).
 PDF statistics:
- 644 PDF objects out of 1000 (max. 8388607)
- 566 compressed objects within 6 object streams
- 264 named destinations out of 1000 (max. 500000)
+ 676 PDF objects out of 1000 (max. 8388607)
+ 590 compressed objects within 6 object streams
+ 271 named destinations out of 1000 (max. 500000)
  245 words of extra memory for PDF output out of 10000 (max. 10000000)
 

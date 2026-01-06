@@ -1,208 +1,222 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {section}{\numberline {1}Methodik: Systematisches Lösen elektromagnetischer Aufgaben}{5}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Was ist eine ``elektromagnetische Aufgabe'' strukturell?}{5}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Der 30-Sekunden-Entscheidungsbaum}{5}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Regime-Klassifikation}{5}{subsection.1.3}%
-\contentsline {subsubsection}{\numberline {1.3.1}Elektrostatisch}{5}{subsubsection.1.3.1}%
-\contentsline {subsubsection}{\numberline {1.3.2}Stationäre Strömungsanalyse (DC-Leitung)}{5}{subsubsection.1.3.2}%
-\contentsline {subsubsection}{\numberline {1.3.3}Magnetostatik}{5}{subsubsection.1.3.3}%
-\contentsline {subsubsection}{\numberline {1.3.4}Magneto-Quasistatik (MQS)}{5}{subsubsection.1.3.4}%
-\contentsline {subsubsection}{\numberline {1.3.5}Elektrodynamik (Wellen)}{5}{subsubsection.1.3.5}%
-\contentsline {subsection}{\numberline {1.4}Primärvariable wählen: Regeln, die wirklich funktionieren}{5}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Symmetrieanalyse}{7}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}Randbedingungen: wie man sie korrekt herleitet}{7}{subsection.1.6}%
-\contentsline {subsubsection}{\numberline {1.6.1}Typen von Randbedingungen}{7}{subsubsection.1.6.1}%
-\contentsline {subsubsection}{\numberline {1.6.2}Physikalische Quellen für Randbedingungen}{7}{subsubsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.7}Standard-Arbeitsablauf}{7}{subsection.1.7}%
-\contentsline {subsection}{\numberline {1.8}Plausibilitätschecks}{7}{subsection.1.8}%
-\contentsline {subsection}{\numberline {1.9}Typische Fehlerbilder}{7}{subsection.1.9}%
-\contentsline {section}{\numberline {2}Maxwell-Gleichungen und ihre physikalischen Reduktionen}{7}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Maxwell-Gleichungen in Differentialform}{7}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Materialgleichungen}{7}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Kontinuitätsgleichung (Ladungserhaltung)}{7}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Reduktionsprinzip: Von Maxwell zur führenden PDE}{9}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Elektrostatisches Regime}{9}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Physikalische Annahmen}{9}{subsubsection.2.5.1}%
-\contentsline {subsubsection}{\numberline {2.5.2}Einführung des Skalarpotentials}{9}{subsubsection.2.5.2}%
-\contentsline {subsubsection}{\numberline {2.5.3}Poisson- und Laplace-Gleichung}{9}{subsubsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.6}Stationäre Strömungsanalyse}{9}{subsection.2.6}%
-\contentsline {subsubsection}{\numberline {2.6.1}Physikalische Annahmen}{9}{subsubsection.2.6.1}%
-\contentsline {subsubsection}{\numberline {2.6.2}Feld--Strom-Beziehung}{9}{subsubsection.2.6.2}%
-\contentsline {subsubsection}{\numberline {2.6.3}Führende Gleichung}{9}{subsubsection.2.6.3}%
-\contentsline {subsection}{\numberline {2.7}Magnetostatisches Regime}{9}{subsection.2.7}%
-\contentsline {subsubsection}{\numberline {2.7.1}Physikalische Annahmen}{9}{subsubsection.2.7.1}%
-\contentsline {subsubsection}{\numberline {2.7.2}Vektorpotential}{9}{subsubsection.2.7.2}%
-\contentsline {subsubsection}{\numberline {2.7.3}Poisson-Gleichung für das Vektorpotential}{9}{subsubsection.2.7.3}%
-\contentsline {subsection}{\numberline {2.8}Harmonische Zeitabhängigkeit und Phasoren}{9}{subsection.2.8}%
-\contentsline {subsubsection}{\numberline {2.8.1}Phasor-Darstellung}{9}{subsubsection.2.8.1}%
-\contentsline {subsubsection}{\numberline {2.8.2}Maxwell-Gleichungen im Frequenzbereich}{9}{subsubsection.2.8.2}%
-\contentsline {subsection}{\numberline {2.9}Magneto-quasistatisches Regime (MQS)}{9}{subsection.2.9}%
-\contentsline {subsubsection}{\numberline {2.9.1}Physikalische Annahmen}{9}{subsubsection.2.9.1}%
-\contentsline {subsubsection}{\numberline {2.9.2}Diffusionsgleichung}{9}{subsubsection.2.9.2}%
-\contentsline {subsection}{\numberline {2.10}Elektrodynamisches Regime (Wellen)}{11}{subsection.2.10}%
-\contentsline {subsubsection}{\numberline {2.10.1}Physikalische Annahmen}{11}{subsubsection.2.10.1}%
-\contentsline {subsubsection}{\numberline {2.10.2}Wellengleichung}{11}{subsubsection.2.10.2}%
-\contentsline {subsection}{\numberline {2.11}Zusammenfassung und Prüfungscheck}{11}{subsection.2.11}%
-\contentsline {section}{\numberline {3}Feld- und Potentialkonzepte}{11}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Warum Potentiale?}{11}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Elektrisches Skalarpotential}{11}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Definition}{11}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Physikalische Bedeutung}{11}{subsubsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.3}Elektrisches Feld aus dem Potential}{11}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Ableitung}{11}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Interpretation}{11}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}Elektrische Flussdichte}{11}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Definition}{11}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Bedeutung für Randbedingungen}{11}{subsubsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.5}Magnetisches Vektorpotential}{11}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Motivation}{11}{subsubsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.6}Eichfreiheit des Vektorpotentials}{11}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Magnetisches Feld aus dem Vektorpotential}{13}{subsection.3.7}%
-\contentsline {subsubsection}{\numberline {3.7.1}Ableitung}{13}{subsubsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.8}Zusammenhang zwischen $\vec A$ und $\vec E$ (zeitabhängig)}{13}{subsection.3.8}%
-\contentsline {subsection}{\numberline {3.9}Stromdichte aus Feldgrößen}{13}{subsection.3.9}%
-\contentsline {subsubsection}{\numberline {3.9.1}Ohmsches Gesetz (lokal)}{13}{subsubsection.3.9.1}%
-\contentsline {subsection}{\numberline {3.10}Energie- und Leistungsbetrachtung}{13}{subsection.3.10}%
-\contentsline {subsubsection}{\numberline {3.10.1}Leistungsdichte}{13}{subsubsection.3.10.1}%
-\contentsline {subsubsection}{\numberline {3.10.2}Poynting-Vektor}{13}{subsubsection.3.10.2}%
-\contentsline {subsection}{\numberline {3.11}Typische Prüfungsfehler bei Potentialen}{13}{subsection.3.11}%
-\contentsline {subsection}{\numberline {3.12}Prüfungs-Check}{13}{subsection.3.12}%
-\contentsline {section}{\numberline {4}Randwertprobleme und Randbedingungen}{13}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Was ist ein Randwertproblem?}{13}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Physikalische Herkunft von Randbedingungen}{13}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Typen von Randbedingungen}{13}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Dirichlet-Randbedingungen}{13}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Neumann-Randbedingungen}{13}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}Gemischte (Robin-)Randbedingungen}{15}{subsubsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.4}Randbedingungen in der Elektrostatik}{15}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Idealer Leiter}{15}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Grenze Leiter -- Isolator}{15}{subsubsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.5}Randbedingungen bei stationärer Strömung}{15}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}Isolierte Oberfläche}{15}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}Strom- oder Spannungsanschluss}{15}{subsubsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.6}Randbedingungen in der Magnetostatik}{15}{subsection.4.6}%
-\contentsline {subsubsection}{\numberline {4.6.1}Normalkomponente von $\vec B$}{15}{subsubsection.4.6.1}%
-\contentsline {subsubsection}{\numberline {4.6.2}Tangentialkomponente von $\vec H$}{15}{subsubsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.7}Randbedingungen für das Vektorpotential}{15}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}Randbedingungen im Unendlichen}{15}{subsection.4.8}%
-\contentsline {subsection}{\numberline {4.9}Symmetrie als Randbedingung}{15}{subsection.4.9}%
-\contentsline {subsection}{\numberline {4.10}Prüfungs-Check für Randbedingungen}{15}{subsection.4.10}%
-\contentsline {section}{\numberline {5}Symmetrie, Koordinatensysteme und Differentialoperatoren}{15}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Warum Symmetrie vor Rechnung?}{15}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Typen von Symmetrie}{17}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Translationssymmetrie}{17}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}Rotationssymmetrie}{17}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}Spiegelsymmetrie}{17}{subsubsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.3}Auswahl des Koordinatensystems}{17}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Differentialoperatoren – Überblick}{17}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Kartesische Koordinaten}{17}{subsection.5.5}%
-\contentsline {subsubsection}{\numberline {5.5.1}Gradient}{17}{subsubsection.5.5.1}%
-\contentsline {subsubsection}{\numberline {5.5.2}Divergenz}{17}{subsubsection.5.5.2}%
-\contentsline {subsubsection}{\numberline {5.5.3}Rotation}{17}{subsubsection.5.5.3}%
-\contentsline {subsubsection}{\numberline {5.5.4}Laplace-Operator}{17}{subsubsection.5.5.4}%
-\contentsline {subsection}{\numberline {5.6}Zylindrische Koordinaten}{17}{subsection.5.6}%
-\contentsline {subsubsection}{\numberline {5.6.1}Gradient}{17}{subsubsection.5.6.1}%
-\contentsline {subsubsection}{\numberline {5.6.2}Divergenz}{17}{subsubsection.5.6.2}%
-\contentsline {subsubsection}{\numberline {5.6.3}Rotation}{17}{subsubsection.5.6.3}%
-\contentsline {subsubsection}{\numberline {5.6.4}Laplace-Operator}{17}{subsubsection.5.6.4}%
-\contentsline {subsection}{\numberline {5.7}Sphärische Koordinaten}{17}{subsection.5.7}%
-\contentsline {subsubsection}{\numberline {5.7.1}Gradient}{17}{subsubsection.5.7.1}%
-\contentsline {subsubsection}{\numberline {5.7.2}Laplace-Operator}{17}{subsubsection.5.7.2}%
-\contentsline {subsection}{\numberline {5.8}Reduktion durch Symmetrie – typische Fälle}{17}{subsection.5.8}%
-\contentsline {subsection}{\numberline {5.9}Prüfungs-Check}{19}{subsection.5.9}%
-\contentsline {section}{\numberline {6}Grundlegende Differentialgleichungen der Elektromagnetik}{19}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Einordnung: PDE vs. ODE}{19}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Laplace-Gleichung}{19}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}Definition}{19}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}Physikalische Bedeutung}{19}{subsubsection.6.2.2}%
-\contentsline {subsubsection}{\numberline {6.2.3}Typische 1D-Reduktionen}{19}{subsubsection.6.2.3}%
-\contentsline {paragraph}{Kartesisch (1D):}{19}{paragraph*.1}%
-\contentsline {paragraph}{Zylindrisch (nur $r$-Abhängigkeit):}{19}{paragraph*.2}%
-\contentsline {paragraph}{Sphärisch (nur $r$-Abhängigkeit):}{19}{paragraph*.3}%
-\contentsline {subsection}{\numberline {6.3}Poisson-Gleichung}{19}{subsection.6.3}%
-\contentsline {subsubsection}{\numberline {6.3.1}Definition}{19}{subsubsection.6.3.1}%
-\contentsline {subsubsection}{\numberline {6.3.2}Physikalische Bedeutung}{19}{subsubsection.6.3.2}%
-\contentsline {subsubsection}{\numberline {6.3.3}Lösungsstruktur}{19}{subsubsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.4}Gewöhnliche DGL zweiter Ordnung}{19}{subsection.6.4}%
-\contentsline {subsubsection}{\numberline {6.4.1}Homogener Fall}{19}{subsubsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.5}Diffusionsgleichung (MQS)}{19}{subsection.6.5}%
-\contentsline {subsubsection}{\numberline {6.5.1}Form}{19}{subsubsection.6.5.1}%
-\contentsline {subsubsection}{\numberline {6.5.2}Physikalische Bedeutung}{19}{subsubsection.6.5.2}%
-\contentsline {subsection}{\numberline {6.6}Wellengleichung}{19}{subsection.6.6}%
-\contentsline {subsubsection}{\numberline {6.6.1}Zeitbereich}{19}{subsubsection.6.6.1}%
-\contentsline {subsubsection}{\numberline {6.6.2}Frequenzbereich}{21}{subsubsection.6.6.2}%
-\contentsline {subsubsection}{\numberline {6.6.3}1D-Lösung}{21}{subsubsection.6.6.3}%
-\contentsline {subsection}{\numberline {6.7}Randverhalten und physikalische Selektion}{21}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.8}Zusammenfassung der Standardlösungen}{21}{subsection.6.8}%
-\contentsline {subsection}{\numberline {6.9}Prüfungs-Check}{21}{subsection.6.9}%
-\contentsline {section}{\numberline {7}Frequenzbereich, komplexe Darstellung und Phasoren}{21}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Harmonische Zeitabhängigkeit}{21}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Ableitungsregeln im Frequenzbereich}{21}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Maxwell-Gleichungen im Frequenzbereich}{21}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Komplexe Materialgrößen}{21}{subsection.7.4}%
-\contentsline {subsubsection}{\numberline {7.4.1}Komplexe Permittivität}{21}{subsubsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.5}Komplexe Wellenzahl und Ausbreitung}{21}{subsection.7.5}%
-\contentsline {subsection}{\numberline {7.6}Phasenlage und komplexe Amplituden}{21}{subsection.7.6}%
-\contentsline {subsection}{\numberline {7.7}Impedanzkonzept}{23}{subsection.7.7}%
-\contentsline {subsubsection}{\numberline {7.7.1}Definition}{23}{subsubsection.7.7.1}%
-\contentsline {subsubsection}{\numberline {7.7.2}Physikalische Bedeutung}{23}{subsubsection.7.7.2}%
-\contentsline {subsection}{\numberline {7.8}Frequenzbereich vs. Zeitbereich}{23}{subsection.7.8}%
-\contentsline {subsection}{\numberline {7.9}Typische Prüfungsfehler}{23}{subsection.7.9}%
-\contentsline {subsection}{\numberline {7.10}Prüfungs-Check}{23}{subsection.7.10}%
-\contentsline {section}{\numberline {8}Magneto-Quasistatik, Diffusion und Skin-Effekt}{23}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Was bedeutet ``quasistatisch''?}{23}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Physikalische Annahmen des MQS-Regimes}{23}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Grundgleichungen im MQS-Regime}{23}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Vektorpotential-Formulierung}{23}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5}Herleitung der Diffusionsgleichung}{23}{subsection.8.5}%
-\contentsline {subsection}{\numberline {8.6}Eindringtiefe (Skin-Tiefe)}{23}{subsection.8.6}%
-\contentsline {subsection}{\numberline {8.7}Feld- und Stromverteilung im Leiter}{25}{subsection.8.7}%
-\contentsline {subsection}{\numberline {8.8}Grenzfälle}{25}{subsection.8.8}%
-\contentsline {subsubsection}{\numberline {8.8.1}Niederfrequenz-Grenze}{25}{subsubsection.8.8.1}%
-\contentsline {subsubsection}{\numberline {8.8.2}Hochfrequenz-Grenze}{25}{subsubsection.8.8.2}%
-\contentsline {subsection}{\numberline {8.9}Leistungsverluste im MQS-Regime}{25}{subsection.8.9}%
-\contentsline {subsection}{\numberline {8.10}Typische Prüfungsfehler}{25}{subsection.8.10}%
-\contentsline {subsection}{\numberline {8.11}Prüfungs-Check}{25}{subsection.8.11}%
-\contentsline {section}{\numberline {9}Elektromagnetische Wellen, Reflexion und Transmission}{25}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Physikalische Einordnung des Wellenregimes}{25}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Wellengleichung aus Maxwell}{25}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Ebene Wellen}{25}{subsection.9.3}%
-\contentsline {subsubsection}{\numberline {9.3.1}Definition}{25}{subsubsection.9.3.1}%
-\contentsline {subsubsection}{\numberline {9.3.2}Orthogonalitätsbeziehungen}{25}{subsubsection.9.3.2}%
-\contentsline {subsection}{\numberline {9.4}Zusammenhang zwischen $\tilde {\vec E}$ und $\tilde {\vec H}$}{25}{subsection.9.4}%
-\contentsline {subsection}{\numberline {9.5}Energiefluss elektromagnetischer Wellen}{27}{subsection.9.5}%
-\contentsline {subsection}{\numberline {9.6}Reflexion und Transmission an Materialgrenzen}{27}{subsection.9.6}%
-\contentsline {subsection}{\numberline {9.7}Randbedingungen an der Grenzfläche}{27}{subsection.9.7}%
-\contentsline {subsection}{\numberline {9.8}Reflexions- und Transmissionskoeffizienten}{27}{subsection.9.8}%
-\contentsline {subsubsection}{\numberline {9.8.1}Reflexionskoeffizient}{27}{subsubsection.9.8.1}%
-\contentsline {subsubsection}{\numberline {9.8.2}Transmissionskoeffizient}{27}{subsubsection.9.8.2}%
-\contentsline {subsection}{\numberline {9.9}Leistungsbetrachtung}{27}{subsection.9.9}%
-\contentsline {subsection}{\numberline {9.10}Verlustbehaftete Medien}{27}{subsection.9.10}%
-\contentsline {subsection}{\numberline {9.11}Typische Prüfungsfehler}{27}{subsection.9.11}%
-\contentsline {subsection}{\numberline {9.12}Prüfungs-Check}{27}{subsection.9.12}%
+\contentsline {section}{\numberline {1}Methodik: Systematisches Lösen elektromagnetischer Aufgaben}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Was ist eine ``elektromagnetische Aufgabe'' strukturell?}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Der 30-Sekunden-Entscheidungsbaum}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Regime-Klassifikation}{3}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Elektrostatisch}{3}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Stationäre Strömungsanalyse (DC-Leitung)}{3}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Magnetostatik}{3}{subsubsection.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.4}Magneto-Quasistatik (MQS)}{3}{subsubsection.1.3.4}%
+\contentsline {subsubsection}{\numberline {1.3.5}Elektrodynamik (Wellen)}{3}{subsubsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.4}Primärvariable wählen: Regeln, die wirklich funktionieren}{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Symmetrieanalyse}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Randbedingungen: wie man sie korrekt herleitet}{4}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}Typen von Randbedingungen}{4}{subsubsection.1.6.1}%
+\contentsline {subsubsection}{\numberline {1.6.2}Physikalische Quellen für Randbedingungen}{4}{subsubsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.7}Standard-Arbeitsablauf}{4}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Plausibilitätschecks}{4}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}Typische Fehlerbilder}{4}{subsection.1.9}%
+\contentsline {section}{\numberline {2}Maxwell-Gleichungen und ihre physikalischen Reduktionen}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Maxwell-Gleichungen in Differentialform}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Materialgleichungen}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Kontinuitätsgleichung (Ladungserhaltung)}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Reduktionsprinzip: Von Maxwell zur führenden PDE}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Elektrostatisches Regime}{5}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Physikalische Annahmen}{5}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Einführung des Skalarpotentials}{5}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Poisson- und Laplace-Gleichung}{5}{subsubsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.6}Stationäre Strömungsanalyse}{5}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Physikalische Annahmen}{5}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Feld--Strom-Beziehung}{5}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Führende Gleichung}{5}{subsubsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.7}Magnetostatisches Regime}{5}{subsection.2.7}%
+\contentsline {subsubsection}{\numberline {2.7.1}Physikalische Annahmen}{5}{subsubsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.2}Vektorpotential}{5}{subsubsection.2.7.2}%
+\contentsline {subsubsection}{\numberline {2.7.3}Poisson-Gleichung für das Vektorpotential}{5}{subsubsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.8}Harmonische Zeitabhängigkeit und Phasoren}{5}{subsection.2.8}%
+\contentsline {subsubsection}{\numberline {2.8.1}Phasor-Darstellung}{5}{subsubsection.2.8.1}%
+\contentsline {subsubsection}{\numberline {2.8.2}Maxwell-Gleichungen im Frequenzbereich}{5}{subsubsection.2.8.2}%
+\contentsline {subsection}{\numberline {2.9}Magneto-quasistatisches Regime (MQS)}{5}{subsection.2.9}%
+\contentsline {subsubsection}{\numberline {2.9.1}Physikalische Annahmen}{5}{subsubsection.2.9.1}%
+\contentsline {subsubsection}{\numberline {2.9.2}Diffusionsgleichung}{5}{subsubsection.2.9.2}%
+\contentsline {subsection}{\numberline {2.10}Elektrodynamisches Regime (Wellen)}{6}{subsection.2.10}%
+\contentsline {subsubsection}{\numberline {2.10.1}Physikalische Annahmen}{6}{subsubsection.2.10.1}%
+\contentsline {subsubsection}{\numberline {2.10.2}Wellengleichung}{6}{subsubsection.2.10.2}%
+\contentsline {subsection}{\numberline {2.11}Zusammenfassung und Prüfungscheck}{6}{subsection.2.11}%
+\contentsline {section}{\numberline {3}Feld- und Potentialkonzepte}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Warum Potentiale?}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Elektrisches Skalarpotential}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Definition}{6}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Physikalische Bedeutung}{6}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Elektrisches Feld aus dem Potential}{6}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Ableitung}{6}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Interpretation}{6}{subsubsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}Elektrische Flussdichte}{6}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Definition}{6}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Bedeutung für Randbedingungen}{6}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Magnetisches Vektorpotential}{6}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Motivation}{6}{subsubsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.6}Eichfreiheit des Vektorpotentials}{6}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Magnetisches Feld aus dem Vektorpotential}{7}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.7.1}Ableitung}{7}{subsubsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.8}Zusammenhang zwischen $\vec A$ und $\vec E$ (zeitabhängig)}{7}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Stromdichte aus Feldgrößen}{7}{subsection.3.9}%
+\contentsline {subsubsection}{\numberline {3.9.1}Ohmsches Gesetz (lokal)}{7}{subsubsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.10}Energie- und Leistungsbetrachtung}{7}{subsection.3.10}%
+\contentsline {subsubsection}{\numberline {3.10.1}Leistungsdichte}{7}{subsubsection.3.10.1}%
+\contentsline {subsubsection}{\numberline {3.10.2}Poynting-Vektor}{7}{subsubsection.3.10.2}%
+\contentsline {subsection}{\numberline {3.11}Typische Prüfungsfehler bei Potentialen}{7}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}Prüfungs-Check}{7}{subsection.3.12}%
+\contentsline {section}{\numberline {4}Randwertprobleme und Randbedingungen}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Was ist ein Randwertproblem?}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Physikalische Herkunft von Randbedingungen}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Typen von Randbedingungen}{7}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Dirichlet-Randbedingungen}{7}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Neumann-Randbedingungen}{7}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Gemischte (Robin-)Randbedingungen}{8}{subsubsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.4}Randbedingungen in der Elektrostatik}{8}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Idealer Leiter}{8}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Grenze Leiter -- Isolator}{8}{subsubsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.5}Randbedingungen bei stationärer Strömung}{8}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Isolierte Oberfläche}{8}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Strom- oder Spannungsanschluss}{8}{subsubsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.6}Randbedingungen in der Magnetostatik}{8}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Normalkomponente von $\vec B$}{8}{subsubsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.2}Tangentialkomponente von $\vec H$}{8}{subsubsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.7}Randbedingungen für das Vektorpotential}{8}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Randbedingungen im Unendlichen}{8}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}Symmetrie als Randbedingung}{8}{subsection.4.9}%
+\contentsline {subsection}{\numberline {4.10}Prüfungs-Check für Randbedingungen}{8}{subsection.4.10}%
+\contentsline {section}{\numberline {5}Symmetrie, Koordinatensysteme und Differentialoperatoren}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Warum Symmetrie vor Rechnung?}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Typen von Symmetrie}{9}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Translationssymmetrie}{9}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Rotationssymmetrie}{9}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Spiegelsymmetrie}{9}{subsubsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.3}Auswahl des Koordinatensystems}{9}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Differentialoperatoren – Überblick}{9}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Kartesische Koordinaten}{9}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Gradient}{9}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Divergenz}{9}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.3}Rotation}{9}{subsubsection.5.5.3}%
+\contentsline {subsubsection}{\numberline {5.5.4}Laplace-Operator}{9}{subsubsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.6}Zylindrische Koordinaten}{9}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}Gradient}{9}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.2}Divergenz}{9}{subsubsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.3}Rotation}{9}{subsubsection.5.6.3}%
+\contentsline {subsubsection}{\numberline {5.6.4}Laplace-Operator}{9}{subsubsection.5.6.4}%
+\contentsline {subsection}{\numberline {5.7}Sphärische Koordinaten}{9}{subsection.5.7}%
+\contentsline {subsubsection}{\numberline {5.7.1}Gradient}{9}{subsubsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.2}Laplace-Operator}{9}{subsubsection.5.7.2}%
+\contentsline {subsection}{\numberline {5.8}Reduktion durch Symmetrie – typische Fälle}{9}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Prüfungs-Check}{10}{subsection.5.9}%
+\contentsline {section}{\numberline {6}Grundlegende Differentialgleichungen der Elektromagnetik}{10}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Einordnung: PDE vs. ODE}{10}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Laplace-Gleichung}{10}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Definition}{10}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Physikalische Bedeutung}{10}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}Typische 1D-Reduktionen}{10}{subsubsection.6.2.3}%
+\contentsline {paragraph}{Kartesisch (1D):}{10}{paragraph*.1}%
+\contentsline {paragraph}{Zylindrisch (nur $r$-Abhängigkeit):}{10}{paragraph*.2}%
+\contentsline {paragraph}{Sphärisch (nur $r$-Abhängigkeit):}{10}{paragraph*.3}%
+\contentsline {subsection}{\numberline {6.3}Poisson-Gleichung}{10}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Definition}{10}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}Physikalische Bedeutung}{10}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3}Lösungsstruktur}{10}{subsubsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.4}Gewöhnliche DGL zweiter Ordnung}{10}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}Homogener Fall}{10}{subsubsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.5}Diffusionsgleichung (MQS)}{10}{subsection.6.5}%
+\contentsline {subsubsection}{\numberline {6.5.1}Form}{10}{subsubsection.6.5.1}%
+\contentsline {subsubsection}{\numberline {6.5.2}Physikalische Bedeutung}{10}{subsubsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.6}Wellengleichung}{10}{subsection.6.6}%
+\contentsline {subsubsection}{\numberline {6.6.1}Zeitbereich}{10}{subsubsection.6.6.1}%
+\contentsline {subsubsection}{\numberline {6.6.2}Frequenzbereich}{11}{subsubsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.3}1D-Lösung}{11}{subsubsection.6.6.3}%
+\contentsline {subsection}{\numberline {6.7}Randverhalten und physikalische Selektion}{11}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Zusammenfassung der Standardlösungen}{11}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Prüfungs-Check}{11}{subsection.6.9}%
+\contentsline {section}{\numberline {7}Frequenzbereich, komplexe Darstellung und Phasoren}{11}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Harmonische Zeitabhängigkeit}{11}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Ableitungsregeln im Frequenzbereich}{11}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Maxwell-Gleichungen im Frequenzbereich}{11}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Komplexe Materialgrößen}{11}{subsection.7.4}%
+\contentsline {subsubsection}{\numberline {7.4.1}Komplexe Permittivität}{11}{subsubsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.5}Komplexe Wellenzahl und Ausbreitung}{11}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Phasenlage und komplexe Amplituden}{11}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Impedanzkonzept}{12}{subsection.7.7}%
+\contentsline {subsubsection}{\numberline {7.7.1}Definition}{12}{subsubsection.7.7.1}%
+\contentsline {subsubsection}{\numberline {7.7.2}Physikalische Bedeutung}{12}{subsubsection.7.7.2}%
+\contentsline {subsection}{\numberline {7.8}Frequenzbereich vs. Zeitbereich}{12}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Typische Prüfungsfehler}{12}{subsection.7.9}%
+\contentsline {subsection}{\numberline {7.10}Prüfungs-Check}{12}{subsection.7.10}%
+\contentsline {section}{\numberline {8}Magneto-Quasistatik, Diffusion und Skin-Effekt}{12}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Was bedeutet ``quasistatisch''?}{12}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Physikalische Annahmen des MQS-Regimes}{12}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Grundgleichungen im MQS-Regime}{12}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Vektorpotential-Formulierung}{12}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Herleitung der Diffusionsgleichung}{12}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Eindringtiefe (Skin-Tiefe)}{12}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Feld- und Stromverteilung im Leiter}{13}{subsection.8.7}%
+\contentsline {subsection}{\numberline {8.8}Grenzfälle}{13}{subsection.8.8}%
+\contentsline {subsubsection}{\numberline {8.8.1}Niederfrequenz-Grenze}{13}{subsubsection.8.8.1}%
+\contentsline {subsubsection}{\numberline {8.8.2}Hochfrequenz-Grenze}{13}{subsubsection.8.8.2}%
+\contentsline {subsection}{\numberline {8.9}Leistungsverluste im MQS-Regime}{13}{subsection.8.9}%
+\contentsline {subsection}{\numberline {8.10}Typische Prüfungsfehler}{13}{subsection.8.10}%
+\contentsline {subsection}{\numberline {8.11}Prüfungs-Check}{13}{subsection.8.11}%
+\contentsline {section}{\numberline {9}Elektromagnetische Wellen, Reflexion und Transmission}{13}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Physikalische Einordnung des Wellenregimes}{13}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Wellengleichung aus Maxwell}{13}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Ebene Wellen}{13}{subsection.9.3}%
+\contentsline {subsubsection}{\numberline {9.3.1}Definition}{13}{subsubsection.9.3.1}%
+\contentsline {subsubsection}{\numberline {9.3.2}Orthogonalitätsbeziehungen}{13}{subsubsection.9.3.2}%
+\contentsline {subsection}{\numberline {9.4}Zusammenhang zwischen $\tilde {\vec E}$ und $\tilde {\vec H}$}{13}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Energiefluss elektromagnetischer Wellen}{14}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Reflexion und Transmission an Materialgrenzen}{14}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Randbedingungen an der Grenzfläche}{14}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.8}Reflexions- und Transmissionskoeffizienten}{14}{subsection.9.8}%
+\contentsline {subsubsection}{\numberline {9.8.1}Reflexionskoeffizient}{14}{subsubsection.9.8.1}%
+\contentsline {subsubsection}{\numberline {9.8.2}Transmissionskoeffizient}{14}{subsubsection.9.8.2}%
+\contentsline {subsection}{\numberline {9.9}Leistungsbetrachtung}{14}{subsection.9.9}%
+\contentsline {subsection}{\numberline {9.10}Verlustbehaftete Medien}{14}{subsection.9.10}%
+\contentsline {subsection}{\numberline {9.11}Typische Prüfungsfehler}{14}{subsection.9.11}%
+\contentsline {subsection}{\numberline {9.12}Prüfungs-Check}{14}{subsection.9.12}%
 \setcounter {tocdepth}{1}
-\contentsline {section}{\numberline {10}Mathematisches Cheatsheet (erweitert, prüfungsdeckend)}{27}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Elementare Ableitungen und Integrale}{27}{subsection.10.1}%
-\contentsline {subsubsection}{\numberline {10.1.1}Potenzen und Logarithmen}{27}{subsubsection.10.1.1}%
-\contentsline {subsubsection}{\numberline {10.1.2}Exponentialfunktionen}{27}{subsubsection.10.1.2}%
-\contentsline {subsection}{\numberline {10.2}Partielle Ableitungen}{27}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}Gradient, Divergenz, Rotation}{29}{subsection.10.3}%
-\contentsline {subsubsection}{\numberline {10.3.1}Gradient}{29}{subsubsection.10.3.1}%
-\contentsline {subsubsection}{\numberline {10.3.2}Divergenz}{29}{subsubsection.10.3.2}%
-\contentsline {subsubsection}{\numberline {10.3.3}Rotation}{29}{subsubsection.10.3.3}%
-\contentsline {subsection}{\numberline {10.4}Vektoridentitäten }{29}{subsection.10.4}%
-\contentsline {subsection}{\numberline {10.5}Laplace-Operator in 1D-Form}{29}{subsection.10.5}%
-\contentsline {subsection}{\numberline {10.6}Standardlösungen der Laplace-Gleichung}{29}{subsection.10.6}%
-\contentsline {subsection}{\numberline {10.7}Gewöhnliche Differentialgleichungen}{29}{subsection.10.7}%
-\contentsline {subsubsection}{\numberline {10.7.1}Charakteristische Gleichung}{29}{subsubsection.10.7.1}%
-\contentsline {subsubsection}{\numberline {10.7.2}Spezialfälle}{29}{subsubsection.10.7.2}%
-\contentsline {subsection}{\numberline {10.8}Komplexe Zahlen und Phasoren}{29}{subsection.10.8}%
-\contentsline {subsection}{\numberline {10.9}Rechnen mit komplexen Größen}{29}{subsection.10.9}%
-\contentsline {subsection}{\numberline {10.10}Reeller Teil und physikalische Interpretation}{29}{subsection.10.10}%
-\contentsline {subsection}{\numberline {10.11}Integralsätze der Vektorrechnung}{29}{subsection.10.11}%
-\contentsline {subsubsection}{\numberline {10.11.1}Gaußscher Satz}{29}{subsubsection.10.11.1}%
-\contentsline {subsubsection}{\numberline {10.11.2}Stokes-Theorem}{29}{subsubsection.10.11.2}%
-\contentsline {subsection}{\numberline {10.12}Delta-Funktion}{29}{subsection.10.12}%
-\contentsline {subsection}{\numberline {10.13}Grenzwerte und Plausibilitätschecks}{29}{subsection.10.13}%
-\contentsline {subsection}{\numberline {10.14}Finale Mathematik-Checkliste}{31}{subsection.10.14}%
-\contentsline {section}{\numberline {11}1-seitige Entscheidungs-Matrix für EM-Prüfungen}{31}{section.11}%
+\contentsline {section}{\numberline {10}Mathematisches Cheatsheet}{14}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Elementare Ableitungen und Integrale}{14}{subsection.10.1}%
+\contentsline {subsubsection}{\numberline {10.1.1}Potenzen und Logarithmen}{14}{subsubsection.10.1.1}%
+\contentsline {subsubsection}{\numberline {10.1.2}Exponentialfunktionen}{14}{subsubsection.10.1.2}%
+\contentsline {subsection}{\numberline {10.2}Partielle Ableitungen}{14}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Trigonometrie, Hyperbelfunktionen und komplexe Darstellung}{15}{subsection.10.3}%
+\contentsline {subsubsection}{\numberline {10.3.1}Definitionen über Exponentialfunktionen }{15}{subsubsection.10.3.1}%
+\contentsline {subsubsection}{\numberline {10.3.2}Ableitungen}{15}{subsubsection.10.3.2}%
+\contentsline {subsubsection}{\numberline {10.3.3}Integrale }{15}{subsubsection.10.3.3}%
+\contentsline {subsubsection}{\numberline {10.3.4}Identitäten }{15}{subsubsection.10.3.4}%
+\contentsline {subsubsection}{\numberline {10.3.5}Komplexe Argumente und Beziehungen zwischen trig und hyperbel}{15}{subsubsection.10.3.5}%
+\contentsline {subsubsection}{\numberline {10.3.6}Inverse Funktionen }{15}{subsubsection.10.3.6}%
+\contentsline {subsubsection}{\numberline {10.3.7}Phasor-Form (EM-Standard)}{15}{subsubsection.10.3.7}%
+\contentsline {subsubsection}{\numberline {10.3.8}Wann trigonometrisch, wann hyperbolisch?}{15}{subsubsection.10.3.8}%
+\contentsline {subsection}{\numberline {10.4}Gradient, Divergenz, Rotation}{15}{subsection.10.4}%
+\contentsline {subsubsection}{\numberline {10.4.1}Gradient}{15}{subsubsection.10.4.1}%
+\contentsline {subsubsection}{\numberline {10.4.2}Divergenz}{16}{subsubsection.10.4.2}%
+\contentsline {subsubsection}{\numberline {10.4.3}Rotation}{16}{subsubsection.10.4.3}%
+\contentsline {subsection}{\numberline {10.5}Vektoridentitäten }{16}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}Laplace-Operator in 1D-Form}{16}{subsection.10.6}%
+\contentsline {subsection}{\numberline {10.7}Standardlösungen der Laplace-Gleichung}{16}{subsection.10.7}%
+\contentsline {subsection}{\numberline {10.8}Gewöhnliche Differentialgleichungen}{16}{subsection.10.8}%
+\contentsline {subsubsection}{\numberline {10.8.1}Charakteristische Gleichung}{16}{subsubsection.10.8.1}%
+\contentsline {subsubsection}{\numberline {10.8.2}Spezialfälle}{16}{subsubsection.10.8.2}%
+\contentsline {subsection}{\numberline {10.9}Komplexe Zahlen und Phasoren}{16}{subsection.10.9}%
+\contentsline {subsection}{\numberline {10.10}Rechnen mit komplexen Größen}{16}{subsection.10.10}%
+\contentsline {subsection}{\numberline {10.11}Reeller Teil und physikalische Interpretation}{16}{subsection.10.11}%
+\contentsline {subsection}{\numberline {10.12}Integralsätze der Vektorrechnung}{16}{subsection.10.12}%
+\contentsline {subsubsection}{\numberline {10.12.1}Gaußscher Satz}{16}{subsubsection.10.12.1}%
+\contentsline {subsubsection}{\numberline {10.12.2}Stokes-Theorem}{16}{subsubsection.10.12.2}%
+\contentsline {subsection}{\numberline {10.13}Delta-Funktion}{16}{subsection.10.13}%
+\contentsline {subsection}{\numberline {10.14}Konzeptionelles Vorgehen: lineare DGL }{17}{subsection.10.14}%
+\contentsline {subsubsection}{\numberline {10.14.1}1 Typ erkennen}{17}{subsubsection.10.14.1}%
+\contentsline {subsubsection}{\numberline {10.14.2}2 Homogene Lösung $u_{\text {hom}}$ (charakteristische Gleichung)}{17}{subsubsection.10.14.2}%
+\contentsline {subsubsection}{\numberline {10.14.3}3 Partikuläre Lösung $u_{\text {part}}$ (nur wenn $g\neq 0$)}{17}{subsubsection.10.14.3}%
+\contentsline {subsubsection}{\numberline {10.14.4}4 Gesamtlösung und Konstanten}{17}{subsubsection.10.14.4}%
+\contentsline {subsection}{\numberline {10.15}Grenzwerte und Plausibilitätschecks}{17}{subsection.10.15}%
+\contentsline {subsection}{\numberline {10.16}Finale Mathematik-Checkliste}{17}{subsection.10.16}%
+\contentsline {section}{\numberline {11}1-seitige Entscheidungs-Matrix für EM-Prüfungen}{17}{section.11}%
