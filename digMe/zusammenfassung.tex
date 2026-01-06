@@ -1,10 +1,16 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 
 % --- Layout: A4 quer + 2 Seiten auf 1 Blatt ---
 % --- Layout: 2 Seiten auf 1 Blatt (A4 quer) ---
-\usepackage[a4paper,left=10mm,right=10mm,top=10mm,bottom=10mm]{geometry}
+\usepackage[a4paper,landscape,left=10mm,right=10mm,top=10mm,bottom=10mm]{geometry}
+
+
 \usepackage{pgfpages}
-\pgfpagesuselayout{2 on 1}[a4paper,landscape,border shrink=3mm]
+\usepackage{multicol}
+\usepackage{float}      % für [H]
+\usepackage{caption}    % für \captionof
+
+
 
 % --- Sprache / Text ---
 \usepackage[T1]{fontenc}
@@ -14,7 +20,7 @@
 % --- Mathe / Listen ---
 \usepackage{amsmath,amssymb}
 \usepackage{enumitem}
-\setlist[itemize]{noitemsep,topsep=2pt}
+\setlist[itemize]{noitemsep,topsep=0pt, partopsep=0pt}
 % --- Code Styling ---
 \usepackage{xcolor}
 \usepackage{listings}
@@ -29,6 +35,15 @@
 \definecolor{codeemph}{RGB}{155,0,90}
 
 % Inline-Highlight (für wichtige Wörter im Text)
+% --- Exam marker macros ---
+\usepackage{xcolor}
+
+\definecolor{examBlue}{RGB}{0,92,185}
+\definecolor{examMagenta}{RGB}{155,0,90}
+
+\newcommand{\pcentral}[1]{\textbf{\textcolor{examMagenta}{Zentrale Regel:}}~#1}
+\newcommand{\prule}[1]{\textbf{\textcolor{examBlue}{Prüfungsregel:}}~#1}
+\newcommand{\pmerke}[1]{\textbf{\textcolor{examBlue}{Prüfungsmerksatz:}}~#1}
 \newcommand{\hilite}[1]{\colorbox{yellow!25}{#1}}
 \newcommand{\imp}[1]{\textbf{\textcolor{codeemph}{#1}}}
 \newcommand{\kw}[1]{\textbf{\textcolor{codekw}{#1}}}
@@ -39,19 +54,22 @@
   frame=single,
   rulecolor=\color{codeframe},
   frameround=tttt,
-  basicstyle=\ttfamily\footnotesize,
+  basicstyle=\ttfamily\fontsize{7}{8}\selectfont,
   keywordstyle=\bfseries\color{codekw},
   commentstyle=\itshape\color{codecom},
   stringstyle=\color{codestr},
   identifierstyle=\color{codeid},
   numbers=left,
   numberstyle=\tiny\color{codeid},
-  numbersep=6pt,
+  numbersep=5pt,
   tabsize=2,
   showstringspaces=false,
   breaklines=true,
-  upquote=true
+  breakatwhitespace=true,
+  columns=fullflexible,
+  keepspaces=true
 }
+
 
 % VHDL Sprache definieren (listings hat VHDL meist, aber so bist du safe)
 \lstdefinelanguage{VHDL}{
@@ -94,103 +112,67 @@
 % --- Typografie kompakt ---
 \usepackage{microtype}
 \usepackage{parskip}
-\setlength{\parskip}{2pt}
+\setlength{\parskip}{1pt}
 \setlength{\parindent}{0pt}
 \renewcommand{\baselinestretch}{0.95}
 \small
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
+\linespread{0.96}
+
 
 \title{Digital Microelectronics}
 \author{Näf Gian Marco}
 \date{\today}
 \usepackage{hyperref}
 \begin{document}
+
+
+
+
+
+\begin{multicols}{3}
+
 \maketitle
 
-
-
 % ============================================================
-\section{How to Design a System on Chip}
+\section{SoC-Grundlagen und Design Flow}
 
-\subsection{Motivation und Einordnung}
-Moderne digitale Systeme sind durch steigende Komplexität, hohe Heterogenität und starken Zeitdruck geprägt. Klassische FPGA- oder HDL-basierte Schaltungsentwicklung skaliert nicht mehr. Aktuelle Designs sind vollständige Systeme mit Prozessoren, Speicherhierarchien, Peripherie und applikationsspezifischer Logik auf einem einzigen Chip.
 
-\subsection{Begriff und Eigenschaften eines SoC}
-Ein System on Chip integriert Mikroprozessor(en), Speicher, Standardperipherie und anwendungsspezifische IP-Blöcke auf einem Silizium-Die. Ziel ist eine hohe Integrationsdichte bei reduzierten Entwicklungs- und Systemkosten sowie erhöhter Flexibilität durch Software-Updates und rekonfigurierbare Hardware.
+\textbf{Flow:}  
+System Planning \& HDL Design
+$\rightarrow$ RTL Synthesis
+$\rightarrow$ Netlist Linking \& Constraints
+$\rightarrow$ Packing / Placement / Optimization
+$\rightarrow$ Routing
+$\rightarrow$ Post-Route Optimization
+$\rightarrow$ Static Timing Analysis
+$\rightarrow$ Bitstream Generation
 
-FPGA-basierte SoCs kombinieren feste Hard-IP (Processing System) mit rekonfigurierbarer Logik (Programmable Logic). Dies erlaubt Hardware/Software-Co-Design und iterative Systementwicklung.
+\prule{%
+Timing-Constraints wirken bereits ab der \hilite{Synthese} und werden in allen Folgeschritten berücksichtigt.
+}
 
-\subsection{Zynq-7000 Architekturüberblick}
-Die Zynq-7000 Plattform besteht aus zwei Hauptdomänen:
+
+Die Zynq-7000 Plattform integriert Prozessor und FPGA auf einem Chip:
 \begin{itemize}
-  \item \textbf{Processing System (PS):} Dual ARM Cortex-A9, Caches, Speichercontroller, feste Peripherie, Hard-IP.
-  \item \textbf{Programmable Logic (PL):} 7-Series FPGA-Logik mit CLBs, Block RAM, DSP48E1-Slices, I/O-Blöcken und Clock-Ressourcen.
+  \item \textbf{Processing System (PS):} ARM Cortex-A9, Speichercontroller, feste Peripherie
+  \item \textbf{Programmable Logic (PL):} FPGA-Logik für applikationsspezifische Beschleuniger
 \end{itemize}
 
-PS und PL sind eng gekoppelt und kommunizieren über dedizierte AXI-Interfaces. Ergänzt wird das System durch analoge Funktionen wie XADC (ADC, Sensorik).
+PS und PL sind über \hilite{AXI-Interfaces} gekoppelt und erlauben Hardware/Software-Co-Design.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.28\textheight,keepaspectratio]{fig/L1_zynq_arch.png}
-  \caption{Zynq-7000 Gesamtarchitektur (PS/PL).}
-\end{figure}
 
-\subsection{Ressourcen der Programmable Logic}
-Die PL basiert auf einer feingranularen Logikstruktur:
+Die PL stellt folgende Kernressourcen bereit:
 \begin{itemize}
-  \item \textbf{CLB (Configurable Logic Block):} Besteht aus zwei Slices.
-  \item \textbf{Slice:} Enthält LUTs, Flip-Flops, Carry-Chains und Multiplexer.
-  \item \textbf{LUTs:} 6-Eingangs-LUTs mit Dual-Output, konfigurierbar als zwei 5-Eingangs-LUTs.
-  \item \textbf{Block RAM:} Dual-Port, vollständig synchron, optional gepipelined.
-  \item \textbf{DSP48E1:} Multiplizierer, Pre-Adder, Post-Adder, SIMD-fähig.
+  \item \textbf{Logik:} CLBs mit LUTs und Flip-Flops
+  \item \textbf{Speicher:} Block RAM (synchron)
+  \item \textbf{Arithmetik:} DSP-Slices (MAC, Multiplizierer)
 \end{itemize}
-
-Diese Ressourcen ermöglichen hochparallele, datenpfadorientierte Implementierungen.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.28\textheight,keepaspectratio]{fig/L1_clb_slice.png}
-  \caption{CLB- und Slice-Struktur der PL.}
-\end{figure}
-
-\subsection{I/O- und Analogressourcen}
-Die 7-Series unterstützen High-Range- und High-Performance-I/Os mit LVDS, SERDES, Delay-Elementen und differenziellen Signalen. Ergänzend bietet das XADC-System integrierte ADCs und On-Chip-Sensorik für Mixed-Signal-Anwendungen.
-
-\subsection{SoC-Design-Herausforderungen}
-Zentrale Herausforderungen moderner SoC-Entwicklung:
-\begin{itemize}
-  \item Systemkomplexität und Parallelität
-  \item Hardware/Software-Partitionierung
-  \item Mehrere Clock-Domänen und Timing Closure
-  \item IP-Integration und Wiederverwendbarkeit
-  \item Team-basierte Entwicklungsflüsse
-\end{itemize}
-
-FPGA-Designs nähern sich methodisch ASIC-Plattformdesigns an.
-
-\subsection{Design Flow und Tool-Unterstützung}
-Der klassische RTL-zentrierte FPGA-Flow wird durch einen systemorientierten, IP-basierten Ansatz ergänzt. Kernelemente:
-\begin{itemize}
-  \item Abstraktionserhöhung
-  \item HW/SW-Co-Design
-  \item IP-Integration
-  \item Einheitliches Constraint-System (XDC)
-  \item Durchgängige Reports und Checkpoints
-\end{itemize}
-
-Vivado dient als zentrale Entwicklungsumgebung für Systemdesign, Implementierung, Analyse und Debugging.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.28\textheight,keepaspectratio]{fig/L1_flow_rtl_vs_system.png}
-  \caption{Traditioneller RTL/FPGA-Flow vs. System-Level/IP-Flow.}
-\end{figure}
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.24\textheight,keepaspectratio]{fig/L1_pld_fpga_soc.png}
-  \caption{Entwicklung von PLD über FPGA zu SoC.}
-\end{figure}
-
+Diese Ressourcen ermöglichen hochparallele,
+\hilite{datenpfadorientierte} Implementierungen.
 
 
 % ============================================================
@@ -251,42 +233,98 @@ Physikalische Constraints definieren die Abbildung logischer Ports auf physische
 set_property IOSTANDARD LVCMOS33 [get_ports rst]
 set_property PULLUP true [get_ports rst]
 set_property PACKAGE_PIN V13 [get_ports rst]
+## Timing exceptions (Exam)
+set_false_path -from [get_ports rst]
+# Multi-cycle (example: 2 cycles for setup, 1 for hold)
+set_multicycle_path 2 -setup -from [get_cells regA] -to [get_cells regB]
+set_multicycle_path 1 -hold  -from [get_cells regA] -to [get_cells regB]
 \end{lstlisting}
 
 In Sonderfällen können explizite Platzierungsconstraints (\texttt{LOC}, \texttt{BEL}) verwendet werden.
 
-\subsection{Timing-Grundlagen und Begriffe}
-Timing-Verifikation erfolgt mittels Static Timing Analysis (STA).
+\subsection{Timing-Grundlagen und Static Timing Analysis (STA)}
 
-Zentrale Begriffe:
+Timing-Verifikation erfolgt mit \hilite{Static Timing Analysis (STA)} ohne Simulation.
+
+\textbf{Zentrale Begriffe:}
 \begin{itemize}
-  \item \textbf{Clock Latency}
-  \item \textbf{Clock Skew}
-  \item \textbf{Clock Jitter}
-  \item \textbf{Slack}
+  \item \textbf{Clock Latency:} Verzögerung von Clock-Quelle zu Register
+  \item \textbf{Clock Skew:} Laufzeitunterschied zwischen Clock-Pfaden
+  \item \textbf{Clock Jitter:} Zeitliche Schwankung der Clock-Flanke
+  \item \textbf{Slack:} Zeitreserve eines Pfades
 \end{itemize}
 
-\imp{Prüfungsregel:}  
-\hilite{Timing} ist korrekt, wenn \hilite{Setup}- und Hold-Bedingungen erfüllt sind und der \hilite{Slack $\ge 0$} ist.
+\textbf{Timing-Bedingungen:}
+\begin{itemize}
+  \item \textbf{Setup:} Daten müssen vor aktiver Clock-Flanke stabil sein
+  \item \textbf{Hold:} Daten müssen nach Clock-Flanke stabil bleiben
+  \item \textbf{Pulse Width:} Mindestbreite der Clock
+\end{itemize}
 
-\begin{figure}[t]
+\prule{%
+Timing ist korrekt, wenn \hilite{Setup- und Hold-Bedingungen erfüllt} sind und der \hilite{Slack $\ge 0$} ist.
+}
+
+\textbf{STA analysiert:}
+\begin{itemize}
+  \item Clock-to-Clock-Pfade
+  \item Minimale und maximale Pfade
+  \item Alle gültigen Registerpfade
+\end{itemize}
+
+\textbf{Wichtige Kennzahlen:}
+\begin{itemize}
+  \item \textbf{WNS (Worst Negative Slack)}
+  \item \textbf{TNS (Total Negative Slack)}
+\end{itemize}
+
+\pmerke{%
+STA betrachtet \hilite{alle relevanten Pfade} unabhängig von Stimuli.
+}
+
+\textbf{Setup- und Hold-Bedingungen (Prüfung):}
+
+\[
+\text{Setup: } T_{clk} \ge T_{cq}^{max} + T_{comb}^{max} + T_{setup} - T_{skew}
+\]
+
+\[
+\text{Hold: } T_{cq}^{min} + T_{comb}^{min} \ge T_{hold} + T_{skew}
+\]
+
+\textbf{Slack (beide Fälle):}
+\[
+\text{Slack} = \text{Required Time} - \text{Arrival Time}
+\]
+
+Merksatz: Setup prüft \texttt{max}-Pfade, Hold prüft \texttt{min}-Pfade.
+
+\begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth,height=0.26\textheight,keepaspectratio]{fig/L2_clock_skew.png}
+  \includegraphics[width=\linewidth]{fig/L2_clock_skew.png}
   \caption{Timing-Nichtidealitäten: Latency, Skew und Jitter.}
 \end{figure}
 
-\subsection{Static Timing Analysis (STA)}
-STA analysiert alle relevanten Minimal- und Maximalpfade ohne Simulation:
-\begin{itemize}
-  \item Clock-to-Clock-Pfade
-  \item Setup-, Hold- und Pulse-Width-Bedingungen
-\end{itemize}
-
-Wichtige Kennzahlen:
-\begin{itemize}
-  \item Worst Negative Slack (WNS)
-  \item Total Negative Slack (TNS)
-\end{itemize}
+\textbf{CDC – 2-FF Synchronizer (Exam)}
+\begin{lstlisting}
+process(clk_b)
+begin
+  if rising_edge(clk_b) then
+    sync1 <= sig_a;
+    sync2 <= sync1;
+  end if;
+end process;
+\end{lstlisting}
+\textbf{Pipeline-Register (Timing-Fix)}
+\begin{lstlisting}
+process(clk)
+begin
+  if rising_edge(clk) then
+    stage1 <= din;
+    stage2 <= stage1;
+  end if;
+end process;
+\end{lstlisting}
 
 \subsection{Clock-Definition}
 Jede relevante Clock muss explizit definiert werden.
@@ -301,6 +339,13 @@ T_{clk} = \frac{1}{f}
 create_clock -name clk -period 10 [get_ports clk]
 \end{lstlisting}
 
+\textbf{Duty-Cycle / Waveform (Prüfung):}\\
+Nicht-50\% Duty-Cycle explizit angeben:
+\begin{lstlisting}
+create_clock -period 5 -waveform {0 2} [get_ports clk]
+\end{lstlisting}
+Merksatz: Ohne \texttt{-waveform} wird 50\% angenommen.
+
 \subsection{Input-Delay-Constraints}
 Externe Signalankunftszeiten müssen spezifiziert werden.
 
@@ -308,6 +353,13 @@ Externe Signalankunftszeiten müssen spezifiziert werden.
 \[
 t_{input\_delay} = t_{data} - t_{clk}
 \]
+\textbf{Prüfungs-Schema (min/max):}
+\begin{itemize}
+  \item \texttt{-max}: Setup-Bedingung
+  \item \texttt{-min}: Hold-Bedingung
+\end{itemize}
+Slack (Prüfung): \\
+\texttt{slack = required time - arrival time}
 
 \subsubsection*{Code-Schablone}
 \begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}]
@@ -321,12 +373,6 @@ Output-Delays definieren erforderliche externe Setup- und Hold-Zeiten.
 \begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}][emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}]
 set_output_delay -clock clk 5 [get_ports data_out]
 \end{lstlisting}
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.26\textheight,keepaspectratio]{fig/L2_io_delays.png}
-  \caption{Input- und Output-Delay-Pfade mit externen Komponenten.}
-\end{figure}
 
 \subsection{Wirkung von Constraints}
 Constraints beeinflussen Platzierung, Routing und Optimierung direkt.
@@ -412,48 +458,20 @@ gen_loop : for i in 0 to N-1 generate
 end generate;
 \end{lstlisting}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.26\textheight,keepaspectratio]{fig/L3_generate_structure.png}
-  \caption{Generate-Struktur und resultierende Hardware.}
-\end{figure}
-
 \subsection{Funktionen in VHDL}
-Funktionen sind nebenläufig nutzbare Unterprogramme mit ausschließlich Eingangsparametern und genau einem Rückgabewert. Sie werden wie Ausdrücke verwendet und dienen der strukturellen Abstraktion.
-
-Eigenschaften:
 \begin{itemize}
-  \item Keine Signalzuweisungen
-  \item Keine Wait-Statements
-  \item Verwendung von Variablen
-  \item Rekursion erlaubt
+  \item Nur Eingangsparameter
+  \item Genau ein Rückgabewert
+  \item Keine Signalzuweisungen, kein wait
 \end{itemize}
 
-\subsubsection*{Funktion – Code-Schablone}
-\begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}]
-function max(a,b : integer) return integer is
-begin
-  if a > b then return a; else return b; end if;
-end function;
-\end{lstlisting}
-
-Funktionen eignen sich besonders für kombinatorische Logik und arithmetische Operationen.
+Geeignet für kombinatorische Logik.
 
 \subsection{Prozeduren in VHDL}
-Prozeduren können mehrere Ein- und Ausgänge besitzen. Sie sind mächtiger als Funktionen, jedoch eingeschränkt synthesefähig. Hauptanwendungsgebiet sind Testbenches und Verhaltensmodelle.
-
-\imp{Prüfungsregel:}  
-\hilite{Prozeduren} in \hilite{Synthese} sind \hilite{toolabhängig} und kritisch zu prüfen.
+Mehrere Ein- und Ausgänge möglich.
+Primär für Testbenches, Synthese toolabhängig.
 
 \subsection{Arrays und Records}
-Arrays modellieren Sammlungen gleichartiger Elemente. Sie können eindimensional oder mehrdimensional sein und sowohl natürliche als auch enumerierte Indizes verwenden.
-
-\subsubsection*{Array – Code-Schablone}
-\begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}][emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}]
-type vec_t is array (0 to 7) of std_logic_vector(15 downto 0);
-signal v : vec_t;
-\end{lstlisting}
-
 Records gruppieren Elemente unterschiedlicher Typen zu logischen Strukturen. Sie eignen sich für Busse, Transaktionen und strukturierte Datensätze im Systementwurf.
 
 \subsubsection*{Record – Code-Schablone}
@@ -465,22 +483,9 @@ type bus_t is record
 end record;
 \end{lstlisting}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.26\textheight,keepaspectratio]{fig/L3_array_record.png}
-  \caption{Array- und Record-Beispiele mit Hardwareabbildung.}
-\end{figure}
-
 \subsection{Packages}
-Packages sind zentrale Container für projektweite Definitionen:
-\begin{itemize}
-  \item Konstanten
-  \item Typen
-  \item Komponenten
-  \item Funktionen und Prozeduren
-\end{itemize}
-
-Sie fördern Konsistenz, Wiederverwendung und Wartbarkeit. Packages werden kompiliert in Libraries abgelegt und über \texttt{use}-Anweisungen eingebunden.
+Zentrale Container für Konstanten, Typen und Funktionen.
+Fördern Wiederverwendung und Konsistenz.
 
 \subsubsection*{Package – Minimal-Schablone}
 \begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}][emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}]
@@ -520,6 +525,46 @@ Fixed-Point-Arithmetik ermöglicht eine effiziente Approximation reeller Werte m
 \imp{Merksatz (Prüfung):}  
 Bei \hilite{Fixed Point} ist der Entwickler verantwortlich für \hilite{Skalierung}, \hilite{Wortlänge} und Überlauf.
 
+\subsection{Fixed-Point Formate und Bitwachstum (Prüfungsformeln)}
+
+\textbf{Qn.m-Notation:}
+\begin{itemize}
+  \item $n$: Anzahl Integer-Bits (inkl. Vorzeichen bei signed)
+  \item $m$: Anzahl Fractional-Bits
+\end{itemize}
+
+\textbf{Auflösung:}
+\[
+\Delta = 2^{-m}
+\]
+
+\textbf{Wertebereich:}
+\[
+uQn.m = [0,\; 2^n - 2^{-m}]
+\]
+\[
+sQn.m = [-2^{n-1},\; 2^{n-1} - 2^{-m}]
+\]
+
+\pcentral{Formatregeln (prüfungsentscheidend).}
+
+\prule{Addition/Subtraktion:}
+\[
+Q(n_1.m_1) + Q(n_2.m_2)
+= Q(\max(n_1,n_2)+1).\max(m_1,m_2)
+\]
+\textit{(+1 Bit = \hilite{Guard Bit} gegen Überlauf)}
+
+\prule{Multiplikation:}
+\[
+Q(n_1.m_1) \cdot Q(n_2.m_2)
+= Q(n_1+n_2).(m_1+m_2)
+\]
+
+\pmerke{%
+Bei signed $\times$ signed entsteht ein \hilite{redundantes Vorzeichenbit}, das meist entfernt werden kann.
+}
+
 \subsection{Ganzzahl- und Zweierkomplement-Darstellung}
 Binäre Ganzzahlen werden als unsigned oder signed (Zweierkomplement) interpretiert.
 
@@ -551,12 +596,6 @@ Notation:
   \item $uQn.m = [0, 2^n - 2^{-m}]$
   \item $sQn.m = [-2^{n-1}, 2^{n-1} - 2^{-m}]$
 \end{itemize}
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.24\textheight,keepaspectratio]{fig/L4_qnm_signed_unsigned.png}
-  \caption{Qn.m-Darstellung: signed vs. unsigned, Wertebereich und Auflösung.}
-\end{figure}
 
 \subsection{Skalierung und Typkonvertierung}
 Reale Zahlen werden durch Skalierung in Fixed Point überführt.
@@ -601,11 +640,7 @@ Das zusätzliche Bit ist ein \textbf{Guard Bit}.
   \item Optional: Abschneiden
 \end{enumerate}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.24\textheight,keepaspectratio]{fig/L4_add_guardbit.png}
-  \caption{Addition: Alignment und Guard Bit zur Überlaufabsicherung.}
-\end{figure}
+
 
 \subsubsection*{Additions-Code-Schablone}
 \begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}][emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}]
@@ -630,12 +665,6 @@ Bei signed $\times$ signed entsteht ein redundantes Vorzeichenbit:
 Q(n_1+n_2-1).(m_1+m_2)
 \]
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.22\textheight,keepaspectratio]{fig/L4_mult_redundant_sign.png}
-  \caption{Multiplikation: resultierendes Format und redundantes Vorzeichenbit.}
-\end{figure}
-
 \subsubsection*{Multiplikations-Code-Schablone}
 \begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}]
 P <= signed(A) * signed(B);
@@ -643,6 +672,25 @@ P <= signed(A) * signed(B);
 
 \imp{Prüfungsregel:}  
 \hilite{Nach} der \hilite{Multiplikation} sind \hilite{fast} immer zu viele Bits vorhanden.
+Ohne \texttt{fixed\_pkg} (Prüfung):
+Skalieren → Vorzeichenerweitern → Rechnen → Trunk./Round → Slice
+Merksatz: Fehlerquelle Nr.1 = fehlendes Guard Bit.
+
+\textbf{Fixed-Point Workflow (ohne fixed\_pkg)}
+\begin{lstlisting}
+-- scale
+A_s <= signed(A) sll m;
+
+-- sign extend + guard bit
+A_ext <= A_s(A_s'left) & A_s;
+
+-- compute
+P_ext <= A_ext * B_ext;
+
+-- truncate / round
+Y <= P_ext(H downto L);
+\end{lstlisting}
+
 
 \subsection{Überlauf, Rundung und Sättigung}
 Mögliche Effekte:
@@ -656,26 +704,12 @@ Mögliche Effekte:
 \imp{Prüfungsfokus:}  
 \hilite{Trunkierung} und \hilite{Rundung} \hilite{unterscheiden} können.
 
-\subsection{FIR-Filter als Anwendungsbeispiel}
-Ein FIR-Filter besteht aus:
+\subsection{FIR-Filter (Prüfungsrelevanz)}
 \begin{itemize}
-  \item Verzögerungskette ($z^{-1}$)
-  \item Multiplikationen
-  \item Akkumulation
+  \item Multiplikation erzeugt Bitwachstum
+  \item Akkumulation benötigt Guard Bits
 \end{itemize}
 
-\textbf{Wortlängenstrategie (Prüfung):}
-\begin{itemize}
-  \item Produkt: redundantes Vorzeichenbit entfernen
-  \item Zwischensumme: Guard Bits meist vernachlässigbar
-  \item Endsumme: Guard Bit beibehalten
-\end{itemize}
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.26\textheight,keepaspectratio]{fig/L4_fir_qformats.png}
-  \caption{FIR-Filter Blockdiagramm mit Q-Formaten für Produkte und Akkumulation.}
-\end{figure}
 
 \subsection{Systematische Wortlängenplanung}
 Effiziente Fixed-Point-Systeme erfordern:
@@ -763,6 +797,27 @@ Bei gleichzeitigem Zugriff auf dieselbe Adresse:
 
 \imp{Prüfungsregel:}  
 Das \hilite{Verhalten} ist nicht \hilite{implizit}, \hilite{sondern} muss spezifiziert werden.
+\textbf{RAM Write-Collision Behaviour (Exam)}
+\begin{lstlisting}
+process(clk)
+begin
+  if rising_edge(clk) then
+    if we = '1' then
+      ram(addr) <= din;
+    end if;
+
+    -- WRITE_FIRST
+    dout <= din when we='1' else ram(addr);
+
+    -- READ_FIRST
+    -- dout <= ram(addr);
+
+    -- NO_CHANGE
+    -- if we='0' then dout <= ram(addr); end if;
+  end if;
+end process;
+\end{lstlisting}
+
 
 \subsection{Distributed RAM}
 Distributed RAM nutzt LUTs (SLICEMs):
@@ -786,11 +841,16 @@ Block RAM besteht aus dedizierten Hard-Macros:
 \imp{Prüfungsregel:}  
 \hilite{Synchrones} \hilite{Lesen} $\rightarrow$ \hilite{Block RAM}.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.26\textheight,keepaspectratio]{fig/L5_ram_overview.png}
-  \caption{RAM-Organisation und Implementierung als Block RAM oder Distributed RAM.}
-\end{figure}
+\begin{quote}\small
+\textbf{Distributed RAM:} LUT-basiert, synchrones Schreiben, asynchrones Lesen.
+Geeignet für kleine, schnelle Speicher. 
+\textbf{Prüfungsregel:} async read $\Rightarrow$ Distributed RAM.
+
+\textbf{Block RAM:} Dedizierte Speicherblöcke, synchrones Lesen und Schreiben.
+Geeignet für große Speicher mit deterministischem Timing.
+\textbf{Prüfungsregel:} sync read $\Rightarrow$ Block RAM.
+\end{quote}
+
 
 \subsection{VHDL-Modellierung von RAM}
 
@@ -861,12 +921,9 @@ Möglichkeiten:
 \hilite{ROM} ohne \hilite{Initialisierung} ist \hilite{inhaltlich} wertlos.
 
 \subsection{Memory Generator IP}
-Xilinx stellt parametrische Speicher-IP bereit:
-\begin{itemize}
-  \item Frei wählbare Breite und Tiefe
-  \item Konfigurierbare Zugriffsmodi
-  \item Native oder AXI4-Schnittstelle
-\end{itemize}
+Parametrisierte Speicher-IP mit wählbarer
+Breite, Tiefe und Zugriffsart wird von Xilinx bereitgestellt.
+
 
 \subsection{IP-Wiederverwendung und Integration}
 IP-Blöcke sind parametrisierte, wiederverwendbare Einheiten.
@@ -883,126 +940,82 @@ Integration:
   \item RTL-Instantiation
 \end{itemize}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.26\textheight,keepaspectratio]{fig/L5_design_workflow.png}
-  \caption{ARM-Prototyp und Design-Workflow im IP Integrator.}
-\end{figure}
-
-\subsection{IP Lifecycle}
-IP-Blöcke unterliegen Versions- und Lebenszyklen:
-\begin{itemize}
-  \item Pre-Production
-  \item Production
-  \item Superseded
-  \item Discontinued
-\end{itemize}
-
-\imp{Abschluss-Merksatz:}  
-\hilite{Gute} Speicher-\hilite{IP} ist parametrisch, \hilite{synchron} und eindeutig spezifiziert.
-
-
+\begin{quote}\small
+\textbf{IP-Integrator / ARM-Workflow (Zynq):}
+Das Processing System (ARM) wird im IP Integrator
+konfiguriert und über AXI mit Custom-IP in der
+Programmable Logic verbunden.
+Nach Validierung des Block Designs erfolgt die
+Hardware-Generierung und der Export (XSA/HDF)
+für die Software-Toolchain.
+Software (BSP, Treiber, Applikation) greift über
+memory-mapped Register auf die FPGA-Logik zu.
+\end{quote}
 
 % ============================================================
 \section{Serial Communication Interfaces}
 
-\subsection{Systematische Einordnung}
-Serielle Kommunikationsschnittstellen verbinden digitale Systeme auf Chip-, Board- oder Systemebene.  
-Sie lassen sich entlang mehrerer Dimensionen klassifizieren:
+\subsection{Serielle Schnittstellen -- kompakte Einordnung}
+
+\pcentral{Serielle Kommunikation spart Pins, erhöht Logikaufwand.}
+
+\textbf{Grundklassifikation (Prüfung):}
 \begin{itemize}
-  \item \textbf{Topologie:} Point-to-Point, Bus, Stern, Daisy-Chain
-  \item \textbf{Datenorganisation:} Seriell vs. Parallel
-  \item \textbf{Zeitorganisation:} Synchron vs. Asynchron
-  \item \textbf{Physikalische Umsetzung:} Single-Ended vs. Differenziell
+  \item \textbf{Topologie:} Point-to-Point, Bus
+  \item \textbf{Zeitorganisation:} synchron, asynchron
+  \item \textbf{Physik:} Single-Ended, differentiell
 \end{itemize}
 
-\imp{Prüfungsregel:}  
-\hilite{Serielle} \hilite{Kommunikation} spart \hilite{Pins}, erhöht aber die Logikkomplexität.
+\prule{%
+Serielle Schnittstellen reduzieren Pin-Anzahl, benötigen jedoch \hilite{Serialisierung und Steuerlogik}.
+}
 
-Die Vorlesung behandelt ausschließlich Physical Layer und Data Link Layer.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.24\textheight,keepaspectratio]{fig/L6_classification_serial.png}
-  \caption{Klassifikation serieller Schnittstellen nach Topologie und Datenorganisation.}
-\end{figure}
-
-\subsection{Logik-zu-Physik-Übersetzung}
-VHDL-Signale sind rein logisch und müssen über I/O-Pads physikalisch umgesetzt werden.
-
-Relevante Parameter:
+\vspace{4pt}
+\textbf{Logik zu Physik:}
 \begin{itemize}
-  \item I/O-Standard
-  \item Single-Ended oder differentiell
-  \item Slew Rate und Drive Strength
-  \item Pull-Up, Pull-Down, Keeper
+  \item VHDL beschreibt \textbf{logische Signale}
+  \item Elektrisches Verhalten wird durch \hilite{I/O-Pads und Constraints} festgelegt
 \end{itemize}
 
-\imp{Merksatz (Prüfung):}  
-\hilite{Pads} \hilite{bestimmen} das \hilite{elektrische} Verhalten, nicht das Protokoll.
+\prule{%
+Das Pad bestimmt Spannungspegel, Drive Strength und Pull-Ups, \hilite{nicht das Protokoll}.
+}
 
-\subsection{Spannungs- und Strommodus}
-
-\textbf{Voltage Mode:}
+\vspace{4pt}
+\textbf{Spannungs- vs. Strommodus (Kurzfassung):}
 \begin{itemize}
-  \item Logik über Spannungspegel
-  \item Einfach, aber hoher Energieverbrauch
+  \item \textbf{Voltage Mode:} Spannungspegel, einfach, geringere Datenrate
+  \item \textbf{Current Mode:} Stromfluss, kleiner Signalhub, hohe Datenrate
 \end{itemize}
 
-\textbf{Current Mode:}
+\prule{%
+Hohe Datenrate $\Rightarrow$ \hilite{Current Mode} (z.B. LVDS).
+}
+
+\vspace{4pt}
+\textbf{LVDS (nur prüfungsrelevant):}
 \begin{itemize}
-  \item Logik über Stromrichtung
-  \item Kleiner Spannungs-Hub
-  \item Besser für hohe Datenraten
-\end{itemize}
-
-\imp{Prüfungsregel:}  
-\hilite{Hohe} \hilite{Datenrate} $\rightarrow$ \hilite{Current Mode}.
-
-\subsection{LVDS}
-LVDS ist eine differentielle Strommodus-Signalisierung.
-
-Kenndaten:
-\begin{itemize}
-  \item Strom: $\pm 3.5$\,mA
-  \item Terminierung: $\approx 100\,\Omega$
-  \item Signalhub: $\approx \pm 350$\,mV
-\end{itemize}
-
-Vorteile:
-\begin{itemize}
-  \item Hohe Geschwindigkeit
-  \item Geringe EMV
+  \item Differenziell
+  \item Strommodus
   \item Hohe Störfestigkeit
 \end{itemize}
 
-LVDS wird über Constraints konfiguriert und nutzt spezielle Buffer.
+\pmerke{%
+LVDS wird über \hilite{I/O-Constraints} konfiguriert, nicht im HDL.
+}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.24\textheight,keepaspectratio]{fig/L6_lvds_pad.png}
-  \caption{LVDS-Prinzip und Umsetzung über FPGA-I/O-Pads.}
-\end{figure}
-
-\subsection{Serialisierung und Deserialisierung}
-Serielle Schnittstellen benötigen SERDES-Strukturen:
+\vspace{4pt}
+\textbf{Serialisierung (Minimalmodell):}
 \begin{itemize}
   \item Parallel-In / Serial-Out (PISO)
   \item Serial-In / Parallel-Out (SIPO)
+  \item Implementiert mit \hilite{Shiftregistern + FSM}
 \end{itemize}
 
-Grundbaustein ist ein Schieberegister mit FSM-Steuerung.
+\prule{%
+Serielle Übertragung benötigt explizite \hilite{Sende-/Empfangssteuerung}.
+}
 
-\subsubsection*{Schieberegister – Code-Schablone}
-\begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}][emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}]
-if rising_edge(clk) then
-  if load='1' then
-    shreg <= data_in;
-  elsif shift='1' then
-    shreg <= shreg(W-2 downto 0) & '0';
-  end if;
-end if;
-\end{lstlisting}
 
 \subsection{SPI – Serial Peripheral Interface}
 SPI ist eine synchrone, serielle Punkt-zu-Punkt-Schnittstelle.
@@ -1024,31 +1037,20 @@ Eigenschaften:
   \item Clock Phase (CPHA)
 \end{itemize}
 
-\begin{figure}[t]
+\begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth,height=0.24\textheight,keepaspectratio]{fig/L6_spi_topology.png}
+  \includegraphics[width=\linewidth]{fig/L6_spi_topology.png}
   \caption{SPI-Topologien, Signale und Master-Slave-Prinzip.}
 \end{figure}
 
 \subsection{SPI-Hardwarestruktur}
-Ein SPI-System besteht aus:
-\begin{itemize}
-  \item TX-Shiftregister
-  \item RX-Shiftregister
-  \item Clock-Divider
-  \item FSM
-\end{itemize}
-
+SPI besteht aus Shiftregistern, Clock-Divider und FSM.
 \imp{Prüfungsregel:}  
 \hilite{SPI} ist \hilite{vollständig} \hilite{synchron}.
 
 \subsection{SPI-Beschreibung in VHDL}
-Die Beschreibung folgt einem festen Muster:
-\begin{itemize}
-  \item Generics für Wortbreite und Mode
-  \item FSM (Idle, Load, Shift, Done)
-  \item SCLK aus Clock-Divider
-\end{itemize}
+Die Beschreibung folgt einem festen Muster: Generics für Wortbreite und Modus, FSM zur Steuerung und Clock-Divider für SCLK.
+
 
 \subsection{I\textsuperscript{2}C – Inter-Integrated Circuit}
 I\textsuperscript{2}C ist eine synchrone Zweidraht-Bus-Schnittstelle.
@@ -1060,28 +1062,13 @@ Eigenschaften:
   \item Open-Drain
 \end{itemize}
 
-\subsection{I\textsuperscript{2}C-Protokoll und Timing}
-Merkmale:
+\subsection{I\textsuperscript{2}C (Prüfungsrelevanz)}
 \begin{itemize}
-  \item Start: SDA fällt bei SCL = High
-  \item Stop: SDA steigt bei SCL = High
-  \item Datenwechsel nur bei SCL = Low
+  \item SDA, SCL (Open-Drain)
+  \item Start/Stop bei SCL=High
+  \item Arbitration über Wired-AND
 \end{itemize}
 
-Nach 8 Bit folgt ein Acknowledge-Zyklus.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.24\textheight,keepaspectratio]{fig/L6_i2c_timing.png}
-  \caption{I\textsuperscript{2}C Timingdiagramm mit Start/Stop/Acknowledge.}
-\end{figure}
-
-\subsection{I\textsuperscript{2}C-Hardware und Arbitration}
-Durch Wired-AND-Struktur ist Arbitration möglich:
-\begin{itemize}
-  \item Mehrere Master dürfen senden
-  \item Master verliert, wenn er '1' sendet und '0' liest
-\end{itemize}
 
 Open-Drain in VHDL:
 \begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}][emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}]
@@ -1089,19 +1076,7 @@ sda <= '0' when drive_low='1' else 'Z';
 \end{lstlisting}
 
 \subsection{UART (Einordnung)}
-UART ist eine asynchrone Punkt-zu-Punkt-Schnittstelle.
-
-Eigenschaften:
-\begin{itemize}
-  \item Keine gemeinsame Clock
-  \item Start- und Stop-Bits
-  \item Einfache Hardware
-\end{itemize}
-
-\imp{Abschluss-Merksatz:}  
-\hilite{UART} ist \hilite{einfach}, \hilite{aber} unpräzise und langsam.
-
-
+UART ist eine asynchrone Punkt-zu-Punkt-Schnittstelle mit Start/Stop-Bits und hat keine gemeinsame clocks.
 
 % ============================================================
 \section{Parallel On-Chip Communication}
@@ -1114,22 +1089,8 @@ Sie wird primär \textbf{on-chip} eingesetzt, da physikalische Effekte off-chip 
 \hilite{Parallel} = \hilite{hoher} \hilite{Durchsatz} bei kurzer Distanz.
 
 \subsection{Serial vs. Parallel}
-Serielle Kommunikation überträgt ein Bit pro Leitung und benötigt Serialisierung und Deserialisierung.  
-Parallele Kommunikation überträgt $N$ Bits gleichzeitig.
-
-\begin{itemize}
-  \item \textbf{Seriell}: wenige Leitungen, SERDES, höhere Latenz
-  \item \textbf{Parallel}: viele Leitungen, einfache Logik, hoher Durchsatz
-\end{itemize}
-
 \imp{Prüfungsregel:}  
 \hilite{Off-chip} \hilite{dominiert} \hilite{seriell}, on-chip dominiert parallel.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.22\textheight,keepaspectratio]{fig/L7_serial_vs_parallel.png}
-  \caption{Serial vs. Parallel Kommunikation auf Bit-Ebene.}
-\end{figure}
 
 \subsection{Physikalische Grenzen paralleler Off-Chip-Kommunikation}
 Außerhalb des Chips begrenzen physikalische Effekte den Nutzen paralleler Übertragung:
@@ -1145,14 +1106,7 @@ Außerhalb des Chips begrenzen physikalische Effekte den Nutzen paralleler Über
 \hilite{Mehr} \hilite{Leitungen} $\rightarrow$ \hilite{mehr} Off-Chip-Probleme.
 
 \subsection{Vorteile paralleler On-Chip-Kommunikation}
-Auf dem Chip entfallen die meisten Nachteile:
-
-\begin{itemize}
-  \item Keine Pads
-  \item Kurze, kontrollierte Leitungen
-  \item Geringer Skew
-  \item Keine SERDES-Strukturen
-\end{itemize}
+Auf dem Chip entfallen die meisten Nachteile: Keine Pads, kurze kontrollierte Leitungen, geringer Skew und keine SERDES-Strukturen.
 
 \textbf{Merksatz:}  
 \hilite{On-Chip-}\hilite{Interconnect}s sind \hilite{natürlich} parallel.
@@ -1182,42 +1136,26 @@ AXI (Advanced eXtensible Interface) ist Teil der AMBA-Architektur von ARM und de
 \hilite{AXI} ist \hilite{kanalbasiert}, kein \hilite{klassischer} Bus.
 
 \subsection{AXI-Architektur}
-AXI verwendet fünf unabhängige Kanäle:
+AXI verwendet fünf unabhängige Kanäle: Write Address (AW), Write Data (W), Write Response (B), Read Address (AR) und Read Data (R).
 
-\begin{itemize}
-  \item Write Address (AW)
-  \item Write Data (W)
-  \item Write Response (B)
-  \item Read Address (AR)
-  \item Read Data (R)
-\end{itemize}
 
 \imp{Prüfungsregel:}  
 \hilite{Read} und \hilite{Write} sind \hilite{vollständig} getrennt.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.22\textheight,keepaspectratio]{fig/L7_axi_5channels.png}
-  \caption{AXI Fünf-Kanal-Architektur für Read/Write.}
-\end{figure}
+\subsection{AXI Handshake (VALID/READY)}
 
-\subsection{AXI-Handshake-Prinzip}
-Jeder Kanal nutzt dasselbe Handshake-Verfahren.
+\pcentral{Alle AXI-Kanäle nutzen dasselbe Handshake-Schema.}
 
-\begin{itemize}
-  \item Sender setzt \texttt{VALID}
-  \item Empfänger setzt \texttt{READY}
-  \item Transfer bei \texttt{VALID} \& \texttt{READY}
-\end{itemize}
+\begin{enumerate}[leftmargin=*,itemsep=0pt,topsep=2pt]
+  \item \textbf{Source} setzt \hilite{VALID=1}, sobald Adresse/Daten stabil anliegen.
+  \item \textbf{Destination} setzt \hilite{READY=1}, sobald sie Adresse/Daten annehmen kann.
+  \item \textbf{Transfer} erfolgt an der \hilite{ersten aktiven Taktflanke}, nachdem \hilite{VALID=1} und \hilite{READY=1} gleichzeitig sind.
+\end{enumerate}
 
-\imp{Zentrale Regel (Prüfung):}  
-\hilite{Daten} müssen stabil bleiben, solange \hilite{\texttt{VALID=1} und \texttt{\hilite{READY}=0}}.
+\prule{%
+Solange \hilite{VALID=1} und \hilite{READY=0}, müssen Adresse/Daten \textbf{stabil bleiben}.
+}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.22\textheight,keepaspectratio]{fig/L7_axi_handshake.png}
-  \caption{AXI Handshake Timingdiagramm (VALID/READY).}
-\end{figure}
 
 \subsection{AXI-Varianten}
 AXI existiert in mehreren Varianten:
@@ -1231,45 +1169,34 @@ AXI existiert in mehreren Varianten:
 \imp{Prüfungsregel:}  
 \hilite{Register-}\hilite{IP} $\rightarrow$ \hilite{AXI4-Lite}.
 
-\subsection{AXI-Interconnects}
-Unterstützte Topologien:
+\subsection{AXI-Interconnect-Topologien}
 
-\begin{itemize}
-  \item 1-to-1
-  \item N-to-1 (Arbitration)
-  \item 1-to-M (Address-Decoding)
-  \item N-to-M
-\end{itemize}
+AXI-Interconnects verbinden mehrere Master und Slaves über definierte Topologien.
+Je nach Richtung sind unterschiedliche Kontrollmechanismen notwendig.
 
-\begin{figure}[t]
-  \centering
-  \begin{subfigure}[t]{0.49\linewidth}
-    \centering
-    \includegraphics[width=\linewidth,height=0.20\textheight,keepaspectratio]{fig/L7_axi_interconnect_n_to_1.png}
-    \caption{N-to-1 (Arbitration).}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.49\linewidth}
-    \centering
-    \includegraphics[width=\linewidth,height=0.20\textheight,keepaspectratio]{fig/L7_axi_interconnect_1_to_m.png}
-    \caption{1-to-M (Decoding/Routing).}
-  \end{subfigure}
-  \caption{AXI Interconnect Topologien: N-to-1 und 1-to-M.}
-\end{figure}
+\textbf{1-to-1:}
+Ein Master direkt mit einem Slave verbunden(ohhne Arbitration oder Adressdekodierung).
+
+
+\textbf{N-to-1 (Arbitration):}
+Mehrere Master greifen auf einen Slave zu(z.B. Speichercontroller, nur ein Master darf gleichzeitig senden).
+
+
+\textbf{1-to-M (Decoding/Routing):}
+Ein Master greift auf mehrere Slaves zu(z.B. CPU auf verschiedene Peripheriekomponenten, Adressdekodierung, keine Arbitration).
+
+\textbf{N-to-M:}
+Mehrere Master greifen auf mehrere Slaves zu(Arbitration und Adressdekodierung).
+
+\prule{%
+AXI-Interconnects sind 
+punkt-zu-punkt kanalbasiert; 
+Arbitration und Routing erfolgen im Interconnect, nicht im Master.
+}
 
 \subsection{AXI auf Zynq}
-Der Zynq-SoC bietet mehrere AXI-Schnittstellen zwischen Processing System (PS) und Programmable Logic (PL):
+PS und PL sind über General Purpose (GP), High Performance (HP) und Accelerator Coherency Port (ACP) AXI-Ports verbunden.
 
-\begin{itemize}
-  \item General Purpose (GP)
-  \item High Performance (HP)
-  \item Accelerator Coherency Port (ACP)
-\end{itemize}
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth,height=0.22\textheight,keepaspectratio]{fig/L7_zynq_ps_pl_axi.png}
-  \caption{Zynq PS--PL AXI-Übersicht.}
-\end{figure}
 
 \subsection{AXI3 vs. AXI4}
 Im Zynq:
@@ -1339,6 +1266,12 @@ Für $n$ unabhängige Eingänge gilt:
 \[
 N = 2^n
 \]
+Erweitert (Prüfung): \\
+\[
+N = 2^{(n_{inputs} + n_{state})}
+\]
+Beispiel: 1 Input + 2 Zustände → $2^3 = 8$ Testvektoren
+
 
 \imp{Prüfungsregel:}  
 \hilite{Exhaustive} \hilite{Verification} ist \hilite{theoretisch} korrekt, praktisch unmöglich.
@@ -1393,11 +1326,8 @@ Effektive Testfälle decken unterschiedliche Szenarien ab:
 Ein Golden Model liefert Referenzergebnisse für gegebene Stimuli.
 
 \subsubsection*{\textcolor{codeemph}{Prüfungsregel}}
-\begin{itemize}
-  \item DUT erzeugt Ergebnis
-  \item Golden Model erzeugt Erwartungswert
-  \item Automatischer Vergleich
-\end{itemize}
+DUT erzeugt Ergebnis $\rightarrow$ Golden Model erzeugt Erwartungswert $\rightarrow$ Automatischer Vergleich.
+
 
 Ohne Golden Model keine skalierbare Verifikation.
 
@@ -1417,30 +1347,38 @@ clk <= not clk after 10 ns;
 
 \imp{Prüfungsregel:}  
 Un\hilite{synchron}\hilite{isierte} \hilite{Test-Benches} erzeugen Scheinergebnisse.
+\textbf{Testbench – Exam Skeleton}
+\begin{lstlisting}
+signal clk : std_logic := '0';
+
+clk <= not clk after 10 ns;
+
+stim : process
+begin
+  rst <= '1'; wait for 20 ns;
+  rst <= '0';
+  din <= x"55"; wait for 20 ns;
+  assert dout = x"55"
+    report "Mismatch"
+    severity error;
+  wait;
+end process;
+\end{lstlisting}
 
 \subsection{Automatische Auswertung}
 Visuelle Inspektion ist unzureichend.
 
 \subsubsection*{\textcolor{codeemph}{Prüfungsrezept}}
-\begin{enumerate}
-  \item Stimulus erzeugen
-  \item DUT simulieren
-  \item Ergebnis speichern
-  \item Mit Golden Model vergleichen
-\end{enumerate}
+Stimulus erzeugen $\rightarrow$ DUT simulieren $\rightarrow$ Ergebnis speichern $\rightarrow$ mit Golden Model vergleichen.
+
 
 \textbf{Merksatz:}  
 Was nicht \hilite{automatisch} \hilite{prüft}, \hilite{skaliert} nicht.
 
 \subsection{File-basierte Test-Benches}
-VHDL unterstützt Datei-I/O über \texttt{STD.TEXTIO}.
+Erlauben große Testmengen.
+Nur in Testbenches erlaubt.
 
-\subsubsection*{Vorteile}
-\begin{itemize}
-  \item Große Testmengen
-  \item Trennung von Daten und Code
-  \item Wiederverwendbarkeit
-\end{itemize}
 
 \imp{Prüfungsregel:}  
 \hilite{File-I}/O ist \hilite{Testbench}-\hilite{only}.
@@ -1460,18 +1398,7 @@ Timing-Simulation:
 \hilite{VHDL} \hilite{besitzt} keine simprim-\hilite{Timing}bibliothek.
 
 \subsection{Debugging in Simulation}
-Simulation erlaubt vollständige Sichtbarkeit.
-
-\subsubsection*{Werkzeuge}
-\begin{itemize}
-  \item Signal-Inspection
-  \item Breakpoints
-  \item Step-by-Step
-  \item Signal-Forcing
-\end{itemize}
-
-\imp{Prüfungsregel:}  
-\hilite{Simulation} ist das \hilite{mächtigste} \hilite{Debugging-Werkzeug}.
+Simulation erlaubt vollständige Sichtbarkeit. Mit den Werkzeugen Signal-Inspection, Breakpoints, Step-by-Step und Signal-Forcing können Fehler systematisch gefunden werden.
 
 \subsection{Voraussetzungen zum Finden eines Fehlers}
 Ein Fehler wird nur gefunden, wenn alle drei Bedingungen erfüllt sind:
@@ -1490,13 +1417,13 @@ Ein Signal ist permanent auf 0 oder 1 festgesetzt.
 
 \subsubsection*{\textcolor{codeemph}{Prüfungsrezept}}
 \begin{itemize}
-  \item Eingang so wählen, dass Fehler wirksam wird
-  \item Pfad bis Ausgang offen halten
-  \item Ausgang beobachten
+  \item Eingang so wählen, dass sa0/sa1 wirksam wird
+  \item Pfad bis Ausgang freischalten
+  \item Ausgang vergleichen
 \end{itemize}
 
 \imp{Prüfungsregel:}  
-\hilite{Stuck-at} ist ein \emph{logisches}, kein \hilite{physikalisches} \hilite{Modell}.
+\hilite{Stuck-at} ist ein \emph{logisches}, kein \hilite{physikalisches} \hilite{Modell}.Kein Output-Unterschied $\Rightarrow$ kein gefundener Fehler.
 
 \subsection{Debugging in Emulation}
 Auf Hardware sind interne Signale nicht direkt sichtbar.
@@ -1524,35 +1451,24 @@ In SoCs ist gekoppeltes Debugging möglich.
 
 %===========================================================
 \section{Exam Code Templates}
-
 \subsection{XDC: Physical + Timing (Skeleton)}
 \begin{lstlisting}[style=xdc,language={},emph={set_property,IOSTANDARD,PACKAGE_PIN,PULLUP,create_clock,set_input_delay,set_output_delay,get_ports,get_clocks},emphstyle=\bfseries\color{codeemph}]
-## --- Physical constraints ---
-set_property IOSTANDARD LVCMOS33 [get_ports {clk}]
-set_property PACKAGE_PIN  W17    [get_ports {clk}]
+## Physical constraints
+set_property IOSTANDARD LVCMOS33 [get_ports {clk rst}]
+set_property PACKAGE_PIN W17    [get_ports clk]
+set_property PACKAGE_PIN W20    [get_ports rst]
+set_property PULLUP true        [get_ports rst]
 
-set_property IOSTANDARD LVCMOS33 [get_ports {rst}]
-set_property PULLUP true         [get_ports {rst}]
-set_property PACKAGE_PIN  W20    [get_ports {rst}]
+## Clock
+create_clock -period 5.0 [get_ports clk]
 
-set_property IOSTANDARD LVCMOS18 [get_ports {x[*]}]
-set_property PACKAGE_PIN  T16    [get_ports {x[2]}]
-# ... weitere Pins
+## Input delays
+set_input_delay  -clock clk -min 1.0 [get_ports x[*]]
+set_input_delay  -clock clk -max 2.5 [get_ports x[*]]
 
-set_property IOSTANDARD LVCMOS18 [get_ports {sda scl}]
-set_property PULLUP true         [get_ports {sda}]
-set_property PULLUP true         [get_ports {scl}]
-# ... Pins for sda/scl
-
-## --- Clock constraint ---
-create_clock -name clk -period 5.000 -waveform {0.000 2.000} [get_ports {clk}]
-
-## --- I/O delays (min/max) ---
-set_input_delay  -clock [get_clocks clk] -min -add_delay 1.000 [get_ports {x[*]}]
-set_input_delay  -clock [get_clocks clk] -max -add_delay 2.500 [get_ports {x[*]}]
-
-set_output_delay -clock [get_clocks clk] -min -add_delay 0.500 [get_ports {y[*]}]
-set_output_delay -clock [get_clocks clk] -max -add_delay 2.000 [get_ports {y[*]}]
+## Output delays
+set_output_delay -clock clk -min 0.5 [get_ports y[*]]
+set_output_delay -clock clk -max 2.0 [get_ports y[*]]
 \end{lstlisting}
 
 \subsection{VHDL: Simple Dual Port RAM (Block RAM inference)}
@@ -1711,86 +1627,125 @@ begin
 end architecture;
 \end{lstlisting}
 
-\subsection{VHDL: Fixed Point ohne fixed\_pkg (Template)}
-\begin{lstlisting}[language=VHDL,emph={signed,sll,rising_edge},emphstyle=\bfseries\color{codeemph}]
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+\subsection{Exam Code Patterns (Fixed Point \& Package)}
 
--- Beispiel: A,B sQ1.7 (8 Bit), Add => sQ2.7 (9 Bit), Mult mit C sQ1.7 => sQ3.14 (16 Bit)
-architecture rtl of fp_no_pkg is
-  signal a1, b1, c1 : signed(7 downto 0);   -- sQ1.7
-  signal x1         : signed(8 downto 0);   -- sQ2.7 (guard bit)
-  signal y1         : signed(15 downto 0);  -- sQ3.14
-begin
-  -- Inputs: bereits skaliert angenommen
-  -- Guard Bit + korrektes Sign-Extend:
-  x1 <= (a1(a1'left) & a1) + (b1(b1'left) & b1);
-
-  y1 <= x1 * c1; -- Bitwachstum beachten
-
-  -- Output: passende Bits auswaehlen (z.B. wieder 8 Bit sQ1.7)
-  -- hier: MSBs nehmen, LSBs abschneiden (Trunkierung)
-  Y <= std_logic_vector(y1(14 downto 7)); -- Beispiel-Slice, abhaengig vom Ziel-Q-Format
-end architecture;
-\end{lstlisting}
-\subsection{VHDL: Package + Function + Nutzung (Template)}
-\begin{lstlisting}[language=VHDL,emph={package,package body,function,return,alias,rising_edge},emphstyle=\bfseries\color{codeemph}]
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
-
-package util_pkg is
-  subtype u16 is natural range 0 to 65535;
-  type triple_t is array (0 to 2) of u16; -- (0)=A,(1)=B,(2)=C
-  function pick0(x : triple_t) return u16;
+\begin{lstlisting}[language=VHDL]
+-- Package: zentrale Definitionen
+package exam_pkg is
+  constant W : integer := 8;
+  function add_fp(a,b : signed(W-1 downto 0)) return signed;
 end package;
 
-package body util_pkg is
-  function pick0(x : triple_t) return u16 is
+package body exam_pkg is
+  function add_fp(a,b : signed(W-1 downto 0)) return signed is
+    variable ext : signed(W downto 0); -- Guard Bit
   begin
-    return x(0);
+    ext := (a(a'left) & a) + (b(b'left) & b);
+    return ext(W-1 downto 0); -- Trunkierung
   end function;
 end package body;
 
--- Usage
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
-use work.util_pkg.all;
+-- Nutzung im synchronen Prozess
+use work.exam_pkg.all;
 
-entity util_use is
-  port(
-    clk : in  std_ulogic;
-    rst : in  std_ulogic;
-    bus : in  std_ulogic_vector(47 downto 0);
-    out0: out u16
-  );
-end entity;
-
-architecture rtl of util_use is
-  alias A_val : std_ulogic_vector(15 downto 0) is bus(47 downto 32);
-  alias B_val : std_ulogic_vector(15 downto 0) is bus(31 downto 16);
-  alias C_val : std_ulogic_vector(15 downto 0) is bus(15 downto 0);
-
-  signal t : triple_t;
+process(clk)
 begin
-  t <= (natural(to_integer(unsigned(A_val))),
-        natural(to_integer(unsigned(B_val))),
-        natural(to_integer(unsigned(C_val))));
-
-  p : process(clk)
-  begin
-    if rising_edge(clk) then
-      if rst = '1' then
-        out0 <= 0;
-      else
-        out0 <= pick0(t);
-      end if;
-    end if;
-  end process;
-end architecture;
+  if rising_edge(clk) then
+    y <= add_fp(a,b);
+  end if;
+end process;
 \end{lstlisting}
 
+\textbf{Schieberegister (Shift Register)}
+\begin{lstlisting}
+process(clk)
+begin
+  if rising_edge(clk) then
+    if rst='1' then
+      reg <= (others => '0');
+    elsif en='1' then
+      reg <= reg(reg'left-1 downto 0) & din;
+    end if;
+  end if;
+end process;
+\end{lstlisting}
+
+\textbf{Register mit Enable (Latch-sicher)}
+\begin{lstlisting}
+process(clk)
+begin
+  if rising_edge(clk) then
+    q <= q; -- default
+    if en='1' then
+      q <= d;
+    end if;
+  end if;
+end process;
+\end{lstlisting}
+
+\textbf{Reset-Varianten (Prüfung)}
+\begin{lstlisting}
+-- synchronous reset
+if rising_edge(clk) then
+  if rst='1' then
+    q <= '0';
+  else
+    q <= d;
+  end if;
+end if;
+
+-- asynchronous reset
+if rst='1' then
+  q <= '0';
+elsif rising_edge(clk) then
+  q <= d;
+end if;
+\end{lstlisting}
+\textbf{Kombinatorischer Prozess (vollständig)}
+\begin{lstlisting}
+process(a,b,sel)
+begin
+  y <= a; -- default
+  if sel='1' then
+    y <= b;
+  end if;
+end process;
+\end{lstlisting}
+\textbf{FSM – Exam Template (Moore)}
+\begin{lstlisting}
+type state_t is (IDLE, RUN, DONE);
+signal state, state_n : state_t;
+
+-- state register
+process(clk)
+begin
+  if rising_edge(clk) then
+    if rst='1' then
+      state <= IDLE;
+    else
+      state <= state_n;
+    end if;
+  end if;
+end process;
+
+-- next state + output logic
+process(state, start)
+begin
+  state_n <= state;
+  case state is
+    when IDLE =>
+      if start='1' then state_n <= RUN; end if;
+    when RUN =>
+      state_n <= DONE;
+    when DONE =>
+      state_n <= IDLE;
+  end case;
+end process;
+\end{lstlisting}
+
+\textbf{Clock Enable vs. Gated Clock}
+Clock Enable bevorzugen. Gated Clock vermeidet man wegen Glitches.
+
+\end{multicols}
 
 \end{document}
