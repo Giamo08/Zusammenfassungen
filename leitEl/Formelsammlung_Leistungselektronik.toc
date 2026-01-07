@@ -1,0 +1,64 @@
+\contentsline {section}{\numberline {1}Grundlegende Modellannahmen}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Idealisierte Halbleiter}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Lastmodelle}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Zeitbereichsanalyse geschalteter Systeme}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Allgemeines Vorgehen}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Schaltintervalle einer RL-Last}{5}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Periodische Signale}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Grunddefinitionen}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Mittelwert}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Effektivwert}{6}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Fourieranalyse nichtsinusförmiger Signale}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Allgemeine Darstellung}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Fourierkoeffizienten}{7}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Leistungsgrößen bei verzerrten Signalen}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Momentanleistung}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Wirkleistung}{7}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Schein- und Blindleistung}{7}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Gleichstromsteller und DC-DC-Wandler}{9}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Grundprinzip der Gleichstromsteller}{9}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Zeitmodell eines DC-Stellers}{9}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Buck-Wandler (Abwärtssteller)}{9}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Schaltzustände}{9}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Herleitung der Übertragungsfunktion}{9}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Stromripple}{10}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Boost-Wandler (Aufwärtssteller)}{10}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Schaltzustände}{10}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Herleitung}{10}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Buck-Boost-Wandler}{11}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Übertragungsfunktion}{11}{subsection.9.1}%
+\contentsline {section}{\numberline {10}PWM – Pulsweitenmodulation}{11}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Grundprinzip}{11}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Modulationsgrad}{11}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Spektrale Struktur}{12}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Einphasiger Wechselrichter}{12}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Ideales Modell}{12}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Strom bei RL-Last}{12}{subsection.11.2}%
+\contentsline {section}{\numberline {12}Analyse- und Entscheidungsschemata}{13}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Zeit- vs. Frequenzbereich}{13}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Stabilitätsbedingung}{13}{subsection.12.2}%
+\contentsline {section}{\numberline {13}Typische Fehlerquellen}{14}{section.13}%
+\contentsline {section}{\numberline {14}Nichtidealitäten, Verluste und praxisnahe Modelle}{15}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Leitverluste (vereinfachtes Modell)}{15}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Schaltverluste (Engineering-Modell)}{15}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}Totzeit und Spannungsfehler (PWM)}{15}{subsection.14.3}%
+\contentsline {section}{\numberline {15}Kommutierung und Leitintervalle in Stromrichtern}{16}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Leitbedingung mit Gegen-EMK (allgemein)}{16}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}Gesteuerte Leitung über Zündwinkel $\alpha $}{16}{subsection.15.2}%
+\contentsline {section}{\numberline {16}Verzerrungskennwerte, THD und Leistungsfaktor}{16}{section.16}%
+\contentsline {subsection}{\numberline {16.1}THD des Stroms}{16}{subsection.16.1}%
+\contentsline {subsection}{\numberline {16.2}Zusammenhang RMS und Harmonische}{16}{subsection.16.2}%
+\contentsline {subsection}{\numberline {16.3}Displacement Factor und Distortion Factor}{16}{subsection.16.3}%
+\contentsline {section}{\numberline {17}DC-DC-Wandler: CCM vs. DCM (vollständig)}{17}{section.17}%
+\contentsline {subsection}{\numberline {17.1}Definitionen}{17}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}CCM-Bedingung (engineering)}{17}{subsection.17.2}%
+\contentsline {subsection}{\numberline {17.3}Ausgangsripple (Kapazität, Dreiecksstrom)}{17}{subsection.17.3}%
+\contentsline {section}{\numberline {18}Filtergrundlagen (LC / RL als Tiefpass)}{18}{section.18}%
+\contentsline {subsection}{\numberline {18.1}Einfaches RL-Tiefpassverhalten}{18}{subsection.18.1}%
+\contentsline {section}{\numberline {19}PWM-Spektrum: strukturierte Herleitung (prüfungsrelevant)}{18}{section.19}%
+\contentsline {subsection}{\numberline {19.1}Grundidee}{18}{subsection.19.1}%
+\contentsline {subsection}{\numberline {19.2}Auflösung / Zeitschritt und Oberwellen}{18}{subsection.19.2}%
+\contentsline {section}{\numberline {20}Zusätzliche Schaltungstopologien (Referenzbilder)}{19}{section.20}%
+\contentsline {section}{\numberline {21}Mathematik-Toolkit (Erweiterung)}{19}{section.21}%
+\contentsline {subsection}{\numberline {21.1}Produkt-zu-Summe (für Fourier-Integrale)}{19}{subsection.21.1}%
+\contentsline {subsection}{\numberline {21.2}Typische Integrale in der Leistungselektronik}{20}{subsection.21.2}%

@@ -181,42 +181,54 @@
 \contentsline {subsection}{\numberline {9.11}Typische Prüfungsfehler}{14}{subsection.9.11}%
 \contentsline {subsection}{\numberline {9.12}Prüfungs-Check}{14}{subsection.9.12}%
 \setcounter {tocdepth}{1}
-\contentsline {section}{\numberline {10}Mathematisches Cheatsheet}{14}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Elementare Ableitungen und Integrale}{14}{subsection.10.1}%
-\contentsline {subsubsection}{\numberline {10.1.1}Potenzen und Logarithmen}{14}{subsubsection.10.1.1}%
-\contentsline {subsubsection}{\numberline {10.1.2}Exponentialfunktionen}{14}{subsubsection.10.1.2}%
-\contentsline {subsection}{\numberline {10.2}Partielle Ableitungen}{14}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}Trigonometrie, Hyperbelfunktionen und komplexe Darstellung}{15}{subsection.10.3}%
-\contentsline {subsubsection}{\numberline {10.3.1}Definitionen über Exponentialfunktionen }{15}{subsubsection.10.3.1}%
-\contentsline {subsubsection}{\numberline {10.3.2}Ableitungen}{15}{subsubsection.10.3.2}%
-\contentsline {subsubsection}{\numberline {10.3.3}Integrale }{15}{subsubsection.10.3.3}%
-\contentsline {subsubsection}{\numberline {10.3.4}Identitäten }{15}{subsubsection.10.3.4}%
-\contentsline {subsubsection}{\numberline {10.3.5}Komplexe Argumente und Beziehungen zwischen trig und hyperbel}{15}{subsubsection.10.3.5}%
-\contentsline {subsubsection}{\numberline {10.3.6}Inverse Funktionen }{15}{subsubsection.10.3.6}%
-\contentsline {subsubsection}{\numberline {10.3.7}Phasor-Form (EM-Standard)}{15}{subsubsection.10.3.7}%
-\contentsline {subsubsection}{\numberline {10.3.8}Wann trigonometrisch, wann hyperbolisch?}{15}{subsubsection.10.3.8}%
-\contentsline {subsection}{\numberline {10.4}Gradient, Divergenz, Rotation}{15}{subsection.10.4}%
-\contentsline {subsubsection}{\numberline {10.4.1}Gradient}{15}{subsubsection.10.4.1}%
-\contentsline {subsubsection}{\numberline {10.4.2}Divergenz}{16}{subsubsection.10.4.2}%
-\contentsline {subsubsection}{\numberline {10.4.3}Rotation}{16}{subsubsection.10.4.3}%
-\contentsline {subsection}{\numberline {10.5}Vektoridentitäten }{16}{subsection.10.5}%
-\contentsline {subsection}{\numberline {10.6}Laplace-Operator in 1D-Form}{16}{subsection.10.6}%
-\contentsline {subsection}{\numberline {10.7}Standardlösungen der Laplace-Gleichung}{16}{subsection.10.7}%
-\contentsline {subsection}{\numberline {10.8}Gewöhnliche Differentialgleichungen}{16}{subsection.10.8}%
-\contentsline {subsubsection}{\numberline {10.8.1}Charakteristische Gleichung}{16}{subsubsection.10.8.1}%
-\contentsline {subsubsection}{\numberline {10.8.2}Spezialfälle}{16}{subsubsection.10.8.2}%
-\contentsline {subsection}{\numberline {10.9}Komplexe Zahlen und Phasoren}{16}{subsection.10.9}%
-\contentsline {subsection}{\numberline {10.10}Rechnen mit komplexen Größen}{16}{subsection.10.10}%
-\contentsline {subsection}{\numberline {10.11}Reeller Teil und physikalische Interpretation}{16}{subsection.10.11}%
-\contentsline {subsection}{\numberline {10.12}Integralsätze der Vektorrechnung}{16}{subsection.10.12}%
-\contentsline {subsubsection}{\numberline {10.12.1}Gaußscher Satz}{16}{subsubsection.10.12.1}%
-\contentsline {subsubsection}{\numberline {10.12.2}Stokes-Theorem}{16}{subsubsection.10.12.2}%
-\contentsline {subsection}{\numberline {10.13}Delta-Funktion}{16}{subsection.10.13}%
-\contentsline {subsection}{\numberline {10.14}Konzeptionelles Vorgehen: lineare DGL }{17}{subsection.10.14}%
-\contentsline {subsubsection}{\numberline {10.14.1}1 Typ erkennen}{17}{subsubsection.10.14.1}%
-\contentsline {subsubsection}{\numberline {10.14.2}2 Homogene Lösung $u_{\text {hom}}$ (charakteristische Gleichung)}{17}{subsubsection.10.14.2}%
-\contentsline {subsubsection}{\numberline {10.14.3}3 Partikuläre Lösung $u_{\text {part}}$ (nur wenn $g\neq 0$)}{17}{subsubsection.10.14.3}%
-\contentsline {subsubsection}{\numberline {10.14.4}4 Gesamtlösung und Konstanten}{17}{subsubsection.10.14.4}%
-\contentsline {subsection}{\numberline {10.15}Grenzwerte und Plausibilitätschecks}{17}{subsection.10.15}%
-\contentsline {subsection}{\numberline {10.16}Finale Mathematik-Checkliste}{17}{subsection.10.16}%
-\contentsline {section}{\numberline {11}1-seitige Entscheidungs-Matrix für EM-Prüfungen}{17}{section.11}%
+\contentsline {section}{\numberline {10}Finite-Element-Methode (FEM)}{14}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Ausgangsproblem}{14}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Grundidee der FEM}{14}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Ansatzfunktionen}{14}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Schwache Formulierung}{15}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Diskretisierung}{15}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}Randbedingungen}{15}{subsection.10.6}%
+\contentsline {subsection}{\numberline {10.7}Lösung des Gleichungssystems}{15}{subsection.10.7}%
+\contentsline {subsection}{\numberline {10.8}Genauigkeit und Netzverfeinerung}{15}{subsection.10.8}%
+\contentsline {subsection}{\numberline {10.9}Energieformulierung}{15}{subsection.10.9}%
+\contentsline {subsection}{\numberline {10.10}Vor- und Nachteile der FEM}{15}{subsection.10.10}%
+\contentsline {subsection}{\numberline {10.11}Fakten und Merks\"atze zur FEM}{15}{subsection.10.11}%
+\contentsline {section}{\numberline {11}Mathematisches Cheatsheet}{16}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Elementare Ableitungen und Integrale}{16}{subsection.11.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Potenzen und Logarithmen}{16}{subsubsection.11.1.1}%
+\contentsline {subsubsection}{\numberline {11.1.2}Exponentialfunktionen}{16}{subsubsection.11.1.2}%
+\contentsline {subsection}{\numberline {11.2}Partielle Ableitungen}{16}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Trigonometrie, Hyperbelfunktionen und komplexe Darstellung}{16}{subsection.11.3}%
+\contentsline {subsubsection}{\numberline {11.3.1}Definitionen über Exponentialfunktionen }{16}{subsubsection.11.3.1}%
+\contentsline {subsubsection}{\numberline {11.3.2}Ableitungen}{16}{subsubsection.11.3.2}%
+\contentsline {subsubsection}{\numberline {11.3.3}Integrale }{16}{subsubsection.11.3.3}%
+\contentsline {subsubsection}{\numberline {11.3.4}Identitäten }{16}{subsubsection.11.3.4}%
+\contentsline {subsubsection}{\numberline {11.3.5}Komplexe Argumente und Beziehungen zwischen trig und hyperbel}{16}{subsubsection.11.3.5}%
+\contentsline {subsubsection}{\numberline {11.3.6}Inverse Funktionen }{16}{subsubsection.11.3.6}%
+\contentsline {subsubsection}{\numberline {11.3.7}Phasor-Form (EM-Standard)}{16}{subsubsection.11.3.7}%
+\contentsline {subsubsection}{\numberline {11.3.8}Wann trigonometrisch, wann hyperbolisch?}{17}{subsubsection.11.3.8}%
+\contentsline {subsection}{\numberline {11.4}Gradient, Divergenz, Rotation}{17}{subsection.11.4}%
+\contentsline {subsubsection}{\numberline {11.4.1}Gradient}{17}{subsubsection.11.4.1}%
+\contentsline {subsubsection}{\numberline {11.4.2}Divergenz}{17}{subsubsection.11.4.2}%
+\contentsline {subsubsection}{\numberline {11.4.3}Rotation}{17}{subsubsection.11.4.3}%
+\contentsline {subsection}{\numberline {11.5}Vektoridentitäten }{17}{subsection.11.5}%
+\contentsline {subsection}{\numberline {11.6}Laplace-Operator in 1D-Form}{17}{subsection.11.6}%
+\contentsline {subsection}{\numberline {11.7}Standardlösungen der Laplace-Gleichung}{17}{subsection.11.7}%
+\contentsline {subsection}{\numberline {11.8}Gewöhnliche Differentialgleichungen}{17}{subsection.11.8}%
+\contentsline {subsubsection}{\numberline {11.8.1}Charakteristische Gleichung}{17}{subsubsection.11.8.1}%
+\contentsline {subsubsection}{\numberline {11.8.2}Spezialfälle}{17}{subsubsection.11.8.2}%
+\contentsline {subsection}{\numberline {11.9}Komplexe Zahlen und Phasoren}{17}{subsection.11.9}%
+\contentsline {subsection}{\numberline {11.10}Rechnen mit komplexen Größen}{17}{subsection.11.10}%
+\contentsline {subsection}{\numberline {11.11}Reeller Teil und physikalische Interpretation}{17}{subsection.11.11}%
+\contentsline {subsection}{\numberline {11.12}Integralsätze der Vektorrechnung}{17}{subsection.11.12}%
+\contentsline {subsubsection}{\numberline {11.12.1}Gaußscher Satz}{17}{subsubsection.11.12.1}%
+\contentsline {subsubsection}{\numberline {11.12.2}Stokes-Theorem}{18}{subsubsection.11.12.2}%
+\contentsline {subsection}{\numberline {11.13}Delta-Funktion}{18}{subsection.11.13}%
+\contentsline {subsection}{\numberline {11.14}Konzeptionelles Vorgehen: lineare DGL }{18}{subsection.11.14}%
+\contentsline {subsubsection}{\numberline {11.14.1}1 Typ erkennen}{18}{subsubsection.11.14.1}%
+\contentsline {subsubsection}{\numberline {11.14.2}2 Homogene Lösung $u_{\text {hom}}$ (charakteristische Gleichung)}{18}{subsubsection.11.14.2}%
+\contentsline {subsubsection}{\numberline {11.14.3}3 Partikuläre Lösung $u_{\text {part}}$ (nur wenn $g\neq 0$)}{18}{subsubsection.11.14.3}%
+\contentsline {subsubsection}{\numberline {11.14.4}4 Gesamtlösung und Konstanten}{18}{subsubsection.11.14.4}%
+\contentsline {subsection}{\numberline {11.15}Grenzwerte und Plausibilitätschecks}{18}{subsection.11.15}%
+\contentsline {subsection}{\numberline {11.16}Finale Mathematik-Checkliste}{18}{subsection.11.16}%
+\contentsline {section}{\numberline {12}1-seitige Entscheidungs-Matrix für EM-Prüfungen}{18}{section.12}%

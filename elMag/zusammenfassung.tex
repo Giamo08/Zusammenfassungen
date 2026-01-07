@@ -2672,6 +2672,232 @@ Die Geometrie klärt oft sofort die Vorzeichen und Richtungen.
 \end{taktik}
 % =========================================================
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+\section{Finite-Element-Methode (FEM)}
+
+Die Finite-Element-Methode (FEM) ist ein numerisches Verfahren zur Lösung partieller Differentialgleichungen (PDEs), wie sie in der Elektrotechnik, insbesondere in der Elektrostatik, Magnetostatik und allgemeinen Feldtheorie, auftreten. Sie wird eingesetzt, wenn analytische Lösungen aufgrund komplexer Geometrien, inhomogener Materialien oder komplizierter Randbedingungen nicht mehr möglich sind.
+
+\subsection{Ausgangsproblem}
+
+Typische feldtheoretische Probleme lassen sich in der folgenden allgemeinen Form beschreiben:
+\[
+\nabla \cdot (\alpha \nabla u) = -f \quad \text{in } \Omega
+\]
+wobei
+\begin{itemize}
+    \item $u$: gesuchte Feldgröße (z.\,B. elektrisches Potential $V$),
+    \item $\alpha$: Materialparameter (z.\,B. $\varepsilon$ oder $\mu$),
+    \item $f$: Quellen (z.\,B. Raumladungsdichte),
+    \item $\Omega$: Rechengebiet.
+\end{itemize}
+
+Für elektrostatische Probleme ergibt sich beispielsweise:
+\[
+\nabla \cdot (\varepsilon \nabla V) = -\rho
+\]
+
+\subsection{Grundidee der FEM}
+
+Das Rechengebiet $\Omega$ wird in viele kleine Teilgebiete zerlegt, sogenannte Finite Elemente. In zwei Dimensionen bestehen diese Elemente meist aus Dreiecken oder Vierecken. Die Zerlegung des Gebiets wird als Vernetzung (Mesh) bezeichnet.
+
+Innerhalb jedes Elements wird die gesuchte Feldgröße nicht exakt, sondern durch eine einfache Näherungsfunktion beschrieben. Die exakte Lösung wird durch das Zusammensetzen vieler lokaler Näherungen approximiert.
+
+\subsection{Ansatzfunktionen}
+
+Innerhalb eines Elements wird die Feldgröße $u(x,y)$ durch Ansatzfunktionen $\varphi_i$ dargestellt:
+\[
+u(x,y) \approx \sum_{i=1}^{n} u_i \varphi_i(x,y)
+\]
+wobei
+\begin{itemize}
+    \item $u_i$: unbekannte Knotenwerte,
+    \item $\varphi_i$: Ansatzfunktionen (Formfunktionen).
+\end{itemize}
+
+Für lineare Dreieckselemente sind die Ansatzfunktionen linear und erfüllen:
+\[
+\varphi_i = 1 \text{ am Knoten } i, \quad \varphi_i = 0 \text{ an allen anderen Knoten}
+\]
+
+\subsection{Schwache Formulierung}
+
+Die FEM basiert nicht auf der direkten Lösung der Differentialgleichung, sondern auf deren schwacher Form. Dazu wird die PDE mit einer Testfunktion $w$ multipliziert und über das Gebiet integriert:
+\[
+\int_{\Omega} w \, \nabla \cdot (\alpha \nabla u)\, \mathrm{d}\Omega
+= \int_{\Omega} w f \, \mathrm{d}\Omega
+\]
+
+Nach partieller Integration ergibt sich:
+\[
+\int_{\Omega} \alpha \nabla w \cdot \nabla u \, \mathrm{d}\Omega
+= \int_{\Omega} w f \, \mathrm{d}\Omega
++ \int_{\partial \Omega} w \alpha \nabla u \cdot \vec{n} \, \mathrm{d}\Gamma
+\]
+
+Diese Formulierung erlaubt die Einbindung von Randbedingungen und reduziert die Anforderungen an die Differenzierbarkeit der Lösung.
+
+\subsection{Diskretisierung}
+
+Durch Einsetzen der Ansatzfunktionen in die schwache Form ergibt sich ein lineares Gleichungssystem:
+\[
+\mathbf{K} \mathbf{u} = \mathbf{f}
+\]
+
+Dabei gilt:
+\[
+K_{ij} = \int_{\Omega} \alpha \nabla \varphi_i \cdot \nabla \varphi_j \, \mathrm{d}\Omega
+\]
+\[
+f_i = \int_{\Omega} \varphi_i f \, \mathrm{d}\Omega
+\]
+
+Die globale Systemmatrix entsteht durch das Zusammenfügen (Assemblierung) aller elementweisen Matrizen.
+
+\subsection{Randbedingungen}
+
+In der FEM werden hauptsächlich zwei Typen von Randbedingungen verwendet:
+
+\textbf{Dirichlet-Randbedingungen:}
+\[
+u = u_0 \quad \text{auf } \partial \Omega_D
+\]
+Diese Randbedingungen legen den Wert der Feldgröße direkt fest.
+
+\textbf{Neumann-Randbedingungen:}
+\[
+\alpha \nabla u \cdot \vec{n} = g \quad \text{auf } \partial \Omega_N
+\]
+Diese beschreiben den Fluss der Feldgröße über den Rand.
+
+\subsection{Lösung des Gleichungssystems}
+
+Das entstehende Gleichungssystem ist in der Regel:
+\begin{itemize}
+    \item groß,
+    \item dünnbesetzt (sparse),
+    \item symmetrisch (bei vielen Feldproblemen).
+\end{itemize}
+
+Zur Lösung werden verwendet:
+\begin{itemize}
+    \item direkte Verfahren (z.\,B. Gauß-Elimination),
+    \item iterative Verfahren (z.\,B. CG, GMRES).
+\end{itemize}
+
+\subsection{Genauigkeit und Netzverfeinerung}
+
+Die Genauigkeit der FEM-Lösung hängt stark von der Netzqualität ab:
+\begin{itemize}
+    \item kleinere Elemente $\rightarrow$ höhere Genauigkeit,
+    \item mehr Knoten $\rightarrow$ mehr Unbekannte,
+    \item höherer Rechenaufwand.
+\end{itemize}
+
+Man unterscheidet:
+\begin{itemize}
+    \item h-Verfeinerung: kleinere Elemente,
+    \item p-Verfeinerung: höhere Ordnung der Ansatzfunktionen.
+\end{itemize}
+
+\subsection{Energieformulierung}
+
+Viele feldtheoretische Probleme lassen sich als Minimierungsproblem einer Energie formulieren. Für die Elektrostatik gilt:
+\[
+W_e = \frac{1}{2} \int_{\Omega} \varepsilon |\vec{E}|^2 \, \mathrm{d}\Omega
+\]
+
+Die FEM-Lösung entspricht einer stationären Lösung dieser Energie. Mit zunehmender Netzverfeinerung konvergiert die berechnete Energie gegen den exakten physikalischen Wert.
+
+\subsection{Vor- und Nachteile der FEM}
+
+Vorteile:
+\begin{itemize}
+    \item flexibel für beliebige Geometrien,
+    \item geeignet für inhomogene Materialien,
+    \item hohe Genauigkeit bei lokaler Verfeinerung.
+\end{itemize}
+
+Nachteile:
+\begin{itemize}
+    \item hoher Speicherbedarf,
+    \item lange Rechenzeiten,
+    \item Ergebnis abhängig von Netzqualität.
+\end{itemize}
+\subsection{Fakten und Merks\"atze zur FEM}
+
+Die folgenden Aussagen dienen als kompakte Entscheidungsgrundlage f\"ur Multiple-Choice- und Theoriefragen zur Finite-Element-Methode.
+
+\subsubsection*{Allgemeine Fakten}
+
+\begin{itemize}
+    \item Die FEM ist ein \textbf{numerisches N\"aherungsverfahren}, kein analytisches Verfahren.
+    \item Die FEM l\"ost \textbf{partielle Differentialgleichungen} \"uber eine Diskretisierung des Rechengebiets.
+    \item Die exakte L\"osung wird nicht berechnet, sondern approximiert.
+    \item Die FEM basiert auf der \textbf{schwachen Formulierung} der Differentialgleichung.
+\end{itemize}
+
+\subsubsection*{Diskretisierung und Netz}
+
+\begin{itemize}
+    \item Das Rechengebiet wird in \textbf{Finite Elemente} zerlegt.
+    \item In 2D werden meist Dreiecks- oder Viereckselemente verwendet.
+    \item Die Netzqualit\"at hat direkten Einfluss auf die Genauigkeit.
+    \item Kleine Elemente erlauben bessere Approximation starker Feldgradienten.
+\end{itemize}
+
+\subsubsection*{Unbekannte und Gleichungssystem}
+
+\begin{itemize}
+    \item Unbekannte der FEM sind die \textbf{Knotenwerte} der Feldgr\"o\ss e.
+    \item Die Anzahl der Unbekannten entspricht der Anzahl der Freiheitsgrade.
+    \item Das resultierende Gleichungssystem ist meist \textbf{linear}.
+    \item Die Systemmatrix ist in vielen Feldproblemen \textbf{symmetrisch und d\"unnbesetzt}.
+\end{itemize}
+
+\subsubsection*{Rechenaufwand}
+
+\begin{itemize}
+    \item Mehr Elemente $\rightarrow$ mehr Knoten $\rightarrow$ mehr Unbekannte.
+    \item Speicherbedarf steigt mit der Netzverfeinerung.
+    \item CPU-Zeit steigt mit der Gr\"o\ss e des Gleichungssystems.
+    \item Iterative L\"oser sind bei gro\ss en Systemen effizienter als direkte L\"oser.
+\end{itemize}
+
+\subsubsection*{Genauigkeit und Konvergenz}
+
+\begin{itemize}
+    \item Kleinere Elemente erh\"ohen die Genauigkeit der L\"osung.
+    \item H\"ohere Ordnung der Ansatzfunktionen erh\"oht ebenfalls die Genauigkeit.
+    \item Die FEM-L\"osung konvergiert bei Netzverfeinerung gegen die exakte L\"osung.
+    \item Numerische Fehler verschwinden im Grenzfall unendlich feiner Netze.
+\end{itemize}
+
+\subsubsection*{Randbedingungen}
+
+\begin{itemize}
+    \item Dirichlet-Randbedingungen legen den Wert der Feldgr\"o\ss e fest.
+    \item Neumann-Randbedingungen legen den Fluss der Feldgr\"o\ss e fest.
+    \item Dirichlet-Randbedingungen werden direkt im Gleichungssystem umgesetzt.
+    \item Neumann-Randbedingungen gehen \"uber den Lastvektor ein.
+\end{itemize}
+
+\subsubsection*{Physikalische Aussagen}
+
+\begin{itemize}
+    \item Die physikalische Energie eines Systems ist methodenunabh\"angig.
+    \item Die FEM approximiert die Feldverteilung, nicht die Physik.
+    \item Die berechnete Energie konvergiert gegen den exakten Wert.
+    \item Die FEM verletzt keine Erhaltungss\"atze bei korrekter Formulierung.
+\end{itemize}
+
+\subsubsection*{Typische Pr\"ufungsaussagen}
+
+\begin{itemize}
+    \item ``Mehr Elemente bedeuten h\"ohere Genauigkeit.'' $\rightarrow$ wahr
+    \item ``Die FEM liefert eine exakte L\"osung.'' $\rightarrow$ falsch
+    \item ``Die FEM ist gut f\"ur komplexe Geometrien geeignet.'' $\rightarrow$ wahr
+    \item ``Die Systemenergie h\"angt vom Netz ab.'' $\rightarrow$ falsch
+\end{itemize}
+
 \section{Mathematisches Cheatsheet}
 % =========================================================
 

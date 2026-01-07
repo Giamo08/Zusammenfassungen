@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1767726430.57644 "/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/elMag/zusammenfassung.tex" "zusammenfassung.pdf" "zusammenfassung" 1767726433.29441 0
-  "/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/elMag/zusammenfassung.tex" 1767726427.45133 92966 e0fcf9c06f09069356e1608dbff018d5 ""
+["pdflatex"] 1767802388.10178 "/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/elMag/zusammenfassung.tex" "zusammenfassung.pdf" "zusammenfassung" 1767802390.74236 0
+  "/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/elMag/zusammenfassung.tex" 1767802385.26718 101481 6a4497ba4ced304b63019eb711aff2e9 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -38,6 +38,9 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/lmsy6.tfm" 1148093231 1300 b0605d44c16c22d99dc001808e4f24ea ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/lmsy8.tfm" 1148093231 1304 cdc9a17df9ef0d2dc320eff37bbab1c4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/lmsy9.tfm" 1148093231 1300 ca37bc0213808d24f74bf4d32f81f80d ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmbx5.tfm" 1254269338 11828 9b1880528bdbe7e6035fd1b46bff1bbb ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmbx6.tfm" 1254269338 11852 eda7061aa4cc8552ba736dae866e4460 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmbx9.tfm" 1254269338 11872 6fc83bd89656207db7e11b4f7ac7546e ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm" 1254269338 11868 4f81e9b6033c032bdaf9884f4d7ef412 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmr5.tfm" 1254269338 11804 aefb10c002e6492c25236524a447f969 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmr6.tfm" 1254269338 11836 e3b6ce3e601aec94f64a536e7f4224d5 ""
@@ -253,10 +256,10 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1732126826.17487 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1732126743 8221431 6ec7a922ea4ffeb9bc4def6d8b15a680 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "zusammenfassung.aux" 1767726433.18558 32573 d66e4486683ff0a7bd1f5ca311529738 "pdflatex"
-  "zusammenfassung.out" 1767726433.18847 3135 c21ca801b977d1065f63430fe8642aa4 "pdflatex"
-  "zusammenfassung.tex" 1767726427.45133 92966 e0fcf9c06f09069356e1608dbff018d5 ""
-  "zusammenfassung.toc" 1767726433.1887 21560 f8f95a51eb6af8b5559a5d4f1f927482 "pdflatex"
+  "zusammenfassung.aux" 1767802390.63219 34150 5f742ce0b1328d136d3605fac4b60b42 "pdflatex"
+  "zusammenfassung.out" 1767802390.63517 3329 f01c873241c1b105012d4e049cf6cce4 "pdflatex"
+  "zusammenfassung.tex" 1767802385.26718 101481 6a4497ba4ced304b63019eb711aff2e9 ""
+  "zusammenfassung.toc" 1767802390.63543 22645 78751653ad68a6c9c68513e70e021194 "pdflatex"
   (generated)
   "zusammenfassung.aux"
   "zusammenfassung.log"

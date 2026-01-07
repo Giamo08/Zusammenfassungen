@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  6 JAN 2026 20:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  7 JAN 2026 17:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -996,46 +996,52 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has 
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.2867 
-       ] [29
+l.2814     \item f
+                  lexibel fÃ¼r beliebige Geometrien,] [29
 pdfTeX warning (ext4): destination with the same identifier (name{page.14}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.3091 \subsection{Komplexe Zahlen und Phasoren}
-                                                ] [31
+l.3035 
+       ] [31
 pdfTeX warning (ext4): destination with the same identifier (name{page.15}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.3283 
-       ]
-Underfull \hbox (badness 10000) in paragraph at lines 3340--3340
-[]|\T1/lmr/m/n/9 Ausbreitung, Pha-sen-ver-
- []
-
-
-Underfull \hbox (badness 2781) in paragraph at lines 3353--3353
-[]|\T1/lmr/m/n/9 Ladungen, Po-ten-tia-le, Di-
- []
-
-
-Underfull \hbox (badness 4634) in paragraph at lines 3355--3355
-[]|\T1/lmr/m/n/9 Ströme trei-ben $[]$, kei-ne
- []
-
-[33
+l.3268 \]
+         ] [33
 pdfTeX warning (ext4): destination with the same identifier (name{page.16}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.3460 
-       ] [35
+l.3493 
+       ]
+Underfull \hbox (badness 10000) in paragraph at lines 3566--3566
+[]|\T1/lmr/m/n/9 Ausbreitung, Pha-sen-ver-
+ []
+
+
+Underfull \hbox (badness 2781) in paragraph at lines 3579--3579
+[]|\T1/lmr/m/n/9 Ladungen, Po-ten-tia-le, Di-
+ []
+
+
+Underfull \hbox (badness 4634) in paragraph at lines 3581--3581
+[]|\T1/lmr/m/n/9 Ströme trei-ben $[]$, kei-ne
+ []
+
+[35
 pdfTeX warning (ext4): destination with the same identifier (name{page.17}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.3467 \end{document}
+l.3671 
+       ] [37
+pdfTeX warning (ext4): destination with the same identifier (name{page.18}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.3693 \end{document}
                      ] (./zusammenfassung.aux <Reading QR code for "https://github.com/Giamo08/Zusammenfassungen" at level 4-Q from aux file.>
 )
  ***********
@@ -1043,21 +1049,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `zusammenfassung.out' has not changed.
-(rerunfilecheck)             Checksum: C21CA801B977D1065F63430FE8642AA4;3135.
+(rerunfilecheck)             Checksum: F01C873241C1B105012D4E049CF6CCE4;3329.
  ) 
 Here is how much of TeX's memory you used:
- 37604 strings out of 474116
- 776328 string characters out of 5743681
+ 37624 strings out of 474116
+ 776590 string characters out of 5743681
  2040187 words of memory out of 5000000
- 59119 multiletter control sequences out of 15000+600000
- 615302 words of font info for 81 fonts, out of 8000000 for 9000
+ 59123 multiletter control sequences out of 15000+600000
+ 624118 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,14n,107p,1357b,1072s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on zusammenfassung.pdf (17 pages, 443082 bytes).
+Output written on zusammenfassung.pdf (18 pages, 454423 bytes).
 PDF statistics:
- 676 PDF objects out of 1000 (max. 8388607)
- 590 compressed objects within 6 object streams
- 271 named destinations out of 1000 (max. 500000)
- 245 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 702 PDF objects out of 1000 (max. 8388607)
+ 613 compressed objects within 7 object streams
+ 284 named destinations out of 1000 (max. 500000)
+ 253 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,767 @@
+\documentclass[a4paper,11pt]{article}
+
+% ================= PREAMBLE =================
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\geometry{margin=2.5cm}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Leistungselektronik}}\\
+{\large Systematische Formelsammlung}\\
+{\small Theorie, Herleitungen und Beispielrechnungen}
+\end{center}
+
+\tableofcontents
+\newpage
+
+% =========================================================
+\section{Grundlegende Modellannahmen}
+
+\subsection{Idealisierte Halbleiter}
+In der analytischen Leistungselektronik werden Halbleiter idealisiert:
+\begin{itemize}[leftmargin=*]
+  \item kein Spannungsabfall im leitenden Zustand
+  \item kein Strom im sperrenden Zustand
+  \item keine Schaltzeiten, keine Verluste
+\end{itemize}
+
+Diese Annahmen ermöglichen geschlossene analytische Lösungen und sind Grundlage aller folgenden Modelle.
+
+\subsection{Lastmodelle}
+Verwendete Standardlast:
+\[
+u(t) = R i(t) + L\frac{di(t)}{dt}
+\]
+
+Zeitkonstante:
+\[
+\tau = \frac{L}{R}
+\]
+
+\subsection*{Beispiel (symbolisch)}
+Gegeben:
+\[
+L\frac{di}{dt}+Ri=U
+\]
+
+Lösung:
+\[
+i(t)=\frac{U}{R}+\left(i_0-\frac{U}{R}\right)e^{-t/\tau}
+\]
+
+\subsection*{Beispiel (numerisch)}
+\[
+R=\SI{10}{\ohm},\quad L=\SI{50}{\milli\henry},\quad U=\SI{100}{\volt}
+\]
+
+\[
+\tau=\frac{0.05}{10}=\SI{5}{\milli\second}
+\]
+
+\[
+i(t)=10\left(1-e^{-t/0.005}\right)
+\]
+
+Nach $t=\SI{10}{\milli\second}$:
+\[
+i(10\text{ ms})\approx\SI{8.65}{\ampere}
+\]
+
+% =========================================================
+\section{Zeitbereichsanalyse geschalteter Systeme}
+
+\subsection{Allgemeines Vorgehen}
+Die Zeitbereichsanalyse erfolgt stückweise:
+\begin{enumerate}[leftmargin=*]
+  \item Definition der Schaltintervalle
+  \item Differentialgleichung je Intervall
+  \item Lösung der DGL
+  \item Randbedingungen
+  \item Periodizität
+\end{enumerate}
+
+\subsection{Schaltintervalle einer RL-Last}
+
+\textbf{Einschaltintervall:}
+\[
+U_{DC}=Ri(t)+L\frac{di}{dt}
+\]
+
+\textbf{Ausschaltintervall:}
+\[
+0=Ri(t)+L\frac{di}{dt}
+\]
+
+\subsection*{Beispiel (symbolisch)}
+Einschalten:
+\[
+i_e(t)=\frac{U_{DC}}{R}+\left(i_{\min}-\frac{U_{DC}}{R}\right)e^{-t/\tau}
+\]
+
+Ausschalten:
+\[
+i_a(t)=i_{\max}e^{-t/\tau}
+\]
+
+Stationärer Betrieb:
+\[
+i_{\min}=i_a(T_a),\quad i_{\max}=i_e(T_e)
+\]
+
+\subsection*{Beispiel (numerisch)}
+\[
+U_{DC}=\SI{100}{\volt},\ R=\SI{10}{\ohm},\ L=\SI{50}{\milli\henry}
+\]
+
+\[
+T_e=\SI{2}{\milli\second},\ T_a=\SI{3}{\milli\second}
+\]
+
+\[
+i_{\max}=10\left(1-e^{-0.002/0.005}\right)\approx\SI{3.3}{\ampere}
+\]
+
+\[
+i_{\min}=i_{\max}e^{-0.003/0.005}\approx\SI{1.8}{\ampere}
+\]
+
+% =========================================================
+\section{Periodische Signale}
+
+\subsection{Grunddefinitionen}
+\[
+T=\frac{1}{f},\quad \omega=2\pi f,\quad \beta=\omega t
+\]
+
+\subsection{Mittelwert}
+\[
+\overline{x}=\frac{1}{T}\int_0^T x(t)\,dt
+\]
+
+Physikalische Bedeutung:
+\begin{itemize}
+  \item Gleichanteil
+  \item Drehmoment, Gleichspannung
+\end{itemize}
+
+\subsection{Effektivwert}
+\[
+X_{\mathrm{RMS}}=\sqrt{\frac{1}{T}\int_0^T x^2(t)\,dt}
+\]
+
+Physikalische Bedeutung:
+\begin{itemize}
+  \item thermische Wirkung
+  \item Verlustleistung
+\end{itemize}
+
+\subsection*{Beispiel (symbolisch)}
+Rechtecksignal mit Amplitude $A$ und Tastgrad $D$:
+\[
+X_{\mathrm{RMS}}=A\sqrt{D}
+\]
+
+\subsection*{Beispiel (numerisch)}
+\[
+A=\SI{10}{\volt},\quad D=0.5
+\]
+
+\[
+X_{\mathrm{RMS}}=10\sqrt{0.5}\approx\SI{7.07}{\volt}
+\]
+
+% =========================================================
+\section{Fourieranalyse nichtsinusförmiger Signale}
+
+\subsection{Allgemeine Darstellung}
+\[
+x(\beta)=\frac{a_0}{2}+\sum_{k=1}^{\infty}\left(a_k\cos k\beta+b_k\sin k\beta\right)
+\]
+
+\subsection{Fourierkoeffizienten}
+\[
+a_k=\frac{1}{\pi}\int_0^{2\pi}x(\beta)\cos(k\beta)\,d\beta
+\]
+\[
+b_k=\frac{1}{\pi}\int_0^{2\pi}x(\beta)\sin(k\beta)\,d\beta
+\]
+
+\subsection*{Beispiel (symbolisch): Halbwellen-Gleichrichtung}
+\[
+x(\beta)=
+\begin{cases}
+\hat{u}\sin\beta,&0<\beta<\pi\\
+0,&\pi<\beta<2\pi
+\end{cases}
+\]
+
+\[
+a_0=\frac{2\hat{u}}{\pi}
+\]
+
+Grundschwingung:
+\[
+\hat{x}_1=\frac{2\hat{u}}{\pi}
+\]
+
+\subsection*{Beispiel (numerisch)}
+\[
+\hat{u}=\SI{325}{\volt}
+\Rightarrow
+U_{1,\mathrm{RMS}}=\frac{1}{\sqrt{2}}\frac{2\cdot325}{\pi}\approx\SI{146}{\volt}
+\]
+
+% =========================================================
+\section{Leistungsgrößen bei verzerrten Signalen}
+
+\subsection{Momentanleistung}
+\[
+p(t)=u(t)i(t)
+\]
+
+\subsection{Wirkleistung}
+\[
+P=\frac{1}{T}\int_0^T u(t)i(t)\,dt
+\]
+
+\subsection{Schein- und Blindleistung}
+\[
+S=U_{\mathrm{RMS}}I_{\mathrm{RMS}}
+\]
+
+\[
+Q=\sqrt{Q_1^2+Q_V^2}
+\]
+
+\subsection*{Beispiel (symbolisch)}
+\[
+P=U_{\mathrm{RMS}}I_{1,\mathrm{RMS}}\cos\varphi_1
+\]
+
+\subsection*{Beispiel (numerisch)}
+\[
+U=\SI{230}{\volt},\ I=\SI{10}{\ampere},\ \cos\varphi=0.8
+\]
+
+\[
+P=\SI{1840}{\watt},\quad S=\SI{2300}{\volt\ampere}
+\]
+
+\[
+Q\approx\SI{1380}{\volt\ampere}
+\]
+% =========================================================
+% BLOCK 2 – DC-DC-Wandler, PWM, Wechselrichter, Analyse
+% =========================================================
+
+\newpage
+\section{Gleichstromsteller und DC-DC-Wandler}
+
+\subsection{Grundprinzip der Gleichstromsteller}
+Ein Gleichstromsteller erzeugt aus einer konstanten Eingangsspannung $U_{DC}$ eine zeitlich gemittelte Ausgangsspannung durch periodisches Schalten. Die Energieübertragung erfolgt diskret, die Mittelwertbildung durch passive Elemente.
+
+Zentrale Steuergröße:
+\[
+D=\frac{T_e}{T_s}
+\]
+
+\subsection{Zeitmodell eines DC-Stellers}
+Induktorspannung:
+\[
+u_L(t)=u_e(t)-u_a(t)
+\]
+
+Grundbedingung im stationären Betrieb:
+\[
+\overline{u_L}=0
+\]
+
+Diese Bedingung bestimmt die Übertragungsfunktion des Wandlers.
+
+% =========================================================
+\section{Buck-Wandler (Abwärtssteller)}
+
+\subsection{Schaltzustände}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{EIN}: $u_L=U_{DC}-U_a$
+  \item \textbf{AUS}: $u_L=-U_a$
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.65\linewidth]{figures/buck_fig1.png}
+\caption{Buck-Wandler: Schaltung und Stromverlauf}
+\end{figure}
+
+\subsection{Herleitung der Übertragungsfunktion}
+\[
+\overline{u_L}=D(U_{DC}-U_a)+(1-D)(-U_a)=0
+\]
+
+\[
+\Rightarrow U_a=D\,U_{DC}
+\]
+
+\subsection*{Beispiel (symbolisch)}
+Gegeben $U_{DC}$ und Tastgrad $D$, ergibt sich die Ausgangsspannung linear proportional.
+
+\subsection*{Beispiel (numerisch)}
+\[
+U_{DC}=\SI{100}{\volt},\quad D=0.35
+\Rightarrow
+U_a=\SI{35}{\volt}
+\]
+
+\subsection{Stromripple}
+\[
+\Delta i_L=\frac{(U_{DC}-U_a)T_e}{L}
+\]
+
+\subsection*{Numerisches Beispiel}
+\[
+L=\SI{2}{\milli\henry},\quad f_s=\SI{5}{\kilo\hertz}
+\]
+
+\[
+\Delta i_L\approx\SI{3.25}{\ampere}
+\]
+
+% =========================================================
+\section{Boost-Wandler (Aufwärtssteller)}
+
+\subsection{Schaltzustände}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{EIN}: $u_L=U_{DC}$
+  \item \textbf{AUS}: $u_L=U_{DC}-U_a$
+\end{itemize}
+
+\subsection{Herleitung}
+\[
+D U_{DC}+(1-D)(U_{DC}-U_a)=0
+\]
+
+\[
+\Rightarrow U_a=\frac{U_{DC}}{1-D}
+\]
+
+\subsection*{Beispiel (symbolisch)}
+Der Ausgang wächst nichtlinear mit $D$.
+
+\subsection*{Beispiel (numerisch)}
+\[
+U_{DC}=\SI{48}{\volt},\quad D=0.6
+\Rightarrow
+U_a=\SI{120}{\volt}
+\]
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.65\linewidth]{figures/buckboost_fig1.png}
+\caption{Boost-/Buck-Boost-Steller: Schaltungskonzepte}
+\end{figure}
+
+% =========================================================
+\section{Buck-Boost-Wandler}
+
+\subsection{Übertragungsfunktion}
+\[
+U_a=-\frac{D}{1-D}U_{DC}
+\]
+
+\subsection*{Beispiel (symbolisch)}
+Negative Ausgangsspannung, Betrag abhängig von $D$.
+
+\subsection*{Beispiel (numerisch)}
+\[
+U_{DC}=\SI{24}{\volt},\quad D=0.4
+\Rightarrow
+U_a\approx-\SI{16}{\volt}
+\]
+
+% =========================================================
+\section{PWM – Pulsweitenmodulation}
+
+\subsection{Grundprinzip}
+PWM vergleicht ein Referenzsignal $r(t)$ mit einem Trägersignal $c(t)$.
+
+\[
+s(t)=
+\begin{cases}
++1,& r(t)>c(t)\\
+-1,& r(t)\le c(t)
+\end{cases}
+\]
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{figures/pwm_fig1.png}
+\caption{PWM-Grundprinzip und Signalverläufe}
+\end{figure}
+
+\subsection{Modulationsgrad}
+\[
+m=\frac{\hat{r}}{\hat{c}}
+\]
+
+\subsection*{Beispiel (numerisch)}
+\[
+\hat{r}=\SI{5}{\volt},\quad \hat{c}=\SI{10}{\volt}
+\Rightarrow m=0.5
+\]
+
+\subsection{Spektrale Struktur}
+\begin{itemize}
+  \item Grundschwingung bei $f_1$
+  \item Seitenbänder bei $n f_s \pm f_1$
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{figures/pwmharm_fig1.png}
+\caption{PWM: Harmonische und Seitenbänder}
+\end{figure}
+
+% =========================================================
+\section{Einphasiger Wechselrichter}
+
+\subsection{Ideales Modell}
+\[
+u_a(t)=U_{DC}\,s(t)
+\]
+
+\subsection{Strom bei RL-Last}
+Die Induktivität wirkt als Tiefpass:
+\begin{itemize}
+  \item Spannung stark verzerrt
+  \item Strom annähernd sinusförmig
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{figures/w1_fig1.png}
+\caption{Wechselrichter: Spannung und Strom}
+\end{figure}
+
+\subsection*{Beispiel (numerisch)}
+\[
+U_{DC}=\SI{400}{\volt},\quad f_1=\SI{50}{\hertz}
+\]
+
+Grundfrequenz des Stroms: \SI{50}{\hertz}
+
+% =========================================================
+\section{Analyse- und Entscheidungsschemata}
+
+\subsection{Zeit- vs. Frequenzbereich}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Fragestellung & Methode \\
+\hline
+Stromripple & Zeitbereich \\
+Oberwellen & Fourier \\
+Wirkleistung & Zeit/Fourier \\
+PWM-Spektrum & Frequenzbereich \\
+Stabilität & Zeitbereich \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Stabilitätsbedingung}
+\[
+x(t)=x(t+T)
+\]
+
+\subsection*{Beispiel}
+Wird diese Bedingung verletzt, wächst oder driftet der Strom über die Perioden.
+
+% =========================================================
+\section{Typische Fehlerquellen}
+
+\begin{itemize}
+  \item Mittelwert statt RMS verwendet
+  \item falsche Periodendefinition
+  \item Induktivitätswirkung ignoriert
+  \item Oberwellen falsch interpretiert
+\end{itemize}
+% =========================================================
+% BLOCK 3 – Vertiefung: Nichtidealitäten, Kommutierung, THD, Filter, CCM/DCM, PWM-Spektrum
+% =========================================================
+
+\newpage
+\section{Nichtidealitäten, Verluste und praxisnahe Modelle}
+
+\subsection{Leitverluste (vereinfachtes Modell)}
+Für Diode/IGBT/MOSFET wird oft modelliert:
+\[
+u_{on}(i) \approx U_0 + r_{on}\,i
+\]
+Leitverlustleistung (zeitlich gemittelt):
+\[
+P_{\mathrm{cond}}=\frac{1}{T}\int_0^T u_{on}(i(t))\,i(t)\,dt
+=U_0\,I_{\mathrm{AV}}+r_{on}\,I_{\mathrm{RMS}}^2
+\]
+
+\subsection*{Beispiel (symbolisch)}
+Gegeben $U_0,r_{on}$ und bekannter Stromverlauf über $I_{\mathrm{AV}}, I_{\mathrm{RMS}}$:
+\[
+P_{\mathrm{cond}}=U_0 I_{\mathrm{AV}}+r_{on} I_{\mathrm{RMS}}^2
+\]
+
+\subsection*{Beispiel (numerisch)}
+\[
+U_0=\SI{0.9}{\volt},\quad r_{on}=\SI{50}{\milli\ohm},\quad
+I_{\mathrm{AV}}=\SI{5}{\ampere},\ I_{\mathrm{RMS}}=\SI{6}{\ampere}
+\]
+\[
+P_{\mathrm{cond}}=0.9\cdot 5 + 0.05\cdot 36 = 4.5+1.8=\SI{6.3}{\watt}
+\]
+
+\subsection{Schaltverluste (Engineering-Modell)}
+Wenn pro Schaltvorgang Energien $E_{on}, E_{off}$ angegeben sind:
+\[
+P_{\mathrm{sw}} \approx f_s\,(E_{on}+E_{off})
+\]
+Optional mit Stromskalierung (Datenblatt-Approximation):
+\[
+E_{on/off}(i) \approx E_{on/off}(I_{ref})\left(\frac{i}{I_{ref}}\right)^\kappa
+\]
+
+\subsection*{Beispiel (numerisch)}
+\[
+f_s=\SI{20}{\kilo\hertz},\quad E_{on}+E_{off}=\SI{0.5}{\milli\joule}
+\Rightarrow
+P_{\mathrm{sw}}=20000\cdot 0.0005=\SI{10}{\watt}
+\]
+
+\subsection{Totzeit und Spannungsfehler (PWM)}
+Totzeit $t_d$ erzeugt effektive Spannungsreduktion und Oberwellen. Grob:
+\[
+\Delta u \propto \frac{t_d}{T_s}U_{DC}
+\]
+Konsequenz: Stromverzerrung steigt, besonders bei kleinen Strömen.
+
+% =========================================================
+\section{Kommutierung und Leitintervalle in Stromrichtern}
+
+\subsection{Leitbedingung mit Gegen-EMK (allgemein)}
+Leitung ist möglich, wenn die anliegende Spannung die Gegen-EMK übersteigt.
+Für sinusförmige Quellspannung $u(t)=\hat{U}\sin\beta$ und Gegen-EMK $E$:
+\[
+\hat{U}\sin\beta > E \quad \Leftrightarrow \quad \sin\beta > \frac{E}{\hat{U}}
+\]
+Definiere
+\[
+\beta_E = \arcsin\!\left(\frac{E}{\hat{U}}\right)
+\]
+Dann ist Leitung nur in Bereichen möglich, in denen $\beta$ diese Bedingung erfüllt.
+
+\subsection{Gesteuerte Leitung über Zündwinkel $\alpha$}
+Bei gesteuerten Gleichrichtern gilt zusätzlich: Leitung erst ab $\alpha$.
+Damit entsteht ein effektives Leitintervall:
+\[
+\beta \in [\alpha,\ \pi-\beta_E]
+\]
+Stabiler Bereich (qualitativ): es muss ein nichtleeres Intervall bleiben:
+\[
+\alpha < \pi - \beta_E
+\]
+
+\subsection*{Beispiel (numerisch)}
+\[
+\hat{U}=\SI{325}{\volt},\quad E=\SI{200}{\volt}
+\Rightarrow
+\beta_E=\arcsin(200/325)\approx 0.66\ \mathrm{rad}\approx 37.8^\circ
+\]
+Maximaler Zündwinkel für noch vorhandenes Leitintervall:
+\[
+\alpha_{\max}\approx 180^\circ-37.8^\circ=142.2^\circ
+\]
+
+% =========================================================
+\section{Verzerrungskennwerte, THD und Leistungsfaktor}
+
+\subsection{THD des Stroms}
+\[
+\mathrm{THD}_I = \frac{\sqrt{\sum_{k=2}^{\infty} I_{k,\mathrm{RMS}}^2}}{I_{1,\mathrm{RMS}}}
+\]
+
+\subsection{Zusammenhang RMS und Harmonische}
+\[
+I_{\mathrm{RMS}}^2 = \sum_{k=1}^{\infty} I_{k,\mathrm{RMS}}^2
+\Rightarrow
+\sum_{k=2}^{\infty} I_{k,\mathrm{RMS}}^2 = I_{\mathrm{RMS}}^2 - I_{1,\mathrm{RMS}}^2
+\]
+
+\subsection{Displacement Factor und Distortion Factor}
+Bei sinusförmiger Spannung:
+\[
+\lambda = \frac{P}{S} = \underbrace{\cos\varphi_1}_{\text{Verschiebungsfaktor}}
+\cdot
+\underbrace{\frac{I_{1,\mathrm{RMS}}}{I_{\mathrm{RMS}}}}_{\text{Verzerrungsfaktor}}
+\]
+
+\subsection*{Beispiel (symbolisch)}
+\[
+I_{\mathrm{RMS}}=\sqrt{I_{1,\mathrm{RMS}}^2+I_{H,\mathrm{RMS}}^2},\quad
+\lambda=\cos\varphi_1\cdot \frac{I_{1,\mathrm{RMS}}}{I_{\mathrm{RMS}}}
+\]
+
+\subsection*{Beispiel (numerisch)}
+\[
+I_{1,\mathrm{RMS}}=\SI{8}{\ampere},\quad I_{\mathrm{RMS}}=\SI{10}{\ampere},\quad \cos\varphi_1=0.9
+\]
+\[
+\lambda=0.9\cdot \frac{8}{10}=0.72
+\]
+Interpretation: guter Phasenfaktor, aber deutliche Verzerrung.
+
+% =========================================================
+\section{DC-DC-Wandler: CCM vs. DCM (vollständig)}
+
+\subsection{Definitionen}
+\textbf{CCM} (continuous conduction mode): $i_L(t)>0$ über die ganze Periode.\\
+\textbf{DCM} (discontinuous conduction mode): $i_L(t)=0$ über ein Intervall.
+
+\subsection{CCM-Bedingung (engineering)}
+Buck: Grenzfall, wenn $i_{\min}=0$. Mit Dreiecksapproximation:
+\[
+I_{L,\mathrm{AV}} = I_o,\qquad \Delta i_L \approx \frac{(U_{DC}-U_a)D T_s}{L}
+\]
+CCM, wenn:
+\[
+I_o > \frac{\Delta i_L}{2}
+\]
+
+\subsection*{Beispiel (numerisch)}
+\[
+U_{DC}=\SI{100}{\volt},\ U_a=\SI{50}{\volt},\ D=0.5,\ f_s=\SI{10}{\kilo\hertz},\ L=\SI{1}{\milli\henry}
+\]
+\[
+\Delta i_L \approx \frac{(100-50)\cdot 0.5 \cdot 1/10000}{0.001}
+= \frac{50\cdot 0.00005}{0.001}=\SI{2.5}{\ampere}
+\]
+\[
+\frac{\Delta i_L}{2}=\SI{1.25}{\ampere}
+\Rightarrow \text{CCM wenn } I_o>1.25\ \mathrm{A}
+\]
+
+\subsection{Ausgangsripple (Kapazität, Dreiecksstrom)}
+Wenn Kondensatorstrom näherungsweise dreiecksförmig ist:
+\[
+\Delta u_a \approx \frac{\Delta i_L}{8 f_s C}
+\]
+(typische Buck-Approximation im CCM)
+
+\subsection*{Beispiel (numerisch)}
+\[
+\Delta i_L=\SI{2.5}{\ampere},\ f_s=\SI{10}{\kilo\hertz},\ C=\SI{100}{\micro\farad}
+\]
+\[
+\Delta u_a \approx \frac{2.5}{8\cdot 10000\cdot 100\cdot 10^{-6}}
+=\frac{2.5}{8}\approx \SI{0.3125}{\volt}
+\]
+
+% =========================================================
+\section{Filtergrundlagen (LC / RL als Tiefpass)}
+
+\subsection{Einfaches RL-Tiefpassverhalten}
+Für eine Induktivität in Serie und betrachtete Stromglättung:
+\[
+Z_L=j\omega L,\quad Z_R=R
+\]
+Stromamplitude (bei Spannungsharmonischer $\hat{U}_k$):
+\[
+\hat{I}_k=\frac{\hat{U}_k}{\sqrt{R^2+(\omega_k L)^2}}
+\]
+Damit gilt: höhere Frequenzen werden stärker gedämpft.
+
+\subsection*{Beispiel (numerisch)}
+\[
+R=\SI{10}{\ohm},\ L=\SI{20}{\milli\henry}
+\]
+Für $f_1=\SI{50}{\hertz}$:
+\[
+\omega_1 L = 2\pi 50\cdot 0.02 \approx 6.28\ \Omega
+\]
+Für $f_{sw}=\SI{5}{\kilo\hertz}$:
+\[
+\omega_{sw}L = 2\pi 5000\cdot 0.02 \approx 628\ \Omega
+\]
+Interpretation: Schaltoberschwingungen werden im Strom massiv unterdrückt.
+
+% =========================================================
+\section{PWM-Spektrum: strukturierte Herleitung (prüfungsrelevant)}
+
+\subsection{Grundidee}
+PWM erzeugt Linien um die Trägerfrequenz $f_s$ und ihre Vielfachen, moduliert durch $f_1$:
+\[
+f = n f_s \pm m f_1,\quad n\in\mathbb{N}
+\]
+Im Idealfall wird die Grundschwingung gezielt eingestellt, während Oberwellen in höhere Frequenzbereiche verschoben werden.
+
+\subsection{Auflösung / Zeitschritt und Oberwellen}
+Wenn das PWM-Signal diskret erzeugt wird mit $N$ Schritten pro Periode:
+\[
+\Delta t = \frac{T}{N}
+\]
+Kleinere $\Delta t$ reduziert Quantisierungseffekte, damit weniger niederfrequente Verzerrung.
+
+% =========================================================
+\section{Zusätzliche Schaltungstopologien (Referenzbilder)}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{figures/m1u_fig1.png}
+\caption{Referenz: ungesteuerte Gleichrichtung (Grafik-Ausschnitt)}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{figures/b2u_fig1.png}
+\caption{Referenz: B2U-Topologie und Spektralidee (Grafik-Ausschnitt)}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{figures/b2u_fig2.png}
+\caption{Referenz: zusätzliche B2U-Detailgrafik (Grafik-Ausschnitt)}
+\end{figure}
+
+% =========================================================
+\section{Mathematik-Toolkit (Erweiterung)}
+
+\subsection{Produkt-zu-Summe (für Fourier-Integrale)}
+\[
+\sin x\cos y=\frac{1}{2}\left[\sin(x+y)+\sin(x-y)\right]
+\]
+\[
+\sin x\sin y=\frac{1}{2}\left[\cos(x-y)-\cos(x+y)\right]
+\]
+\[
+\cos x\cos y=\frac{1}{2}\left[\cos(x-y)+\cos(x+y)\right]
+\]
+
+\subsection{Typische Integrale in der Leistungselektronik}
+\[
+\int_{\alpha}^{\pi}\sin^2\beta\,d\beta=\frac{\pi-\alpha}{2}+\frac{\sin(2\alpha)}{4}
+\]
+\[
+\int_{\alpha}^{\pi}\sin\beta\,d\beta=\cos\alpha+1
+\]
+\[
+\int e^{-t/\tau}\,dt=-\tau e^{-t/\tau}
+\]
+
+
+\end{document}
