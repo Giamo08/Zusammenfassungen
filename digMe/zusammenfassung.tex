@@ -11,8 +11,9 @@
 \usepackage{caption}    % für \captionof
 \usepackage{qrcode}
 \usepackage{hyperref}
+\raggedbottom
 
-
+\usepackage{placeins}
 % --- Sprache / Text ---
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -136,13 +137,6 @@
 
 \begin{multicols}{3}
 
-\maketitle
-\begin{center}
-\vspace{1em}
-
-
-\href{https://github.com/Giamo08/Zusammenfassungen}{\texttt{github.com/Giamo08/Zusammenfassungen}}
-\end{center}
 % ============================================================
 \section{SoC-Grundlagen und Design Flow}
 
@@ -179,6 +173,7 @@ Die PL stellt folgende Kernressourcen bereit:
 \end{itemize}
 Diese Ressourcen ermöglichen hochparallele,
 \hilite{datenpfadorientierte} Implementierungen.
+main Challenges: HW/SW Partitioning, Timing Closure bei hoher Integration, Verifikation über Hardware und Software, Tool- und Design-Flow-Komplexität.
 
 
 % ============================================================
@@ -226,13 +221,12 @@ Physikalische Constraints definieren die Abbildung logischer Ports auf physische
   \item Pull-Ups, Pull-Downs
 \end{itemize}
 
-\subsubsection*{\textcolor{codeemph}{Vorgehensschema (Prüfung)}}
-\begin{enumerate}
-  \item Signalrichtung bestimmen
-  \item Spannung bestimmen $\rightarrow$ \texttt{IOSTANDARD}
-  \item Pin zuordnen $\rightarrow$ \texttt{PACKAGE\_PIN}
-  \item Reset? $\rightarrow$ \texttt{PULLUP true}
-\end{enumerate}
+\paragraph{Pad-Typen (Prüfung)}
+\begin{itemize}
+  \item Single-Ended Pads (z.B. LVCMOS)
+  \item Differenzielle Pads (z.B. LVDS)
+\end{itemize}
+
 
 \subsubsection*{XDC-Code-Schablone}
 \begin{lstlisting}[style=xdc,emph={set_property,get_ports,PACKAGE_PIN,IOSTANDARD,PULLUP},emphstyle=\bfseries\color{codeemph}]
@@ -525,209 +519,240 @@ Gute \hilite{Wiederverwendung} entsteht durch klare Schnittstellen, Generics und
 \section{\hilite{Fixed Point} Arithmetic}
 
 \subsection{Motivation und Problemstellung}
-Reale Zahlen treten in digitalen Systemen häufig auf, können jedoch in Hardware nicht direkt verarbeitet werden.  
-Fixed-Point-Arithmetik ermöglicht eine effiziente Approximation reeller Werte mit endlicher Wortlänge.
+Reale Zahlen können in Hardware nicht direkt verarbeitet werden.  
+\hilite{Fixed-Point-Arithmetik} approximiert reelle Werte mit endlicher Wortlänge.
 
 \imp{Merksatz (Prüfung):}  
-Bei \hilite{Fixed Point} ist der Entwickler verantwortlich für \hilite{Skalierung}, \hilite{Wortlänge} und Überlauf.
+Bei \hilite{Fixed Point} ist der Entwickler verantwortlich für \hilite{Skalierung}, \hilite{Wortlänge} und \hilite{Überlauf}.
+
+%------------------------------------------------
 
 \subsection{Fixed-Point Formate und Bitwachstum (Prüfungsformeln)}
 
-\textbf{Qn.m-Notation:}
+\textbf{Qn.m-Notation}
 \begin{itemize}
-  \item $n$: Anzahl Integer-Bits (inkl. Vorzeichen bei signed)
-  \item $m$: Anzahl Fractional-Bits
+  \item $n$: Integer-Bits (inkl. Vorzeichen bei signed)
+  \item $m$: Fractional-Bits
 \end{itemize}
 
-\textbf{Auflösung:}
+\textbf{Auflösung}
 \[
 \Delta = 2^{-m}
 \]
 
-\textbf{Wertebereich:}
+\textbf{Wertebereich}
 \[
 uQn.m = [0,\; 2^n - 2^{-m}]
-\]
-\[
+\qquad
 sQn.m = [-2^{n-1},\; 2^{n-1} - 2^{-m}]
 \]
 
-\pcentral{Formatregeln (prüfungsentscheidend).}
-
-\prule{Addition/Subtraktion:}
-\[
-Q(n_1.m_1) + Q(n_2.m_2)
-= Q(\max(n_1,n_2)+1).\max(m_1,m_2)
-\]
-\textit{(+1 Bit = \hilite{Guard Bit} gegen Überlauf)}
-
-\prule{Multiplikation:}
-\[
-Q(n_1.m_1) \cdot Q(n_2.m_2)
-= Q(n_1+n_2).(m_1+m_2)
-\]
-
-\pmerke{%
-Bei signed $\times$ signed entsteht ein \hilite{redundantes Vorzeichenbit}, das meist entfernt werden kann.
-}
+%------------------------------------------------
 
 \subsection{Ganzzahl- und Zweierkomplement-Darstellung}
-Binäre Ganzzahlen werden als unsigned oder signed (Zweierkomplement) interpretiert.
 
-Für $n$ Bit gilt:
+Für $n$ Bit:
 \begin{itemize}
   \item Unsigned: $[0, 2^n - 1]$
   \item Signed: $[-2^{n-1}, 2^{n-1}-1]$
 \end{itemize}
 
 \imp{Prüfungsregel:}  
-Das \hilite{Bitmuster} ist \hilite{identisch}, nur der Typ \hilite{bestimmt} die Interpretation.
+\hilite{Bitmuster identisch}, nur der \hilite{Typ} bestimmt die Interpretation.
+
+%------------------------------------------------
 
 \subsection{Fixed-Point-Zahlendarstellung (Qn.m)}
-Fixed-Point-Zahlen besitzen einen impliziten Dezimalpunkt.  
-$n$ Bits repräsentieren den ganzzahligen Anteil, $m$ Bits den fractional Anteil.
+Fixed-Point-Zahlen besitzen einen impliziten Dezimalpunkt.
 
-Notation:
 \begin{itemize}
   \item \textbf{uQn.m}: unsigned
   \item \textbf{sQn.m}: signed
 \end{itemize}
 
-\subsubsection*{Auflösung und Wertebereich}
-\[
-\Delta = 2^{-m}
-\]
-
-\begin{itemize}
-  \item $uQn.m = [0, 2^n - 2^{-m}]$
-  \item $sQn.m = [-2^{n-1}, 2^{n-1} - 2^{-m}]$
-\end{itemize}
+%------------------------------------------------
 
 \subsection{Skalierung und Typkonvertierung}
-Reale Zahlen werden durch Skalierung in Fixed Point überführt.
 
-\subsubsection*{\textcolor{codeemph}{Prüfungsformeln}}
+\textcolor{codeemph}{Prüfungsformeln}
 \[
 \text{Fixed} = \lfloor \text{Real} \cdot 2^m \rfloor
-\]
-\[
+\qquad
 \text{Real} = \text{Fixed} \cdot 2^{-m}
 \]
 
 \imp{Prüfungsregel:}  
-Ohne \hilite{explizite} \hilite{Typkonvertierung} keine \hilite{Arithmetik} in VHDL.
+Ohne \hilite{explizite Typkonvertierung} keine \hilite{Arithmetik} in VHDL.
+
+%------------------------------------------------
 
 \subsection{fixed\_pkg vs. klassische Umsetzung}
-Die Bibliothek \texttt{fixed\_pkg} (VHDL-2008) bietet:
+
+\texttt{fixed\_pkg} bietet:
 \begin{itemize}
   \item Automatisches Alignment
   \item Guard Bits
-  \item Kontrollierte Rundung und Sättigung
+  \item Rundung und Sättigung
 \end{itemize}
 
 \imp{Prüfungsfokus:}  
-\hilite{Prüfungen} \hilite{verlangen} \hilite{meist} die klassische Umsetzung ohne \texttt{fixed\_pkg}.
+Prüfungen verlangen meist klassische Umsetzung ohne \texttt{fixed\_pkg}.
+
+%------------------------------------------------
 
 \subsection{Addition und Subtraktion}
 
-\subsubsection*{\textcolor{codeemph}{Formatregel (Prüfung)}}
+\textcolor{codeemph}{Formatregel (Prüfung)}
 \[
 Q(n_1.m_1) + Q(n_2.m_2)
 = Q(\max(n_1,n_2)+1).\max(m_1,m_2)
 \]
 
-Das zusätzliche Bit ist ein \textbf{Guard Bit}.
-
-\subsubsection*{Vorgehen ohne fixed\_pkg}
+\textbf{Vorgehen ohne fixed\_pkg}
 \begin{enumerate}
   \item Fractional Bits angleichen
-  \item Vorzeichenerweiterung
-  \item Addition
-  \item Optional: Abschneiden
+  \item Vorzeichenerweitern
+  \item Addieren
+  \item Optional: Trunkieren/Runden
 \end{enumerate}
 
-
-
-\subsubsection*{Additions-Code-Schablone}
-\begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}][emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}]
-A_ext <= signed(A) sll 1;
+\textbf{Additions-Code-Schablone}
+\begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},
+                   emphstyle=\bfseries\color{codeemph}]
+A_ext <= signed(A) sll 1; -- Guard Bit
 B_ext <= signed(B);
 Y_ext <= A_ext + B_ext;
 \end{lstlisting}
 
 \imp{Prüfungsregel:}  
-\hilite{Addition} \hilite{scheitert} meist an fehlendem \hilite{Guard Bit}.
+\hilite{Fehlende Guard Bits} = häufigste Fehlerquelle.
+
+%------------------------------------------------
 
 \subsection{Multiplikation}
 
-\subsubsection*{Formatregel}
+\textcolor{codeemph}{Formatregel}
 \[
 Q(n_1.m_1) \cdot Q(n_2.m_2)
 = Q(n_1+n_2).(m_1+m_2)
 \]
 
-Bei signed $\times$ signed entsteht ein redundantes Vorzeichenbit:
+Signed $\times$ signed:
 \[
 Q(n_1+n_2-1).(m_1+m_2)
 \]
 
-\subsubsection*{Multiplikations-Code-Schablone}
-\begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}]
-P <= signed(A) * signed(B);
+\textbf{Multiplikations-Code-Schablone}
+\begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},
+                   emphstyle=\bfseries\color{codeemph}]
+P_ext <= signed(A) * signed(B);
 \end{lstlisting}
 
 \imp{Prüfungsregel:}  
-\hilite{Nach} der \hilite{Multiplikation} sind \hilite{fast} immer zu viele Bits vorhanden.
-Ohne \texttt{fixed\_pkg} (Prüfung):
-Skalieren → Vorzeichenerweitern → Rechnen → Trunk./Round → Slice
-Merksatz: Fehlerquelle Nr.1 = fehlendes Guard Bit.
+Nach der Multiplikation sind \hilite{meist zu viele Bits} vorhanden.
 
-\textbf{Fixed-Point Workflow (ohne fixed\_pkg)}
+\textbf{Typischer Fixed-Point-Workflow}
 \begin{lstlisting}
--- scale
-A_s <= signed(A) sll m;
-
--- sign extend + guard bit
-A_ext <= A_s(A_s'left) & A_s;
-
--- compute
-P_ext <= A_ext * B_ext;
-
--- truncate / round
-Y <= P_ext(H downto L);
+Scale -> Sign-Extend + Guard -> Compute -> Truncate/Round -> Slice
 \end{lstlisting}
 
+%------------------------------------------------
 
 \subsection{Überlauf, Rundung und Sättigung}
-Mögliche Effekte:
+
 \begin{itemize}
-  \item Wrap-Around (Überlauf)
+  \item Wrap-Around
   \item Sättigung
   \item Trunkierung
   \item Rundung
 \end{itemize}
 
 \imp{Prüfungsfokus:}  
-\hilite{Trunkierung} und \hilite{Rundung} \hilite{unterscheiden} können.
+\hilite{Trunkierung vs. Rundung} sicher unterscheiden.
 
+%------------------------------------------------
+
+\subsection{Rechenbeispiel: Bitmuster, Fixed Point und Skalierung}
+
+\textbf{Gegeben:}
+\begin{lstlisting}
+value = "11100111"
+\end{lstlisting}
+
+\textbf{a) unsigned(7 downto 0)}
+\[
+11100111_2 = 2^7+2^6+2^5+2^2+2^1+2^0 = 231
+\]
+
+\textbf{b) signed(7 downto 0)}
+\[
+231 - 2^8 = -25
+\]
+
+\textbf{c) ufixed(2 downto -5)}
+\[
+\Delta = 2^{-5}, \quad
+x = 231 \cdot 2^{-5} = \frac{231}{32} = 7.21875
+\]
+
+\textbf{d) sfixed(2 downto -5)}
+\[
+x = (-25) \cdot 2^{-5} = \frac{-25}{32} = -0.78125
+\]
+
+%------------------------------------------------
+\subsection{Rechenbeispiel: Real $\rightarrow$ sQ4.4}
+
+\textbf{Gegeben:}
+\[
+B = 5.59375, \quad m=4
+\]
+
+\textbf{Skalieren:}
+\[
+5.59375 \cdot 2^4 = 89.5
+\]
+
+\begin{center}
+\begin{tabular}{p{0.45\linewidth} p{0.45\linewidth}}
+\textbf{Truncate} & \textbf{Round} \\[0.5ex]
+\hline \\[-1.5ex]
+
+$I_{\text{trunc}} = \lfloor 89.5 \rfloor = 89$ &
+$I_{\text{round}} = \lfloor 89.5 + 0.5 \rfloor = 90$ \\[1ex]
+
+$89_{10} = 01011001_2$ &
+$90_{10} = 01011010_2$ \\[1ex]
+
+$\texttt{b\_sfixed} = 01011001$ &
+$\texttt{b\_sfixed} = 01011010$ \\[1ex]
+
+$89 \cdot 2^{-4} = 5.5625$ &
+$90 \cdot 2^{-4} = 5.625$
+\end{tabular}
+\end{center}
+
+%------------------------------------------------
 \subsection{FIR-Filter (Prüfungsrelevanz)}
+
 \begin{itemize}
   \item Multiplikation erzeugt Bitwachstum
   \item Akkumulation benötigt Guard Bits
 \end{itemize}
 
+%------------------------------------------------
 
 \subsection{Systematische Wortlängenplanung}
-Effiziente Fixed-Point-Systeme erfordern:
+
 \begin{itemize}
-  \item Analyse der Wertebereiche
+  \item Wertebereich analysieren
   \item Konsistente Q-Formate
-  \item Kontrollierte Guard Bits
+  \item Guard Bits gezielt einsetzen
 \end{itemize}
 
 \imp{Abschluss-Merksatz:}  
-\hilite{Fixed Point} ist \hilite{kontrollierter} Fehler. Gute Planung schlägt hohe \hilite{Wortlänge}.
-
+\hilite{Fixed Point} ist \hilite{kontrollierter Fehler}.  
+Planung schlägt Wortlänge.
 
 % ============================================================
 \section{Custom IP Blocks: Memory}
@@ -909,11 +934,26 @@ ROM unterscheidet sich von RAM nur durch konstante Inhalte.
 \subsubsection*{ROM – Code-Schablone}
 \begin{lstlisting}[emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}][emph={entity,architecture,process,rising_edge,signal,constant,generic,port},emphstyle=\bfseries\color{codeemph}]
 type rom_t is array (0 to 15) of std_logic_vector(7 downto 0);
-constant rom : rom_t := (
+constant rom : rom_t := (   -- manuelle Initialisierung
   0 => x"12",
   1 => x"34",
   others => x"00"
 );
+-- oder dateibasierte Initialisierung
+impure function init_mem(mif_file_name : string) return rom_t is
+  file mif_file : text open read_mode is mif_file_name;
+  variable mif_line : line;
+  variable temp_bv  : bit_vector (7 downto 0);
+  variable temp_mem : rom_t;
+begin
+  for i in 0 to rom_t'range loop
+    readline(mif_file, mif_line);
+    read(mif_line, temp_bv);
+    temp_mem(i) := std_logic_vector(temp_bv);
+  end loop;
+  return temp_mem;
+end function;
+constant rom : rom_t := init_mem("my_file.mif");
 \end{lstlisting}
 
 \subsection{Speicherinitialisierung}
@@ -957,6 +997,9 @@ für die Software-Toolchain.
 Software (BSP, Treiber, Applikation) greift über
 memory-mapped Register auf die FPGA-Logik zu.
 \end{quote}
+\paragraph{IP Life Cycle (Prüfung)}
+Design $\rightarrow$ Verifikation $\rightarrow$ Packaging $\rightarrow$ Integration $\rightarrow$ Reuse
+
 
 % ============================================================
 \section{Serial Communication Interfaces}
@@ -1043,11 +1086,7 @@ Eigenschaften:
   \item Clock Phase (CPHA)
 \end{itemize}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{fig/L6_spi_topology.png}
-  \caption{SPI-Topologien, Signale und Master-Slave-Prinzip.}
-\end{figure}
+
 
 \subsection{SPI-Hardwarestruktur}
 SPI besteht aus Shiftregistern, Clock-Divider und FSM.
@@ -1067,6 +1106,12 @@ Eigenschaften:
   \item Multi-Master, Multi-Slave
   \item Open-Drain
 \end{itemize}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{fig/L6_spi_topology.png}
+  \caption{SPI-Topologien, Signale und Master-Slave-Prinzip.}
+\end{figure}
+\FloatBarrier
 
 \subsection{I\textsuperscript{2}C (Prüfungsrelevanz)}
 \begin{itemize}
@@ -1081,8 +1126,34 @@ Open-Drain in VHDL:
 sda <= '0' when drive_low='1' else 'Z';
 \end{lstlisting}
 
-\subsection{UART (Einordnung)}
-UART ist eine asynchrone Punkt-zu-Punkt-Schnittstelle mit Start/Stop-Bits und hat keine gemeinsame clocks.
+\subsection{UART (Asynchrone serielle Schnittstelle)}
+
+UART ist eine \textbf{asynchrone} Punkt-zu-Punkt Schnittstelle ohne gemeinsame Clock.
+Die Übertragung erfolgt rahmenbasiert:
+Startbit (0), 8 Datenbits (LSB first), optional Parity, Stopbit (1). Typisch: 8N1.
+
+\paragraph{Timing / Baudrate}
+Die Bitzeit beträgt $T_b = 1/\text{baud}$.
+In synchroner Logik wird ein Baud-Tick über einen Clock-Teiler erzeugt:
+\[
+\text{BAUD\_DIV} = \left\lfloor \frac{f_\text{clk}}{\text{baud}} \right\rfloor
+\]
+
+\paragraph{Sender (TX)}
+TX wird mit einer FSM und einem Shiftregister realisiert:
+IDLE (Leitung high) $\rightarrow$ START $\rightarrow$ DATA (8 Bits) $\rightarrow$ STOP.
+Pro Baud-Tick wird ein Bit ausgegeben.
+
+\paragraph{Empfänger (RX)}
+RX erkennt das Startbit (fallende Flanke) und sampelt jedes Bit in der Bitmitte
+(optional mit Oversampling). Nach korrektem Stopbit wird \texttt{rx\_valid} gesetzt.
+\paragraph{Prüfungsregel}
+RX-Sampling muss in der Bitmitte erfolgen; andernfalls steigt die Bitfehlerrate deutlich an.
+
+\paragraph{Prüfungsmerksätze}
+UART ist asynchron. Timing entsteht aus dem Baud-Teiler.
+Daten werden LSB first übertragen.
+Implementierung erfolgt mit FSM + Shiftregister.
 
 % ============================================================
 \section{Parallel On-Chip Communication}
@@ -1461,20 +1532,20 @@ In SoCs ist gekoppeltes Debugging möglich.
 \begin{lstlisting}[style=xdc,language={},emph={set_property,IOSTANDARD,PACKAGE_PIN,PULLUP,create_clock,set_input_delay,set_output_delay,get_ports,get_clocks},emphstyle=\bfseries\color{codeemph}]
 ## Physical constraints
 set_property IOSTANDARD LVCMOS33 [get_ports {clk rst}]
-set_property PACKAGE_PIN W17    [get_ports clk]
-set_property PACKAGE_PIN W20    [get_ports rst]
-set_property PULLUP true        [get_ports rst]
+set_property PACKAGE_PIN W17      [get_ports clk]
+set_property PACKAGE_PIN W20      [get_ports rst]
+set_property PULLUP true          [get_ports rst]
 
-## Clock
-create_clock -period 5.0 [get_ports clk]
+## Clock (waveform)
+create_clock -name clk -period 10.000 -waveform {7.000 10.000} [get_ports clk]
 
-## Input delays
-set_input_delay  -clock clk -min 1.0 [get_ports x[*]]
-set_input_delay  -clock clk -max 2.5 [get_ports x[*]]
+## Input delays ( relative to clk, bundle x[*])
+set_input_delay -clock [get_clocks clk] -min -add_delay 1.000 [get_ports {x[*]}]
+set_input_delay -clock [get_clocks clk] -max -add_delay 2.500 [get_ports {x[*]}]
 
-## Output delays
-set_output_delay -clock clk -min 0.5 [get_ports y[*]]
-set_output_delay -clock clk -max 2.0 [get_ports y[*]]
+## Output delays (keep as generic placeholders)
+# set_output_delay -clock [get_clocks clk] -min 0.5 [get_ports {y[*]}]
+# set_output_delay -clock [get_clocks clk] -max 2.0 [get_ports {y[*]}]
 \end{lstlisting}
 
 \subsection{VHDL: Simple Dual Port RAM (Block RAM inference)}
@@ -1528,9 +1599,6 @@ end architecture;
 
 \subsection{VHDL: I2C Open-Drain (one wire)}
 \begin{lstlisting}[language=VHDL,emph={inout,'Z',process},emphstyle=\bfseries\color{codeemph}]
-library ieee;
-use ieee.std_logic_1164.all;
-
 entity i2c_line is
   port(
     sda      : inout std_logic;
@@ -1549,89 +1617,110 @@ end architecture;
 
 \subsection{VHDL: AXI4-Lite Registerbank (minimal)}
 \begin{lstlisting}[language=VHDL,emph={AWVALID,AWREADY,WVALID,WREADY,BVALID,BREADY,ARVALID,ARREADY,RVALID,RREADY,ADDR,WDATA,RDATA,process,rising_edge},emphstyle=\bfseries\color{codeemph}]
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+-- AXI4-Lite Registerbank (Exam-Minimal, 1-cycle ready, no stalls)
+-- Idea: regs[] memory-mapped, addr word-aligned: addr(5 downto 2)
 
-entity axi_lite_regs is
-  generic(ADDR_W : positive := 6); -- byte address width
-  port(
-    aclk    : in  std_ulogic;
-    aresetn : in  std_ulogic;
+type regfile_t is array (0 to 7) of std_ulogic_vector(31 downto 0);
+signal regs  : regfile_t := (others => (others => '0'));
+signal widx  : integer range 0 to 7;
+signal ridx  : integer range 0 to 7;
 
-    -- Write address
-    awvalid : in  std_ulogic;
-    awready : out std_ulogic;
-    awaddr  : in  std_ulogic_vector(ADDR_W-1 downto 0);
+widx <= to_integer(unsigned(awaddr(5 downto 2)));
+ridx <= to_integer(unsigned(araddr(5 downto 2)));
 
-    -- Write data
-    wvalid  : in  std_ulogic;
-    wready  : out std_ulogic;
-    wdata   : in  std_ulogic_vector(31 downto 0);
+awready <= '1';  wready <= '1';  arready <= '1';  -- always ready (no backpressure)
 
-    -- Write response
-    bvalid  : out std_ulogic;
-    bready  : in  std_ulogic;
-
-    -- Read address
-    arvalid : in  std_ulogic;
-    arready : out std_ulogic;
-    araddr  : in  std_ulogic_vector(ADDR_W-1 downto 0);
-
-    -- Read data
-    rvalid  : out std_ulogic;
-    rready  : in  std_ulogic;
-    rdata   : out std_ulogic_vector(31 downto 0)
-  );
-end entity;
-
-architecture rtl of axi_lite_regs is
-  type regfile_t is array (0 to 7) of std_ulogic_vector(31 downto 0);
-  signal regs : regfile_t := (others => (others => '0'));
-
-  signal aw_hs, w_hs, ar_hs : std_ulogic;
-  signal wr_addr_idx, rd_addr_idx : integer range 0 to 7;
+process(aclk)
 begin
-  wr_addr_idx <= to_integer(unsigned(awaddr(5 downto 2))); -- word aligned
-  rd_addr_idx <= to_integer(unsigned(araddr(5 downto 2)));
+  if rising_edge(aclk) then
+    if aresetn='0' then
+      regs   <= (others => (others => '0'));
+      bvalid <= '0';
+      rvalid <= '0';
+      rdata  <= (others => '0');
+    else
+      -- clear responses when accepted
+      if bvalid='1' and bready='1' then bvalid <= '0'; end if;
+      if rvalid='1' and rready='1' then rvalid <= '0'; end if;
 
-  awready <= '1';
-  wready  <= '1';
-  arready <= '1';
+      -- WRITE: accept when AW+W valid in same cycle (minimal)
+      if (awvalid='1') and (wvalid='1') then
+        regs(widx) <= wdata;
+        bvalid <= '1';
+      end if;
 
-  aw_hs <= awvalid and awready;
-  w_hs  <= wvalid  and wready;
-  ar_hs <= arvalid and arready;
-
-  p_axi : process(aclk)
-  begin
-    if rising_edge(aclk) then
-      if aresetn = '0' then
-        regs   <= (others => (others => '0'));
-        bvalid <= '0';
-        rvalid <= '0';
-        rdata  <= (others => '0');
-      else
-        -- default: clear responses when accepted
-        if bvalid = '1' and bready = '1' then bvalid <= '0'; end if;
-        if rvalid = '1' and rready = '1' then rvalid <= '0'; end if;
-
-        -- write: accept address+data in same cycle (minimal model)
-        if (aw_hs = '1') and (w_hs = '1') then
-          regs(wr_addr_idx) <= wdata;
-          bvalid <= '1';
-        end if;
-
-        -- read: respond on address handshake
-        if ar_hs = '1' then
-          rdata  <= regs(rd_addr_idx);
-          rvalid <= '1';
-        end if;
+      -- READ: respond immediately on AR valid (minimal)
+      if (arvalid='1') then
+        rdata  <= regs(ridx);
+        rvalid <= '1';
       end if;
     end if;
-  end process;
-end architecture;
+  end if;
+end process;
+
 \end{lstlisting}
+\subsection*{UART TX – Minimal Code Skeleton}
+
+
+
+\begin{lstlisting}[language=VHDL,emph={generic,CLK_HZ,BAUD,process,rising_edge,signal,constant},emphstyle=\bfseries\color{codeemph}]
+-- UART TX: Baud + FSM in einem Prozess (Exam-Minimal)
+-- generics: CLK_HZ, BAUD
+
+type state_t is (IDLE, START, DATA, STOP);
+signal state : state_t := IDLE;
+
+constant BAUD_DIV : integer := CLK_HZ / BAUD;
+signal cnt      : integer range 0 to BAUD_DIV-1 := 0;
+signal bit_idx  : integer range 0 to 7 := 0;
+signal shreg    : std_logic_vector(7 downto 0);
+
+process(clk)
+begin
+  if rising_edge(clk) then
+    -- Baud tick
+    if cnt = BAUD_DIV-1 then
+      cnt <= 0;
+
+      case state is
+        when IDLE =>
+          tx <= '1';
+          if tx_start='1' then
+            shreg <= tx_data;
+            bit_idx <= 0;
+            state <= START;
+          end if;
+
+        when START =>
+          tx <= '0';
+          state <= DATA;
+
+        when DATA =>
+          tx <= shreg(0);
+          shreg <= '0' & shreg(7 downto 1);
+          if bit_idx=7 then
+            state <= STOP;
+          else
+            bit_idx <= bit_idx + 1;
+          end if;
+
+        when STOP =>
+          tx <= '1';
+          state <= IDLE;
+      end case;
+
+    else
+      cnt <= cnt + 1;
+    end if;
+  end if;
+end process;
+
+\end{lstlisting}
+
+\vspace{-6pt}
+\textbf{Merksatz (Prüfung):}
+UART ist asynchron. Timing entsteht aus dem Baud-Teiler.
+Implementierung: FSM + Shiftregister.
 
 \subsection{Exam Code Patterns (Fixed Point \& Package)}
 
@@ -1706,47 +1795,6 @@ if rst='1' then
 elsif rising_edge(clk) then
   q <= d;
 end if;
-\end{lstlisting}
-\textbf{Kombinatorischer Prozess (vollständig)}
-\begin{lstlisting}
-process(a,b,sel)
-begin
-  y <= a; -- default
-  if sel='1' then
-    y <= b;
-  end if;
-end process;
-\end{lstlisting}
-\textbf{FSM – Exam Template (Moore)}
-\begin{lstlisting}
-type state_t is (IDLE, RUN, DONE);
-signal state, state_n : state_t;
-
--- state register
-process(clk)
-begin
-  if rising_edge(clk) then
-    if rst='1' then
-      state <= IDLE;
-    else
-      state <= state_n;
-    end if;
-  end if;
-end process;
-
--- next state + output logic
-process(state, start)
-begin
-  state_n <= state;
-  case state is
-    when IDLE =>
-      if start='1' then state_n <= RUN; end if;
-    when RUN =>
-      state_n <= DONE;
-    when DONE =>
-      state_n <= IDLE;
-  end case;
-end process;
 \end{lstlisting}
 
 \textbf{Clock Enable vs. Gated Clock}

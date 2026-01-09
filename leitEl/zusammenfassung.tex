@@ -8,6 +8,34 @@
 \usepackage{booktabs}
 \usepackage{siunitx}
 \usepackage{hyperref}
+\usepackage{qrcode}
+\usepackage{pgfpages}
+\pgfpagesuselayout{2 on 1}[a4paper,landscape,border shrink=5mm]
+% ================= COLOR SCHEME =================
+\usepackage[dvipsnames]{xcolor}
+
+% Semantic colors (consistent, print-friendly)
+\definecolor{FormulaBlue}{HTML}{1F4E79}
+\definecolor{BegriffGreen}{HTML}{2E7D32}
+\definecolor{HinweisOrange}{HTML}{B45309}
+\definecolor{LinkBlue}{HTML}{0B5394}
+
+% Default coloring for all math (inline + display)
+\everymath{\color{FormulaBlue}}
+\everydisplay{\color{FormulaBlue}}
+
+% Macros for manual emphasis (use these in the content)
+\newcommand{\formel}[1]{{\color{FormulaBlue}#1}}
+\newcommand{\begriff}[1]{{\color{BegriffGreen}\textbf{#1}}}
+\newcommand{\hinweis}[1]{{\color{HinweisOrange}\textit{#1}}}
+
+% Make links readable and consistent
+\hypersetup{
+  colorlinks=true,
+  linkcolor=LinkBlue,
+  urlcolor=LinkBlue,
+  citecolor=LinkBlue
+}
 \geometry{margin=2.5cm}
 
 \setlength{\parindent}{0pt}
@@ -16,9 +44,18 @@
 \begin{document}
 
 \begin{center}
-{\LARGE \textbf{Leistungselektronik}}\\
+{\LARGE \begriff{Leistungselektronik}}\\
 {\large Systematische Formelsammlung}\\
 {\small Theorie, Herleitungen und Beispielrechnungen}
+\end{center}
+\begin{center}
+\vspace{1em}
+
+\qrcode[height=2.5cm]{https://github.com/Giamo08/Zusammenfassungen}
+
+\vspace{0.3em}
+
+\href{https://github.com/Giamo08/Zusammenfassungen}{\texttt{github.com/Giamo08/Zusammenfassungen}}
 \end{center}
 
 \tableofcontents
@@ -92,12 +129,12 @@ Die Zeitbereichsanalyse erfolgt stückweise:
 
 \subsection{Schaltintervalle einer RL-Last}
 
-\textbf{Einschaltintervall:}
+\begriff{Einschaltintervall:}
 \[
 U_{DC}=Ri(t)+L\frac{di}{dt}
 \]
 
-\textbf{Ausschaltintervall:}
+\begriff{Ausschaltintervall:}
 \[
 0=Ri(t)+L\frac{di}{dt}
 \]
@@ -293,8 +330,8 @@ Diese Bedingung bestimmt die Übertragungsfunktion des Wandlers.
 
 \subsection{Schaltzustände}
 \begin{itemize}[leftmargin=*]
-  \item \textbf{EIN}: $u_L=U_{DC}-U_a$
-  \item \textbf{AUS}: $u_L=-U_a$
+  \item \begriff{EIN}: $u_L=U_{DC}-U_a$
+  \item \begriff{AUS}: $u_L=-U_a$
 \end{itemize}
 
 \begin{figure}[h]
@@ -341,8 +378,8 @@ L=\SI{2}{\milli\henry},\quad f_s=\SI{5}{\kilo\hertz}
 
 \subsection{Schaltzustände}
 \begin{itemize}[leftmargin=*]
-  \item \textbf{EIN}: $u_L=U_{DC}$
-  \item \textbf{AUS}: $u_L=U_{DC}-U_a$
+  \item \begriff{EIN}: $u_L=U_{DC}$
+  \item \begriff{AUS}: $u_L=U_{DC}-U_a$
 \end{itemize}
 
 \subsection{Herleitung}
@@ -630,8 +667,8 @@ Interpretation: guter Phasenfaktor, aber deutliche Verzerrung.
 \section{DC-DC-Wandler: CCM vs. DCM (vollständig)}
 
 \subsection{Definitionen}
-\textbf{CCM} (continuous conduction mode): $i_L(t)>0$ über die ganze Periode.\\
-\textbf{DCM} (discontinuous conduction mode): $i_L(t)=0$ über ein Intervall.
+\begriff{CCM} (continuous conduction mode): $i_L(t)>0$ über die ganze Periode.\\
+\begriff{DCM} (discontinuous conduction mode): $i_L(t)=0$ über ein Intervall.
 
 \subsection{CCM-Bedingung (engineering)}
 Buck: Grenzfall, wenn $i_{\min}=0$. Mit Dreiecksapproximation:

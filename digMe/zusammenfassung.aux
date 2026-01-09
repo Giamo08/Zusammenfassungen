@@ -5,220 +5,6 @@
 \providecommand\babel@aux[2]{}
 \@nameuse{bbl@beforestart}
 \catcode `"\active 
-\ifx\newhyper\@undefined
-\gdef\newhyper#1#2{}
-\gdef\hyperfnpage#1#2{}
-\global\let\@hyper@newlabel\newlabel
-\gdef\hyper@end@newlabel{\relax}
-\gdef\hyper@newlabel#1#2#3#4#5{\ifx|#4|\hyper@end@newlabel\@hyper@newlabel{#1}{{#2}{#3}}\else\@hyper@newlabel{#1}{{#4}{#5}}\fi}
-\gdef\newlabel#1#2{\hyper@newlabel{#1}#2\hyper@end@newlabel\hyper@end@newlabel}
-\gdef\@@hyperpage[#1]{#1}
-\gdef\@hyperpage#1{#1}
-\gdef\hyperpage{\@ifnextchar[\@@hyperpage\@hyperpage}
-\global\let\fragilehyperreference\@gobble
-\global\let\fragilehyperpagereference\@gobble
-\global\let\fragilehyperanchor\@gobble
-\global\let\fragileblindhyperanchor\@gobble
-\global\let\fragilehyperURL\@gobble
-\gdef\hyperbackcite#1#2#3#4{}
-\global\let\hyper@setref\@setref
-\gdef\hyper@thirdoffour#1#2#3{#2}
-\gdef\hyper@forthoffour#1#2#3{#3}
-\gdef\hyper@end@forthoffour{\relax}
-\gdef\@setref#1{%
-\ifx#1\relax%
-\def\hyper@next{\hyper@setref{#1}}%
-\else%
-\edef\hyper@tmp{\expandafter\hyper@forthoffour#1\hyper@end@forthoffour}%
-\ifx\hyper@tmp\hyper@end@forthoffour%
-\def\hyper@next{\hyper@setref{#1}}%
-\else%
-\edef\hyper@tmp{{\expandafter\hyper@thirdoffour#1}{\expandafter\hyper@forthoffour#1}}%
-\def\hyper@next{\hyper@setref{\hyper@tmp}}%
-\fi%
-\fi%
-\hyper@next%
-} 
-\begingroup
-\catcode`\<=\catcode`\{
-\catcode`\>=\catcode`\}
-\catcode`\{=12\catcode`\}=12
-\catcode`\%=12
-\gdef\hyper@open<{>
-\gdef\hyper@close<}>
-\gdef\hyper@comment<%>
-\endgroup
-\bgroup
-\global\edef\hyper@hash{\string#}
-\egroup
-\gdef\hyper@nl{^^J} 
-\def\hyper@hash@four{\hyper@hash\hyper@hash\hyper@hash\hyper@hash} 
-\global\long\def\hyper@protected@write#1{
-\begingroup
-\let\thepage\relax
-\let\protect\@unexpandable@protect
-\edef\reserved@a{\immediate\write\@auxout{#1}}
-\reserved@a
-\endgroup
-\if@nobreak\ifvmode\nobreak\fi\fi
-} 
-\gdef\hyper@aux@write{
-\hyper@protected@write{\hyper@comment@potential%
-\string\ifx\string\newhyper\string\@undefined
-}
-\hyper@protected@write{\hyper@comment@potential%
-\string\gdef\string\newhyper\hyper@hash1\hyper@hash2{}\hyper@nl
-\string\gdef\string\hyperfnpage\hyper@hash1\hyper@hash2{}\hyper@nl
-\string\global\string\let\string\@hyper@newlabel\string\newlabel\hyper@nl
-\string\gdef\string\hyper@end@newlabel{\string\relax}\hyper@nl
-\string\gdef\string\hyper@newlabel\hyper@hash1\hyper@hash2\hyper@hash3\hyper@hash4\hyper@hash5{\hyper@comment@potential%
-\string\ifx\string|\hyper@hash4\string|\string\hyper@end@newlabel\hyper@comment@potential%
-\string\@hyper@newlabel{\hyper@hash1}{{\hyper@hash2}{\hyper@hash3}}\hyper@comment@potential%
-\string\else\hyper@comment@potential%
-\string\@hyper@newlabel{\hyper@hash1}{{\hyper@hash4}{\hyper@hash5}}\hyper@comment@potential%
-\string\fi\hyper@comment@potential%
-}\hyper@nl
-\string\gdef\string\newlabel\hyper@hash1\hyper@hash2{\string\hyper@newlabel{\hyper@hash1}\hyper@hash2\string\hyper@end@newlabel\string\hyper@end@newlabel}\hyper@nl
-\string\gdef\string\@@hyperpage[\hyper@hash1]{\hyper@hash1}\hyper@nl
-\string\gdef\string\@hyperpage\hyper@hash1{\hyper@hash1}\hyper@nl
-\string\gdef\string\hyperpage{\string\@ifnextchar[\string\@@hyperpage\string\@hyperpage}\hyper@nl
-\string\global\string\let\string\fragilehyperreference\string\@gobble\hyper@nl
-\string\global\string\let\string\fragilehyperpagereference\string\@gobble\hyper@nl
-\string\global\string\let\string\fragilehyperanchor\string\@gobble\hyper@nl
-\string\global\string\let\string\fragileblindhyperanchor\string\@gobble\hyper@nl
-\string\global\string\let\string\fragilehyperURL\string\@gobble\hyper@nl
-\string\gdef\string\hyperbackcite\hyper@hash1\hyper@hash2\hyper@hash3\hyper@hash4{}\hyper@nl
-\string\global\string\let\string\hyper@setref\string\@setref\hyper@nl
-\string\gdef\string\hyper@thirdoffour\hyper@hash1\hyper@hash2\hyper@hash3{\hyper@hash2}\hyper@nl
-\string\gdef\string\hyper@forthoffour\hyper@hash1\hyper@hash2\hyper@hash3{\hyper@hash3}\hyper@nl
-\string\gdef\string\hyper@end@forthoffour{\string\relax}\hyper@nl
-\string\gdef\string\@setref\hyper@hash1{\hyper@comment@real\hyper@nl
-\string\ifx\hyper@hash1\string\relax\hyper@comment@real\hyper@nl
-\string\def\string\hyper@next{\string\hyper@setref{\hyper@hash1}}\hyper@comment@real\hyper@nl
-\string\else\hyper@comment@real\hyper@nl
-\string\edef\string\hyper@tmp{\string\expandafter\string\hyper@forthoffour\hyper@hash1\string\hyper@end@forthoffour}\hyper@comment@real\hyper@nl
-\string\ifx\string\hyper@tmp\string\hyper@end@forthoffour\hyper@comment@real\hyper@nl
-\string\def\string\hyper@next{\string\hyper@setref{\hyper@hash1}}\hyper@comment@real\hyper@nl
-\string\else\hyper@comment@real\hyper@nl
-\string\edef\string\hyper@tmp{{\string\expandafter\string\hyper@thirdoffour\hyper@hash1}{\string\expandafter\string\hyper@forthoffour\hyper@hash1}}\hyper@comment@real\hyper@nl
-\string\def\string\hyper@next{\string\hyper@setref{\string\hyper@tmp}}\hyper@comment@real\hyper@nl
-\string\fi\hyper@comment@real\hyper@nl
-\string\fi\hyper@comment@real\hyper@nl
-\string\hyper@next\hyper@comment@real\hyper@nl
-} 
-}
-\hyper@protected@write{\hyper@comment@potential%
-\string\begingroup\hyper@nl
-\string\catcode\string`\string\<\string=\string\catcode\string`\string\{\hyper@nl
-\string\catcode\string`\string\>\string=\string\catcode\string`\string\}\hyper@nl
-\string\catcode\string`\string\{\string=12\string\catcode\string`\string\}\string=12\hyper@nl
-\string\catcode\string`\string\%\string=12\hyper@nl
-\string\gdef\string\hyper@open<{>\hyper@nl
-\string\gdef\string\hyper@close<}>\hyper@nl
-\string\gdef\string\hyper@comment<\hyper@comment@real>\hyper@nl
-\string\endgroup
-}
-\hyper@protected@write{\hyper@comment@potential%
-\string\bgroup\hyper@nl
-\string\global\string\edef\string\hyper@hash{\string\string\hyper@hash}\hyper@nl
-\string\egroup
-}
-\hyper@protected@write{\hyper@comment@potential%
-\string\gdef\string\hyper@nl{\string^\string^J} 
-}
-\hyper@protected@write{\hyper@comment@potential%
-\string\def\string\hyper@hash@four{\string\hyper@hash\string\hyper@hash\string\hyper@hash\string\hyper@hash} 
-}
-\hyper@protected@write{\hyper@comment@potential%
-\string\global\string\long\string\def\string\hyper@protected@write\hyper@hash1{\hyper@nl
-\string\begingroup\hyper@nl
-\string\let\string\thepage\string\relax\hyper@nl
-\string\let\string\protect\string\@unexpandable@protect\hyper@nl
-\string\edef\string\reserved@a{\string\immediate\string\write\string\@auxout{\hyper@hash1}}\hyper@nl
-\string\reserved@a\hyper@nl
-\string\endgroup\hyper@nl
-\string\if@nobreak\string\ifvmode\string\nobreak\string\fi\string\fi\hyper@nl
-} 
-}
-\hyper@protected@write{\hyper@comment@potential%
-\string\gdef\string\hyper@aux@write\hyper@open
-}
-\hyper@second@write{\hyper@comment@potential%
-\string\hyper@write\hyper@open\hyper@nl
-\string\begingroup\hyper@nl
-\string\let\string\@hyper@protected@write\string\hyper@protected@write\hyper@nl
-\string\def\string\hyper@protected@write@do\hyper@hash\hyper@hash1\hyper@hash\hyper@hash2{\hyper@nl
-\string\begingroup\hyper@nl
-\string\let\string\hyper@string\string\string\hyper@nl
-\string\def\string\string{\string\hyper@string\string\string\string\hyper@string}\hyper@nl
-\string\def\string\hyper@open{\string\hyper@string\string\hyper@open}\hyper@nl
-\string\def\string\hyper@close{\string\hyper@string\string\hyper@close}\hyper@nl
-\string\def\string\hyper@nl{\string\hyper@string\string\hyper@nl\string^\string^J}\hyper@nl
-\string\def\string\hyper@comment@real{\string\hyper@string\string\hyper@comment@real}\hyper@nl
-\string\def\string\hyper@comment@potential{\string\hyper@string\string\hyper@comment@potential\string\hyper@comment\string^\string^J}\hyper@nl
-\string\def\string\hyper@hash{\string\hyper@string\string\hyper@hash}\hyper@nl
-\string\@hyper@protected@write{\string\hyper@string\hyper@hash\hyper@hash1{\hyper@hash\hyper@hash2\string^\string^J}}\hyper@nl
-\string\endgroup\hyper@nl
-}\hyper@nl
-\string\def\string\hyper@protected@write{\string\hyper@protected@write@do\string\hyper@protected@write}\hyper@nl
-\string\def\string\hyper@second@write\hyper@hash\hyper@hash1{\hyper@nl
-\string\hyper@protected@write@do\string\hyper@second@write{\hyper@hash\hyper@hash1}\hyper@nl
-\string\@hyper@protected@write{\hyper@hash\hyper@hash1}\hyper@nl
-}\hyper@nl
-\string\def\string\hyper@write{\string\@gobble}\hyper@nl
-\string\hyper@aux@write\hyper@nl
-\string\endgroup\hyper@nl
-\hyper@close
-}
-\hyper@write{
-\begingroup
-\let\@hyper@protected@write\hyper@protected@write
-\def\hyper@protected@write@do##1##2{
-\begingroup
-\let\hyper@string\string
-\def\string{\hyper@string\string\hyper@string}
-\def\hyper@open{\hyper@string\hyper@open}
-\def\hyper@close{\hyper@string\hyper@close}
-\def\hyper@nl{\hyper@string\hyper@nl^^J}
-\def\hyper@comment@real{\hyper@string\hyper@comment@real}
-\def\hyper@comment@potential{\hyper@string\hyper@comment@potential\hyper@comment^^J}
-\def\hyper@hash{\hyper@string\hyper@hash}
-\@hyper@protected@write{\hyper@string##1{##2^^J}}
-\endgroup
-}
-\def\hyper@protected@write{\hyper@protected@write@do\hyper@protected@write}
-\def\hyper@second@write##1{
-\hyper@protected@write@do\hyper@second@write{##1}
-\@hyper@protected@write{##1}
-}
-\def\hyper@write{\@gobble}
-\hyper@aux@write
-\endgroup
-}
-\hyper@protected@write{\hyper@comment@potential%
-\hyper@close
-}
-\hyper@protected@write{\hyper@comment@potential%
-\string\AtBeginDocument{\hyper@comment@real\hyper@nl
-\string\let\string\hyper@write\string\relax\hyper@comment@real\hyper@nl
-\string\let\string\hyper@second@write\string\@gobble\hyper@comment@real\hyper@nl
-\string\let\string\hyper@comment@potential\string\@empty\hyper@comment@real\hyper@nl
-\string\let\string\hyper@comment@real\string\hyper@comment\hyper@comment@real\hyper@nl
-\string\hyper@aux@write\hyper@comment@real\hyper@nl
-} 
-}
-\hyper@protected@write{\hyper@comment@potential%
-\string\fi
-}
-}
-\AtBeginDocument{%
-\let\hyper@write\relax%
-\let\hyper@second@write\@gobble%
-\let\hyper@comment@potential\@empty%
-\let\hyper@comment@real\hyper@comment%
-\hyper@aux@write%
-} 
-\fi
 \ifx\qr@savematrix\@undefined\def\qr@savematrix{\begingroup\let\do\@makeother\dospecials\catcode`\{=1\catcode`\}=2\relax \qr@savematrix@int}\def\qr@savematrix@int#1#2#3#4{\endgroup}\fi
 \babel@aux{ngerman}{}
 \@writefile{toc}{\contentsline {section}{\numberline {1}SoC-Grundlagen und Design Flow}{1}{section.1}\protected@file@percent }
@@ -227,6 +13,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Arten von Constraints}{1}{subsection.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}XDC-Format und Constraint-Organisation}{1}{subsection.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Physikalische Constraints}{1}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Pad-Typen (Prüfung)}{1}{section*.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Timing-Grundlagen und Static Timing Analysis (STA)}{1}{subsection.2.5}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Timing-Nichtidealitäten: Latency, Skew und Jitter.}}{2}{figure.caption.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Clock-Definition}{2}{subsection.2.6}\protected@file@percent }
@@ -237,7 +24,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3}\colorbox {yellow!25}{System Level VHDL} und IP-\colorbox {yellow!25}{Wiederverwendung}}{2}{section.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Zielsetzung von System Level VHDL}{2}{subsection.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Grundprinzipien der Wiederverwendung}{2}{subsection.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Alias, Konstanten und Generics}{3}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Alias, Konstanten und Generics}{2}{subsection.3.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Generate-Konstrukte}{3}{subsection.3.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Funktionen in VHDL}{3}{subsection.3.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Prozeduren in VHDL}{3}{subsection.3.6}\protected@file@percent }
@@ -247,19 +34,21 @@
 \@writefile{toc}{\contentsline {section}{\numberline {4}\colorbox {yellow!25}{Fixed Point} Arithmetic}{3}{section.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Motivation und Problemstellung}{3}{subsection.4.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Fixed-Point Formate und Bitwachstum (Prüfungsformeln)}{3}{subsection.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Ganzzahl- und Zweierkomplement-Darstellung}{4}{subsection.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Fixed-Point-Zahlendarstellung (Qn.m)}{4}{subsection.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Skalierung und Typkonvertierung}{4}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Ganzzahl- und Zweierkomplement-Darstellung}{3}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Fixed-Point-Zahlendarstellung (Qn.m)}{3}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Skalierung und Typkonvertierung}{3}{subsection.4.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.6}fixed\_pkg vs. klassische Umsetzung}{4}{subsection.4.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.7}Addition und Subtraktion}{4}{subsection.4.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.8}Multiplikation}{4}{subsection.4.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.9}Überlauf, Rundung und Sättigung}{4}{subsection.4.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.10}FIR-Filter (Prüfungsrelevanz)}{4}{subsection.4.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.11}Systematische Wortlängenplanung}{4}{subsection.4.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.10}Rechenbeispiel: Bitmuster, Fixed Point und Skalierung}{4}{subsection.4.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.11}Rechenbeispiel: Real $\rightarrow $ sQ4.4}{4}{subsection.4.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.12}FIR-Filter (Prüfungsrelevanz)}{4}{subsection.4.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.13}Systematische Wortlängenplanung}{4}{subsection.4.13}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5}Custom IP Blocks: Memory}{4}{section.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Einordnung und Ziel}{4}{subsection.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Speichertypen}{5}{subsection.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Speicherorganisation}{5}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Speichertypen}{4}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Speicherorganisation}{4}{subsection.5.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Speicherports und Zugriffsarten}{5}{subsection.5.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Zugriffsmodi bei Schreibkollisionen}{5}{subsection.5.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Distributed RAM}{5}{subsection.5.6}\protected@file@percent }
@@ -267,18 +56,24 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.8}VHDL-Modellierung von RAM}{5}{subsection.5.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.9}Synthesis-Attribute}{5}{subsection.5.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.10}ROM-Implementierung}{5}{subsection.5.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.11}Speicherinitialisierung}{6}{subsection.5.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.12}Memory Generator IP}{6}{subsection.5.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.11}Speicherinitialisierung}{5}{subsection.5.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.12}Memory Generator IP}{5}{subsection.5.12}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.13}IP-Wiederverwendung und Integration}{6}{subsection.5.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{IP Life Cycle (Prüfung)}{6}{section*.22}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {6}Serial Communication Interfaces}{6}{section.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Serielle Schnittstellen -- kompakte Einordnung}{6}{subsection.6.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}SPI – Serial Peripheral Interface}{6}{subsection.6.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces SPI-Topologien, Signale und Master-Slave-Prinzip.}}{6}{figure.caption.29}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.3}SPI-Hardwarestruktur}{6}{subsection.6.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.4}SPI-Beschreibung in VHDL}{6}{subsection.6.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.5}I\textsuperscript  {2}C – Inter-Integrated Circuit}{6}{subsection.6.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces SPI-Topologien, Signale und Master-Slave-Prinzip.}}{6}{figure.caption.23}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.6}I\textsuperscript  {2}C (Prüfungsrelevanz)}{6}{subsection.6.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.7}UART (Einordnung)}{7}{subsection.6.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.7}UART (Asynchrone serielle Schnittstelle)}{6}{subsection.6.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Timing / Baudrate}{6}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Sender (TX)}{7}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Empfänger (RX)}{7}{section*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Prüfungsregel}{7}{section*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Prüfungsmerksätze}{7}{section*.28}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7}Parallel On-Chip Communication}{7}{section.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Einordnung paralleler Kommunikation}{7}{subsection.7.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Serial vs. Parallel}{7}{subsection.7.2}\protected@file@percent }
@@ -291,8 +86,8 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.9}AXI-Varianten}{7}{subsection.7.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.10}AXI-Interconnect-Topologien}{7}{subsection.7.10}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.11}AXI auf Zynq}{7}{subsection.7.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.12}AXI3 vs. AXI4}{7}{subsection.7.12}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.13}AXI-IP-Erstellung}{7}{subsection.7.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.12}AXI3 vs. AXI4}{8}{subsection.7.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.13}AXI-IP-Erstellung}{8}{subsection.7.13}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.14}Register-basierte Kommunikation}{8}{subsection.7.14}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.15}FPGA–Processor-Kommunikation}{8}{subsection.7.15}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {8}Debugging and Verification of SoC}{8}{section.8}\protected@file@percent }
@@ -304,7 +99,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.6}Testfälle und Stimuli}{8}{subsection.8.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.7}Golden Model}{8}{subsection.8.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.8}Test-Bench-Organisation}{8}{subsection.8.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.9}Automatische Auswertung}{8}{subsection.8.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.9}Automatische Auswertung}{9}{subsection.8.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.10}File-basierte Test-Benches}{9}{subsection.8.10}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.11}Simulation und Modelle}{9}{subsection.8.11}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.12}Debugging in Simulation}{9}{subsection.8.12}\protected@file@percent }
@@ -315,7 +110,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {9}Exam Code Templates}{9}{section.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.1}XDC: Physical + Timing (Skeleton)}{9}{subsection.9.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.2}VHDL: Simple Dual Port RAM (Block RAM inference)}{9}{subsection.9.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}VHDL: I2C Open-Drain (one wire)}{9}{subsection.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}VHDL: I2C Open-Drain (one wire)}{10}{subsection.9.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.4}VHDL: AXI4-Lite Registerbank (minimal)}{10}{subsection.9.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.5}Exam Code Patterns (Fixed Point \& Package)}{10}{subsection.9.5}\protected@file@percent }
 \gdef \@abspage@last{10}

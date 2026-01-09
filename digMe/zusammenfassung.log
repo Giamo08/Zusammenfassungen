@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  6 JAN 2026 20:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  9 JAN 2026 15:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -461,6 +461,8 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip58
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
@@ -625,24 +627,24 @@ File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 ) (./zusammenfassung.aux)
 \openout1 = `zusammenfassung.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -701,259 +703,278 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 131.
+Package hyperref Info: Link coloring OFF on input line 132.
  (./zusammenfassung.out) (./zusammenfassung.out)
 \@outlinefile=\write4
 \openout4 = `zusammenfassung.out'.
 
 \c@lstlisting=\count369
-LaTeX Info: Redefining \microtypecontext on input line 131.
-Package microtype Info: Applying patch `item' on input line 131.
-Package microtype Info: Applying patch `toc' on input line 131.
-Package microtype Info: Applying patch `eqnum' on input line 131.
-Package microtype Info: Applying patch `footnote' on input line 131.
-Package microtype Info: Applying patch `verbatim' on input line 131.
+LaTeX Info: Redefining \microtypecontext on input line 132.
+Package microtype Info: Applying patch `item' on input line 132.
+Package microtype Info: Applying patch `toc' on input line 132.
+Package microtype Info: Applying patch `eqnum' on input line 132.
+Package microtype Info: Applying patch `footnote' on input line 132.
+Package microtype Info: Applying patch `verbatim' on input line 132.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 131.
+LaTeX Info: Redefining \showhyphens on input line 132.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 140.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 146.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 140.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 146.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 144.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
+Underfull \hbox (badness 10000) in paragraph at lines 174--177
+\T1/cmr/m/n/10 (+20) Diese Res-sour-cen er-mög-li-chen hoch-par-al-le-le,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+[]\T1/cmr/bx/n/12 (+20) XDC-Format und Constraint-
+ []
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 219.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-Underfull \hbox (badness 10000) in paragraph at lines 180--182
-\T1/cmr/m/n/10 (+20) Diese Res-sour-cen er-mög-li-chen hoch-par-al-le-le,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--207
-[]\T1/cmr/bx/n/12 (+20) XDC-Format und Constraint-
- []
-
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 239.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 233.
 
-Overfull \hbox (13.21083pt too wide) in paragraph at lines 253--254
+Overfull \hbox (13.21083pt too wide) in paragraph at lines 247--248
 \T1/cmr/m/n/10 (-20) Timing-Verifikation er-folgt mit [][][][][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 [][]\T1/cmr/bx/n/10 (+20) Prüfungsregel:[] \T1/cmr/m/n/10 (+20) Ti-ming ist kor-rekt, wenn
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 [][][][][][] \T1/cmr/m/n/10 (+20) sind und der
  []
 
 
-Overfull \hbox (2.6903pt too wide) in paragraph at lines 289--290
+Overfull \hbox (2.6903pt too wide) in paragraph at lines 283--284
 [][]\T1/cmr/bx/n/10 (-20) Prüfungsmerksatz:[] \T1/cmr/m/n/10 (-20) STA be-trach-tet [][][][][][]
  []
 
+<fig/L2_clock_skew.png, id=392, 922.44624pt x 714.67pt>
+File: fig/L2_clock_skew.png Graphic file (type png)
+<use fig/L2_clock_skew.png>
+Package pdftex.def Info: fig/L2_clock_skew.png  used on input line 304.
+(pdftex.def)             Requested size: 256.04712pt x 198.37234pt.
 [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<fig/L2_clock_skew.png, id=419, 922.44624pt x 714.67pt>
-File: fig/L2_clock_skew.png Graphic file (type png)
-<use fig/L2_clock_skew.png>
-Package pdftex.def Info: fig/L2_clock_skew.png  used on input line 310.
-(pdftex.def)             Requested size: 256.04712pt x 198.37234pt.
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <7> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 316.
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 344.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 310.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 338.
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 344.
+Package Listings Warning: Text dropped after begin of listing on input line 338.
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 379.
+Package Listings Warning: Text dropped after begin of listing on input line 373.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--388
+Underfull \hbox (badness 10000) in paragraph at lines 380--382
 [][]\T1/cmr/bx/n/10 (+20) Abschluss-Merksatz (Prü-fung):[] \T1/cmr/m/n/10 (+20) Oh-ne kor-rek-te
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--390
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
 [][][][][][][] \T1/cmr/bx/n/14.4 (+20) und IP-
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\colorbox' on input line 390.
+(hyperref)                removing `\colorbox' on input line 384.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\colorbox' on input line 390.
+(hyperref)                removing `\colorbox' on input line 384.
+
+
+Package Listings Warning: Text dropped after begin of listing on input line 420.
 
 [2 <./fig/L2_clock_skew.png>]
-
-Package Listings Warning: Text dropped after begin of listing on input line 426.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 456--458
+Underfull \hbox (badness 10000) in paragraph at lines 450--452
 [][]\T1/cmr/bx/n/10 (+20) Prüfungsregel:[] [][][][][][] \T1/cmr/m/n/10 (+20) ist [][][][][][]
  []
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 460.
+Package Listings Warning: Text dropped after begin of listing on input line 454.
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 497.
+Package Listings Warning: Text dropped after begin of listing on input line 491.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\colorbox' on input line 525.
+(hyperref)                removing `\colorbox' on input line 519.
 
 
-Underfull \hbox (badness 5878) in paragraph at lines 574--574
+Underfull \hbox (badness 5878) in paragraph at lines 552--552
 []\T1/cmr/bx/n/12 (+20) Ganzzahl- und Zweierkomplement-
  []
 
 [3]
+Underfull \hbox (badness 10000) in paragraph at lines 651--653
+[][]\T1/cmr/bx/n/10 (+20) Prüfungsregel:[] \T1/cmr/m/n/10 (+20) Nach der Mul-ti-pli-ka-ti-on sind
+ []
 
-Package Listings Warning: Text dropped after begin of listing on input line 652.
+
+Underfull \hbox (badness 7722) in paragraph at lines 675--675
+[]\T1/cmr/bx/n/12 (+20) Rechenbeispiel: Bit-mus-ter, Fi-xed
+ []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--712
-[][]\T1/cmr/bx/n/10 (+20) Prüfungsfokus:[] [][][][][][] \T1/cmr/m/n/10 (+20) und [][][][][][]
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 704.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\rightarrow' on input line 704.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 704.
+
+
+Overfull \hbox (13.00357pt too wide) in paragraph at lines 753--756
+[][]\T1/cmr/bx/n/10 (-20) Abschluss-Merksatz:[] [][][][][][] \T1/cmr/m/n/10 (-20) ist [][][][][][].
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 836--838
+Underfull \hbox (badness 10000) in paragraph at lines 861--863
 [][]\T1/cmr/bx/n/10 (+20) Prüfungsregel:[] \T1/cmr/m/n/10 (+20) A[][][][][][]es [][][][][][] $\OMS/cmsy/m/n/10 !$
  []
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 871.
+Package Listings Warning: Text dropped after begin of listing on input line 896.
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 893.
+Package Listings Warning: Text dropped after begin of listing on input line 918.
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 899.
+Package Listings Warning: Text dropped after begin of listing on input line 924.
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 910.
+Package Listings Warning: Text dropped after begin of listing on input line 935.
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 926--928
+
+Underfull \hbox (badness 10000) in paragraph at lines 966--968
 [][]\T1/cmr/bx/n/10 (+20) Prüfungsregel:[] [][][][][][] \T1/cmr/m/n/10 (+20) oh-ne [][][][][][] ist
  []
 
-
-Overfull \hbox (33.89914pt too wide) in paragraph at lines 983--984
+[5]
+Overfull \hbox (33.89914pt too wide) in paragraph at lines 1026--1027
 []\T1/cmr/m/n/10 (-20) Elektrisches Ver-hal-ten wird durch [][][][][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1027--1028
+Underfull \hbox (badness 10000) in paragraph at lines 1070--1071
 \T1/cmr/m/n/10 (+20) SPI ist ei-ne syn-chro-ne, se-ri-el-le Punkt-zu-Punkt-
  []
 
-<fig/L6_spi_topology.png, id=595, 1105.12875pt x 786.94pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathsurround' on input line 1100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 1100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 1100.
+
+<fig/L6_spi_topology.png, id=602, 1105.12875pt x 786.94pt>
 File: fig/L6_spi_topology.png Graphic file (type png)
 <use fig/L6_spi_topology.png>
-Package pdftex.def Info: fig/L6_spi_topology.png  used on input line 1048.
+Package pdftex.def Info: fig/L6_spi_topology.png  used on input line 1111.
 (pdftex.def)             Requested size: 256.04712pt x 182.32524pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1061.
+(hyperref)                removing `\mathsurround' on input line 1116.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1061.
+(hyperref)                removing `\z@' on input line 1116.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1061.
+(hyperref)                removing `superscript' on input line 1116.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1071.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1071.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1071.
-
-
-Package Listings Warning: Text dropped after begin of listing on input line 1080.
+Package Listings Warning: Text dropped after begin of listing on input line 1125.
 
 [6 <./fig/L6_spi_topology.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1114--1114
+Underfull \hbox (badness 10000) in paragraph at lines 1185--1185
 []\T1/cmr/bx/n/12 (+20) Vorteile par-al-le-ler On-Chip-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1129--1131
+Underfull \hbox (badness 10000) in paragraph at lines 1200--1202
 [][]\T1/cmr/bx/n/10 (+20) Prüfungsregel:[] [][][][][][] [][][][][][] \T1/cmr/m/n/10 (+20) sind im-mer
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1132--1132
+Underfull \hbox (badness 10000) in paragraph at lines 1203--1203
 []\T1/cmr/bx/n/12 (+20) AXI als Standard-On-Chip-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1214--1216
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1287
 [][]\T1/cmr/bx/n/10 (+20) Prüfungsregel:[] [][][][][][] [][][][][][]
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 1274--1276
+Underfull \hbox (badness 10000) in paragraph at lines 1345--1347
 
  []
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 1309.
+Package Listings Warning: Text dropped after begin of listing on input line 1380.
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 1350.
+Package Listings Warning: Text dropped after begin of listing on input line 1421.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 1403--1405
+Underfull \hbox (badness 10000) in paragraph at lines 1474--1476
 [][]\T1/cmr/bx/n/10 (+20) Prüfungsregel:[] [][][][][][] [][][][][][] \T1/cmr/m/n/10 (+20) kei-ne simprim-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1431--1433
+Underfull \hbox (badness 10000) in paragraph at lines 1502--1504
 [][]\T1/cmr/bx/n/10 (+20) Prüfungsregel:[] [][][][][][] \T1/cmr/m/n/10 (+20) ist ein \T1/cmr/m/it/10 (+20) lo-gi-sches\T1/cmr/m/n/10 (+20) , kein
  []
 
 [9]
-Overfull \vbox (9.75298pt too high) has occurred while \output is active []
+Overfull \vbox (11.05104pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (11.06921pt too high) has occurred while \output is active []
 
  [10] (./zusammenfassung.aux)
  ***********
@@ -961,21 +982,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `zusammenfassung.out' has not changed.
-(rerunfilecheck)             Checksum: DF82EA022C2D3A0F2EE146BA40ABDC06;18767.
+(rerunfilecheck)             Checksum: AA2A8D2ECAC4675A1FD5CFFC4E4AE67D;19430.
  ) 
 Here is how much of TeX's memory you used:
- 27579 strings out of 474116
- 469489 string characters out of 5743681
- 3042187 words of memory out of 5000000
- 48762 multiletter control sequences out of 15000+600000
- 584767 words of font info for 191 fonts, out of 8000000 for 9000
+ 27606 strings out of 474116
+ 469987 string characters out of 5743681
+ 3202187 words of memory out of 5000000
+ 48808 multiletter control sequences out of 15000+600000
+ 584434 words of font info for 193 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,6n,93p,1103b,2284s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfit0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on zusammenfassung.pdf (10 pages, 1455120 bytes).
+ 87i,13n,93p,1103b,2227s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfit0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on zusammenfassung.pdf (10 pages, 1440114 bytes).
 PDF statistics:
- 1157 PDF objects out of 1200 (max. 8388607)
- 1081 compressed objects within 11 object streams
- 575 named destinations out of 1000 (max. 500000)
- 47879 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1127 PDF objects out of 1200 (max. 8388607)
+ 1053 compressed objects within 11 object streams
+ 549 named destinations out of 1000 (max. 500000)
+ 46359 words of extra memory for PDF output out of 51595 (max. 10000000)
 
