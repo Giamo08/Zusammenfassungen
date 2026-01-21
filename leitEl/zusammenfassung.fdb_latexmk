@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1769017983.92803 "/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/leitEl/zusammenfassung.tex" "zusammenfassung.pdf" "zusammenfassung" 1769017990.28356 0
+["pdflatex"] 1769019813.57209 "/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/leitEl/zusammenfassung.tex" "zusammenfassung.pdf" "zusammenfassung" 1769019820.20468 0
   "/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/leitEl/zusammenfassung.tex" 1769017918.68496 3246 af4b46a9163c1ff48314f6478478dd33 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -406,11 +406,11 @@
   "sections/04_B2U.tex" 1769015413.09801 875 5c722965a5d8efd62adac008450cdd65 ""
   "sections/05_B2C_gesteuert.tex" 1769015413.09834 1172 f400486c88df5ee49690de0151bc5160 ""
   "sections/06_Wechselstromsteller.tex" 1769015413.09878 2018 14211adc202f4395289dc5895f88ed7a ""
-  "sections/07_Gleichstromsteller.tex" 1769015413.09922 1586 603c21111cca59e71923e9d6b2f957bc ""
+  "sections/07_Gleichstromsteller.tex" 1769019257.61759 4903 f82f0c747bd30e7cc131203a7924c8e8 ""
   "sections/08_Gleichstrommaschine.tex" 1769017273.83645 7446 ab8eac9c401082ce7b4533ad907ce742 ""
   "sections/09_Drezahlregelung.tex" 1769015413.09976 4885 bd79f5fca7a07cd7b1f1b5883b831836 ""
   "sections/100_fourierreihen.tex" 1769015413.10002 10781 f58e73522e0afc3f20a3e28e694df7ed ""
-  "sections/10_einphasiger_wechselrichter.tex" 1769015413.10043 830 b276360eb1b31538241b76151530b3e9 ""
+  "sections/10_einphasiger_wechselrichter.tex" 1769019818.62288 4801 93d4eefe499eaef36ddbc41f461d2ac0 ""
   "sections/11_Harmonische_Spektralanalyse.tex" 1769015413.10068 5492 f744273cde3e02a7ad84c660fcbae49d ""
   "sections/12_PWM.tex" 1769017349.64284 1664 d08b66796d2487372f617c7a57978389 ""
   "sections/13_3Wechselrichter.tex" 1769015413.10123 1391 bf49a84758aaba98c6e10e7f0bf13466 ""
@@ -421,8 +421,8 @@
   "sections/400_DGL.tex" 1769015413.10276 7972 0f2561b1801c981ad3a04585e3615488 ""
   "sections/500_Uebungen.tex" 1769015413.10303 21015 d29df729e84319e7d937a0c3a47301ec ""
   "sections/600_Schnellentscheidung.tex" 1769017977.34155 10625 13535ac83ce1cf9a2a69033a4ea6004e ""
-  "zusammenfassung.aux" 1769017990.14836 66353 85aac62972ae7cdeb4f211ba792cb1c8 "pdflatex"
-  "zusammenfassung.out" 1769017990.15156 49272 edaeec210d3effdd07e144a511d1feb4 "pdflatex"
+  "zusammenfassung.aux" 1769019820.07354 68401 ef47ca7023264ad76c557d332b3d4bae "pdflatex"
+  "zusammenfassung.out" 1769019820.07659 51627 d88fbd9876cca2481ca2e03b70dfb5c5 "pdflatex"
   "zusammenfassung.tex" 1769017918.68496 3246 af4b46a9163c1ff48314f6478478dd33 ""
   (generated)
   "zusammenfassung.aux"

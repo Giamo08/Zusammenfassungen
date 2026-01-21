@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  21 JAN 2026 18:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  21 JAN 2026 19:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1344,26 +1344,26 @@ contour: Using real outline for `2.3.1\ ' on input line 61.
 contour: Using real outline for `Betriebszustände' on input line 61.
 contour: Using real outline for `2.3.2\ ' on input line 84.
 contour: Using real outline for `Statisches Durchlassmodell' on input line 84.
-<images/Didodekennlinie.png, id=987, 835.62187pt x 410.03188pt>
+<images/Didodekennlinie.png, id=1035, 835.62187pt x 410.03188pt>
 File: images/Didodekennlinie.png Graphic file (type png)
 <use images/Didodekennlinie.png>
 Package pdftex.def Info: images/Didodekennlinie.png  used on input line 102.
 (pdftex.def)             Requested size: 232.17616pt x 113.92596pt.
-<images/didodeunterschied.png, id=989, 838.13126pt x 500.87125pt>
+<images/didodeunterschied.png, id=1037, 838.13126pt x 500.87125pt>
 File: images/didodeunterschied.png Graphic file (type png)
 <use images/didodeunterschied.png>
 Package pdftex.def Info: images/didodeunterschied.png  used on input line 105.
 (pdftex.def)             Requested size: 232.17616pt x 138.74503pt.
 contour: Using real outline for `2.3.3\ ' on input line 108.
 contour: Using real outline for `Dynamisches Schaltverhalten' on input line 108.
-<images/rueckerhol.png, id=990, 237.88875pt x 213.79875pt>
+<images/rueckerhol.png, id=1038, 237.88875pt x 213.79875pt>
 File: images/rueckerhol.png Graphic file (type png)
 <use images/rueckerhol.png>
 Package pdftex.def Info: images/rueckerhol.png  used on input line 133.
 (pdftex.def)             Requested size: 232.17616pt x 208.67313pt.
 contour: Using real outline for `2.4.1\ ' on input line 139.
 contour: Using real outline for `Vier-Schichten-Struktur und Zündprinzip' on input line 139.
-<images/thyristor.png, id=991, 1306.8825pt x 569.12625pt>
+<images/thyristor.png, id=1039, 1306.8825pt x 569.12625pt>
 File: images/thyristor.png Graphic file (type png)
 <use images/thyristor.png>
 Package pdftex.def Info: images/thyristor.png  used on input line 164.
@@ -1373,7 +1373,7 @@ contour: Using real outline for `2.4.2\ ' on input line 168.
 contour: Using real outline for `Statisches Modell und Verluste' on input line 168.
 contour: Using real outline for `2.5.1\ ' on input line 191.
 contour: Using real outline for `Gate-gesteuerter Feldeffekttransistor' on input line 191.
-<images/MOSFET.png, id=1025, 466.74374pt x 220.825pt>
+<images/MOSFET.png, id=1073, 466.74374pt x 220.825pt>
 File: images/MOSFET.png Graphic file (type png)
 <use images/MOSFET.png>
 Package pdftex.def Info: images/MOSFET.png  used on input line 210.
@@ -1382,7 +1382,7 @@ contour: Using real outline for `2.5.2\ ' on input line 214.
 contour: Using real outline for `Dynamisches Modell und Gate-Ladung' on input line 214.
 contour: Using real outline for `2.6.1\ ' on input line 233.
 contour: Using real outline for `Hybridstruktur MOS–Bipolar' on input line 233.
-<images/IGBT.png, id=1026, 220.825pt x 140.525pt>
+<images/IGBT.png, id=1074, 220.825pt x 140.525pt>
 File: images/IGBT.png Graphic file (type png)
 <use images/IGBT.png>
 Package pdftex.def Info: images/IGBT.png  used on input line 251.
@@ -1447,33 +1447,33 @@ contour: Using real outline for `Wirkleistung' on input line 100.
 contour: Using real outline for `4.4.3\ ' on input line 107.
 contour: Using real outline for `Spezialfall: Ohmsche Last' on input line 107.
 [5]) (./sections/022_BuckBoost.tex
-<images/Buckconverter.png, id=1124, 680.04062pt x 259.97125pt>
+<images/Buckconverter.png, id=1172, 680.04062pt x 259.97125pt>
 File: images/Buckconverter.png Graphic file (type png)
 <use images/Buckconverter.png>
 Package pdftex.def Info: images/Buckconverter.png  used on input line 53.
 (pdftex.def)             Requested size: 232.17616pt x 88.75797pt.
-<images/Buckconverter_verlauf.png, id=1125, 653.44125pt x 783.42688pt>
+<images/Buckconverter_verlauf.png, id=1173, 653.44125pt x 783.42688pt>
 File: images/Buckconverter_verlauf.png Graphic file (type png)
 <use images/Buckconverter_verlauf.png>
 Package pdftex.def Info: images/Buckconverter_verlauf.png  used on input line 58.
 (pdftex.def)             Requested size: 232.17616pt x 278.3516pt.
-<images/Boostconv.png, id=1126, 656.4525pt x 322.70563pt>
+<images/Boostconv.png, id=1174, 656.4525pt x 322.70563pt>
 File: images/Boostconv.png Graphic file (type png)
 <use images/Boostconv.png>
 Package pdftex.def Info: images/Boostconv.png  used on input line 85.
 (pdftex.def)             Requested size: 232.17616pt x 114.13536pt.
-<images/Boostconv_verlauf.png, id=1127, 681.04437pt x 784.43062pt>
+<images/Boostconv_verlauf.png, id=1175, 681.04437pt x 784.43062pt>
 File: images/Boostconv_verlauf.png Graphic file (type png)
 <use images/Boostconv_verlauf.png>
 Package pdftex.def Info: images/Boostconv_verlauf.png  used on input line 89.
 (pdftex.def)             Requested size: 232.17616pt x 267.42104pt.
  [6 <./images/Buckconverter.png> <./images/Buckconverter_verlauf.png>]
-<images/Buckboostconv.png, id=1149, 651.93562pt x 265.99374pt>
+<images/Buckboostconv.png, id=1198, 651.93562pt x 265.99374pt>
 File: images/Buckboostconv.png Graphic file (type png)
 <use images/Buckboostconv.png>
 Package pdftex.def Info: images/Buckboostconv.png  used on input line 113.
 (pdftex.def)             Requested size: 232.17616pt x 94.7308pt.
-<images/Buckboostconv_verlauf.png, id=1150, 671.00688pt x 762.85pt>
+<images/Buckboostconv_verlauf.png, id=1199, 671.00688pt x 762.85pt>
 File: images/Buckboostconv_verlauf.png Graphic file (type png)
 <use images/Buckboostconv_verlauf.png>
 Package pdftex.def Info: images/Buckboostconv_verlauf.png  used on input line 117.
@@ -1491,23 +1491,23 @@ contour: Using real outline for `Vergleich C-Glättung vs. L-Glättung' on input
 contour: Using real outline for `6.3.5\ ' on input line 123.
 contour: Using real outline for `Typische Prüfungsfälle' on input line 123.
 ) (./sections/03_M1U.tex
-<images/M1U.png, id=1169, 840.13875pt x 343.78438pt>
+<images/M1U.png, id=1217, 840.13875pt x 343.78438pt>
 File: images/M1U.png Graphic file (type png)
 <use images/M1U.png>
 Package pdftex.def Info: images/M1U.png  used on input line 8.
 (pdftex.def)             Requested size: 232.17616pt x 95.00523pt.
-<images/M1U_verlauf.png, id=1170, 923.45pt x 759.33687pt>
+<images/M1U_verlauf.png, id=1218, 923.45pt x 759.33687pt>
 File: images/M1U_verlauf.png Graphic file (type png)
 <use images/M1U_verlauf.png>
 Package pdftex.def Info: images/M1U_verlauf.png  used on input line 43.
 (pdftex.def)             Requested size: 232.17616pt x 190.91129pt.
-<images/M1C.png, id=1171, 504.88625pt x 239.39438pt>
+<images/M1C.png, id=1219, 504.88625pt x 239.39438pt>
 File: images/M1C.png Graphic file (type png)
 <use images/M1C.png>
 Package pdftex.def Info: images/M1C.png  used on input line 98.
 (pdftex.def)             Requested size: 232.17616pt x 110.08621pt.
 ) (./sections/04_B2U.tex
-<images/B2U.png, id=1172, 302.12875pt x 168.63pt>
+<images/B2U.png, id=1220, 302.12875pt x 168.63pt>
 File: images/B2U.png Graphic file (type png)
 <use images/B2U.png>
 Package pdftex.def Info: images/B2U.png  used on input line 8.
@@ -1520,45 +1520,45 @@ Package multicol Warning: Floats and marginpars not allowed inside `multicols' e
 Package multicol Warning: Floats and marginpars not allowed inside `multicols' environment!.
 
 [8 <./images/M1U.png> <./images/M1U_verlauf.png>]
-<images/B2U_verlauf.png, id=1190, 225.84375pt x 224.84pt>
+<images/B2U_verlauf.png, id=1238, 225.84375pt x 224.84pt>
 File: images/B2U_verlauf.png Graphic file (type png)
 <use images/B2U_verlauf.png>
 Package pdftex.def Info: images/B2U_verlauf.png  used on input line 39.
 (pdftex.def)             Requested size: 232.17616pt x 231.15894pt.
 ) (./sections/05_B2C_gesteuert.tex
-<images/B1C.png, id=1191, 455.20062pt x 406.51875pt>
+<images/B1C.png, id=1239, 455.20062pt x 406.51875pt>
 File: images/B1C.png Graphic file (type png)
 <use images/B1C.png>
 Package pdftex.def Info: images/B1C.png  used on input line 5.
 (pdftex.def)             Requested size: 232.17616pt x 207.34662pt.
-<images/B1C_Verlauf.png, id=1192, 445.665pt x 430.10687pt>
+<images/B1C_Verlauf.png, id=1240, 445.665pt x 430.10687pt>
 File: images/B1C_Verlauf.png Graphic file (type png)
 <use images/B1C_Verlauf.png>
 Package pdftex.def Info: images/B1C_Verlauf.png  used on input line 34.
 (pdftex.def)             Requested size: 232.17616pt x 224.07031pt.
 ) (./sections/14_3Gleichrichter.tex
-<images/B6U.png, id=1193, 681.04437pt x 296.60812pt>
+<images/B6U.png, id=1241, 681.04437pt x 296.60812pt>
 File: images/B6U.png Graphic file (type png)
 <use images/B6U.png>
 Package pdftex.def Info: images/B6U.png  used on input line 8.
 (pdftex.def)             Requested size: 177.54353pt x 77.32448pt.
-<images/B6U_verlauf.png, id=1194, 1184.92688pt x 681.54625pt>
+<images/B6U_verlauf.png, id=1242, 1184.92688pt x 681.54625pt>
 File: images/B6U_verlauf.png Graphic file (type png)
 <use images/B6U_verlauf.png>
 Package pdftex.def Info: images/B6U_verlauf.png  used on input line 12.
 (pdftex.def)             Requested size: 232.17616pt x 133.54056pt.
-<images/B6C.png, id=1195, 323.70938pt x 238.8925pt>
+<images/B6C.png, id=1243, 323.70938pt x 238.8925pt>
 File: images/B6C.png Graphic file (type png)
 <use images/B6C.png>
 Package pdftex.def Info: images/B6C.png  used on input line 35.
 (pdftex.def)             Requested size: 177.54353pt x 131.0231pt.
  [9 <./images/M1C.png> <./images/B2U_verlauf.png> <./images/B1C.png> <./images/B1C_Verlauf.png> <./images/B6U.png>]
-<images/B6C_Verlauf.png, id=1209, 735.24687pt x 721.69624pt>
+<images/B6C_Verlauf.png, id=1257, 735.24687pt x 721.69624pt>
 File: images/B6C_Verlauf.png Graphic file (type png)
 <use images/B6C_Verlauf.png>
 Package pdftex.def Info: images/B6C_Verlauf.png  used on input line 39.
 (pdftex.def)             Requested size: 232.17616pt x 227.89714pt.
-<images/kommutierung.png, id=1210, 687.56876pt x 1044.90375pt>
+<images/kommutierung.png, id=1258, 687.56876pt x 1044.90375pt>
 File: images/kommutierung.png Graphic file (type png)
 <use images/kommutierung.png>
 Package pdftex.def Info: images/kommutierung.png  used on input line 63.
@@ -1570,7 +1570,7 @@ Package multicol Warning: Floats and marginpars not allowed inside `multicols' e
 
 Package multicol Warning: Floats and marginpars not allowed inside `multicols' environment!.
 
-<images/B6strom.png, id=1211, 294.09875pt x 172.645pt>
+<images/B6strom.png, id=1259, 294.09875pt x 172.645pt>
 File: images/B6strom.png Graphic file (type png)
 <use images/B6strom.png>
 Package pdftex.def Info: images/B6strom.png  used on input line 105.
@@ -1582,39 +1582,39 @@ Package multicol Warning: Floats and marginpars not allowed inside `multicols' e
 Package multicol Warning: Floats and marginpars not allowed inside `multicols' environment!.
 
 ) (./sections/06_Wechselstromsteller.tex
-<images/Wechselstromschalter.png, id=1212, 532.48938pt x 554.07pt>
+<images/Wechselstromschalter.png, id=1260, 532.48938pt x 554.07pt>
 File: images/Wechselstromschalter.png Graphic file (type png)
 <use images/Wechselstromschalter.png>
 Package pdftex.def Info: images/Wechselstromschalter.png  used on input line 8.
 (pdftex.def)             Requested size: 232.17616pt x 241.58495pt.
-<images/Wechselstromsteller.png, id=1213, 486.81876pt x 442.15187pt>
+<images/Wechselstromsteller.png, id=1261, 486.81876pt x 442.15187pt>
 File: images/Wechselstromsteller.png Graphic file (type png)
 <use images/Wechselstromsteller.png>
 Package pdftex.def Info: images/Wechselstromsteller.png  used on input line 29.
 (pdftex.def)             Requested size: 232.17616pt x 210.8744pt.
  [10 <./images/B6U_verlauf.png> <./images/B6C.png> <./images/B6C_Verlauf.png> <./images/Wechselstromschalter.png>]) (./sections/07_Gleichstromsteller.tex
-<images/Gleichstromsteller.png, id=1228, 689.57625pt x 297.61188pt>
+<images/Gleichstromsteller.png, id=1276, 689.57625pt x 297.61188pt>
 File: images/Gleichstromsteller.png Graphic file (type png)
 <use images/Gleichstromsteller.png>
-Package pdftex.def Info: images/Gleichstromsteller.png  used on input line 10.
+Package pdftex.def Info: images/Gleichstromsteller.png  used on input line 24.
 (pdftex.def)             Requested size: 232.17616pt x 100.2058pt.
-<images/Gleichstromsteller1Q.png, id=1229, 1028.34187pt x 528.47438pt>
+<images/Gleichstromsteller1Q.png, id=1277, 1028.34187pt x 528.47438pt>
 File: images/Gleichstromsteller1Q.png Graphic file (type png)
 <use images/Gleichstromsteller1Q.png>
-Package pdftex.def Info: images/Gleichstromsteller1Q.png  used on input line 24.
+Package pdftex.def Info: images/Gleichstromsteller1Q.png  used on input line 112.
 (pdftex.def)             Requested size: 232.17616pt x 119.31285pt.
-<images/Gleichstromsteller2Q.png, id=1230, 1062.46938pt x 649.92813pt>
+<images/Gleichstromsteller2Q.png, id=1278, 1062.46938pt x 649.92813pt>
 File: images/Gleichstromsteller2Q.png Graphic file (type png)
 <use images/Gleichstromsteller2Q.png>
-Package pdftex.def Info: images/Gleichstromsteller2Q.png  used on input line 37.
+Package pdftex.def Info: images/Gleichstromsteller2Q.png  used on input line 141.
 (pdftex.def)             Requested size: 232.17616pt x 142.02267pt.
-<images/Gleichstromsteller4Q.png, id=1231, 1167.36125pt x 636.3775pt>
+<images/Gleichstromsteller4Q.png, id=1279, 1167.36125pt x 636.3775pt>
 File: images/Gleichstromsteller4Q.png Graphic file (type png)
 <use images/Gleichstromsteller4Q.png>
-Package pdftex.def Info: images/Gleichstromsteller4Q.png  used on input line 49.
+Package pdftex.def Info: images/Gleichstromsteller4Q.png  used on input line 165.
 (pdftex.def)             Requested size: 232.17616pt x 126.56439pt.
-) (./sections/08_Gleichstrommaschine.tex
-<images/Grundaufbau_gleistrommaschiene.png, id=1232, 579.16376pt x 502.87875pt>
+ [11 <./images/Wechselstromsteller.png> <./images/Gleichstromsteller.png> <./images/Gleichstromsteller1Q.png> <./images/Gleichstromsteller2Q.png>]) (./sections/08_Gleichstrommaschine.tex
+<images/Grundaufbau_gleistrommaschiene.png, id=1296, 579.16376pt x 502.87875pt>
 File: images/Grundaufbau_gleistrommaschiene.png Graphic file (type png)
 <use images/Grundaufbau_gleistrommaschiene.png>
 Package pdftex.def Info: images/Grundaufbau_gleistrommaschiene.png  used on input line 20.
@@ -1622,19 +1622,18 @@ Package pdftex.def Info: images/Grundaufbau_gleistrommaschiene.png  used on inpu
 
 contour: Using real outline for `12.1.1\ ' on input line 23.
 contour: Using real outline for `Vereinfachtes Ersatzschaltbild' on input line 23.
-<images/gleichstrommasciene.png, id=1233, 717.68124pt x 251.94125pt>
+<images/gleichstrommasciene.png, id=1297, 717.68124pt x 251.94125pt>
 File: images/gleichstrommasciene.png Graphic file (type png)
 <use images/gleichstrommasciene.png>
 Package pdftex.def Info: images/gleichstrommasciene.png  used on input line 25.
 (pdftex.def)             Requested size: 232.17616pt x 81.50319pt.
-[11 <./images/Wechselstromsteller.png> <./images/Gleichstromsteller.png> <./images/Gleichstromsteller1Q.png> <./images/Gleichstromsteller2Q.png> <./images/Gleichstromsteller4Q.png> <./images/Grundaufbau_gleistrommaschiene.png>]
 contour: Using real outline for `12.2.1\ ' on input line 40.
 contour: Using real outline for `Elektrische Gleichung' on input line 40.
 contour: Using real outline for `12.2.2\ ' on input line 46.
 contour: Using real outline for `Gegenspannung' on input line 46.
 contour: Using real outline for `12.2.3\ ' on input line 59.
 contour: Using real outline for `Drehmomentgleichung' on input line 59.
-) (./sections/09_Drezahlregelung.tex [12 <./images/gleichstrommasciene.png>]
+[12 <./images/Gleichstromsteller4Q.png> <./images/Grundaufbau_gleistrommaschiene.png> <./images/gleichstrommasciene.png>]) (./sections/09_Drezahlregelung.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 101.
@@ -1647,6 +1646,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 101.
 
+[13]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 120.
@@ -1660,24 +1660,29 @@ contour: Using real outline for `Leerlauf' on input line 134.
 contour: Using real outline for `13.7.2\ ' on input line 141.
 contour: Using real outline for `Kurzschluss / Blockieren' on input line 141.
 ) (./sections/10_einphasiger_wechselrichter.tex
-<images/1PWechselrichter.png, id=1288, 971.12813pt x 583.68062pt>
+<images/1PWechselrichter.png, id=1350, 971.12813pt x 583.68062pt>
 File: images/1PWechselrichter.png Graphic file (type png)
 <use images/1PWechselrichter.png>
-Package pdftex.def Info: images/1PWechselrichter.png  used on input line 7.
+Package pdftex.def Info: images/1PWechselrichter.png  used on input line 20.
 (pdftex.def)             Requested size: 232.17616pt x 139.54292pt.
-<images/1PWechselrichter_verlauf.png, id=1289, 1168.86688pt x 715.17188pt>
+<images/1PWechselrichter_verlauf.png, id=1351, 1168.86688pt x 715.17188pt>
 File: images/1PWechselrichter_verlauf.png Graphic file (type png)
 <use images/1PWechselrichter_verlauf.png>
-Package pdftex.def Info: images/1PWechselrichter_verlauf.png  used on input line 11.
+Package pdftex.def Info: images/1PWechselrichter_verlauf.png  used on input line 49.
 (pdftex.def)             Requested size: 232.17616pt x 142.0497pt.
-) (./sections/11_Harmonische_Spektralanalyse.tex [13 <./images/1PWechselrichter.png> <./images/1PWechselrichter_verlauf.png>]
+ [14 <./images/1PWechselrichter.png> <./images/1PWechselrichter_verlauf.png>]
+contour: Using real outline for `14.6.1\ ' on input line 148.
+contour: Using real outline for `Rechteckbetrieb' on input line 148.
+contour: Using real outline for `14.6.2\ ' on input line 156.
+contour: Using real outline for `PWM-Betrieb' on input line 156.
+) (./sections/11_Harmonische_Spektralanalyse.tex
 contour: Using real outline for `15.3.1\ ' on input line 56.
 contour: Using real outline for `Phasenanschnitt (Wechselstromsteller, B2C)' on input line 56.
 File: images/Wechselstromsteller.png Graphic file (type png)
 <use images/Wechselstromsteller.png>
 Package pdftex.def Info: images/Wechselstromsteller.png  used on input line 57.
 (pdftex.def)             Requested size: 232.17616pt x 210.8744pt.
-<images/Wechselstromsteller_Verlauf.png, id=1320, 564.1075pt x 556.0775pt>
+<images/Wechselstromsteller_Verlauf.png, id=1381, 564.1075pt x 556.0775pt>
 File: images/Wechselstromsteller_Verlauf.png Graphic file (type png)
 <use images/Wechselstromsteller_Verlauf.png>
 Package pdftex.def Info: images/Wechselstromsteller_Verlauf.png  used on input line 61.
@@ -1688,26 +1693,27 @@ contour: Using real outline for `15.3.3\ ' on input line 85.
 contour: Using real outline for `PWM-Wechselrichter' on input line 85.
 contour: Using real outline for `15.5.1\ ' on input line 112.
 contour: Using real outline for `Total Harmonic Distortion (THD)' on input line 112.
+[15 <./images/Wechselstromsteller_Verlauf.png>]
 contour: Using real outline for `15.5.2\ ' on input line 132.
 contour: Using real outline for `Verzerrungsfaktor' on input line 132.
-[14 <./images/Wechselstromsteller_Verlauf.png>]) (./sections/12_PWM.tex
-<images/sinuspwm.png, id=1345, 383.4325pt x 132.495pt>
+) (./sections/12_PWM.tex
+<images/sinuspwm.png, id=1403, 383.4325pt x 132.495pt>
 File: images/sinuspwm.png Graphic file (type png)
 <use images/sinuspwm.png>
 Package pdftex.def Info: images/sinuspwm.png  used on input line 7.
 (pdftex.def)             Requested size: 232.17616pt x 80.22946pt.
-<images/specpwm.png, id=1346, 838.13126pt x 301.125pt>
+<images/specpwm.png, id=1404, 838.13126pt x 301.125pt>
 File: images/specpwm.png Graphic file (type png)
 <use images/specpwm.png>
 Package pdftex.def Info: images/specpwm.png  used on input line 67.
 (pdftex.def)             Requested size: 232.17616pt x 83.41383pt.
 ) (./sections/13_3Wechselrichter.tex
-<images/3PWechselrichter.png, id=1347, 941.01563pt x 640.3925pt>
+<images/3PWechselrichter.png, id=1405, 941.01563pt x 640.3925pt>
 File: images/3PWechselrichter.png Graphic file (type png)
 <use images/3PWechselrichter.png>
 Package pdftex.def Info: images/3PWechselrichter.png  used on input line 7.
 (pdftex.def)             Requested size: 232.17616pt x 157.99683pt.
-
+ [16 <./images/sinuspwm.png> <./images/specpwm.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 12.
@@ -1741,23 +1747,22 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 22.
 
 ) (./sections/15_Direktumrichter.tex
-<images/direktumrichtergrund.png, id=1348, 1084.05pt x 362.35374pt>
+<images/direktumrichtergrund.png, id=1438, 1084.05pt x 362.35374pt>
 File: images/direktumrichtergrund.png Graphic file (type png)
 <use images/direktumrichtergrund.png>
 Package pdftex.def Info: images/direktumrichtergrund.png  used on input line 9.
 (pdftex.def)             Requested size: 232.17616pt x 77.60596pt.
- [15 <./images/sinuspwm.png> <./images/specpwm.png> <./images/3PWechselrichter.png>]
-<images/direktumrichter_matrix.png, id=1379, 307.1475pt x 164.615pt>
+<images/direktumrichter_matrix.png, id=1439, 307.1475pt x 164.615pt>
 File: images/direktumrichter_matrix.png Graphic file (type png)
 <use images/direktumrichter_matrix.png>
 Package pdftex.def Info: images/direktumrichter_matrix.png  used on input line 41.
 (pdftex.def)             Requested size: 232.17616pt x 124.43552pt.
-<images/direktumrichter_kommutierung.png, id=1380, 381.425pt x 133.49875pt>
+<images/direktumrichter_kommutierung.png, id=1440, 381.425pt x 133.49875pt>
 File: images/direktumrichter_kommutierung.png Graphic file (type png)
 <use images/direktumrichter_kommutierung.png>
 Package pdftex.def Info: images/direktumrichter_kommutierung.png  used on input line 69.
 (pdftex.def)             Requested size: 232.17616pt x 81.26096pt.
-) (./sections/100_fourierreihen.tex
+) (./sections/100_fourierreihen.tex [17 <./images/3PWechselrichter.png> <./images/direktumrichtergrund.png> <./images/direktumrichter_matrix.png> <./images/direktumrichter_kommutierung.png>]
 contour: Using real outline for `19.2.1\ ' on input line 57.
 contour: Using real outline for `Umrechnung der Fourierkoeffizienten' on input line 57.
 contour: Using real outline for `19.3.1\ ' on input line 72.
@@ -1770,7 +1775,6 @@ contour: Using real outline for `19.3.4\ ' on input line 117.
 contour: Using real outline for `Zeitverschiebung' on input line 117.
 contour: Using real outline for `19.4.1\ ' on input line 133.
 contour: Using real outline for `Optimalität der Fourierreihe' on input line 133.
-[16 <./images/direktumrichtergrund.png> <./images/direktumrichter_matrix.png> <./images/direktumrichter_kommutierung.png>]
 contour: Using real outline for `19.4.2\ ' on input line 147.
 contour: Using real outline for `Bessel'sche Ungleichung' on input line 147.
 contour: Using real outline for `19.4.3\ ' on input line 153.
@@ -1784,7 +1788,7 @@ contour: Using real outline for `Konvergenzgeschwindingkeit der Fourierkoeffizie
 contour: Using real outline for `19.4.7\ ' on input line 191.
 contour: Using real outline for `Punktweise Konvergenz (Satz von Dirichlet)' on input line 191.
 contour: Using real outline for `Beispiel: Summenberechnung mit Fourierreihe' on input line 213.
-<images/gibbs.PNG, id=1401, 482.80376pt x 152.57pt>
+<images/gibbs.PNG, id=1467, 482.80376pt x 152.57pt>
 File: images/gibbs.PNG Graphic file (type png)
 <use images/gibbs.PNG>
 Package pdftex.def Info: images/gibbs.PNG  used on input line 238.
@@ -1792,6 +1796,7 @@ Package pdftex.def Info: images/gibbs.PNG  used on input line 238.
 ) (./sections/200_Mathe.tex
 contour: Using real outline for `20.1.1\ ' on input line 23.
 contour: Using real outline for `Elementare Funktionen' on input line 23.
+[18]
 contour: Using real outline for `20.1.2\ ' on input line 39.
 contour: Using real outline for `Lineare Regeln' on input line 39.
 contour: Using real outline for `20.1.3\ ' on input line 47.
@@ -1800,7 +1805,6 @@ contour: Using real outline for `20.1.4\ ' on input line 53.
 contour: Using real outline for `Quotientenregel' on input line 53.
 contour: Using real outline for `20.1.5\ ' on input line 60.
 contour: Using real outline for `Kettenregel' on input line 60.
-[17 <./images/gibbs.PNG>]
 contour: Using real outline for `20.3.1\ ' on input line 90.
 contour: Using real outline for `Elementare Integrale' on input line 90.
 contour: Using real outline for `20.3.2\ ' on input line 104.
@@ -1819,6 +1823,7 @@ contour: Using real outline for `20.9.2\ ' on input line 247.
 contour: Using real outline for `Komplexe Sinusdarstellung' on input line 247.
 contour: Using real outline for `20.10.1\ ' on input line 260.
 contour: Using real outline for `Grundformen' on input line 260.
+[19 <./images/gibbs.PNG>]
 contour: Using real outline for `20.10.2\ ' on input line 274.
 contour: Using real outline for `Konjugation' on input line 274.
 contour: Using real outline for `20.10.3\ ' on input line 282.
@@ -1831,7 +1836,6 @@ contour: Using real outline for `20.11.2\ ' on input line 307.
 contour: Using real outline for `Impedanzen' on input line 307.
 contour: Using real outline for `20.11.3\ ' on input line 317.
 contour: Using real outline for `Serien- und Parallelschaltung' on input line 317.
-[18]
 contour: Using real outline for `20.15.1\ ' on input line 386.
 contour: Using real outline for `Definition' on input line 386.
 contour: Using real outline for `20.15.2\ ' on input line 395.
@@ -1864,6 +1868,7 @@ contour: Using real outline for `20.17.3\ ' on input line 546.
 contour: Using real outline for `R--C-Kreis' on input line 546.
 contour: Using real outline for `20.18.1\ ' on input line 564.
 contour: Using real outline for `Standardform' on input line 564.
+[20]
 contour: Using real outline for `20.18.2\ ' on input line 576.
 contour: Using real outline for `Dämpfungsfälle' on input line 576.
 contour: Using real outline for `20.18.3\ ' on input line 589.
@@ -1876,7 +1881,7 @@ contour: Using real outline for `20.18.6\ ' on input line 632.
 contour: Using real outline for `Laplace-Lösung von DGLs' on input line 632.
 contour: Using real outline for `20.18.7\ ' on input line 643.
 contour: Using real outline for `Standardübertragungsfunktionen' on input line 643.
-[19]) (./sections/300_ETformeln.tex
+) (./sections/300_ETformeln.tex
 contour: Using real outline for `21.1.1\ ' on input line 13.
 contour: Using real outline for `Strom, Spannung, Leistung' on input line 13.
 contour: Using real outline for `21.1.2\ ' on input line 27.
@@ -1921,6 +1926,7 @@ contour: Using real outline for `$I$' on input line 152.
 contour: Using real outline for `$I$' on input line 152.
 contour: Using real outline for `$I$' on input line 152.
 contour: Using real outline for `$I$' on input line 152.
+[21]
 contour: Using real outline for `21.6.1\ ' on input line 190.
 contour: Using real outline for `Grundgrössen' on input line 190.
 contour: Using real outline for `21.6.2\ ' on input line 211.
@@ -1935,7 +1941,6 @@ contour: Using real outline for `21.6.6\ ' on input line 258.
 contour: Using real outline for `Luftspalt (dominant)' on input line 258.
 contour: Using real outline for `21.6.7\ ' on input line 269.
 contour: Using real outline for `Energie und Kraft im Magnetfeld' on input line 269.
-[20]
 contour: Using real outline for `21.6.8\ ' on input line 286.
 contour: Using real outline for `Induzierte Spannung (Faraday)' on input line 286.
 contour: Using real outline for `21.7.1\ ' on input line 299.
@@ -1963,6 +1968,7 @@ contour: Using real outline for `Leistungsfluss (Poynting)' on input line 443.
 ) (./sections/400_DGL.tex
 contour: Using real outline for `22.1.1\ ' on input line 23.
 contour: Using real outline for `1. Ordnung (typisch R--L, R--C)' on input line 23.
+[22]
 contour: Using real outline for `22.1.2\ ' on input line 29.
 contour: Using real outline for `2. Ordnung (typisch RLC, mechanische Systeme)' on input line 29.
 contour: Using real outline for `22.1.3\ ' on input line 35.
@@ -1973,7 +1979,6 @@ contour: Using real outline for `22.3.2\ ' on input line 70.
 contour: Using real outline for `Lösungsstruktur' on input line 70.
 contour: Using real outline for `22.3.3\ ' on input line 83.
 contour: Using real outline for `Wichtiger Spezialfall: Konstantanregung $u(t)=U$' on input line 83.
-[21]
 contour: Using real outline for `22.7.1\ ' on input line 169.
 contour: Using real outline for `Standardform' on input line 169.
 contour: Using real outline for `22.7.2\ ' on input line 182.
@@ -1990,12 +1995,12 @@ contour: Using real outline for `22.9.3\ ' on input line 268.
 contour: Using real outline for `Beispiel: 1. Ordnung per Laplace' on input line 268.
 contour: Using real outline for `22.10.1\ ' on input line 298.
 contour: Using real outline for `Vorgehen' on input line 298.
-) (./sections/500_Uebungen.tex [22]
+[23]) (./sections/500_Uebungen.tex
 Overfull \hbox (26.15567pt too wide) detected at line 184
 []
  []
 
-
+[24]
 Overfull \hbox (11.72604pt too wide) detected at line 287
 \OML/txmi/m/it/8 a[] \OT1/txr/m/n/8 = [] [][] \OML/txmi/m/it/8 u[]\OT1/txr/m/n/8 (\OML/txmi/m/it/8 \OT1/txr/m/n/8 ) \OML/txmi/m/it/8 d;  a[] \OT1/txr/m/n/8 = [] [][] \OML/txmi/m/it/8 u[]\OT1/txr/m/n/8 (\OML/txmi/m/it/8 \OT1/txr/m/n/8 ) [](\OML/txmi/m/it/8 k\OT1/txr/m/n/8 ) \OML/txmi/m/it/8 d;  b[] \OT1/txr/m/n/8 = [] [][] \OML/txmi/m/it/8 u[]\OT1/txr/m/n/8 (\OML/txmi/m/it/8 \OT1/txr/m/n/8 ) [](\OML/txmi/m/it/8 k\OT1/txr/m/n/8 ) \OML/txmi/m/it/8 d:
  []
@@ -2010,7 +2015,7 @@ Overfull \hbox (65.86041pt too wide) detected at line 326
 []\OML/txmi/m/it/8 :
  []
 
-[23] [24] [25]) (./sections/600_Schnellentscheidung.tex
+[25] [26]) (./sections/600_Schnellentscheidung.tex
 contour: Using real outline for `30.1.1\ ' on input line 12.
 contour: Using real outline for `Grundrelationen' on input line 12.
 contour: Using real outline for `30.1.2\ ' on input line 25.
@@ -2037,6 +2042,7 @@ contour: Using real outline for `30.4.3\ ' on input line 143.
 contour: Using real outline for `C-Glättung vs L-Glättung' on input line 143.
 contour: Using real outline for `30.4.4\ ' on input line 152.
 contour: Using real outline for `Kommutierungsüberlappung' on input line 152.
+[27]
 contour: Using real outline for `30.4.5\ ' on input line 159.
 contour: Using real outline for `Harmonische' on input line 159.
 contour: Using real outline for `30.6.1\ ' on input line 183.
@@ -2051,7 +2057,6 @@ contour: Using real outline for `30.7.3\ ' on input line 216.
 contour: Using real outline for `Betriebsart' on input line 216.
 contour: Using real outline for `30.12.1\ ' on input line 263.
 contour: Using real outline for `Kernaussagen' on input line 263.
-[26]
 contour: Using real outline for `30.12.2\ ' on input line 269.
 contour: Using real outline for `Ankerspannung' on input line 269.
 contour: Using real outline for `30.12.3\ ' on input line 276.
@@ -2060,28 +2065,28 @@ contour: Using real outline for `30.12.4\ ' on input line 282.
 contour: Using real outline for `Feld' on input line 282.
 contour: Using real outline for `30.12.5\ ' on input line 289.
 contour: Using real outline for `Anlauf' on input line 289.
-) [27] (./zusammenfassung.aux <Reading QR code for "https://github.com/Giamo08/Zusammenfassungen" at level 3-L from aux file.>
+) [28] (./zusammenfassung.aux <Reading QR code for "https://github.com/Giamo08/Zusammenfassungen" at level 3-L from aux file.>
 )
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `zusammenfassung.out' has not changed.
-(rerunfilecheck)             Checksum: EDAEEC210D3EFFDD07E144A511D1FEB4;49272.
+(rerunfilecheck)             Checksum: D88FBD9876CCA2481CA2E03B70DFB5C5;51627.
  ) 
 Here is how much of TeX's memory you used:
- 66381 strings out of 474116
- 1622982 string characters out of 5743681
+ 66422 strings out of 474116
+ 1623546 string characters out of 5743681
  2605781 words of memory out of 5000000
- 86824 multiletter control sequences out of 15000+600000
+ 86836 multiletter control sequences out of 15000+600000
  655349 words of font info for 230 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,16n,148p,1110b,2824s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,16n,148p,1110b,2884s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txbsy.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txexa.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zusammenfassung.pdf (27 pages, 4247536 bytes).
+Output written on zusammenfassung.pdf (28 pages, 4257965 bytes).
 PDF statistics:
- 2072 PDF objects out of 2073 (max. 8388607)
- 1900 compressed objects within 19 object streams
- 919 named destinations out of 1000 (max. 500000)
- 2044 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2146 PDF objects out of 2487 (max. 8388607)
+ 1972 compressed objects within 20 object streams
+ 948 named destinations out of 1000 (max. 500000)
+ 2140 words of extra memory for PDF output out of 10000 (max. 10000000)
 
