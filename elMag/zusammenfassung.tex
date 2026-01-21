@@ -2898,6 +2898,146 @@ Die folgenden Aussagen dienen als kompakte Entscheidungsgrundlage f\"ur Multiple
     \item ``Die Systemenergie h\"angt vom Netz ab.'' $\rightarrow$ falsch
 \end{itemize}
 
+
+\section{1-seitige Entscheidungs-Matrix für EM-Prüfungen}
+% =========================================================
+\vspace{4pt}
+
+% ---------------------------------------------------------
+\subsection*{Schritt 1: Zeitverhalten}
+% ---------------------------------------------------------
+
+\begin{schema}
+\begin{tabular}{p{4cm} p{10cm}}
+\imp{Frage} & \imp{Konsequenz} \\ \hline
+Keine Zeitabhängigkeit & $\partial/\partial t=0$ \\
+Sinusförmig, Frequenz $f$ gegeben & Frequenzbereich, $e^{j\omega t}$ \\
+Ausbreitung, Phasenverschiebung im Raum & Wellenregime \\
+\end{tabular}
+\end{schema}
+
+\vspace{2pt}
+
+% ---------------------------------------------------------
+\subsection*{Schritt 2: Dominante Physik}
+% ---------------------------------------------------------
+
+\begin{schema}
+\begin{tabular}{p{4cm} p{10cm}}
+\imp{Beobachtung} & \imp{Regime} \\ \hline
+Ladungen, Potentiale, Dielektrikum & Elektrostatik \\
+Ströme, Widerstand, DC & Stationäre Strömung \\
+Ströme treiben $\B$, keine Zeitabhängigkeit & Magnetostatik \\
+AC, Leiter, Skin-Effekt & Magneto-Quasistatik (MQS) \\
+Reflexion, Transmission, Impedanz & Elektrodynamik (Wellen) \\
+\end{tabular}
+\end{schema}
+
+\vspace{2pt}
+
+% ---------------------------------------------------------
+\subsection*{Schritt 3: Darf ein Potential verwendet werden?}
+% ---------------------------------------------------------
+
+\begin{schema}
+\begin{tabular}{p{4cm} p{10cm}}
+\imp{Bedingung} & \imp{Wahl} \\ \hline
+$\nabla\times\E=0$ & $\E=-\nabla\varphi$ \\
+$\nabla\cdot\B=0$ & $\B=\nabla\times\A$ \\
+Induktion dominant & $\E=-\partial\A/\partial t$ \\
+Wellen & direkt $\E,\Hf$ ansetzen \\
+\end{tabular}
+\end{schema}
+
+\vspace{2pt}
+
+% ---------------------------------------------------------
+\subsection*{Schritt 4: Führende Gleichung}
+% ---------------------------------------------------------
+
+\begin{schema}
+\begin{tabular}{p{5cm} p{9cm}}
+\imp{Situation} & \imp{Grundgleichung} \\ \hline
+Elektrostatik, $\rho=0$ & $\Delta\varphi=0$ (Laplace) \\
+Elektrostatik, $\rho\neq0$ & $\Delta\varphi=-\rho/\eps$ (Poisson) \\
+Stationäre Strömung & $\nabla\cdot(\sigma\nabla\varphi)=0$ \\
+Magnetostatik & $\Delta\A=-\mu\J$ \\
+MQS (Leiter) & $\Delta\A-j\omega\mu\sigma\A=0$ \\
+Welle & $\Delta\E+\omega^2\mu\eps\E=0$ \\
+\end{tabular}
+\end{schema}
+
+\vspace{2pt}
+
+% ---------------------------------------------------------
+\subsection*{Schritt 5: Symmetrie $\rightarrow$ Koordinaten}
+% ---------------------------------------------------------
+
+\begin{schema}
+\begin{tabular}{p{4cm} p{10cm}}
+\imp{Geometrie} & \imp{Koordinaten + Abhängigkeit} \\ \hline
+Ebene, Platte & kartesisch, $u(x)$ \\
+Zylinder, Draht & zylindrisch, $u(r)$ \\
+Kugel, Punktquelle & sphärisch, $u(r)$ \\
+Unendlich lang & $\partial/\partial z=0$ \\
+Rotationssymmetrie & $\partial/\partial\varphi=0$ \\
+\end{tabular}
+\end{schema}
+
+\vspace{2pt}
+
+% ---------------------------------------------------------
+\subsection*{Schritt 6: Standardlösungen merken}
+% ---------------------------------------------------------
+
+\begin{schema}
+\begin{tabular}{p{5cm} p{9cm}}
+\imp{Gleichung} & \imp{Lösungsform} \\ \hline
+$\frac{\dd^2 u}{\dd x^2}=0$ & $u=Ax+B$ \\
+$\frac{1}{r}\frac{\dd}{\dd r}(r u')=0$ & $u=A\ln r+B$ \\
+$\frac{1}{r^2}\frac{\dd}{\dd r}(r^2 u')=0$ & $u=A/r+B$ \\
+$u''-\alpha^2 u=0$ & $u=Ae^{\alpha x}+Be^{-\alpha x}$ \\
+$u''+k^2u=0$ & $u=A\cos kx+B\sin kx$ \\
+\end{tabular}
+\end{schema}
+
+\vspace{2pt}
+
+% ---------------------------------------------------------
+\subsection*{Schritt 7: Randbedingungen (physikalisch)}
+% ---------------------------------------------------------
+
+\begin{schema}
+\begin{tabular}{p{5cm} p{9cm}}
+\imp{Rand} & \imp{Bedingung} \\ \hline
+Idealer Leiter (ES) & $\varphi=\text{konstant}$ \\
+Isolator (DC) & $\J_n=0$ \\
+Materialgrenze & Stetigkeit tangentialer Felder \\
+Symmetrieebene & $\partial u/\partial n=0$ \\
+Unendlichkeit & Lösung endlich / abklingend \\
+\end{tabular}
+\end{schema}
+
+\vspace{2pt}
+
+% ---------------------------------------------------------
+\subsection*{Schritt 8: Pflicht-Checks}
+% ---------------------------------------------------------
+
+\begin{checkitem}
+\begin{itemize}
+  \item Dimensionen korrekt?
+  \item Grenzfälle: $\omega\to0$, $r\to\infty$, $\sigma\to0$?
+  \item Richtungen von $\E$, $\Hf$, $\vec S$ plausibel?
+  \item Energieerhaltung bei Wellen erfüllt?
+\end{itemize}
+\end{checkitem}
+
+\begin{taktik}
+Wenn du unsicher bist:  
+\imp{Gehe exakt diese 8 Schritte durch.}  
+Keine Abkürzungen. Jede EM-Prüfungsaufgabe ist darin vollständig enthalten.
+\end{taktik}
 \section{Mathematisches Cheatsheet}
 % =========================================================
 
@@ -3549,145 +3689,347 @@ Reduziere sie auf Mathematik.
 Fast immer ist es eine Laplace-, Poisson-, Diffusions- oder Wellengleichung.
 \end{taktik}
 % =========================================================
+\section{Elektrotechnik und Magnetismus – Prüfungs-Spickzettel (Formeln)}
 
-\section{1-seitige Entscheidungs-Matrix für EM-Prüfungen}
-% =========================================================
-\vspace{4pt}
+%-------------------------------------------------
+\subsection{Fundamentale Konstanten}
 
-% ---------------------------------------------------------
-\subsection*{Schritt 1: Zeitverhalten}
-% ---------------------------------------------------------
+\[
+\varepsilon_0 = 8.854 \cdot 10^{-12}\,\mathrm{F/m}
+\qquad
+\mu_0 = 4\pi \cdot 10^{-7}\,\mathrm{H/m}
+\]
 
-\begin{schema}
-\begin{tabular}{p{4cm} p{10cm}}
-\imp{Frage} & \imp{Konsequenz} \\ \hline
-Keine Zeitabhängigkeit & $\partial/\partial t=0$ \\
-Sinusförmig, Frequenz $f$ gegeben & Frequenzbereich, $e^{j\omega t}$ \\
-Ausbreitung, Phasenverschiebung im Raum & Wellenregime \\
-\end{tabular}
-\end{schema}
+\[
+c = \frac{1}{\sqrt{\mu_0\varepsilon_0}}
+\]
 
-\vspace{2pt}
+%-------------------------------------------------
+\subsection{Maxwell-Gleichungen (makroskopisch)}
 
-% ---------------------------------------------------------
-\subsection*{Schritt 2: Dominante Physik}
-% ---------------------------------------------------------
+\[
+\nabla \cdot \mathbf{D} = \rho
+\qquad
+\nabla \cdot \mathbf{B} = 0
+\]
 
-\begin{schema}
-\begin{tabular}{p{4cm} p{10cm}}
-\imp{Beobachtung} & \imp{Regime} \\ \hline
-Ladungen, Potentiale, Dielektrikum & Elektrostatik \\
-Ströme, Widerstand, DC & Stationäre Strömung \\
-Ströme treiben $\B$, keine Zeitabhängigkeit & Magnetostatik \\
-AC, Leiter, Skin-Effekt & Magneto-Quasistatik (MQS) \\
-Reflexion, Transmission, Impedanz & Elektrodynamik (Wellen) \\
-\end{tabular}
-\end{schema}
+\[
+\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
+\qquad
+\nabla \times \mathbf{H}
+=
+\mathbf{J} + \frac{\partial \mathbf{D}}{\partial t}
+\]
 
-\vspace{2pt}
+%-------------------------------------------------
+\subsection{Materialgleichungen}
 
-% ---------------------------------------------------------
-\subsection*{Schritt 3: Darf ein Potential verwendet werden?}
-% ---------------------------------------------------------
+\[
+\mathbf{D} = \varepsilon \mathbf{E}
+\qquad
+\varepsilon = \varepsilon_0 \varepsilon_r
+\]
 
-\begin{schema}
-\begin{tabular}{p{4cm} p{10cm}}
-\imp{Bedingung} & \imp{Wahl} \\ \hline
-$\nabla\times\E=0$ & $\E=-\nabla\varphi$ \\
-$\nabla\cdot\B=0$ & $\B=\nabla\times\A$ \\
-Induktion dominant & $\E=-\partial\A/\partial t$ \\
-Wellen & direkt $\E,\Hf$ ansetzen \\
-\end{tabular}
-\end{schema}
+\[
+\mathbf{B} = \mu \mathbf{H}
+\qquad
+\mu = \mu_0 \mu_r
+\]
 
-\vspace{2pt}
+\[
+\mathbf{J} = \sigma \mathbf{E}
+\]
 
-% ---------------------------------------------------------
-\subsection*{Schritt 4: Führende Gleichung}
-% ---------------------------------------------------------
+%-------------------------------------------------
+\subsection{Elektrisches Potential und Feld}
 
-\begin{schema}
-\begin{tabular}{p{5cm} p{9cm}}
-\imp{Situation} & \imp{Grundgleichung} \\ \hline
-Elektrostatik, $\rho=0$ & $\Delta\varphi=0$ (Laplace) \\
-Elektrostatik, $\rho\neq0$ & $\Delta\varphi=-\rho/\eps$ (Poisson) \\
-Stationäre Strömung & $\nabla\cdot(\sigma\nabla\varphi)=0$ \\
-Magnetostatik & $\Delta\A=-\mu\J$ \\
-MQS (Leiter) & $\Delta\A-j\omega\mu\sigma\A=0$ \\
-Welle & $\Delta\E+\omega^2\mu\eps\E=0$ \\
-\end{tabular}
-\end{schema}
+\[
+\mathbf{E} = -\nabla V
+\]
 
-\vspace{2pt}
+\[
+U = -\int \mathbf{E}\cdot \mathrm d\mathbf{l}
+\]
 
-% ---------------------------------------------------------
-\subsection*{Schritt 5: Symmetrie $\rightarrow$ Koordinaten}
-% ---------------------------------------------------------
+\[
+Q = \oint \mathbf{D}\cdot \mathrm d\mathbf{A}
+\]
 
-\begin{schema}
-\begin{tabular}{p{4cm} p{10cm}}
-\imp{Geometrie} & \imp{Koordinaten + Abhängigkeit} \\ \hline
-Ebene, Platte & kartesisch, $u(x)$ \\
-Zylinder, Draht & zylindrisch, $u(r)$ \\
-Kugel, Punktquelle & sphärisch, $u(r)$ \\
-Unendlich lang & $\partial/\partial z=0$ \\
-Rotationssymmetrie & $\partial/\partial\varphi=0$ \\
-\end{tabular}
-\end{schema}
+%-------------------------------------------------
+\subsection{Laplace- und Poisson-Gleichung}
 
-\vspace{2pt}
+\[
+\nabla \cdot (\varepsilon \nabla V) = -\rho
+\]
 
-% ---------------------------------------------------------
-\subsection*{Schritt 6: Standardlösungen merken}
-% ---------------------------------------------------------
+Für konstantes $\varepsilon$:
+\[
+\Delta V = -\frac{\rho}{\varepsilon}
+\qquad
+(\rho = 0 \Rightarrow \Delta V = 0)
+\]
 
-\begin{schema}
-\begin{tabular}{p{5cm} p{9cm}}
-\imp{Gleichung} & \imp{Lösungsform} \\ \hline
-$\frac{\dd^2 u}{\dd x^2}=0$ & $u=Ax+B$ \\
-$\frac{1}{r}\frac{\dd}{\dd r}(r u')=0$ & $u=A\ln r+B$ \\
-$\frac{1}{r^2}\frac{\dd}{\dd r}(r^2 u')=0$ & $u=A/r+B$ \\
-$u''-\alpha^2 u=0$ & $u=Ae^{\alpha x}+Be^{-\alpha x}$ \\
-$u''+k^2u=0$ & $u=A\cos kx+B\sin kx$ \\
-\end{tabular}
-\end{schema}
+%-------------------------------------------------
+\subsection{Strom, Stromdichte, Kontinuität}
 
-\vspace{2pt}
+\[
+\mathbf{J} = \sigma \mathbf{E}
+\]
 
-% ---------------------------------------------------------
-\subsection*{Schritt 7: Randbedingungen (physikalisch)}
-% ---------------------------------------------------------
+\[
+I = \int \mathbf{J}\cdot \mathrm d\mathbf{A}
+\]
 
-\begin{schema}
-\begin{tabular}{p{5cm} p{9cm}}
-\imp{Rand} & \imp{Bedingung} \\ \hline
-Idealer Leiter (ES) & $\varphi=\text{konstant}$ \\
-Isolator (DC) & $\J_n=0$ \\
-Materialgrenze & Stetigkeit tangentialer Felder \\
-Symmetrieebene & $\partial u/\partial n=0$ \\
-Unendlichkeit & Lösung endlich / abklingend \\
-\end{tabular}
-\end{schema}
+\[
+\nabla \cdot \mathbf{J} + \frac{\partial \rho}{\partial t} = 0
+\]
 
-\vspace{2pt}
+Stationär:
+\[
+\nabla \cdot \mathbf{J} = 0
+\]
 
-% ---------------------------------------------------------
-\subsection*{Schritt 8: Pflicht-Checks}
-% ---------------------------------------------------------
+%-------------------------------------------------
+\subsection{Widerstand}
 
-\begin{checkitem}
-\begin{itemize}
-  \item Dimensionen korrekt?
-  \item Grenzfälle: $\omega\to0$, $r\to\infty$, $\sigma\to0$?
-  \item Richtungen von $\E$, $\Hf$, $\vec S$ plausibel?
-  \item Energieerhaltung bei Wellen erfüllt?
-\end{itemize}
-\end{checkitem}
+\[
+U = RI
+\]
 
-\begin{taktik}
-Wenn du unsicher bist:  
-\imp{Gehe exakt diese 8 Schritte durch.}  
-Keine Abkürzungen. Jede EM-Prüfungsaufgabe ist darin vollständig enthalten.
-\end{taktik}
+\[
+R = \frac{l}{\sigma A}
+\]
+
+%-------------------------------------------------
+\subsection{Elektrische Energie}
+
+Energiedichte:
+\[
+w_\mathrm{el} = \frac{1}{2}\mathbf{E}\cdot\mathbf{D}
+\]
+
+Gesamtenergie:
+\[
+W_\mathrm{el}
+=
+\frac{1}{2}
+\int_\Omega
+\varepsilon |\mathbf{E}|^2
+\,\mathrm d\Omega
+\]
+
+Mehrere Materialien:
+\[
+W_\mathrm{el}
+=
+\sum_i
+\frac{1}{2}
+\int_{\Omega_i}
+\varepsilon_i |\mathbf{E}_i|^2
+\,\mathrm d\Omega
+\]
+
+%-------------------------------------------------
+\subsection{Kapazität}
+
+Definition:
+\[
+C = \frac{Q}{U}
+\]
+
+Energieform:
+\[
+W_\mathrm{el} = \frac{1}{2} C U^2
+\]
+
+Zentrale Prüfungsformel:
+\[
+\boxed{
+C = \frac{2W_\mathrm{el}}{U^2}
+}
+\]
+
+Serienschaltung:
+\[
+\frac{1}{C_\mathrm{ges}} = \sum_i \frac{1}{C_i}
+\]
+
+Parallelschaltung:
+\[
+C_\mathrm{ges} = \sum_i C_i
+\]
+
+%-------------------------------------------------
+\subsection{Standard-Kapazitäten}
+
+Plattenkondensator:
+\[
+C = \varepsilon \frac{A}{d}
+\]
+
+Zylinderkondensator:
+\[
+C = \frac{2\pi \varepsilon H}{\ln(R_2/R_1)}
+\]
+
+Kugelkondensator:
+\[
+C = 4\pi \varepsilon \frac{R_1R_2}{R_2 - R_1}
+\]
+
+%-------------------------------------------------
+\subsection{Magnetische Größen}
+
+\[
+\mathbf{B} = \nabla \times \mathbf{A}
+\]
+
+\[
+\Phi = \int \mathbf{B}\cdot \mathrm d\mathbf{A}
+\]
+
+\[
+\Psi = N\Phi
+\]
+
+%-------------------------------------------------
+\subsection{Induktion}
+
+\[
+U_\mathrm{ind} = -\frac{\mathrm d\Phi}{\mathrm dt}
+\]
+
+\[
+U_\mathrm{ind} = -\frac{\mathrm d\Psi}{\mathrm dt}
+\]
+
+%-------------------------------------------------
+\subsection{Magnetische Energie}
+
+Energiedichte:
+\[
+w_\mathrm{mag} = \frac{1}{2}\mathbf{B}\cdot\mathbf{H}
+\]
+
+Gesamtenergie:
+\[
+W_\mathrm{mag}
+=
+\frac{1}{2}
+\int_\Omega
+\mu |\mathbf{H}|^2
+\,\mathrm d\Omega
+\]
+
+%-------------------------------------------------
+\subsection{Induktivität}
+
+Definition:
+\[
+L = \frac{\Psi}{I}
+\]
+
+Energieform:
+\[
+W_\mathrm{mag} = \frac{1}{2} L I^2
+\]
+
+Zentrale Prüfungsformel:
+\[
+\boxed{
+L = \frac{2W_\mathrm{mag}}{I^2}
+}
+\]
+
+%-------------------------------------------------
+\subsection{Standard-Induktivitäten}
+
+Lange Spule:
+\[
+L = \mu \frac{N^2 A}{l}
+\]
+
+Toroid:
+\[
+L = \frac{\mu N^2 H}{2\pi}
+\ln\frac{R_2}{R_1}
+\]
+
+%-------------------------------------------------
+\subsection{Zeitabhängige Bauelemente}
+
+Kondensator:
+\[
+i(t) = C \frac{\mathrm d u}{\mathrm dt}
+\]
+
+Induktor:
+\[
+u(t) = L \frac{\mathrm d i}{\mathrm dt}
+\]
+
+%-------------------------------------------------
+\subsection{Wechselstrom und Phasoren}
+
+\[
+u(t) = \Re\{\tilde U e^{j\omega t}\}
+\]
+
+\[
+\frac{\mathrm d}{\mathrm dt} \rightarrow j\omega
+\]
+
+Impedanzen:
+\[
+Z_R = R
+\qquad
+Z_C = \frac{1}{j\omega C}
+\qquad
+Z_L = j\omega L
+\]
+
+%-------------------------------------------------
+\subsection{Leistung und Energiefluss}
+
+Leistungsdichte:
+\[
+p = \mathbf{E}\cdot\mathbf{J}
+\]
+
+Verlustleistung:
+\[
+P = \int_\Omega \mathbf{E}\cdot\mathbf{J}\,\mathrm d\Omega
+\]
+
+Poynting-Vektor:
+\[
+\mathbf{S} = \mathbf{E} \times \mathbf{H}
+\]
+
+\[
+P = \oint \mathbf{S}\cdot \mathrm d\mathbf{A}
+\]
+
+%-------------------------------------------------
+\subsection{Zentrale Dualitäten}
+
+\[
+\varepsilon \leftrightarrow \mu
+\qquad
+\mathbf{E} \leftrightarrow \mathbf{H}
+\]
+
+\[
+U \leftrightarrow I
+\qquad
+Q \leftrightarrow \Psi
+\]
+
+\[
+W=\frac12 C U^2
+\qquad
+W=\frac12 L I^2
+\]
+
 
 \end{document}

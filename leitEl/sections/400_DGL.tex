@@ -1,0 +1,344 @@
+\section{Lösen von Differentialgleichungen}
+
+Diese Section zeigt ein \textbf{systematisches Vorgehen} zum Lösen typischer
+Differentialgleichungen in der Elektrotechnik und Leistungselektronik.
+Fokus: \textbf{1. Ordnung} (R--L / R--C) und \textbf{2. Ordnung} (RLC),
+inkl. \textbf{Stückweise-Betrieb} (Schaltzustände), wie er bei Umrichtern ständig vorkommt.
+
+\smallskip
+
+\textbf{Zielbild:}
+\begin{itemize}
+    \item DGL-Typ schnell erkennen
+    \item Standardlösung aufbauen (homogen + particular)
+    \item Anfangs- und Randbedingungen korrekt einsetzen
+    \item Laplace-Methode sicher anwenden
+    \item Stückweise Lösungen sauber verketten
+\end{itemize}
+
+% -------------------------------------------------
+\subsection{DGL-Typen (Prüfungs-Screening)}
+
+\subsubsection{1. Ordnung (typisch R--L, R--C)}
+
+\[
+\cbl{a \frac{dy}{dt} + b y = g(t)}
+\]
+
+\subsubsection{2. Ordnung (typisch RLC, mechanische Systeme)}
+
+\[
+\cbl{a \frac{d^2y}{dt^2} + b \frac{dy}{dt} + c y = g(t)}
+\]
+
+\subsubsection{Stückweise DGL (Umrichterbetrieb)}
+
+\[
+\cbl{\text{Je Schaltzustand eigene DGL, dann Übergangsbedingungen.}}
+\]
+
+\crd{\textrightarrow\ 80\% der Punkte kommen aus sauberem Strukturieren, nicht aus Rechenkunst.}
+
+% -------------------------------------------------
+\subsection{Universales Vorgehen}
+
+\begin{enumerate}
+    \item \textbf{Signal und System definieren:} gesuchte Grösse $y(t)$, Eingänge, Parameter.
+    \item \textbf{DGL aufstellen:} KVL/KCL oder Energie-/Kraftgleichungen.
+    \item \textbf{DGL normieren:} auf Standardform bringen.
+    \item \textbf{Lösungsansatz wählen:}
+    \begin{itemize}
+        \item Zeitbereich (homogen + particular)
+        \item Laplace (algebraisch)
+    \end{itemize}
+    \item \textbf{Konstanten bestimmen:} Anfangswerte, Periodenbedingungen, Randbedingungen.
+    \item \textbf{Plausibilisieren:} Grenzfälle $t\to 0$, $t\to\infty$, Einheiten, Vorzeichen.
+\end{enumerate}
+
+% -------------------------------------------------
+\subsection{DGL 1. Ordnung im Zeitbereich}
+
+\subsubsection{Standardform}
+
+\[
+\cbl{\frac{dy}{dt} + \frac{1}{\tau} y = k \, u(t)}
+\qquad
+\cbl{\tau = \frac{a}{b}}
+\]
+
+\subsubsection{Lösungsstruktur}
+
+\[
+\cbl{y(t) = y_h(t) + y_p(t)}
+\]
+
+Homogene Lösung ($u(t)=0$):
+\[
+\cbl{y_h(t) = C \e^{-t/\tau}}
+\]
+
+Partikuläre Lösung hängt von $u(t)$ ab.
+
+\subsubsection{Wichtiger Spezialfall: Konstantanregung $u(t)=U$}
+
+Partikulär:
+\[
+\cbl{y_p = k U \tau \cdot \frac{1}{\tau} = kU}
+\]
+
+Gesamtlösung:
+\[
+\cbl{y(t) = kU + \big(y(0)-kU\big)\e^{-t/\tau}}
+\]
+
+\crd{\textrightarrow\ Merksatz: Endwert + (Start-Endwert)$\cdot e^{-t/\tau}$.}
+
+% -------------------------------------------------
+\subsection{Beispiel 1: R--L-Kreis (Stromanstieg)}
+
+KVL:
+\[
+\cbl{L\frac{di}{dt} + Ri = U}
+\qquad
+\Rightarrow
+\qquad
+\frac{di}{dt} + \frac{R}{L} i = \frac{U}{L}
+\]
+
+Zeitkonstante:
+\[
+\cbl{\tau = \frac{L}{R}}
+\]
+
+Lösung:
+\[
+\cbl{i(t) = \frac{U}{R} + \left(i(0) - \frac{U}{R}\right)\e^{-t/\tau}}
+\]
+
+Spezialfall $i(0)=0$:
+\[
+\cbl{i(t) = \frac{U}{R}\left(1-\e^{-t/\tau}\right)}
+\]
+
+% -------------------------------------------------
+\subsection{Beispiel 2: R--C-Kreis (Spannungsanstieg am Kondensator)}
+
+KVL:
+\[
+\cbl{u_R + u_C = U,\quad u_R = Ri,\quad i = C\frac{du_C}{dt}}
+\]
+
+\[
+RC\frac{du_C}{dt}+u_C = U
+\qquad
+\cbl{\tau = RC}
+\]
+
+Lösung:
+\[
+\cbl{u_C(t) = U + \big(u_C(0)-U\big)\e^{-t/\tau}}
+\]
+
+Spezialfall $u_C(0)=0$:
+\[
+\cbl{u_C(t) = U\left(1-\e^{-t/\tau}\right)}
+\]
+
+% -------------------------------------------------
+\subsection{Integrierender Faktor (allgemeine 1. Ordnung)}
+
+Für:
+\[
+\cbl{\frac{dy}{dt} + p(t) y = q(t)}
+\]
+
+Integrierender Faktor:
+\[
+\cbl{\mu(t) = \e^{\int p(t)\,dt}}
+\]
+
+Dann:
+\[
+\cbl{y(t) = \frac{1}{\mu(t)}\left(\int \mu(t) q(t)\,dt + C\right)}
+\]
+
+% -------------------------------------------------
+\subsection{DGL 2. Ordnung im Zeitbereich}
+
+\subsubsection{Standardform}
+
+\[
+\cbl{\frac{d^2y}{dt^2} + 2\zeta\omega_0 \frac{dy}{dt} + \omega_0^2 y = K\omega_0^2 u(t)}
+\]
+
+Parameter:
+\[
+\cbl{\omega_0 = \sqrt{\frac{1}{LC}}}
+\qquad
+\cbl{\zeta = \frac{R}{2}\sqrt{\frac{C}{L}}}
+\]
+
+\subsubsection{Homogene Lösung über charakteristische Gleichung}
+
+Ansatz:
+\[
+y_h(t)=\e^{st}
+\]
+
+Charakteristische Gleichung:
+\[
+\cbl{s^2 + 2\zeta\omega_0 s + \omega_0^2 = 0}
+\]
+
+Pole:
+\[
+\cbl{s_{1,2} = -\zeta\omega_0 \pm \omega_0\sqrt{\zeta^2-1}}
+\]
+
+\subsubsection{Fälle}
+
+Unterdämpft ($0<\zeta<1$):
+\[
+\cbl{y_h(t)=\e^{-\zeta\omega_0 t}\left(C_1\cos(\omega_d t)+C_2\sin(\omega_d t)\right)}
+\]
+\[
+\cbl{\omega_d = \omega_0\sqrt{1-\zeta^2}}
+\]
+
+Kritisch ($\zeta=1$):
+\[
+\cbl{y_h(t)=(C_1+C_2 t)\e^{-\omega_0 t}}
+\]
+
+Überdämpft ($\zeta>1$):
+\[
+\cbl{y_h(t)=C_1\e^{s_1 t}+C_2\e^{s_2 t}}
+\]
+
+\subsubsection{Partikuläre Lösung}
+
+Typische Prüfungsinputs:
+\begin{itemize}
+    \item Konstante $u(t)=U$
+    \item Sprung $u(t)=U\cdot 1(t)$
+    \item Sinus $u(t)=\hat U\sin(\omega t)$ (Frequenzantwort)
+\end{itemize}
+
+Für $u(t)=U$ ist meist $y_p$ konstant.
+
+% -------------------------------------------------
+\subsection{Beispiel 3: Serien-RLC (typische Form)}
+
+Aus KVL:
+\[
+u(t)=Ri(t)+L\frac{di}{dt}+\frac{1}{C}\int i(t)\,dt
+\]
+
+Differenziert:
+\[
+\cbl{\frac{d^2 i}{dt^2} + \frac{R}{L}\frac{di}{dt} + \frac{1}{LC}i = \frac{1}{L}\frac{du}{dt}}
+\]
+
+Typischer Prüfungsfall: Spannungssprung $u(t)=U$ $\Rightarrow du/dt = U\delta(t)$.
+Dann lösen über Laplace am saubersten.
+
+% -------------------------------------------------
+\subsection{Laplace-Methode (Standardworkflow)}
+
+\subsubsection{Workflow}
+
+\begin{enumerate}
+    \item DGL aufstellen
+    \item Laplace anwenden
+    \item Anfangswerte einsetzen
+    \item Nach $Y(s)$ auflösen
+    \item Partialbruchzerlegung
+    \item Rücktransformation
+\end{enumerate}
+
+\subsubsection{Merksätze}
+
+\[
+\cbl{\mathcal{L}\left\{\frac{dy}{dt}\right\}=sY(s)-y(0)}
+\qquad
+\cbl{\mathcal{L}\left\{\frac{d^2y}{dt^2}\right\}=s^2Y(s)-sy(0)-y'(0)}
+\]
+
+\subsubsection{Beispiel: 1. Ordnung per Laplace}
+
+\[
+L\frac{di}{dt}+Ri=U
+\]
+
+Laplace:
+\[
+LsI(s)-L i(0)+RI(s)=\frac{U}{s}
+\]
+
+\[
+\cbl{I(s)=\frac{\frac{U}{s}+L i(0)}{Ls+R}}
+\]
+
+Rücktransformation ergibt:
+\[
+i(t)=\frac{U}{R}+\left(i(0)-\frac{U}{R}\right)\e^{-tR/L}
+\]
+
+% -------------------------------------------------
+\subsection{Stückweise DGL bei Schaltvorgängen}
+
+Typisch bei:
+\begin{itemize}
+    \item Gleichstromsteller (Ein/Aus-Phasen)
+    \item Wechselrichter (Halbperioden)
+    \item Wechselstromsteller (Leit-/Sperrintervalle)
+\end{itemize}
+
+\subsubsection{Vorgehen}
+
+\begin{enumerate}
+    \item Zeitintervalle definieren ($[t_0,t_1)$, $[t_1,t_2)$, \dots)
+    \item Für jedes Intervall DGL aufstellen
+    \item Allgemeine Lösung je Intervall berechnen
+    \item Übergangsbedingungen anwenden:
+    \[
+    \cbl{i_L(t_1^-)=i_L(t_1^+)}
+    \qquad
+    \cbl{u_C(t_1^-)=u_C(t_1^+)}
+    \]
+    \item Periodenbedingung falls periodisch:
+    \[
+    \cbl{y(t)=y(t+T)}
+    \]
+\end{enumerate}
+
+\crd{\textrightarrow\ Ohne Übergangs- und Periodenbedingungen ist die Lösung wertlos.}
+
+% -------------------------------------------------
+\subsection{Typische Prüfungs-Tricks}
+
+\begin{itemize}
+    \item Endwert sofort aus stationärem Zustand bestimmen ($dy/dt=0$).
+    \item Zeitkonstante als $\tau=L/R$ oder $\tau=RC$ identifizieren.
+    \item Stetigkeit von $i_L$ und $u_C$ konsequent nutzen.
+    \item Einheitencheck: $\tau$ muss Sekunden sein.
+\end{itemize}
+
+\subsection{Typische Fehlerquellen}
+
+\begin{itemize}
+    \item Anfangswerte vergessen oder falsch eingesetzt.
+    \item Exponentialfaktor falsches Vorzeichen.
+    \item Stetigkeit verletzt ($i_L$ springt, $u_C$ springt).
+    \item Stückweise Lösung ohne Randbedingungen.
+\end{itemize}
+
+\subsection{Minimal-Checkliste für Aufgaben}
+
+\begin{enumerate}
+    \item DGL-Typ identifizieren (1. Ordnung / 2. Ordnung / stückweise).
+    \item $\tau$, $\omega_0$, $\zeta$ bestimmen.
+    \item Homogen + Partikulär (oder Laplace) lösen.
+    \item Konstanten mit Anfangs- und Übergangsbedingungen bestimmen.
+    \item Grenzwerte $t\to 0$ und $t\to\infty$ prüfen.
+\end{enumerate}

@@ -1,0 +1,879 @@
+% =========================================================
+\section{Übung 1: Zeitbereichanalyse R--L Lasten}
+% =========================================================
+
+\subsection*{a) Zeitfunktion des Stromes $i_R(t)$ im stationären Betrieb}
+
+\paragraph{Gegeben}
+Periodische Umschaltung zweier Stromschalter $S_1$ und $S_2$ mit
+\[
+t\in[0,t_\mathrm{ein}] \quad \text{(EIN-Phase)}, 
+\qquad
+t\in[t_\mathrm{ein},\,t_\mathrm{ein}+t_\mathrm{aus}] \quad \text{(AUS-Phase)}.
+\]
+R--L Last mit $R$, $L$, Versorgung $U_b$.
+(Notation wie im Aufgabenblatt: $i_{R1}$ in EIN-Phase, $i_{R2}$ in AUS-Phase.)
+
+\paragraph{Gesucht}
+Zeitfunktion $i_R(t)$ im stationären Betrieb.
+
+\paragraph{Lösungsweg}
+\textbf{1) EIN-Phase $t\in[0,t_\mathrm{ein}]$:}
+Maschenregel:
+\[
+R\,i_{R1}(t) + L\frac{di_{R1}}{dt} = U_b.
+\]
+Homogener Anteil:
+\[
+R\,i_{R1h}+L\frac{di_{R1h}}{dt}=0
+\;\Rightarrow\;
+i_{R1h}(t)=C\,e^{-\frac{R}{L}t}.
+\]
+Partikuläre Lösung (Konstante):
+\[
+i_{R1p}(t)=\frac{U_b}{R}.
+\]
+Damit:
+\[
+i_{R1}(t)=\frac{U_b}{R}+C\,e^{-\frac{R}{L}t}.
+\]
+Mit Startwert $i_{R1}(0)=i_\mathrm{min}$:
+\[
+C=i_\mathrm{min}-\frac{U_b}{R}
+\quad\Rightarrow\quad
+\boxed{
+i_{R1}(t)=\frac{U_b}{R}+\left(i_\mathrm{min}-\frac{U_b}{R}\right)e^{-\frac{R}{L}t}
+}.
+\]
+
+\textbf{2) AUS-Phase $t\in[t_\mathrm{ein},t_\mathrm{ein}+t_\mathrm{aus}]$:}
+Maschenregel (Quelle weg):
+\[
+R\,i_{R2}(t) + L\frac{di_{R2}}{dt} = 0
+\;\Rightarrow\;
+\boxed{
+i_{R2}(t)=D\,e^{-\frac{R}{L}(t-t_\mathrm{ein})}
+}.
+\]
+Mit $i_{R2}(t_\mathrm{ein})=i_{R1}(t_\mathrm{ein})=i_\mathrm{max}$ folgt:
+\[
+\boxed{
+i_{R2}(t)=i_\mathrm{max}\,e^{-\frac{R}{L}(t-t_\mathrm{ein})}
+}.
+\]
+
+\textbf{3) Stationaritätsbedingung (Periodizität):}
+\[
+i_{R2}(t_\mathrm{ein}+t_\mathrm{aus}) = i_\mathrm{min}.
+\]
+Also:
+\[
+i_\mathrm{min}=i_\mathrm{max}e^{-\frac{R}{L}t_\mathrm{aus}}
+\;\Rightarrow\;
+\boxed{
+i_\mathrm{max}=i_\mathrm{min}\,e^{\frac{R}{L}t_\mathrm{aus}}
+}.
+\]
+Und aus EIN-Phase bei $t=t_\mathrm{ein}$:
+\[
+i_\mathrm{max}=\frac{U_b}{R}+\left(i_\mathrm{min}-\frac{U_b}{R}\right)e^{-\frac{R}{L}t_\mathrm{ein}}.
+\]
+Damit sind $i_\mathrm{min},i_\mathrm{max}$ eindeutig bestimmbar und $i_R(t)$ ist stückweise durch $i_{R1},i_{R2}$ gegeben.
+
+% ---------------------------------------------------------
+
+\subsection*{b) Mittelwert $\overline{i_R}$}
+
+\paragraph{Gegeben}
+Stückweise Stromverlauf aus Teil a).
+
+\paragraph{Gesucht}
+\[
+\overline{i_R}=\frac{1}{T}\int_0^T i_R(t)\,dt, \qquad T=t_\mathrm{ein}+t_\mathrm{aus}.
+\]
+
+\paragraph{Lösungsweg}
+\[
+\overline{i_R}=\frac{1}{T}\left(
+\int_0^{t_\mathrm{ein}} i_{R1}(t)\,dt + \int_{t_\mathrm{ein}}^{T} i_{R2}(t)\,dt
+\right).
+\]
+Mit
+\[
+i_{R1}(t)=\frac{U_b}{R}+\left(i_\mathrm{min}-\frac{U_b}{R}\right)e^{-\frac{R}{L}t}
+\]
+folgt
+\[
+\int_0^{t_\mathrm{ein}} i_{R1}(t)\,dt
+=
+\frac{U_b}{R}t_\mathrm{ein}
++
+\left(i_\mathrm{min}-\frac{U_b}{R}\right)\frac{L}{R}\left(1-e^{-\frac{R}{L}t_\mathrm{ein}}\right).
+\]
+Und
+\[
+\int_{t_\mathrm{ein}}^{T} i_{R2}(t)\,dt
+=
+\int_0^{t_\mathrm{aus}} i_\mathrm{max}e^{-\frac{R}{L}\tau}\,d\tau
+=
+i_\mathrm{max}\frac{L}{R}\left(1-e^{-\frac{R}{L}t_\mathrm{aus}}\right).
+\]
+Damit:
+\[
+\boxed{
+\overline{i_R}=\frac{1}{T}\left[
+\frac{U_b}{R}t_\mathrm{ein}
++
+\left(i_\mathrm{min}-\frac{U_b}{R}\right)\frac{L}{R}\left(1-e^{-\frac{R}{L}t_\mathrm{ein}}\right)
++
+i_\mathrm{max}\frac{L}{R}\left(1-e^{-\frac{R}{L}t_\mathrm{aus}}\right)
+\right].
+}
+\]
+
+% ---------------------------------------------------------
+
+\subsection*{c) Effektivwert $I_{\mathrm{RMS}}$}
+
+\paragraph{Gesucht}
+\[
+I_{\mathrm{RMS}}=\sqrt{\frac{1}{T}\int_0^T i_R^2(t)\,dt}.
+\]
+
+\paragraph{Lösungsweg}
+\[
+I_{\mathrm{RMS}}^2=\frac{1}{T}\left(
+\int_0^{t_\mathrm{ein}} i_{R1}^2(t)\,dt + \int_{t_\mathrm{ein}}^T i_{R2}^2(t)\,dt
+\right).
+\]
+Für die AUS-Phase:
+\[
+\int_{t_\mathrm{ein}}^T i_{R2}^2(t)\,dt
+=
+\int_0^{t_\mathrm{aus}} i_\mathrm{max}^2 e^{-2\frac{R}{L}\tau}\,d\tau
+=
+i_\mathrm{max}^2\frac{L}{2R}\left(1-e^{-2\frac{R}{L}t_\mathrm{aus}}\right).
+\]
+Für die EIN-Phase setze
+\[
+i_{R1}(t)=A+B e^{-\frac{R}{L}t},
+\quad A=\frac{U_b}{R},\quad B=i_\mathrm{min}-\frac{U_b}{R}.
+\]
+Dann
+\[
+i_{R1}^2=A^2+2ABe^{-\frac{R}{L}t}+B^2e^{-2\frac{R}{L}t}.
+\]
+Also:
+\[
+\int_0^{t_\mathrm{ein}} i_{R1}^2(t)\,dt
+=
+A^2 t_\mathrm{ein}
++2AB\frac{L}{R}\left(1-e^{-\frac{R}{L}t_\mathrm{ein}}\right)
++B^2\frac{L}{2R}\left(1-e^{-2\frac{R}{L}t_\mathrm{ein}}\right).
+\]
+Somit:
+\[
+\boxed{
+I_{\mathrm{RMS}}=\sqrt{\frac{1}{T}\left[
+A^2 t_\mathrm{ein}
++2AB\frac{L}{R}\left(1-e^{-\frac{R}{L}t_\mathrm{ein}}\right)
++B^2\frac{L}{2R}\left(1-e^{-2\frac{R}{L}t_\mathrm{ein}}\right)
++i_\mathrm{max}^2\frac{L}{2R}\left(1-e^{-2\frac{R}{L}t_\mathrm{aus}}\right)
+\right]}.
+}
+\]
+
+% ---------------------------------------------------------
+
+\subsection*{d) Spannungen $u_R(t)$ und $u_L(t)$}
+
+\paragraph{Gesucht}
+Zeitfunktionen $u_R(t)$, $u_L(t)$.
+
+\paragraph{Lösungsweg}
+\[
+u_R(t)=R\,i_R(t),
+\qquad
+u_L(t)=L\frac{di_R}{dt}.
+\]
+In EIN-Phase aus DGL:
+\[
+u_L(t)=U_b-u_R(t)=U_b-Ri_{R1}(t).
+\]
+In AUS-Phase:
+\[
+u_L(t)=-u_R(t)=-R i_{R2}(t).
+\]
+
+% ---------------------------------------------------------
+
+\subsection*{e) Simulation/Verifikation (LTspice/PLECS)}
+
+\paragraph{Lösungsweg}
+Parameter wie im Aufgabenblatt setzen, periodische Schalteransteuerung definieren,
+Zeitbereich simulieren, stationären Bereich auswerten und $i_\mathrm{min},i_\mathrm{max},\overline{i},I_{\mathrm{RMS}}$
+mit den analytischen Ausdrücken aus a)–c) vergleichen.
+% =========================================================
+
+
+
+% =========================================================
+\section{Übung 2: Einpuls-Gleichrichter M1U }
+% =========================================================
+
+\subsection*{a) Zeitverlauf $u_2(t)$ und $u_R(t)$ für $t\in[0,60\,\mathrm{ms}]$}
+
+\paragraph{Gegeben}
+Einpuls-Gleichrichter M1U, Eingang
+\[
+u_2(t)=\hat u_2\sin(\omega t),
+\quad f_1=50\,\mathrm{Hz}\Rightarrow T=20\,\mathrm{ms}.
+\]
+Lastspannung
+\[
+u_R(t)=
+\begin{cases}
+\hat u_2\sin(\omega t), & 0<\omega t<\pi\\
+0, & \pi<\omega t<2\pi
+\end{cases}
+\quad\text{(periodisch)}.
+\]
+
+\paragraph{Gesucht}
+Plot über 3 Perioden. (Rechenweg: Stückweise Definition oben.)
+
+\subsection*{b) Mittelwert und Effektivwert von $u_R(t)$}
+
+\paragraph{Gesucht}
+\[
+\overline{u_R}=\frac{1}{T}\int_0^T u_R(t)\,dt,
+\qquad
+U_{R,\mathrm{RMS}}=\sqrt{\frac{1}{T}\int_0^T u_R^2(t)\,dt}.
+\]
+
+\paragraph{Lösungsweg}
+Substitution $\alpha=\omega t$, $dt=\frac{d\alpha}{\omega}$, $T=\frac{2\pi}{\omega}$.
+
+\textbf{Mittelwert:}
+\[
+\overline{u_R}
+=\frac{1}{2\pi}\int_0^{\pi}\hat u_2\sin\alpha\,d\alpha
+=\frac{\hat u_2}{2\pi}\left[-\cos\alpha\right]_0^\pi
+=\boxed{\frac{\hat u_2}{\pi}}.
+\]
+
+\textbf{Effektivwert:}
+\[
+U_{R,\mathrm{RMS}}
+=\sqrt{\frac{1}{2\pi}\int_0^{\pi}\hat u_2^2\sin^2\alpha\,d\alpha}
+=
+\sqrt{\frac{\hat u_2^2}{2\pi}\cdot\frac{\pi}{2}}
+=
+\boxed{\frac{\hat u_2}{2}}.
+\]
+
+\subsection*{c) Erste sechs Harmonische von $u_R(t)$}
+
+\paragraph{Gesucht}
+Fourierreihe
+\[
+u_R(\alpha)=\frac{a_0}{2}+\sum_{k=1}^{\infty}\left(a_k\cos(k\alpha)+b_k\sin(k\alpha)\right)
+\]
+mit
+\[
+a_0=\frac{1}{\pi}\int_0^{2\pi}u_R(\alpha)\,d\alpha,\quad
+a_k=\frac{1}{\pi}\int_0^{2\pi}u_R(\alpha)\cos(k\alpha)\,d\alpha,\quad
+b_k=\frac{1}{\pi}\int_0^{2\pi}u_R(\alpha)\sin(k\alpha)\,d\alpha.
+\]
+
+\paragraph{Lösungsweg}
+Da $u_R(\alpha)=\hat u_2\sin\alpha$ nur für $\alpha\in[0,\pi]$, sonst 0:
+
+\[
+a_0=\frac{1}{\pi}\int_0^{\pi}\hat u_2\sin\alpha\,d\alpha
+=\boxed{\frac{2\hat u_2}{\pi}}.
+\]
+
+\[
+b_k=\frac{\hat u_2}{\pi}\int_0^{\pi}\sin\alpha\sin(k\alpha)\,d\alpha
+=
+\begin{cases}
+\frac{\hat u_2}{2}, & k=1\\
+0, & k\neq 1
+\end{cases}
+\]
+
+\[
+a_k=\frac{\hat u_2}{\pi}\int_0^{\pi}\sin\alpha\cos(k\alpha)\,d\alpha
+=
+\frac{\hat u_2}{\pi}\cdot\frac{2}{1-k^2}
+\quad\text{für gerade }k,
+\qquad
+a_k=0\ \text{für ungerade }k.
+\]
+
+Damit (erste \textbf{sechs} Nicht-Null-Koeffizienten wie in Lösung):
+\[
+\boxed{
+a_2=-\frac{2}{3\pi}\hat u_2,\ 
+a_4=-\frac{2}{15\pi}\hat u_2,\ 
+a_6=-\frac{2}{35\pi}\hat u_2,\ 
+a_8=-\frac{2}{63\pi}\hat u_2,\ 
+a_{10}=-\frac{2}{99\pi}\hat u_2,\ 
+a_{12}=-\frac{2}{143\pi}\hat u_2,\ 
+b_1=\frac{\hat u_2}{2}
+}.
+\]
+% =========================================================
+
+
+
+% =========================================================
+\section{Übung 3: Zweipuls-Gleichrichter}
+% =========================================================
+
+\subsection*{a) Zeitverlauf $u_2(t)$ und $u_R(t)$ über drei Perioden}
+
+\paragraph{Gegeben}
+Eingang:
+\[
+u_2(t)=\hat u_2\sin(\omega t),\quad f_1=50\,\mathrm{Hz}.
+\]
+Vollwellige Gleichrichtung:
+\[
+u_R(t)=|u_2(t)|=\hat u_2|\sin(\omega t)|.
+\]
+
+\paragraph{Gesucht}
+Zeitverlauf für $t\in[0,60\,\mathrm{ms}]$.
+
+\paragraph{Lösungsweg}
+Stückweise:
+\[
+u_R(t)=
+\begin{cases}
+\hat u_2\sin(\omega t), & 0<\omega t<\pi\\
+-\hat u_2\sin(\omega t), & \pi<\omega t<2\pi
+\end{cases}
+\quad\text{periodisch}.
+\]
+
+\subsection*{b) Mittelwert und Effektivwert von $u_R(t)$}
+
+\paragraph{Gesucht}
+\[
+\overline{u_R},\quad U_{R,\mathrm{RMS}}.
+\]
+
+\paragraph{Lösungsweg}
+Mit $\alpha=\omega t$:
+
+\textbf{Mittelwert:}
+\[
+\overline{u_R}
+=\frac{1}{2\pi}\int_0^{2\pi}\hat u_2|\sin\alpha|\,d\alpha
+=\frac{2}{2\pi}\int_0^{\pi}\hat u_2\sin\alpha\,d\alpha
+=\boxed{\frac{2\hat u_2}{\pi}}.
+\]
+
+\textbf{Effektivwert:}
+\[
+U_{R,\mathrm{RMS}}
+=\sqrt{\frac{1}{2\pi}\int_0^{2\pi}\hat u_2^2\sin^2\alpha\,d\alpha}
+=
+\sqrt{\frac{\hat u_2^2}{2\pi}\cdot\pi}
+=
+\boxed{\frac{\hat u_2}{\sqrt{2}}}.
+\]
+
+\subsection*{c) Harmonische (Fourier-Koeffizienten)}
+
+\paragraph{Lösungsweg}
+Da $u_R(\alpha)=\hat u_2|\sin\alpha|$ gerade ist, gilt:
+\[
+b_k=0.
+\]
+Koeffizienten:
+\[
+a_0=\frac{1}{\pi}\int_0^{2\pi}\hat u_2|\sin\alpha|\,d\alpha=\boxed{\frac{4\hat u_2}{\pi}},
+\]
+\[
+a_k=\frac{1}{\pi}\int_0^{2\pi}\hat u_2|\sin\alpha|\cos(k\alpha)\,d\alpha
+=
+\begin{cases}
+-\frac{4\hat u_2}{\pi}\frac{1}{k^2-1}, & k\ \text{gerade}\\
+0, & k\ \text{ungerade}
+\end{cases}
+\]
+(erste relevante gerade $k=2,4,6,\dots$).
+% =========================================================
+
+
+
+% =========================================================
+\section{Übung 4: Wechselstromsteller W1 (R-Last)}
+% =========================================================
+
+\subsection*{a) Zeitverlauf von $u_R(t)$ und $i_R(t)$ für $t\in[0,60\,\mathrm{ms}]$}
+
+\paragraph{Gegeben}
+Wechselstromsteller (Phasenanschnitt) mit ohmscher Last $R$.
+Eingangsspannung:
+\[
+u_2(t)=\hat U \sin(\omega t),\qquad \omega=2\pi f.
+\]
+Zündwinkel $\alpha$ pro Halbwelle.
+
+\paragraph{Gesucht}
+Zeitverlauf von Lastspannung $u_R(t)$ und Laststrom $i_R(t)$ über drei Perioden.
+
+\paragraph{Lösungsweg}
+Für eine reine R-Last gilt:
+\[
+i_R(t)=\frac{u_R(t)}{R}.
+\]
+Phasenanschnitt bedeutet: Leitung nur im Intervall $\omega t\in[\alpha,\pi]$ (positive Halbwelle)
+und $\omega t\in[\pi+\alpha,2\pi]$ (negative Halbwelle).
+
+Definiere $\beta=\omega t$ (periodisch mit $2\pi$):
+\[
+u_R(\beta)=
+\begin{cases}
+\hat U \sin\beta, & \alpha \le \beta \le \pi,\\[4pt]
+\hat U \sin\beta, & \pi+\alpha \le \beta \le 2\pi,\\[4pt]
+0, & \text{sonst.}
+\end{cases}
+\]
+und damit:
+\[
+i_R(\beta)=\frac{u_R(\beta)}{R}.
+\]
+
+% ---------------------------------------------------------
+
+\subsection*{b) Mittelwert und Effektivwert von $u_R(t)$ und $i_R(t)$}
+
+\paragraph{Gegeben}
+Stückweise Definition aus a), $\beta=\omega t$.
+
+\paragraph{Gesucht}
+\[
+\overline{u_R},\quad U_{R,\mathrm{RMS}},\quad \overline{i_R},\quad I_{R,\mathrm{RMS}}.
+\]
+
+\paragraph{Lösungsweg}
+\textbf{Mittelwert:}
+Wegen Symmetrie (positive und negative Halbwelle gleich gross, Vorzeichen wechselt):
+\[
+\boxed{\overline{u_R}=0}
+\qquad\Rightarrow\qquad
+\boxed{\overline{i_R}=0}.
+\]
+
+\textbf{Effektivwert:}
+\[
+U_{R,\mathrm{RMS}}=\sqrt{\frac{1}{2\pi}\int_0^{2\pi}u_R^2(\beta)\,d\beta}.
+\]
+Da $u_R(\beta)=\hat U\sin\beta$ nur in den Leitintervallen:
+\[
+U_{R,\mathrm{RMS}}^2=\frac{1}{2\pi}\left(
+\int_{\alpha}^{\pi}\hat U^2\sin^2\beta\,d\beta
++
+\int_{\pi+\alpha}^{2\pi}\hat U^2\sin^2\beta\,d\beta
+\right)
+=\frac{\hat U^2}{\pi}\int_{\alpha}^{\pi}\sin^2\beta\,d\beta.
+\]
+Mit
+\[
+\sin^2\beta=\frac{1-\cos(2\beta)}{2}
+\]
+folgt
+\[
+\int_{\alpha}^{\pi}\sin^2\beta\,d\beta
+=
+\left[\frac{\beta}{2}-\frac{\sin(2\beta)}{4}\right]_{\alpha}^{\pi}
+=
+\frac{\pi-\alpha}{2}+\frac{\sin(2\alpha)}{4}.
+\]
+Somit:
+\[
+\boxed{
+U_{R,\mathrm{RMS}}
+=
+\hat U \sqrt{\frac{1}{\pi}\left(\frac{\pi-\alpha}{2}+\frac{\sin(2\alpha)}{4}\right)}
+=
+\hat U\sqrt{\frac{\pi-\alpha}{2\pi}+\frac{\sin(2\alpha)}{4\pi}}
+}.
+\]
+Für den Strom:
+\[
+\boxed{I_{R,\mathrm{RMS}}=\frac{U_{R,\mathrm{RMS}}}{R}}.
+\]
+
+% ---------------------------------------------------------
+
+\subsection*{c) Wirkleistung $P$ an der ohmschen Last}
+
+\paragraph{Gesucht}
+Wirkleistung $P$.
+
+\paragraph{Lösungsweg}
+Für reine R-Last:
+\[
+P = R\, I_{R,\mathrm{RMS}}^2=\frac{U_{R,\mathrm{RMS}}^2}{R}.
+\]
+Mit obigem Ergebnis:
+\[
+\boxed{
+P
+=
+\frac{\hat U^2}{R}
+\left(
+\frac{\pi-\alpha}{2\pi}+\frac{\sin(2\alpha)}{4\pi}
+\right)
+}.
+\]
+
+% ---------------------------------------------------------
+
+\subsection*{d) Fourierkoeffizienten von $i_R(t)$ (Spektrum)}
+
+\paragraph{Gesucht}
+Fourierreihe von $i_R(\beta)$ und Struktur der Koeffizienten.
+
+\paragraph{Lösungsweg}
+\[
+i_R(\beta)=\frac{u_R(\beta)}{R}
+\]
+ist ein \textbf{ungerades} Signal (anti-symmetrisch), daher gilt:
+\[
+\boxed{a_k=0\ \text{für alle }k,\qquad a_0=0.}
+\]
+Es bleiben nur Sinuskoeffizienten:
+\[
+b_k=\frac{1}{\pi}\int_0^{2\pi} i_R(\beta)\sin(k\beta)\,d\beta
+=
+\frac{2}{\pi}\int_{\alpha}^{\pi} \frac{\hat U}{R}\sin\beta\sin(k\beta)\,d\beta.
+\]
+Mit Produkt-zu-Summe:
+\[
+\sin\beta\sin(k\beta)=\frac{1}{2}\left[\cos((k-1)\beta)-\cos((k+1)\beta)\right].
+\]
+Dann:
+\[
+b_k=\frac{\hat U}{\pi R}\int_{\alpha}^{\pi}\left[\cos((k-1)\beta)-\cos((k+1)\beta)\right]\,d\beta.
+\]
+Integration:
+\[
+\boxed{
+b_k
+=
+\frac{\hat U}{\pi R}
+\left[
+\frac{\sin((k-1)\beta)}{k-1}
+-
+\frac{\sin((k+1)\beta)}{k+1}
+\right]_{\alpha}^{\pi}
+}.
+\]
+Damit ist die Fourierreihe:
+\[
+\boxed{
+i_R(\beta)=\sum_{k=1}^{\infty} b_k \sin(k\beta).
+}
+\]
+
+% ---------------------------------------------------------
+
+\subsection*{e) Blindleistung und Verzerrungsblindleistung}
+
+\paragraph{Gesucht}
+Grundschwingungsblindleistung und Verzerrungsblindleistung.
+
+\paragraph{Lösungsweg}
+Bei ohmscher Last ist die \textbf{Grundschwingungsblindleistung} ideal:
+\[
+\boxed{Q_1=0}
+\]
+(Grundschwingungsstrom und -spannung in Phase).
+
+Nichtsinusförmige Ströme erzeugen jedoch Verzerrungsblindleistung:
+\[
+S = U_{\mathrm{RMS}} I_{\mathrm{RMS}},\qquad P=R I_{\mathrm{RMS}}^2,
+\]
+\[
+\boxed{D=\sqrt{S^2-P^2-Q_1^2}=\sqrt{S^2-P^2}}.
+\]
+
+
+
+% =========================================================
+\section{Übung 5: Gleichstromsteller (Schalter) }
+% =========================================================
+
+\subsection*{a) $i_L(t)$ und $u_R(t)$ über eine Schaltperiode}
+
+\paragraph{Gegeben}
+Gleichstromquelle $U_{DC}$, Schaltperiode $T_s=T_e+T_a$.
+Einschaltzeit $T_e$, Ausschaltzeit $T_a$.
+R--L Last ($R_1$, $L_1$). Zeitkonstante:
+\[
+\boxed{\tau=\frac{L_1}{R_1}}.
+\]
+
+\paragraph{Gesucht}
+Stromverlauf $i_L(t)$ und Lastspannung $u_R(t)$ im stationären Betrieb.
+
+\paragraph{Lösungsweg}
+\textbf{Intervall 1 (EIN): $0<t<T_e$}
+\[
+L_1\frac{di_L}{dt}+R_1 i_L = U_{DC}.
+\]
+Allg. Lösung:
+\[
+\boxed{
+i_L(t)=\frac{U_{DC}}{R_1}+\left(i_{\min}-\frac{U_{DC}}{R_1}\right)e^{-t/\tau}
+},\qquad 0<t<T_e.
+\]
+Endwert:
+\[
+\boxed{
+i_{\max}=i_L(T_e)=\frac{U_{DC}}{R_1}+\left(i_{\min}-\frac{U_{DC}}{R_1}\right)e^{-T_e/\tau}.
+}
+\]
+
+\textbf{Intervall 2 (AUS): $T_e<t<T_s$}
+Quelle weg:
+\[
+L_1\frac{di_L}{dt}+R_1 i_L = 0.
+\]
+Damit:
+\[
+\boxed{
+i_L(t)= i_{\max}\,e^{-(t-T_e)/\tau}
+},\qquad T_e<t<T_s.
+\]
+Endwert:
+\[
+\boxed{
+i_{\min}=i_L(T_s)=i_{\max}\,e^{-T_a/\tau}.
+}
+\]
+
+\textbf{Stationarität (Periodenbedingung):}
+\[
+i_{\min}=i_{\max}e^{-T_a/\tau}
+\quad\Rightarrow\quad
+\boxed{T_a=-\tau\ln\!\left(\frac{i_{\min}}{i_{\max}}\right)}.
+\]
+
+\textbf{Lastspannung:}
+\[
+\boxed{u_R(t)=R_1\, i_L(t)}.
+\]
+
+% ---------------------------------------------------------
+
+\subsection*{b) Bestimmung einer Schaltzeit aus $i_{\min}$, $i_{\max}$ (typische Prüfungsform)}
+
+\paragraph{Gegeben}
+$i_{\min}$ und $i_{\max}$ (aus Diagramm/Simulation).
+
+\paragraph{Gesucht}
+$T_a$ (oder $T_e$).
+
+\paragraph{Lösungsweg}
+Direkt aus der AUS-Phase:
+\[
+i_{\min}=i_{\max}e^{-T_a/\tau}
+\;\Rightarrow\;
+\boxed{T_a=-\tau\ln\!\left(\frac{i_{\min}}{i_{\max}}\right)}.
+\]
+Dann $T_e=T_s-T_a$ (falls $T_s$ gegeben).
+
+
+% =========================================================
+\section{Übung 6: PWM-Wechselrichter }
+% =========================================================
+
+\subsection*{a) Herleitung von $i_L(t)$ und $u_L(t)$ in einem PWM-Intervall}
+
+\paragraph{Gegeben}
+PWM-Schaltsignal erzeugt zeitlich wechselnde Lastspannung.
+In jedem Intervall gilt entweder:
+\[
+u_L(t)=U_{DC}\quad \text{oder}\quad u_L(t)=0
+\]
+(idealisiert, je nach Schalterzustand).
+R--L Last ($R$, $L$), $\tau=\frac{L}{R}$.
+
+\paragraph{Gesucht}
+Stromverlauf $i_L(t)$ stückweise und Darstellung über mehrere Schaltintervalle.
+
+\paragraph{Lösungsweg}
+Betrachte ein beliebiges Intervall $[t_i,t_{i+1}]$.
+
+\textbf{Fall 1: $u_L(t)=U_{DC}$ auf $[t_i,t_{i+1}]$}
+\[
+L\frac{di}{dt}+Ri=U_{DC}.
+\]
+Mit Anfangswert $i(t_i)$:
+\[
+\boxed{
+i(t)=\frac{U_{DC}}{R}+\left(i(t_i)-\frac{U_{DC}}{R}\right)e^{-(t-t_i)/\tau}
+},\qquad t\in[t_i,t_{i+1}].
+\]
+
+\textbf{Fall 2: $u_L(t)=0$ auf $[t_i,t_{i+1}]$}
+\[
+L\frac{di}{dt}+Ri=0
+\Rightarrow
+\boxed{
+i(t)=i(t_i)e^{-(t-t_i)/\tau}
+},\qquad t\in[t_i,t_{i+1}].
+\]
+
+Die Endwerte $i(t_{i+1})$ sind jeweils die Anfangswerte des nächsten Intervalls.
+
+\textbf{Lastspannung:}
+Je nach PWM-Zustand:
+\[
+\boxed{u_L(t)\in\{0,\ U_{DC}\}}.
+\]
+
+% ---------------------------------------------------------
+
+\subsection*{b) Wodurch wird die Hauptfrequenz des Laststroms bestimmt?}
+
+\paragraph{Gesucht}
+Hauptfrequenz-Aussage.
+
+\paragraph{Lösungsweg}
+Die PWM enthält zwei charakteristische Frequenzen:
+\begin{itemize}
+\item Grundfrequenz $f_1$ der Referenz (Sinus)
+\item Schaltfrequenz $f_s$ des Trägers
+\end{itemize}
+Die \textbf{Hauptfrequenz} der Laststromgrundschwingung wird durch die Referenz bestimmt:
+\[
+\boxed{f_{i,\mathrm{main}}=f_1.}
+\]
+Die Schaltfrequenz erzeugt Oberschwingungen und Ripple um Vielfache von $f_s$.
+
+% ---------------------------------------------------------
+
+\subsection*{c) Vergleich idealer und realer Laststrom (qualitativ)}
+
+\paragraph{Gesucht}
+Warum weicht realer PWM-Strom vom idealen ab?
+
+\paragraph{Lösungsweg}
+Abweichungen entstehen durch:
+\begin{itemize}
+\item endliche Schaltfrequenz $f_s$ (Ripple)
+\item nichtideale Schalter (Spannungsabfälle, Totzeit)
+\item Filterwirkung der Last ($R$--$L$) dämpft hohe Harmonische
+\end{itemize}
+
+
+
+% =========================================================
+\section{Übung 7: Gesteuerter Gleichrichter + Gleichstrommaschine}
+% =========================================================
+
+\subsection*{a) Warum läuft die Maschine unterhalb einer Winkelgrenze nicht sauber an?}
+
+\paragraph{Gegeben}
+Gesteuerter Gleichrichter speist fremderregte Gleichstrommaschine.
+Induzierte Spannung:
+\[
+\boxed{E = k\Phi \omega.}
+\]
+Gleichrichter-Ausgangsspannung $U_a(\alpha)$ ist abhängig vom Steuerwinkel $\alpha$.
+
+\paragraph{Gesucht}
+Erklärung der mechanischen Schwingungen und Nicht-Anlauf für kleine $\alpha$.
+
+\paragraph{Lösungsweg}
+Ankerstrom fliesst nur, wenn die momentane Gleichrichterspannung die induzierte Spannung übersteigt:
+\[
+u_a(t) > E.
+\]
+In der Lösung wird ein Grenzwinkel $\beta$ eingeführt mit:
+\[
+\boxed{E = U_{2m}\sin\beta}.
+\]
+Dann gilt:
+\[
+\boxed{\text{Stromfluss nur für }\alpha>\beta.}
+\]
+Falls $\alpha<\beta$:
+\[
+i_a(t)\approx 0\Rightarrow M\approx 0
+\]
+und der Motor erzeugt kein stabiles Drehmoment, was zu Stillstand bzw. Schwingungen führt.
+
+% ---------------------------------------------------------
+
+\subsection*{b) Warum steigt $n$ mit $\alpha$ zuerst, erreicht ein Maximum und fällt dann wieder?}
+
+\paragraph{Gegeben}
+Drehmoment:
+\[
+\boxed{M=I_a\Phi}
+\]
+und bei Fremderregung $\Phi=\mathrm{konstant}$.
+Damit bestimmt $I_a$ das Drehmoment.
+
+\paragraph{Gesucht}
+Erklärung des nichtmonotonen Zusammenhangs $n(\alpha)$.
+
+\paragraph{Lösungsweg}
+Mittelwert-Ankerstrom (wie in der Lösung) über das leitende Intervall:
+\[
+\boxed{
+I_{a,\mathrm{avr}}
+=
+\frac{1}{\pi R_a}\int_{\alpha}^{\pi-\beta}\left(U_{2m}\sin\gamma - E\right)\,d\gamma
+}
+\quad \text{mit } \gamma=\omega t.
+\]
+Für kleine $\alpha$ ist das Leitintervall gross, $I_{a,\mathrm{avr}}$ steigt, Drehmoment steigt, $n$ steigt.
+
+Bei grösserem $\alpha$ verkleinert sich das Leitintervall, obwohl $U_a(\alpha)$ steuerbar ist.
+Ab einem Punkt dominiert die Verkürzung des Leitintervalls, $I_{a,\mathrm{avr}}$ sinkt, Drehmoment sinkt,
+und damit fällt die Drehzahl wieder.
+
+Zusammenhang Winkel $\beta$:
+\[
+\sin\beta=\frac{E}{U_{2m}}
+\quad\Rightarrow\quad
+\boxed{\beta=\arcsin\!\left(\frac{E}{U_{2m}}\right)}.
+\]
+Mit
+\[
+E=k\Phi\omega=k_1 n
+\]
+ist $\beta$ drehzahlabhängig, was die nichtlineare Rückkopplung erklärt.
+
+% ---------------------------------------------------------
+
+\subsection*{c) Grenzbedingung für den Stromfluss}
+
+\paragraph{Gesucht}
+Grenze zwischen Stromfluss und kein Stromfluss.
+
+\paragraph{Lösungsweg}
+Grenzfall:
+\[
+\boxed{\alpha=\beta}
+\]
+mit
+\[
+\boxed{\beta=\arcsin\!\left(\frac{E}{U_{2m}}\right)}.
+\]
+Für $\alpha\le\beta$ gilt näherungsweise:
+\[
+I_a \approx 0,\quad M\approx 0.
+\]
+

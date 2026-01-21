@@ -1,0 +1,465 @@
+\section{Elektrotechnische Grundlagen -- Formelsammlung}
+
+Diese Section sammelt \textbf{elektrotechnische Kernformeln} für schnelle Rechnungen
+in Leistungselektronik, Netzwerken, Maschinen und Feldern:
+\textbf{Strom/Spannung/Leistung}, \textbf{RLC}, \textbf{Wechselstromrechnung},
+\textbf{Magnetismus}, \textbf{Transformator}, \textbf{Drehstrom} und \textbf{Maschinen-Base}.
+Sie ist als \textbf{Nachschlage-Section} aufgebaut.
+
+% -------------------------------------------------
+\subsection{Grundgrössen und Definitionen}
+
+\subsubsection{Strom, Spannung, Leistung}
+
+\[
+\cbl{i(t) = \frac{dq(t)}{dt}}
+\qquad
+\cbl{u(t) = \frac{dw(t)}{dq(t)}}
+\]
+
+\[
+\cbl{p(t) = u(t)\, i(t)}
+\qquad
+\cbl{w(t) = \int p(t)\,dt}
+\]
+
+\subsubsection{Passives Vorzeichenkonzept}
+
+\[
+\cbl{p>0 \Rightarrow \text{Verbraucherbetrieb}}
+\qquad
+\cbl{p<0 \Rightarrow \text{Generatorbetrieb}}
+\]
+
+% -------------------------------------------------
+\subsection{Kirchhoff und Netzwerkanalyse}
+
+\subsubsection{Knoten- und Maschensatz}
+
+\[
+\cbl{\sum i_k = 0 \quad \text{(KCL)}}
+\qquad
+\cbl{\sum u_k = 0 \quad \text{(KVL)}}
+\]
+
+\subsubsection{Leiterwerte und Widerstände}
+
+\[
+\cbl{R = \rho \frac{\ell}{A}}
+\qquad
+\cbl{G = \frac{1}{R}}
+\]
+
+\subsubsection{Serien- und Parallelschaltung}
+
+\[
+\cbl{R_{\mathrm{Serie}} = \sum R_k}
+\qquad
+\cbl{\frac{1}{R_{\mathrm{Par}}} = \sum \frac{1}{R_k}}
+\]
+
+% -------------------------------------------------
+\subsection{Bauelementgleichungen (Zeitbereich)}
+
+\subsubsection{Widerstand}
+
+\[
+\cbl{u_R(t) = R\, i(t)}
+\qquad
+\cbl{p_R(t) = R\, i^2(t) = \frac{u_R^2(t)}{R}}
+\]
+
+\subsubsection{Induktivität}
+
+\[
+\cbl{u_L(t) = L \frac{di(t)}{dt}}
+\qquad
+\cbl{i_L(t) \;\text{stetig}}
+\]
+
+Energie:
+\[
+\cbl{w_L = \frac{1}{2} L i^2}
+\]
+
+\subsubsection{Kapazität}
+
+\[
+\cbl{i_C(t) = C \frac{du(t)}{dt}}
+\qquad
+\cbl{u_C(t) \;\text{stetig}}
+\]
+
+Energie:
+\[
+\cbl{w_C = \frac{1}{2} C u^2}
+\]
+
+% -------------------------------------------------
+\subsection{Wechselstromrechnung (Sinus, Phasor)}
+
+\subsubsection{Sinusgrössen}
+
+\[
+\cbl{u(t) = \hat U \sin(\omega t + \varphi)}
+\qquad
+\cbl{i(t) = \hat I \sin(\omega t + \varphi_i)}
+\]
+
+\[
+\cbl{\omega = 2\pi f}
+\]
+
+Effektivwerte:
+\[
+\cbl{U = \frac{\hat U}{\sqrt{2}}}
+\qquad
+\cbl{I = \frac{\hat I}{\sqrt{2}}}
+\]
+
+\subsubsection{Phasor-Notation}
+
+\[
+\cbl{\underline{U} = U \e^{\jimg \varphi}}
+\qquad
+\cbl{\underline{I} = I \e^{\jimg \varphi_i}}
+\]
+
+\subsubsection{Impedanzen}
+
+\[
+\cbl{Z_R = R}
+\qquad
+\cbl{Z_L = \jimg \omega L}
+\qquad
+\cbl{Z_C = \frac{1}{\jimg \omega C}}
+\]
+
+Admittanzen:
+\[
+\cbl{Y = \frac{1}{Z}}
+\qquad
+\cbl{Y_R = \frac{1}{R}}
+\qquad
+\cbl{Y_L = \frac{1}{\jimg \omega L}}
+\qquad
+\cbl{Y_C = \jimg \omega C}
+\]
+
+\subsubsection{Komplexe Leistung}
+
+\[
+\cbl{\underline{S} = \underline{U}\, \underline{I}^{\,\ast} = P + \jimg Q}
+\]
+
+\[
+\cbl{P = U I \cos\varphi}
+\qquad
+\cbl{Q = U I \sin\varphi}
+\qquad
+\cbl{|S| = U I}
+\]
+
+Leistungsfaktor:
+\[
+\cbl{\lambda = \frac{P}{|S|} = \cos\varphi \quad \text{(Sinusfall)}}
+\]
+
+% -------------------------------------------------
+\subsection{Nichtsinusförmige Grössen (RMS, Mittelwert)}
+
+Mittelwert (über Periode $T$):
+\[
+\cbl{\overline{x} = \frac{1}{T}\int_0^T x(t)\,dt}
+\]
+
+Effektivwert:
+\[
+\cbl{X_{\mathrm{RMS}} = \sqrt{\frac{1}{T}\int_0^T x^2(t)\,dt}}
+\]
+
+Wirkleistung allgemein:
+\[
+\cbl{P = \frac{1}{T}\int_0^T u(t)i(t)\,dt}
+\]
+
+% -------------------------------------------------
+\subsection{Magnetismus und Felder}
+
+\subsubsection{Grundgrössen}
+
+\[
+\cbl{\vec{B} \;[\mathrm{T}], \quad \vec{H}\;[\mathrm{A/m}], \quad \Phi\;[\mathrm{Wb}]}
+\]
+
+\[
+\cbl{\Phi = \int \vec{B}\cdot d\vec{A}}
+\qquad
+\cbl{B = \frac{\Phi}{A}}
+\]
+
+Materialgleichung (linear):
+\[
+\cbl{\vec{B} = \mu \vec{H}}
+\qquad
+\cbl{\mu = \mu_0 \mu_r}
+\qquad
+\cbl{\mu_0 = 4\pi \cdot 10^{-7}\,\mathrm{H/m}}
+\]
+
+\subsubsection{Ampèresches Gesetz}
+
+\[
+\cbl{\oint \vec{H}\cdot d\vec{\ell} = N i}
+\]
+
+Für magnetischen Kreis:
+\[
+\cbl{H \ell = N i \Rightarrow H = \frac{N i}{\ell}}
+\]
+
+\subsubsection{Magnetische Spannung, Durchflutung}
+
+\[
+\cbl{\Theta = N i \quad \text{(Durchflutung)}}
+\qquad
+\cbl{\mathcal{F}=\Theta}
+\]
+
+\subsubsection{Reluktanz und magnetischer Widerstand}
+
+\[
+\cbl{\mathcal{R} = \frac{\ell}{\mu A}}
+\]
+
+Magnetischer Ohmscher Zusammenhang:
+\[
+\cbl{\Phi = \frac{\Theta}{\mathcal{R}}}
+\]
+
+Reluktanzen in Serie/Parallel:
+\[
+\cbl{\mathcal{R}_{\mathrm{Serie}} = \sum \mathcal{R}_k}
+\qquad
+\cbl{\frac{1}{\mathcal{R}_{\mathrm{Par}}} = \sum \frac{1}{\mathcal{R}_k}}
+\]
+
+\subsubsection{Induktivität aus Magnetkreis}
+
+\[
+\cbl{L = \frac{N\Phi}{i}}
+\qquad
+\Rightarrow
+\qquad
+\cbl{L = \frac{N^2}{\mathcal{R}}}
+\]
+
+\subsubsection{Luftspalt (dominant)}
+
+\[
+\cbl{\mathcal{R}_\delta = \frac{\delta}{\mu_0 A}}
+\]
+
+Wenn Luftspalt dominiert:
+\[
+\cbl{L \approx \frac{N^2 \mu_0 A}{\delta}}
+\]
+
+\subsubsection{Energie und Kraft im Magnetfeld}
+
+Energiedichte:
+\[
+\cbl{w_m = \frac{1}{2} \vec{B}\cdot \vec{H}}
+\]
+
+Gesamtenergie (linear, Induktivität):
+\[
+\cbl{W_m = \frac{1}{2} L i^2}
+\]
+
+Kraft im Luftspalt (vereinfachtes Modell):
+\[
+\cbl{F \approx \frac{B^2}{2\mu_0} A}
+\]
+
+\subsubsection{Induzierte Spannung (Faraday)}
+
+\[
+\cbl{u_{\mathrm{ind}}(t) = - N \frac{d\Phi(t)}{dt}}
+\]
+
+\[
+\cbl{\nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}}
+\]
+
+% -------------------------------------------------
+\subsection{Transformator (Ideal und Näherung)}
+
+\subsubsection{Idealer Trafo}
+
+Windungsverhältnis:
+\[
+\cbl{n = \frac{N_1}{N_2}}
+\]
+
+Spannungsübersetzung:
+\[
+\cbl{\frac{U_1}{U_2} = \frac{N_1}{N_2} = n}
+\]
+
+Stromübersetzung:
+\[
+\cbl{\frac{I_1}{I_2} = \frac{N_2}{N_1} = \frac{1}{n}}
+\]
+
+Leistung (ideal):
+\[
+\cbl{P_1 = P_2}
+\]
+
+Impedanzreflexion:
+\[
+\cbl{Z_1 = n^2 Z_2}
+\]
+
+\subsubsection{Induktivitäten und Kopplung}
+
+\[
+\cbl{L_1 = \frac{N_1^2}{\mathcal{R}}}
+\qquad
+\cbl{L_2 = \frac{N_2^2}{\mathcal{R}}}
+\qquad
+\cbl{M = k \sqrt{L_1 L_2}}
+\]
+
+% -------------------------------------------------
+\subsection{Drehstrom (3~) -- Kernformeln}
+
+\subsubsection{Spannungen (symmetrisch)}
+
+\[
+\cbl{u_a(t)=\hat U_{ph}\sin(\omega t)}
+\]
+\[
+\cbl{u_b(t)=\hat U_{ph}\sin(\omega t-120^\circ)}
+\]
+\[
+\cbl{u_c(t)=\hat U_{ph}\sin(\omega t-240^\circ)}
+\]
+
+Verhältnis Leiter--Phase:
+\[
+\cbl{U_{LL} = \sqrt{3}\,U_{ph}}
+\qquad
+\cbl{\hat U_{LL} = \sqrt{3}\,\hat U_{ph}}
+\]
+
+\subsubsection{Leistung im Drehstromsystem}
+
+\[
+\cbl{P = \sqrt{3}\,U_{LL}\,I_L\cos\varphi}
+\]
+\[
+\cbl{Q = \sqrt{3}\,U_{LL}\,I_L\sin\varphi}
+\]
+\[
+\cbl{S = \sqrt{3}\,U_{LL}\,I_L}
+\]
+
+\subsubsection{Stern/Dreieck}
+
+Stern:
+\[
+\cbl{U_{ph}=\frac{U_{LL}}{\sqrt{3}}}
+\qquad
+\cbl{I_{ph}=I_L}
+\]
+
+Dreieck:
+\[
+\cbl{U_{ph}=U_{LL}}
+\qquad
+\cbl{I_{ph}=\frac{I_L}{\sqrt{3}}}
+\]
+
+% -------------------------------------------------
+\subsection{Elektrische Maschinen -- Basisformeln}
+
+\subsubsection{Elektrische und mechanische Winkelgeschwindigkeit}
+
+\[
+\cbl{\omega = 2\pi f}
+\qquad
+\cbl{n = \frac{\omega}{2\pi}\cdot 60 \;\; [\mathrm{rpm}]}
+\]
+
+\subsubsection{Synchronmaschine (Grundbeziehungen)}
+
+Synchronwinkelgeschwindigkeit:
+\[
+\cbl{\omega_s = \frac{2\pi f}{p}}
+\qquad
+\cbl{n_s = \frac{60 f}{p}}
+\]
+($p$ = Polpaarzahl)
+
+\subsubsection{Asynchronmaschine (Schlupf)}
+
+\[
+\cbl{s = \frac{n_s - n}{n_s}}
+\qquad
+\cbl{f_r = s f}
+\]
+
+\subsubsection{Gleichstrommaschine (Kernformeln)}
+
+\[
+\cbl{E_i = \omega \Psi}
+\qquad
+\cbl{M = i_a \Psi}
+\qquad
+\cbl{u_a = R_a i_a + E_i}
+\]
+
+% -------------------------------------------------
+\subsection{Leitung, Feld und Lorentzkraft}
+
+\subsubsection{Lorentzkraft}
+
+\[
+\cbl{\vec{F} = q(\vec{E} + \vec{v}\times \vec{B})}
+\]
+
+Leiterkraft (vereinfachtes Modell):
+\[
+\cbl{\vec{F} = I \, \vec{\ell} \times \vec{B}}
+\]
+Betrag:
+\[
+\cbl{F = B I \ell \sin\theta}
+\]
+
+\subsubsection{Leistungsfluss (Poynting)}
+
+\[
+\cbl{\vec{S} = \vec{E}\times \vec{H}}
+\]
+
+% -------------------------------------------------
+\subsection{Typische Merksätze (ET-Kern)}
+
+\begin{itemize}
+    \item $u_L=L\,di/dt$ und $i_C=C\,du/dt$ sind die wichtigsten Zeitableitungsbeziehungen.
+    \item $W_L=\tfrac{1}{2}Li^2$ und $W_C=\tfrac{1}{2}Cu^2$ sind prüfungsrelevant.
+    \item Magnetkreis: $\Phi=\Theta/\mathcal{R}$ und $L=N^2/\mathcal{R}$.
+    \item Drehstromleistung: $P=\sqrt{3}U_{LL}I_L\cos\varphi$.
+\end{itemize}
+
+\subsection{Typische Fehlerquellen}
+
+\begin{itemize}
+    \item Leiter- und Phasenspannung verwechselt ($\sqrt{3}$-Faktor).
+    \item Vorzeichen bei Induktion ($u=-N d\Phi/dt$) ignoriert.
+    \item Luftspalt-Reluktanz unterschätzt.
+    \item RMS mit Scheitelwert verwechselt.
+\end{itemize}

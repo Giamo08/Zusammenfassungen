@@ -1,0 +1,671 @@
+\section{Mathematische Analyse -- Formelsammlung}
+
+Diese Section sammelt die \textbf{wichtigsten mathematischen Werkzeuge}
+für die Analyse in der Leistungselektronik:
+\textbf{Ableitungen}, \textbf{Integrale}, \textbf{Trigonometrie},
+\textbf{Exponentialfunktionen}, \textbf{Komplexrechnung},
+\textbf{Laplace-Transformation} und \textbf{Differentialgleichungen (RLC)}.
+Sie ist als \textbf{reine Nachschlage-Section} gedacht.
+
+\smallskip
+
+\textbf{Ziel:}
+\begin{itemize}
+    \item Schneller Zugriff auf Standardformeln
+    \item Fehlerfreie Umformungen in Prüfungen
+    \item Einheitliche Notation im ganzen Skript
+\end{itemize}
+
+% -------------------------------------------------
+\subsection{Grundlegende Ableitungsregeln}
+
+\subsubsection{Elementare Funktionen}
+
+\[
+\frac{d}{dx} c = 0
+\qquad
+\frac{d}{dx} x = 1
+\qquad
+\frac{d}{dx} x^n = n x^{n-1}
+\]
+
+\[
+\frac{d}{dx} \e^{x} = \e^{x}
+\qquad
+\frac{d}{dx} \ln x = \frac{1}{x}
+\]
+
+\subsubsection{Lineare Regeln}
+
+\[
+\frac{d}{dx} [f(x) + g(x)] = f'(x) + g'(x)
+\qquad
+\frac{d}{dx} [c \, f(x)] = c \, f'(x)
+\]
+
+\subsubsection{Produktregel}
+
+\[
+\cbl{\frac{d}{dx} [f(x) g(x)] = f'(x) g(x) + f(x) g'(x)}
+\]
+
+\subsubsection{Quotientenregel}
+
+\[
+\cbl{\frac{d}{dx} \left[ \frac{f(x)}{g(x)} \right]
+= \frac{f'(x) g(x) - f(x) g'(x)}{g(x)^2}}
+\]
+
+\subsubsection{Kettenregel}
+
+\[
+\cbl{\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)}
+\]
+
+% -------------------------------------------------
+\subsection{Ableitungen trigonometrischer Funktionen}
+
+\[
+\cbl{\frac{d}{dx} \sin x = \cos x}
+\qquad
+\cbl{\frac{d}{dx} \cos x = - \sin x}
+\]
+
+\[
+\frac{d}{dx} \tan x = \frac{1}{\cos^2 x}
+\qquad
+\frac{d}{dx} \cot x = - \frac{1}{\sin^2 x}
+\]
+
+\[
+\frac{d}{dx} \arcsin x = \frac{1}{\sqrt{1-x^2}}
+\qquad
+\frac{d}{dx} \arccos x = -\frac{1}{\sqrt{1-x^2}}
+\]
+
+% -------------------------------------------------
+\subsection{Grundlegende Integralregeln}
+
+\subsubsection{Elementare Integrale}
+
+\[
+\int c \, dx = c x + C
+\qquad
+\int x^n \, dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1)
+\]
+
+\[
+\int \frac{1}{x} \, dx = \ln |x| + C
+\qquad
+\int \e^{x} \, dx = \e^{x} + C
+\]
+
+\subsubsection{Lineare Regeln}
+
+\[
+\int [f(x) + g(x)] dx = \int f(x) dx + \int g(x) dx
+\qquad
+\int c f(x) dx = c \int f(x) dx
+\]
+
+% -------------------------------------------------
+\subsection{Integrale trigonometrischer Funktionen}
+
+\[
+\cbl{\int \sin x \, dx = - \cos x + C}
+\qquad
+\cbl{\int \cos x \, dx = \sin x + C}
+\]
+
+\[
+\int \tan x \, dx = - \ln |\cos x| + C
+\qquad
+\int \cot x \, dx = \ln |\sin x| + C
+\]
+
+\[
+\int \sin^2 x \, dx = \frac{x}{2} - \frac{\sin(2x)}{4} + C
+\qquad
+\int \cos^2 x \, dx = \frac{x}{2} + \frac{\sin(2x)}{4} + C
+\]
+
+\[
+\int \sin(ax) \, dx = -\frac{1}{a}\cos(ax) + C
+\qquad
+\int \cos(ax) \, dx = \frac{1}{a}\sin(ax) + C
+\]
+
+% -------------------------------------------------
+\subsection{Partielle Integration}
+
+\[
+\cbl{\int u \, dv = u v - \int v \, du}
+\]
+
+Beispiel:
+\[
+\int x \e^{x} dx = x \e^{x} - \int \e^{x} dx = (x-1) \e^{x} + C
+\]
+
+% -------------------------------------------------
+\subsection{Substitution}
+
+\[
+\cbl{u = g(x), \qquad du = g'(x) dx}
+\]
+
+Beispiel:
+\[
+\int \sin(3x) dx
+= -\frac{1}{3} \cos(3x) + C
+\]
+
+% -------------------------------------------------
+\subsection{Trigonometrische Identitäten}
+
+\subsubsection{Grundidentitäten}
+
+\[
+\cbl{\sin^2 x + \cos^2 x = 1}
+\qquad
+\cbl{1 + \tan^2 x = \frac{1}{\cos^2 x}}
+\qquad
+1 + \cot^2 x = \frac{1}{\sin^2 x}
+\]
+
+\subsubsection{Winkeladdition}
+
+\[
+\cbl{\sin(a \pm b) = \sin a \cos b \pm \cos a \sin b}
+\]
+
+\[
+\cbl{\cos(a \pm b) = \cos a \cos b \mp \sin a \sin b}
+\]
+
+\subsubsection{Doppelwinkel}
+
+\[
+\cbl{\sin(2x) = 2 \sin x \cos x}
+\qquad
+\cbl{\cos(2x) = \cos^2 x - \sin^2 x = 1 - 2 \sin^2 x = 2 \cos^2 x - 1}
+\]
+
+\subsubsection{Halbwinkel}
+
+\[
+\cbl{\sin^2\left(\frac{x}{2}\right) = \frac{1-\cos x}{2}}
+\qquad
+\cbl{\cos^2\left(\frac{x}{2}\right) = \frac{1+\cos x}{2}}
+\]
+
+% -------------------------------------------------
+\subsection{Produkt--Summen--Formeln}
+
+\[
+\cbl{\sin a \cos b = \frac{1}{2} [ \sin(a+b) + \sin(a-b) ]}
+\]
+
+\[
+\cbl{\cos a \cos b = \frac{1}{2} [ \cos(a+b) + \cos(a-b) ]}
+\]
+
+\[
+\cbl{\sin a \sin b = \frac{1}{2} [ \cos(a-b) - \cos(a+b) ]}
+\]
+
+\[
+\cbl{\sin a + \sin b = 2 \sin\left(\frac{a+b}{2}\right) \cos\left(\frac{a-b}{2}\right)}
+\]
+
+\[
+\cbl{\cos a + \cos b = 2 \cos\left(\frac{a+b}{2}\right) \cos\left(\frac{a-b}{2}\right)}
+\]
+
+\[
+\cbl{\cos a - \cos b = -2 \sin\left(\frac{a+b}{2}\right) \sin\left(\frac{a-b}{2}\right)}
+\]
+
+% -------------------------------------------------
+\subsection{Exponential- und Euler-Formeln}
+
+\subsubsection{Euler-Formel}
+
+\[
+\cbl{\e^{\jimg x} = \cos x + \jimg \sin x}
+\qquad
+\cbl{\e^{-\jimg x} = \cos x - \jimg \sin x}
+\]
+
+\[
+\cbl{\cos x = \frac{\e^{\jimg x} + \e^{-\jimg x}}{2}}
+\qquad
+\cbl{\sin x = \frac{\e^{\jimg x} - \e^{-\jimg x}}{2\jimg}}
+\]
+
+\subsubsection{Komplexe Sinusdarstellung}
+
+\[
+\cbl{\hat X \sin(\omega t + \varphi) = \Im\left\{ \hat X \e^{\jimg(\omega t + \varphi)} \right\}}
+\]
+
+\[
+\cbl{\hat X \cos(\omega t + \varphi) = \Re\left\{ \hat X \e^{\jimg(\omega t + \varphi)} \right\}}
+\]
+
+% -------------------------------------------------
+\subsection{Komplexrechnung}
+
+\subsubsection{Grundformen}
+
+\[
+\cbl{z = x + \jimg y}
+\qquad
+\cbl{z = r \e^{\jimg \varphi}}
+\]
+
+\[
+r = |z| = \sqrt{x^2 + y^2}
+\qquad
+\varphi = \arg(z)
+\]
+
+\subsubsection{Konjugation}
+
+\[
+\cbl{\overline{z} = x - \jimg y}
+\qquad
+\cbl{z \overline{z} = |z|^2}
+\]
+
+\subsubsection{Multiplikation und Division}
+
+\[
+\cbl{z_1 z_2 = r_1 r_2 \e^{\jimg (\varphi_1 + \varphi_2)}}
+\qquad
+\cbl{\frac{z_1}{z_2} = \frac{r_1}{r_2} \e^{\jimg (\varphi_1 - \varphi_2)}}
+\]
+
+\subsubsection{Real- und Imaginärteil}
+
+\[
+\cbl{\Re(z) = x}
+\qquad
+\cbl{\Im(z) = y}
+\]
+
+% -------------------------------------------------
+\subsection{Komplexe Wechselstromrechnung}
+
+\subsubsection{Ableiten im Zeitbereich}
+
+\[
+\cbl{\frac{d}{dt} \e^{\jimg \omega t} = \jimg \omega \e^{\jimg \omega t}}
+\]
+
+\subsubsection{Impedanzen}
+
+\[
+\cbl{Z_R = R}
+\qquad
+\cbl{Z_L = \jimg \omega L}
+\qquad
+\cbl{Z_C = \frac{1}{\jimg \omega C}}
+\]
+
+\subsubsection{Serien- und Parallelschaltung}
+
+\[
+\cbl{Z_{\mathrm{Serie}} = Z_1 + Z_2 + \dots}
+\]
+
+\[
+\cbl{\frac{1}{Z_{\mathrm{Par}}} = \frac{1}{Z_1} + \frac{1}{Z_2} + \dots}
+\]
+
+% -------------------------------------------------
+\subsection{Orthogonalitätsintegrale (Fourier-Kern)}
+
+\[
+\cbl{\int_0^T \cos(m \omega t)\cos(n \omega t)\,dt =
+\begin{cases}
+T, & m=n=0 \\
+\frac{T}{2}, & m=n>0 \\
+0, & m\neq n
+\end{cases}}
+\]
+
+\[
+\cbl{\int_0^T \sin(m \omega t)\sin(n \omega t)\,dt =
+\begin{cases}
+\frac{T}{2}, & m=n \\
+0, & m\neq n
+\end{cases}}
+\]
+
+\[
+\cbl{\int_0^T \sin(m \omega t)\cos(n \omega t)\,dt = 0}
+\]
+
+% -------------------------------------------------
+\subsection{Grenzwerte und Reihen}
+
+\[
+\cbl{\lim_{x \to 0} \frac{\sin x}{x} = 1}
+\qquad
+\cbl{\lim_{x \to 0} \frac{1 - \cos x}{x^2} = \frac{1}{2}}
+\]
+
+\[
+\cbl{\e^{x} = \sum_{n=0}^{\infty} \frac{x^n}{n!}}
+\qquad
+\cbl{\sin x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}}
+\qquad
+\cbl{\cos x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!}}
+\]
+
+% -------------------------------------------------
+\subsection{Bestimmte Integrale über Perioden}
+
+\[
+\cbl{\int_0^T \sin(n \omega t)\,dt = 0}
+\qquad
+\cbl{\int_0^T \cos(n \omega t)\,dt = 0}
+\]
+
+\[
+\cbl{\int_0^T \sin^2(n \omega t)\,dt = \frac{T}{2}}
+\qquad
+\cbl{\int_0^T \cos^2(n \omega t)\,dt = \frac{T}{2}}
+\]
+
+% =================================================
+\subsection{Laplace-Transformation}
+
+\subsubsection{Definition}
+
+Für eine zeitkontinuierliche Funktion $f(t)$ (typisch $t\ge 0$):
+\[
+\cbl{\mathcal{L}\{f(t)\} = F(s) = \int_{0}^{\infty} f(t)\, \e^{-st}\,dt}
+\qquad
+s = \sigma + \jimg \omega
+\]
+
+\subsubsection{Wichtige Grundtransformierte}
+
+\[
+\mathcal{L}\{1\} = \frac{1}{s}
+\qquad
+\mathcal{L}\{t\} = \frac{1}{s^2}
+\qquad
+\mathcal{L}\{t^n\} = \frac{n!}{s^{n+1}}
+\]
+
+\[
+\cbl{\mathcal{L}\{\e^{at}\} = \frac{1}{s-a}}
+\]
+
+\[
+\cbl{\mathcal{L}\{\sin(\omega t)\} = \frac{\omega}{s^2+\omega^2}}
+\qquad
+\cbl{\mathcal{L}\{\cos(\omega t)\} = \frac{s}{s^2+\omega^2}}
+\]
+
+\[
+\mathcal{L}\{\sinh(\omega t)\} = \frac{\omega}{s^2-\omega^2}
+\qquad
+\mathcal{L}\{\cosh(\omega t)\} = \frac{s}{s^2-\omega^2}
+\]
+
+\subsubsection{Linearität}
+
+\[
+\cbl{\mathcal{L}\{a f(t) + b g(t)\} = aF(s) + bG(s)}
+\]
+
+\subsubsection{Ableitungssatz}
+
+\[
+\cbl{\mathcal{L}\left\{\frac{df}{dt}\right\} = sF(s) - f(0)}
+\]
+
+\[
+\cbl{\mathcal{L}\left\{\frac{d^2f}{dt^2}\right\} = s^2F(s) - s f(0) - f'(0)}
+\]
+
+\crd{\textrightarrow\ Anfangswerte gehen als Terme in den Zähler. Häufige Prüfungsfalle.}
+
+\subsubsection{Integralsatz}
+
+\[
+\cbl{\mathcal{L}\left\{\int_0^t f(\tau)\,d\tau\right\} = \frac{1}{s} F(s)}
+\]
+
+\subsubsection{Zeitverschiebung (Heaviside)}
+
+\[
+\cbl{\mathcal{L}\{f(t-t_0)u(t-t_0)\} = \e^{-s t_0} F(s)}
+\]
+
+\subsubsection{Frequenzverschiebung}
+
+\[
+\cbl{\mathcal{L}\{\e^{at} f(t)\} = F(s-a)}
+\]
+
+\subsubsection{Faltung}
+
+\[
+\cbl{(f*g)(t) = \int_0^t f(\tau)g(t-\tau)\,d\tau}
+\qquad
+\cbl{\mathcal{L}\{f*g\} = F(s)G(s)}
+\]
+
+\subsubsection{Initial- und Finalwertsatz}
+
+\[
+\cbl{f(0^+) = \lim_{s\to\infty} sF(s)}
+\qquad
+\cbl{f(\infty) = \lim_{s\to 0} sF(s)}
+\]
+
+\crd{\textrightarrow\ Finalwertsatz nur gültig, wenn alle Pole von $sF(s)$ in der linken Halbebene liegen.}
+
+\subsubsection{Inverse Laplace (Standardstrategien)}
+
+\begin{itemize}
+    \item Partialbruchzerlegung
+    \item Tabellenrücktransformation
+    \item Verschiebungssätze (Zeit, Frequenz)
+    \item Quadratische Ergänzung für $s^2+\omega^2$
+\end{itemize}
+
+% =================================================
+\subsection{Übertragungsfunktionen und Systemdarstellung}
+
+Für lineare zeitinvariante Systeme (LTI):
+\[
+\cbl{H(s) = \frac{Y(s)}{X(s)}}
+\]
+
+\subsubsection{Pol-Nullstellen-Darstellung}
+
+\[
+\cbl{H(s)=K \frac{(s-z_1)(s-z_2)\dots}{(s-p_1)(s-p_2)\dots}}
+\]
+
+\subsubsection{Zeitkonstante und Eckfrequenz}
+
+Erste Ordnung:
+\[
+\cbl{H(s)=\frac{1}{1+s\tau}}
+\qquad
+\cbl{\omega_c = \frac{1}{\tau}}
+\qquad
+\cbl{f_c = \frac{1}{2\pi\tau}}
+\]
+
+% =================================================
+\subsection{Differentialgleichungen 1. Ordnung (R--L / R--C)}
+
+\subsubsection{Standardform}
+
+\[
+\cbl{\tau \frac{dy}{dt} + y = K \, u(t)}
+\]
+
+Homogene Lösung:
+\[
+\cbl{y_h(t) = C \e^{-t/\tau}}
+\]
+
+Partikuläre Lösung (Konstantanregung $u(t)=U$):
+\[
+\cbl{y_p(t)=K U}
+\]
+
+Gesamtlösung:
+\[
+\cbl{y(t) = K U + \big(y(0)-K U\big)\e^{-t/\tau}}
+\]
+
+\subsubsection{R--L-Kreis}
+
+\[
+\cbl{L\frac{di}{dt} + Ri = u(t)}
+\qquad
+\cbl{\tau = \frac{L}{R}}
+\]
+
+Sprung $u(t)=U$:
+\[
+\cbl{i(t) = \frac{U}{R}\left(1-\e^{-t/\tau}\right) + i(0)\e^{-t/\tau}}
+\]
+
+\subsubsection{R--C-Kreis}
+
+\[
+\cbl{RC\frac{du_C}{dt} + u_C = u(t)}
+\qquad
+\cbl{\tau = RC}
+\]
+
+Sprung $u(t)=U$:
+\[
+\cbl{u_C(t) = U\left(1-\e^{-t/\tau}\right) + u_C(0)\e^{-t/\tau}}
+\]
+
+\crd{\textrightarrow\ Bei Induktivitäten ist $i(t)$ stetig, bei Kapazitäten ist $u_C(t)$ stetig.}
+
+% =================================================
+\subsection{Differentialgleichungen 2. Ordnung (RLC-Systeme)}
+
+\subsubsection{Standardform}
+
+\[
+\cbl{\frac{d^2y}{dt^2} + 2\zeta\omega_0 \frac{dy}{dt} + \omega_0^2 y = K \omega_0^2 u(t)}
+\]
+
+\[
+\cbl{\omega_0 = \sqrt{\frac{1}{LC}}}
+\qquad
+\cbl{\zeta = \frac{R}{2}\sqrt{\frac{C}{L}}}
+\]
+
+\subsubsection{Dämpfungsfälle}
+
+\begin{itemize}
+    \item \textbf{Unterdämpft:} $0<\zeta<1$ (schwingend)
+    \item \textbf{Kritisch gedämpft:} $\zeta=1$
+    \item \textbf{Überdämpft:} $\zeta>1$
+\end{itemize}
+
+Unterdämpfte Eigenfrequenz:
+\[
+\cbl{\omega_d = \omega_0\sqrt{1-\zeta^2}}
+\]
+
+\subsubsection{Freie Schwingung (homogene Lösung)}
+
+Unterdämpft:
+\[
+\cbl{y_h(t)=\e^{-\zeta\omega_0 t}\left(C_1\cos(\omega_d t)+C_2\sin(\omega_d t)\right)}
+\]
+
+Überdämpft:
+\[
+\cbl{y_h(t)=C_1\e^{s_1 t}+C_2\e^{s_2 t}}
+\qquad
+s_{1,2}=-\omega_0\left(\zeta\pm\sqrt{\zeta^2-1}\right)
+\]
+
+Kritisch:
+\[
+\cbl{y_h(t)=(C_1 + C_2 t)\e^{-\omega_0 t}}
+\]
+
+\subsubsection{Serien-RLC (Stromdynamik)}
+
+KVL:
+\[
+\cbl{u(t)=Ri(t)+L\frac{di}{dt}+\frac{1}{C}\int i(t)\,dt}
+\]
+
+Differenziert:
+\[
+\cbl{\frac{d^2 i}{dt^2} + \frac{R}{L}\frac{di}{dt} + \frac{1}{LC}i = \frac{1}{L}\frac{du}{dt}}
+\]
+
+\subsubsection{Parallele-RLC (Spannungsdynamik)}
+
+KCL:
+\[
+i(t)=\frac{u(t)}{R}+C\frac{du}{dt}+\frac{1}{L}\int u(t)\,dt
+\]
+
+Differenziert:
+\[
+\cbl{\frac{d^2 u}{dt^2} + \frac{1}{RC}\frac{du}{dt} + \frac{1}{LC}u = \frac{1}{C}\frac{di}{dt}}
+\]
+
+\subsubsection{Laplace-Lösung von DGLs}
+
+Vorgehen:
+\begin{enumerate}
+    \item DGL aufstellen (KVL/KCL)
+    \item Laplace anwenden (Ableitungssätze)
+    \item Nach $Y(s)$ auflösen
+    \item Partialbrüche
+    \item Rücktransformation
+\end{enumerate}
+
+\subsubsection{Standardübertragungsfunktionen}
+
+\paragraph{Tiefpass 1. Ordnung}
+\[
+\cbl{H(s)=\frac{1}{1+s\tau}}
+\]
+
+\paragraph{Bandpass / Resonanz 2. Ordnung (Normalform)}
+\[
+\cbl{H(s)=\frac{\omega_0^2}{s^2+2\zeta\omega_0 s+\omega_0^2}}
+\]
+
+% -------------------------------------------------
+\subsection{Typische Merksätze (Analyse-Kern)}
+
+\begin{itemize}
+    \item Kettenregel, Produktregel, trigonometrische Identitäten sicher beherrschen.
+    \item Laplace macht aus DGLs algebraische Gleichungen.
+    \item $i_L(t)$ und $u_C(t)$ sind stetig.
+    \item Polstellen bestimmen Stabilität und Zeitverhalten.
+\end{itemize}
+
+\subsection{Typische Fehlerquellen}
+
+\begin{itemize}
+    \item Anfangswerte bei Laplace-Ableitung vergessen.
+    \item Finalwertsatz ohne Polprüfung verwendet.
+    \item Vorzeichenfehler bei $\cos'(x)$ und bei KVL/KCL.
+    \item $u_C$ bzw. $i_L$ als sprungfähig angenommen.
+\end{itemize}

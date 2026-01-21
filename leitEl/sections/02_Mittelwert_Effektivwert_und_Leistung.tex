@@ -1,0 +1,248 @@
+\section{Mittelwert, Effektivwert und Leistung}
+
+Diese Section behandelt die \textbf{zentralen Bewertungsgrössen} für periodische, nichtsinusförmige Spannungen und Ströme,
+wie sie in Gleichrichtern, Stellern und Wechselrichtern auftreten.
+
+\smallskip
+
+\textbf{Zielbild:}
+\begin{itemize}
+    \item Definition von Mittelwert und Effektivwert
+    \item Physikalische Interpretation (DC-Anteil, thermische Wirkung)
+    \item Leistungsberechnung bei allgemeinen periodischen Signalen
+    \item Anwendung auf stückweise definierte Zeitverläufe aus Übungen
+\end{itemize}
+
+\subsection{Periodische Signale und Grundbegriffe}
+
+Ein Signal $x(t)$ heisst \textbf{periodisch} mit Periodendauer $T$, wenn gilt:
+\[
+x(t) = x(t+T) \qquad \forall t.
+\]
+
+Typische Beispiele aus der Leistungselektronik:
+\begin{itemize}
+    \item Gleichgerichtete Sinusspannung (Halb- und Vollwelle)
+    \item Strom im R-L-Kreis bei Schaltbetrieb
+    \item PWM-Ausgangsspannungen
+\end{itemize}
+
+\crd{\textrightarrow\ Mittelwert und Effektivwert werden immer über \textbf{eine volle Periode $T$} gebildet.}
+
+\subsection{Zeitmittelwert (Gleichwert, DC-Anteil)}
+
+\subsubsection{Definition}
+
+Der \textbf{Zeitmittelwert} (Mittelwert) eines periodischen Signals $x(t)$ ist definiert als:
+\[
+\cbl{\overline{x} = \frac{1}{T} \int_{0}^{T} x(t)\,\diff t.}
+\]
+
+Interpretation:
+\begin{itemize}
+    \item Entspricht dem \textbf{Gleichanteil} des Signals.
+    \item Bei Strom: mittlerer Transport von Ladung pro Zeit.
+    \item Bei Spannung: DC-Anteil der Ausgangsspannung eines Gleichrichters.
+\end{itemize}
+
+\subsubsection{Typische Eigenschaften}
+
+\begin{itemize}
+    \item Symmetrische Wechselgrössen: $\overline{x}=0$.
+    \item Gleichgerichtete Signale: $\overline{x}>0$.
+    \item Für stückweise definierte Signale:
+    \[
+    \overline{x} = \frac{1}{T} \left( \int_{t_1}^{t_2} x_1(t)\,\diff t + \int_{t_2}^{t_3} x_2(t)\,\diff t + \dots \right).
+    \]
+\end{itemize}
+
+\crd{\textrightarrow\ Mittelwert ist \textbf{nicht} gleich Effektivwert. Häufige Prüfungsfalle.}
+
+\subsection{Effektivwert (RMS)}
+
+\subsubsection{Definition}
+
+Der \textbf{Effektivwert} eines periodischen Signals $x(t)$ ist definiert als:
+\[
+\cbl{x_{\mathrm{RMS}} = \sqrt{\frac{1}{T} \int_{0}^{T} x^2(t)\,\diff t}.}
+\]
+
+Interpretation:
+\begin{itemize}
+    \item Entspricht dem \textbf{Gleichwert}, der in einem Widerstand \textbf{die gleiche Verlustleistung} erzeugt.
+    \item Thermische Wirkung.
+    \item Grundlage für Dimensionierung von Leitern, Bauteilen und Verlusten.
+\end{itemize}
+
+\subsubsection{Vergleich Mittelwert vs. Effektivwert}
+
+\begin{itemize}
+    \item Mittelwert: lineare Mittelung.
+    \item Effektivwert: quadratische Mittelung.
+    \item Allgemein gilt:
+    \[
+    x_{\mathrm{RMS}} \ge |\overline{x}|.
+    \]
+\end{itemize}
+
+\subsection{Momentanleistung und Wirkleistung}
+
+\subsubsection{Momentanleistung}
+
+Für allgemeine Spannungen und Ströme:
+\[
+\cbl{p(t) = u(t)\, i(t).}
+\]
+
+Diese Grösse schwankt zeitlich, auch im stationären Betrieb.
+
+\subsubsection{Wirkleistung}
+
+Die \textbf{mittlere Wirkleistung} ist definiert als:
+\[
+\cbl{P = \overline{p(t)} = \frac{1}{T} \int_{0}^{T} u(t)\,i(t)\,\diff t.}
+\]
+
+\subsubsection{Spezialfall: Ohmsche Last}
+
+Für $u(t) = R\, i(t)$ gilt:
+\[
+\cbl{P = R \, I_{\mathrm{RMS}}^2 = \frac{U_{\mathrm{RMS}}^2}{R}.}
+\]
+
+Interpretation:
+\begin{itemize}
+    \item Nur der Effektivwert bestimmt die Verlustleistung.
+    \item Unabhängig von der Signalform.
+\end{itemize}
+
+\subsection{Berechnung bei stückweise definierten Signalen}
+
+In vielen Übungen ist $x(t)$ stückweise gegeben:
+\[
+x(t) =
+\begin{cases}
+x_1(t), & 0 < t < T_1,\\
+x_2(t), & T_1 < t < T_2,\\
+\dots
+\end{cases}
+\]
+
+Dann gilt:
+
+\paragraph{Mittelwert}
+\[
+\cbl{\overline{x} = \frac{1}{T} \sum_k \int_{T_k} x_k(t)\,\diff t.}
+\]
+
+\paragraph{Effektivwert}
+\[
+\cbl{x_{\mathrm{RMS}} = \sqrt{ \frac{1}{T} \sum_k \int_{T_k} x_k^2(t)\,\diff t }.}
+\]
+
+\paragraph{Wirkleistung}
+\[
+\cbl{P = \frac{1}{T} \sum_k \int_{T_k} u_k(t)\, i_k(t)\,\diff t.}
+\]
+
+\crd{\textrightarrow\ Bei stückweisen Verläufen immer korrekt die Zeitintervalle trennen.}
+
+\subsection{Bezug zu Fourier-Reihen}
+
+Für ein periodisches Signal mit Fourierkoeffizienten gilt (Parseval):
+
+\[
+\cbl{X_{\mathrm{RMS}}^2 = \frac{a_0^2}{2} + \sum_{n=1}^\infty \left( a_n^2 + b_n^2 \right).}
+\]
+
+Interpretation:
+\begin{itemize}
+    \item Effektivwert ist die Summe der Quadrate aller Harmonischen.
+    \item Harmonische tragen direkt zur Verlustleistung bei.
+\end{itemize}
+
+\subsection{Skizze 1: Nichtsinusförmiger periodischer Strom}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[->] (0,0) -- (8,0) node[right] {$t$};
+\draw[->] (0,0) -- (0,3) node[above] {$i(t)$};
+
+\draw (0,1) -- (2,2.5) -- (4,1) -- (6,2.5) -- (8,1);
+
+\draw[dashed] (0,1) -- (8,1) node[right] {$\overline{i}$};
+\draw[dashed] (0,2) -- (8,2) node[right] {$i_{\mathrm{RMS}}$};
+
+\draw (4,0) node[below] {$T/2$};
+\draw (8,0) node[below] {$T$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Aussage:}
+\begin{itemize}
+    \item Mittelwert ist die horizontale Mittel-Linie.
+    \item Effektivwert liegt darüber.
+\end{itemize}
+
+\subsection{Skizze 2: Quadratbildung für Effektivwert}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[->] (0,0) -- (8,0) node[right] {$t$};
+\draw[->] (0,0) -- (0,3) node[above] {$x^2(t)$};
+
+\draw (0,0.5) -- (2,2.5) -- (4,0.5) -- (6,2.5) -- (8,0.5);
+
+\draw[dashed] (0,1.5) -- (8,1.5) node[right] {$\overline{x^2}$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Aussage:}
+\begin{itemize}
+    \item Zuerst quadrieren.
+    \item Dann mitteln.
+    \item Dann Wurzel ziehen.
+\end{itemize}
+
+\subsection{Skizze 3: Leistung bei ohmscher Last}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[->] (0,0) -- (8,0) node[right] {$t$};
+\draw[->] (0,0) -- (0,3) node[above] {$p(t)$};
+
+\draw (0,1.5) .. controls (1,2.5) .. (2,1.5)
+      .. controls (3,0.5) .. (4,1.5)
+      .. controls (5,2.5) .. (6,1.5)
+      .. controls (7,0.5) .. (8,1.5);
+
+\draw[dashed] (0,1.5) -- (8,1.5) node[right] {$P$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Aussage:}
+\begin{itemize}
+    \item Momentanleistung schwankt.
+    \item Wirkleistung ist der Mittelwert.
+\end{itemize}
+
+\subsection{Typische Fehlerquellen}
+
+\begin{itemize}
+    \item Mittelwert mit Effektivwert verwechselt.
+    \item Quadrat beim RMS vergessen.
+    \item Falsche Periodendauer $T$ eingesetzt.
+    \item Stückweise Integrale nicht getrennt.
+    \item Leistung mit $U_{\mathrm{RMS}}\cdot I_{\mathrm{RMS}}$ berechnet bei nichtohmscher Last.
+\end{itemize}
+
+\subsection{Minimal-Checkliste für Aufgaben}
+
+\begin{enumerate}
+    \item Periodendauer $T$ bestimmen.
+    \item Signalform stückweise festlegen.
+    \item Mittelwert berechnen.
+    \item Effektivwert berechnen.
+    \item Bei Leistung: $p(t)=u(t)i(t)$ bilden und mitteln.
+    \item Plausibilität prüfen: $x_{\mathrm{RMS}} \ge |\overline{x}|$.
+\end{enumerate}

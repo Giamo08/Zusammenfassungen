@@ -1,0 +1,300 @@
+\section{Zeitbereichsanalyse von $R$-$L$-Lasten bei Schaltbetrieb}
+
+Diese Section behandelt den \textbf{Kernfall der Leistungselektronik}:
+Ein $R$-$L$-Lastkreis, der durch einen idealen Schalter periodisch ein- und ausgeschaltet wird.
+Ziel ist die \textbf{exakte Zeitbereichslösung} des Stroms und der Spannungen in den einzelnen Schaltintervallen.
+
+\smallskip
+
+\textbf{Business-Relevanz:}
+\begin{itemize}
+    \item Dimensionierung von Induktivität und Schaltfrequenz
+    \item Berechnung von Stromrippel und Spitzenstrom
+    \item Stationärer periodischer Betrieb
+    \item Grundlage für Wirkungsgrad, Verluste und Bauteilauslegung
+\end{itemize}
+
+\subsection{Grundschaltung und Topologien}
+
+\subsubsection{Ideale Grundschaltung}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw (0,0) to[battery,l=$U_{\mathrm{DC}}$] (0,3);
+\draw (0,3) -- (2,3);
+\draw (2,3) to[switch,l=$S$] (4,3);
+\draw (4,3) to[R,l=$R$] (6,3);
+\draw (6,3) to[L,l=$L$] (6,0);
+\draw (6,0) -- (0,0);
+\draw (5,1.5) node[right] {$i(t)$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Elemente:}
+\begin{itemize}
+    \item $U_{\mathrm{DC}}$: Gleichspannungsquelle
+    \item $S$: idealer Schalter (Ein/Aus)
+    \item $R$: ohmsche Last
+    \item $L$: Induktivität
+    \item $i(t)$: Laststrom (Zustandsgrösse)
+\end{itemize}
+
+\subsubsection{Zwei Topologien pro Periode}
+
+Bei periodischem Schalten entstehen zwei lineare Teilsysteme:
+
+\medskip
+\textbf{Topologie 1: Einschaltphase ($0 < t < T_{\mathrm{ein}}$)}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw (0,0) to[battery,l=$U_{\mathrm{DC}}$] (0,3);
+\draw (0,3) -- (4,3);
+\draw (4,3) to[R,l=$R$] (6,3);
+\draw (6,3) to[L,l=$L$] (6,0);
+\draw (6,0) -- (0,0);
+\end{tikzpicture}
+\end{center}
+
+Schalter geschlossen, Quelle aktiv.
+
+\medskip
+\textbf{Topologie 2: Ausschaltphase ($T_{\mathrm{ein}} < t < T_s$)}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw (4,3) to[R,l=$R$] (6,3);
+\draw (6,3) to[L,l=$L$] (6,0);
+\draw (6,0) -- (4,0);
+\draw (4,0) -- (4,3);
+\draw (3,1.5) node[left] {Freilaufpfad};
+\end{tikzpicture}
+\end{center}
+
+Quelle getrennt, Strom fliesst im geschlossenen $R$-$L$-Kreis weiter.
+
+\subsection{Differentialgleichungen pro Intervall}
+
+\subsubsection{Einschaltphase}
+
+Kirchhoff:
+\[
+\cbl{U_{\mathrm{DC}} = R\,i(t) + L\,\frac{di(t)}{dt}}
+\]
+
+Standardform:
+\[
+\cbl{\frac{di}{dt} + \frac{R}{L} i = \frac{U_{\mathrm{DC}}}{L}}
+\]
+
+Zeitkonstante:
+\[
+\cbl{\tau = \frac{L}{R}}
+\]
+
+\subsubsection{Ausschaltphase}
+
+Quelle getrennt:
+\[
+\cbl{0 = R\,i(t) + L\,\frac{di(t)}{dt}}
+\]
+
+Standardform:
+\[
+\cbl{\frac{di}{dt} + \frac{R}{L} i = 0}
+\]
+
+\subsection{Lösung der Einschaltphase}
+
+Allgemeine Lösung:
+\[
+\cbl{i_{\mathrm{ein}}(t) = i_\infty + \big(i(0) - i_\infty\big)\,e^{-t/\tau}},
+\]
+mit Endwert:
+\[
+\cbl{i_\infty = \frac{U_{\mathrm{DC}}}{R}}
+\]
+
+Interpretation:
+\begin{itemize}
+    \item Strom steigt exponentiell gegen $U_{\mathrm{DC}}/R$.
+    \item Steigung zu Beginn maximal.
+    \item Dynamik vollständig durch $\tau = L/R$ bestimmt.
+\end{itemize}
+
+\subsection{Lösung der Ausschaltphase}
+
+Homogene Lösung:
+\[
+\cbl{i_{\mathrm{aus}}(t) = i(T_{\mathrm{ein}})\, e^{-(t-T_{\mathrm{ein}})/\tau}}
+\]
+
+Interpretation:
+\begin{itemize}
+    \item Strom fällt exponentiell ab.
+    \item Energie wird in $R$ dissipiert.
+    \item Kein neuer Energieeintrag.
+\end{itemize}
+
+\subsection{Kontinuitätsbedingungen am Schaltzeitpunkt}
+
+\crd{\textrightarrow\ Induktorstrom ist stetig. Sprünge sind im idealen Modell nicht erlaubt.}
+
+
+Zentrale Regel:
+\[
+\cbl{i_L(t^-)=i_L(t^+)}
+\]
+
+Konkret:
+\begin{itemize}
+    \item Anfang Einschaltphase: $i_{\mathrm{ein}}(0)=i_{\min}$
+    \item Übergang: $i_{\mathrm{aus}}(T_{\mathrm{ein}})=i_{\mathrm{ein}}(T_{\mathrm{ein}})=i_{\max}$
+    \item Periodenende: $i_{\mathrm{aus}}(T_s)=i_{\min}$
+\end{itemize}
+
+Diese drei Bedingungen schliessen das System.
+
+\subsection{Stationärer periodischer Betrieb}
+
+Definition:
+\[
+\cbl{i(t)=i(t+T_s)}
+\]
+
+Konkret:
+\[
+i_{\mathrm{aus}}(T_s) = i_{\mathrm{ein}}(0).
+\]
+
+Damit ergeben sich zwei Gleichungen:
+\[
+\cbl{i_{\max} = i_\infty + (i_{\min}-i_\infty)e^{-T_{\mathrm{ein}}/\tau}}
+\]
+\[
+\cbl{i_{\min} = i_{\max} e^{-T_{\mathrm{aus}}/\tau}}
+\]
+mit
+\[
+T_s = T_{\mathrm{ein}} + T_{\mathrm{aus}}.
+\]
+
+Diese Gleichungen liefern $i_{\min}$ und $i_{\max}$ explizit.
+
+\subsection{Typische Ergebnisgrössen}
+
+\subsubsection{Stromrippel}
+\[
+\cbl{\Delta i = i_{\max} - i_{\min}}
+\]
+
+\subsubsection{Mittelwert des Stroms}
+\[
+\overline{i} = \frac{1}{T_s} \left(
+\int_0^{T_{\mathrm{ein}}} i_{\mathrm{ein}}(t)\,dt
++
+\int_{T_{\mathrm{ein}}}^{T_s} i_{\mathrm{aus}}(t)\,dt
+\right).
+\]
+
+\subsubsection{Effektivwert des Stroms}
+\[
+I_{\mathrm{RMS}} = \sqrt{
+\frac{1}{T_s}
+\left(
+\int_0^{T_{\mathrm{ein}}} i_{\mathrm{ein}}^2(t)\,dt
++
+\int_{T_{\mathrm{ein}}}^{T_s} i_{\mathrm{aus}}^2(t)\,dt
+\right)
+}.
+\]
+
+\subsubsection{Lastspannungen}
+
+\begin{itemize}
+    \item Ohmsch:
+    \[
+    \cbl{u_R(t) = R\,i(t)}
+    \]
+    \item Induktiv:
+    \[
+    \cbl{u_L(t) = L\,\frac{di(t)}{dt}}
+    \]
+\end{itemize}
+
+Während:
+\begin{itemize}
+    \item Einschalten: $u_L = U_{\mathrm{DC}} - R i(t)$
+    \item Ausschalten: $u_L = -R i(t)$
+\end{itemize}
+
+\subsection{Zeitverläufe (qualitativ)}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[->] (0,0) -- (8,0) node[right] {$t$};
+\draw[->] (0,0) -- (0,3) node[above] {$i(t)$};
+
+\draw (0,1) .. controls (1,2.2) .. (3,2.5);
+\draw (3,2.5) .. controls (4,2) .. (6,1.2);
+\draw (6,1.2) .. controls (7,1.8) .. (8,2.2);
+
+\draw[dashed] (3,0) -- (3,3) node[above] {$T_{\mathrm{ein}}$};
+\draw[dashed] (6,0) -- (6,3) node[above] {$T_s$};
+
+\draw (0,1) node[left] {$i_{\min}$};
+\draw (3,2.5) node[left] {$i_{\max}$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Interpretation:}
+\begin{itemize}
+    \item Exponentieller Anstieg in Einschaltphase
+    \item Exponentieller Abfall in Ausschaltphase
+    \item Periodisch wiederholbarer Sägezahn mit Krümmung
+\end{itemize}
+
+\subsection{Einfluss der Parameter}
+
+\subsubsection{Induktivität $L$}
+\begin{itemize}
+    \item Größeres $L$ $\Rightarrow$ größeres $\tau$ $\Rightarrow$ kleinerer Stromrippel
+    \item Trägere Dynamik
+\end{itemize}
+
+\subsubsection{Schaltfrequenz $f_s = 1/T_s$}
+\begin{itemize}
+    \item Höheres $f_s$ $\Rightarrow$ kleineres $T_s$ $\Rightarrow$ kleinerer Rippel
+    \item Höhere Schaltverluste
+\end{itemize}
+
+\subsubsection{Widerstand $R$}
+\begin{itemize}
+    \item Größeres $R$ $\Rightarrow$ kleinerer Endstrom $U_{\mathrm{DC}}/R$
+    \item Kürzere Zeitkonstante $\tau$
+\end{itemize}
+
+\subsection{Typische Fehlerquellen}
+
+\crd{Diese Fehler kosten in der Prüfung direkt Punkte.}
+
+
+\begin{itemize}
+    \item Falsches Vorzeichen im Exponenten
+    \item Falsche Zeitverschiebung in der Ausschaltphase ($t-T_{\mathrm{ein}}$ vergessen)
+    \item Kontinuität am Schaltpunkt nicht eingehalten
+    \item Periodenbedingung nicht geschlossen
+    \item $i_\infty$ falsch angesetzt
+\end{itemize}
+
+\subsection{Standard-Vorgehen für Prüfungsaufgaben}
+
+\begin{enumerate}
+    \item Schaltintervalle identifizieren.
+    \item Pro Intervall DGL aufstellen.
+    \item Zeitkonstante $\tau=L/R$ bestimmen.
+    \item Lösungen ansetzen (exponentiell).
+    \item Kontinuitätsbedingungen formulieren.
+    \item Periodenbedingung $i(0)=i(T_s)$ anwenden.
+    \item Gesuchte Grössen berechnen: $i_{\min}$, $i_{\max}$, $\Delta i$, $\overline{i}$, $I_{\mathrm{RMS}}$.
+\end{enumerate}
