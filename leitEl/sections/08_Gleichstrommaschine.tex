@@ -16,19 +16,13 @@ und für das Verständnis der \textbf{Kennlinien $M$–$n$}.
 \end{itemize}
 
 \subsection{Grundaufbau und Ersatzschaltbild}
-
+\begin{center}
+    \includegraphics[width=0.85\linewidth]{images/Grundaufbau_gleistrommaschiene.png}
+\end{center}
 \subsubsection{Vereinfachtes Ersatzschaltbild}
 
 \begin{center}
-\begin{tikzpicture}[scale=1]
-\draw (0,2) to[battery,l=$u_a(t)$] (2,2);
-\draw (2,2) to[R,l=$R_a$] (4,2);
-\draw (4,2) to[L,l=$L_a$] (6,2);
-\draw (6,2) to[battery,l=$E_i$] (8,2);
-\draw (8,2) -- (8,0) -- (0,0) -- (0,2);
-\draw (6,3) node[above] {Gegenspannung};
-\draw (9,1) node[right] {$i_a(t)$};
-\end{tikzpicture}
+    \includegraphics[width=0.85\linewidth]{images/gleichstrommasciene.png}
 \end{center}
 
 \textbf{Elemente:}
@@ -141,6 +135,20 @@ Das ist eine \textbf{lineare Kennlinie}.
     \]
 \end{itemize}
 
+\subsection{Dynamisches Modell der Gleichstrommaschine}
+
+Mechanische Bewegungsgleichung:
+\[
+\boxed{J \frac{d\omega}{dt} = M - M_L}
+\]
+
+Elektrische Gleichung:
+\[
+\boxed{u_a = R_a i_a + L_a \frac{di_a}{dt} + k\Phi \omega}
+\]
+
+Das System ist ein gekoppeltes elektrisches–mechanisches System.
+
 \subsection{Einfluss der Ankerspannung}
 
 Für verschiedene $u_a$ entstehen parallele Kennlinien:
@@ -225,3 +233,72 @@ Damit:
     \item Arbeitspunkt aus Schnitt Motor–Last bestimmen.
     \item Stabilität qualitativ prüfen.
 \end{enumerate}
+\subsection{Schnellentscheidungshilfen für die Gleichstrommaschine}
+
+Diese Merksätze erlauben eine schnelle qualitative Beurteilung in Prüfungsaufgaben.
+
+\paragraph{Grundgleichungen}
+
+\[
+u_a = R_a i_a + k\Phi \omega
+\]
+\[
+M = k\Phi i_a
+\]
+
+\paragraph{Einfluss der Ankerspannung $u_a$}
+
+\begin{itemize}
+\item $u_a \uparrow \;\Rightarrow\; \omega \uparrow$
+\item $u_a \downarrow \;\Rightarrow\; \omega \downarrow$
+\item $u_a = 0 \;\Rightarrow\; \omega = 0$ (Stillstand)
+\end{itemize}
+
+\paragraph{Einfluss des Lastmoments $M_L$}
+
+\begin{itemize}
+\item $M_L \uparrow \;\Rightarrow\; i_a \uparrow \;\Rightarrow\; \omega \downarrow$
+\item $M_L \downarrow \;\Rightarrow\; i_a \downarrow \;\Rightarrow\; \omega \uparrow$
+\end{itemize}
+
+\paragraph{Einfluss des Erregerflusses $\Phi$}
+
+\begin{itemize}
+\item $\Phi \uparrow \;\Rightarrow\; \omega \downarrow$ (Feldschwächung umgekehrt)
+\item $\Phi \downarrow \;\Rightarrow\; \omega \uparrow$
+\item $\Phi \downarrow \;\Rightarrow\; M_{\max} \downarrow$
+\end{itemize}
+
+\paragraph{Motoranlauf}
+
+Beim Anlauf gilt:
+\[
+\omega = 0 \;\Rightarrow\; E = k\Phi \omega = 0
+\]
+
+Damit:
+\[
+\boxed{i_{a,0} = \frac{u_a}{R_a}}
+\]
+
+Konsequenzen:
+\begin{itemize}
+\item Sehr hoher Anlaufstrom.
+\item Anlaufwiderstand oder Stromregelung notwendig.
+\item Drehmoment beim Anlauf:
+\[
+\boxed{M_0 = k\Phi i_{a,0}}
+\]
+\end{itemize}
+
+\paragraph{Typische Prüfungsfragen}
+
+\begin{itemize}
+\item $u_a$ erhöhen $\Rightarrow$ Drehzahl steigt.
+\item Lastmoment steigt $\Rightarrow$ Strom steigt, Drehzahl sinkt.
+\item Feldschwächung $\Rightarrow$ hohe Drehzahl, kleines Drehmoment.
+\item Beim Anlauf ist der Strom maximal.
+\end{itemize}
+
+\crd{\textrightarrow\ Diese Merksätze erlauben schnelle qualitative Entscheidungen ohne Rechnung.}
+

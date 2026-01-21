@@ -284,6 +284,33 @@ Leitverluste & klein & klein & klein bei klein $I$ & klein bei gross $I$ \\
 Speicherladung & ja & ja & nein & ja \\
 \end{tabular}
 \end{center}
+\subsection{Safe Operating Area (SOA)}
+
+Die Safe Operating Area beschreibt den zulässigen Arbeitsbereich eines Leistungshalbleiters
+im Strom–Spannungs–Diagramm.
+
+Zulässige Grenzbedingungen:
+\[
+\boxed{
+\begin{aligned}
+u &< U_{RRM} \\
+i &< I_{\max} \\
+P &= u \cdot i < P_{\max} \\
+\frac{di}{dt} &< \left(\frac{di}{dt}\right)_{\max} \\
+\frac{du}{dt} &< \left(\frac{du}{dt}\right)_{\max}
+\end{aligned}
+}
+\]
+
+Physikalische Bedeutung:
+\begin{itemize}
+\item Begrenzung durch Durchbruchspannung,
+\item Begrenzung durch thermische Überlast,
+\item Begrenzung durch sekundären Durchbruch (bipolare Bauelemente).
+\end{itemize}
+
+Die Einhaltung der SOA ist zwingend für den sicheren Betrieb.
+
 
 \subsection{Zusammenfassung der Verlustmechanismen}
 
@@ -304,3 +331,83 @@ Thermische Auslegung:
 \[
 T_j = T_{amb} + R_{th} P_V < T_{j,\max}.
 \]
+\subsection{Vereinfachte Schaltverlustrechnung}
+
+Bei näherungsweise linearem Spannungs- und Stromverlauf während des Schaltens gilt:
+
+\paragraph{Einschaltverlust}
+
+\[
+\boxed{E_{on} \approx \frac{1}{2} U \, I \, t_{on}}
+\]
+
+\paragraph{Ausschaltverlust}
+
+\[
+\boxed{E_{off} \approx \frac{1}{2} U \, I \, t_{off}}
+\]
+
+Mittlere Schaltverluste:
+
+\[
+\boxed{
+P_{sw} = f_s \left(E_{on} + E_{off}\right)
+}
+\]
+
+Konsequenzen:
+\begin{itemize}
+\item $f_s \uparrow \Rightarrow P_{sw} \uparrow$
+\item $t_{on}, t_{off}$ klein $\Rightarrow$ geringe Verluste.
+\end{itemize}
+
+\subsection{Thermische Widerstandskette}
+
+\[
+\boxed{R_{th,tot} = R_{th,jc} + R_{th,ck} + R_{th,ka}}
+\]
+
+Temperaturen:
+
+\[
+T_j = T_{amb} + R_{th,tot} P_V
+\]
+\[
+T_c = T_j - R_{th,jc} P_V,
+\qquad
+T_k = T_c - R_{th,ck} P_V
+\]
+
+Grenzbedingung:
+\[
+\boxed{T_j < T_{j,\max}}
+\]
+\subsection{Vereinfachte Schaltverlustrechnung}
+
+Bei näherungsweise linearem Spannungs- und Stromverlauf während des Schaltens gilt:
+
+\paragraph{Einschaltverlust}
+
+\[
+\boxed{E_{on} \approx \frac{1}{2} U \, I \, t_{on}}
+\]
+
+\paragraph{Ausschaltverlust}
+
+\[
+\boxed{E_{off} \approx \frac{1}{2} U \, I \, t_{off}}
+\]
+
+Mittlere Schaltverluste:
+
+\[
+\boxed{
+P_{sw} = f_s \left(E_{on} + E_{off}\right)
+}
+\]
+
+Konsequenzen:
+\begin{itemize}
+\item $f_s \uparrow \Rightarrow P_{sw} \uparrow$
+\item $t_{on}, t_{off}$ klein $\Rightarrow$ geringe Verluste.
+\end{itemize}

@@ -1,0 +1,318 @@
+% =========================================================
+\section{Schnellentscheidungshilfen (Prüfungs-Kompass)}
+% =========================================================
+
+Diese Section dient als schnelle Entscheidungslogik für typische Prüfungsfragen.
+Sie ersetzt keine Herleitungen, sondern liefert direkte \textbf{Wenn–Dann}-Aussagen.
+
+% ---------------------------------------------------------
+\subsection{Allgemeine Grundlagen (R, L, C)}
+
+\subsubsection{Grundrelationen}
+
+\[
+u_R = R i,\qquad u_L = L\frac{di}{dt},\qquad i_C = C\frac{du_C}{dt}
+\]
+
+\begin{itemize}
+\item Wenn $i$ in einer Spule sprunghaft ändern soll $\Rightarrow$ $u_L$ wird sehr gross $\Rightarrow$ Freilaufpfad nötig.
+\item Wenn $u_C$ sprunghaft ändern soll $\Rightarrow$ $i_C$ wird sehr gross $\Rightarrow$ Einschaltstromspitze.
+\item Induktivität: \textbf{Strom ist quasi-kontinuierlich}.
+\item Kapazität: \textbf{Spannung ist quasi-kontinuierlich}.
+\end{itemize}
+
+\subsubsection{Zeitkonstante und Einschwingen}
+
+\[
+\tau_{RL}=\frac{L}{R},\qquad \tau_{RC}=RC
+\]
+
+\begin{itemize}
+\item Wenn $\tau$ gross $\Rightarrow$ langsame Änderung, starke Glättung.
+\item Wenn $\tau$ klein $\Rightarrow$ schnelle Änderung, wenig Glättung.
+\item Nach $t\approx 5\tau$ ist das System praktisch im Endwert.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{Mittelwert, Effektivwert, Leistung}
+
+\subsubsection{Schnellregeln}
+
+\[
+\overline{x}=\frac{1}{T}\int_0^T x(t)\,dt,\qquad
+X_{\mathrm{RMS}}=\sqrt{\frac{1}{T}\int_0^T x^2(t)\,dt}
+\]
+
+\begin{itemize}
+\item Wenn Signal symmetrisch um 0 (ungerade) $\Rightarrow$ Mittelwert $=0$.
+\item Wenn Signal immer positiv (Gleichrichtung) $\Rightarrow$ Mittelwert $>0$.
+\item RMS reagiert stark auf Spitzenwerte $\Rightarrow$ Impulsströme erhöhen RMS stark.
+\end{itemize}
+
+\subsubsection{Leistung}
+
+\[
+p(t)=u(t)i(t),\quad P=\overline{p(t)}
+\]
+
+\begin{itemize}
+\item Ohmsche Last: $P=\frac{U_{\mathrm{RMS}}^2}{R}=R I_{\mathrm{RMS}}^2$.
+\item Induktiv/Kapazitiv: Momentanleistung kann positiv/negativ sein $\Rightarrow$ Blindleistung möglich.
+\end{itemize}
+
+\subsubsection{Nichtsinusförmig}
+
+\[
+U_{\mathrm{RMS}}^2=\sum_{n\ge 1} U_{n,\mathrm{RMS}}^2
+\]
+
+\begin{itemize}
+\item Wenn THD hoch $\Rightarrow$ Verzerrung hoch $\Rightarrow$ Filter/Glättung sinnvoll.
+\item Wenn Strom verzerrt $\Rightarrow$ Leistungsfaktor sinkt auch bei $\cos\varphi_1\approx 1$.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{Leistungshalbleiter (Diode, Thyristor, MOSFET, IGBT)}
+
+\subsubsection{Grundlogik}
+
+\begin{itemize}
+\item Diode: leitet automatisch, keine Steuerung.
+\item Thyristor: zündbar, nicht abschaltbar (nur über Stromnull oder Kommutierung).
+\item MOSFET: voll steuerbar, schnell, gut für hohe $f_s$.
+\item IGBT: voll steuerbar, gut bei hohen Leistungen, mittlere $f_s$.
+\end{itemize}
+
+\subsubsection{Verluste}
+
+\[
+P_{cond}=U_0 I_{\mathrm{avg}} + r I_{\mathrm{RMS}}^2,\qquad
+P_{sw}=f_s(E_{on}+E_{off})
+\]
+
+\begin{itemize}
+\item Wenn $f_s\uparrow$ $\Rightarrow$ Schaltverluste $\uparrow$.
+\item Wenn $I_{\mathrm{RMS}}\uparrow$ $\Rightarrow$ Leitverluste $\uparrow$.
+\item MOSFET: Verluste dominieren über $r_{DS,on}I^2$.
+\item IGBT: Verluste dominieren über $U_{CE0}I$ bei mittleren Strömen.
+\item Diode: hohe $Q_{rr}$ $\Rightarrow$ hohe Schaltverluste in schnellen Umrichtern.
+\end{itemize}
+
+\subsubsection{Thermik}
+
+\[
+T_j=T_{amb}+R_{th,tot}P_V,\qquad
+R_{th,tot}=R_{th,jc}+R_{th,ck}+R_{th,ka}
+\]
+
+\begin{itemize}
+\item Wenn $P_V\uparrow$ $\Rightarrow$ $T_j\uparrow$.
+\item Wenn $R_{th}\downarrow$ (besserer Kühlkörper) $\Rightarrow$ $T_j\downarrow$.
+\item Grenzcheck immer: $T_j<T_{j,\max}$.
+\end{itemize}
+
+\subsubsection{Induktive Last}
+
+\begin{itemize}
+\item Wenn Schalter aus und kein Freilauf $\Rightarrow$ Überspannung.
+\item Daher: Freilaufdiode oder antiparallele Diode ist Pflicht.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{Gleichrichter (M1, B2, B6)}
+
+\subsubsection{Systematik}
+
+\begin{itemize}
+\item M: Mittelpunkt (2 Dioden/Thyristoren)
+\item B: Brücke (4 bzw. 6 Ventile)
+\item Zahl: Pulszahl (1,2,6)
+\item U: ungesteuert (Dioden)
+\item C: gesteuert (Thyristoren)
+\end{itemize}
+
+\subsubsection{Einfluss von Zündwinkel $\alpha$}
+
+\begin{itemize}
+\item Wenn $\alpha\uparrow$ $\Rightarrow$ $\overline{u_d}\downarrow$.
+\item B2C und B6C: $\overline{u_d}\propto \cos\alpha$.
+\item Wenn $\alpha>90^\circ$ $\Rightarrow$ $\cos\alpha<0$ $\Rightarrow$ Rückspeisebetrieb möglich (bei passender Last).
+\end{itemize}
+
+\subsubsection{C-Glättung vs L-Glättung}
+
+\begin{itemize}
+\item C-Glättung: Spannung glatt, Strom impulsförmig, Spitzenstrom hoch, Netzrückwirkung schlecht.
+\item L-Glättung: Strom glatt, Spannung wellig, Netzrückwirkung besser, Industrie typisch.
+\item Wenn $C\uparrow$ $\Rightarrow$ $\Delta u \downarrow$ aber Spitzenstrom $\uparrow$.
+\item Wenn $L\uparrow$ $\Rightarrow$ $\Delta i \downarrow$ und Strom wird kontinuierlicher.
+\end{itemize}
+
+\subsubsection{Kommutierungsüberlappung}
+
+\begin{itemize}
+\item Wenn Netzinduktivität $L_\sigma\uparrow$ oder $i_d\uparrow$ $\Rightarrow$ Überlappung $\mu\uparrow$.
+\item $\mu\uparrow \Rightarrow \overline{u_d}\downarrow$.
+\end{itemize}
+
+\subsubsection{Harmonische}
+
+\begin{itemize}
+\item B6: typische Netzstromharmonische $n=6k\pm 1$.
+\item B2: harmonisch stärker belastend als B6.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{Wechselstromsteller (Phasenanschnitt)}
+
+\begin{itemize}
+\item Wenn $\alpha\uparrow$ $\Rightarrow$ Leitintervall kürzer $\Rightarrow$ $U_{\mathrm{RMS}}\downarrow$.
+\item $\overline{u}$ bleibt bei symmetrischem AC-Anschnitt $=0$.
+\item RMS sinkt nicht linear, sondern nach der bekannten Integralform.
+\end{itemize}
+
+\begin{itemize}
+\item Wechselstrom\textbf{schalter}: nur EIN/AUS ganze Halbwellen.
+\item Wechselstrom\textbf{steller}: Phasenanschnitt, Teilhalbwellen.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{Gleichstromsteller (Chopper)}
+
+\subsubsection{1-Quadrant (Buck-artig)}
+
+\begin{itemize}
+\item Wenn Tastgrad $d\uparrow$ $\Rightarrow$ $\overline{u_d}\uparrow$.
+\item $\overline{u_d}=dU_{DC}$.
+\item Wenn $L$ gross $\Rightarrow$ Strom nahezu konstant.
+\end{itemize}
+
+\subsubsection{2- und 4-Quadrant}
+
+\begin{itemize}
+\item 2Q: Energie kann in beide Richtungen, Spannung aber nur positiv (typisch Bremsbetrieb möglich).
+\item 4Q: Spannung und Strom können Vorzeichen wechseln (Motor + Generator in beide Drehrichtungen).
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{DC-DC-Wandler (Buck, Boost, Buck-Boost)}
+
+\subsubsection{Buck}
+
+\begin{itemize}
+\item $d\uparrow \Rightarrow u_2\uparrow$.
+\item $0<d<1 \Rightarrow u_2 < U_{DC}$.
+\item $L\uparrow \Rightarrow \Delta i_L \downarrow$.
+\end{itemize}
+
+\subsubsection{Boost}
+
+\begin{itemize}
+\item $d\uparrow \Rightarrow u_2\uparrow$ stark.
+\item $d\rightarrow 1 \Rightarrow u_2 \rightarrow \infty$ (ideal), real begrenzt durch Verluste.
+\end{itemize}
+
+\subsubsection{Betriebsart}
+
+\begin{itemize}
+\item Wenn $L < L_{\min}$ $\Rightarrow$ diskontinuierlicher Betrieb $\Rightarrow$ Mittelwertformeln ändern sich.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{Einphasiger Wechselrichter}
+
+\begin{itemize}
+\item Rechteckbetrieb: einfach, aber viele Harmonische.
+\item PWM: Grundschwingung steuerbar, Harmonische hochfrequent.
+\item Wenn Modulationsindex $m_a\uparrow$ $\Rightarrow$ Grundschwingung $\uparrow$ (linear bis $m_a\le 1$).
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{Dreiphasiger Wechselrichter}
+
+\begin{itemize}
+\item Dreiphasig: Leistungsfluss nahezu konstant.
+\item 180$^\circ$-Betrieb: jede Phase 180$^\circ$ leitend.
+\item 120$^\circ$-Betrieb: jede Phase 120$^\circ$ leitend, oft geringere Verluste.
+\item Leiterspannung ist Differenz zweier Phasenspannungen: $u_{LL}=u_a-u_b$.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{PWM (Sinus-PWM) – Spektrum und Auswirkungen}
+
+\begin{itemize}
+\item $f_s\uparrow \Rightarrow$ Ripplefrequenz $\uparrow$, Filterung einfacher, aber Schaltverluste $\uparrow$.
+\item Spektrum: Seitenbänder um Vielfache von $f_s$.
+\item R--L Last wirkt als Tiefpass $\Rightarrow$ Strom wird sinusähnlicher als Spannung.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{Direktumrichter}
+
+\begin{itemize}
+\item Kein Zwischenkreis: AC $\rightarrow$ AC direkt.
+\item Wenn Kommutierung falsch $\Rightarrow$ Kurzschluss von Netzphasen oder Unterbrechung der Last.
+\item Ausgangsfrequenz begrenzt: typischerweise $f_2 < \frac{1}{2}f_1$.
+\item Leistungsfluss kann positiv oder negativ sein $\Rightarrow$ Rückspeisung möglich.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{Gleichstrommaschine (Motorbetrieb, Anlauf, Feldschwächung)}
+
+\subsubsection{Kernaussagen}
+
+\[
+u_a = R_a i_a + k\Phi \omega,\qquad M=k\Phi i_a
+\]
+
+\subsubsection{Ankerspannung}
+
+\begin{itemize}
+\item $u_a\uparrow \Rightarrow \omega\uparrow$.
+\item $u_a\downarrow \Rightarrow \omega\downarrow$.
+\end{itemize}
+
+\subsubsection{Lastmoment}
+
+\begin{itemize}
+\item $M_L\uparrow \Rightarrow i_a\uparrow \Rightarrow \omega\downarrow$.
+\end{itemize}
+
+\subsubsection{Feld}
+
+\begin{itemize}
+\item $\Phi\downarrow$ (Feldschwächung) $\Rightarrow \omega\uparrow$ aber $M_{\max}\downarrow$.
+\item $\Phi\uparrow \Rightarrow \omega\downarrow$.
+\end{itemize}
+
+\subsubsection{Anlauf}
+
+\[
+\omega=0 \Rightarrow E=0 \Rightarrow i_{a,0}=\frac{u_a}{R_a}
+\]
+
+\begin{itemize}
+\item Anlaufstrom sehr hoch $\Rightarrow$ Begrenzung durch Stromregelung/Anlaufwiderstand.
+\item Anlaufmoment: $M_0=k\Phi i_{a,0}$.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{Harmonische und Spektralanalyse}
+
+\begin{itemize}
+\item Nichtsinusförmig $\Rightarrow$ Grundschwingung + Harmonische.
+\item THD hoch $\Rightarrow$ Verzerrung hoch.
+\item R--L Last dämpft höhere Harmonische stärker: $I_n=\frac{U_n}{\sqrt{R^2+(n\omega L)^2}}$.
+\end{itemize}
+
+% ---------------------------------------------------------
+\subsection{Fourier (schnelle Auswahlregeln)}
+
+\begin{itemize}
+\item Gerade Funktion $\Rightarrow b_n=0$.
+\item Ungerade Funktion $\Rightarrow a_n=0$.
+\item Zeitverschiebung $\Rightarrow$ Phasenfaktoren $e^{jk\omega t_0}$.
+\item Sprungstellen $\Rightarrow$ Gibbs, Dirichlet: Mittelwert der Sprungwerte.
+\end{itemize}
+
+% =========================================================
