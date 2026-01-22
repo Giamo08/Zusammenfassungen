@@ -1,0 +1,221 @@
+\section{Einführung in Gleichrichter und Grundsystematik}
+
+Gleichrichter dienen der Umwandlung von Wechselspannung in Gleichspannung.
+Sie bilden die Eingangsstufe nahezu aller leistungselektronischen Systeme,
+insbesondere in Netzteilen, Umrichtern und elektrischen Antrieben.
+
+Je nach Schaltungstopologie, Pulszahl und Steuerart ergeben sich sehr unterschiedliche
+Eigenschaften hinsichtlich Mittelwert, Restwelligkeit, Netzrückwirkungen und Stellbarkeit.
+
+\subsection{Systematik der Gleichrichterbezeichnungen}
+
+Die Bezeichnungen der Gleichrichter folgen einer einheitlichen Nomenklatur,
+die unmittelbar Auskunft über Aufbau und Funktion gibt:
+
+\begin{itemize}
+\item \textbf{M} = Mittelpunktschaltung,
+\item \textbf{B} = Brückenschaltung,
+\item \textbf{Zahl} = Pulszahl $p$ pro Netzperiode,
+\item \textbf{U} = ungesteuert (Dioden),
+\item \textbf{C} = gesteuert (Thyristoren).
+\end{itemize}
+
+Beispiele:
+\begin{itemize}
+\item M1U: Einpuls, Mittelpunkt, ungesteuert,
+\item B2U: Zweipuls, Brücke, ungesteuert,
+\item B6C: Sechspuls, Brücke, gesteuert.
+\end{itemize}
+
+Die Pulszahl bestimmt die Frequenz der Gleichspannungswelligkeit
+und damit die Qualität der erzeugten Gleichspannung.
+
+\crd{\textrightarrow\ M/B beschreibt die Topologie, die Zahl die Pulszahl, U/C die Steuerart.}
+
+\subsection{Grundklassifikation der Gleichrichter}
+
+Man unterscheidet grundsätzlich zwei Hauptklassen:
+
+\begin{itemize}
+\item \textbf{Ungesteuerte Gleichrichter (U)}:  
+Dioden, keine Stellmöglichkeit der Ausgangsspannung.
+
+\item \textbf{Gesteuerte Gleichrichter (C)}:  
+Thyristoren, Stellgrösse ist der Zündwinkel $\alpha$.
+\end{itemize}
+
+Bei gesteuerten Gleichrichtern ist der Mittelwert der Gleichspannung
+proportional zu $\cos\alpha$.
+Für $\alpha > 90^\circ$ ist Rückspeisebetrieb möglich.
+
+\subsection{Einfluss von Induktivität und Kapazität auf den Betrieb}
+
+In realen Anwendungen werden Induktivität $L$ und Kapazität $C$ eingesetzt,
+um das Verhalten des Gleichrichters gezielt zu beeinflussen.
+Sie bestimmen wesentlich die Stromform, die Spannungswelligkeit
+sowie die Netzrückwirkungen.
+
+Man unterscheidet drei Grundfälle:
+
+\begin{itemize}
+\item \textbf{C-Glättung (kapazitive Last)},
+\item \textbf{L-Glättung (induktive Last)},
+\item \textbf{LC-Glättung (Filter)}.
+\end{itemize}
+
+Der gewählte Lasttyp bestimmt insbesondere:
+
+\begin{itemize}
+\item die Stromform $i_d(t)$ im Gleichrichter,
+\item die Restwelligkeit der Gleichspannung $\Delta u_d$,
+\item die Netzstromharmonischen,
+\item den Leistungsfaktor $\lambda$,
+\item die thermische Belastung der Halbleiter.
+\end{itemize}
+
+\subsubsection*{C-Glättung (kapazitive Last)}
+
+Der Kondensator lädt sich in jeder Leitphase auf den momentanen Scheitelwert
+der Gleichspannung auf und entlädt sich zwischen den Leitphasen über die Last.
+
+Näherung für den Spannungsrippel:
+\[
+\cbl{\Delta u_d \approx \frac{I_d}{f_r \, C}}
+\]
+mit:
+\begin{itemize}
+\item $I_d$: mittlerer Gleichstrom,
+\item $f_r = p f$: Ripple-Frequenz der Gleichspannung,
+\item $p$: Pulszahl des Gleichrichters,
+\item $f$: Netzfrequenz,
+\item $C$: Kapazität des Kondensators.
+\end{itemize}
+
+Mittelwert der Gleichspannung:
+\[
+\cbl{u_d \approx \hat U_d - \frac{\Delta u_d}{2}}
+\]
+mit:
+\begin{itemize}
+\item $\hat U_d$: Scheitelwert der gleichgerichteten Spannung.
+\end{itemize}
+
+Typische Konsequenzen:
+\begin{itemize}
+\item Sehr kurze Leitwinkel $\Rightarrow$ hohe Spitzenströme:
+\[
+\cbl{i_{D,\max} \gg I_d}
+\]
+\item Starke Verzerrung des Netzstroms.
+\item Schlechter Leistungsfaktor:
+\[
+\cbl{\lambda = \frac{P}{U_{\mathrm{RMS}} I_{\mathrm{RMS}}} \ll 1}
+\]
+\end{itemize}
+
+\subsubsection*{L-Glättung (induktive Last)}
+
+Die Induktivität erzwingt eine nahezu konstante Stromform.
+Im stationären Betrieb gilt für die mittlere Induktorspannung:
+
+\[
+\cbl{\overline{u_L} = \frac{1}{T}\int_0^T u_L(t)\, dt = 0}
+\]
+
+Mit:
+\[
+u_L(t) = L \frac{di_d(t)}{dt}
+\]
+
+Daraus folgt für den Mittelwert der Gleichspannung:
+\[
+\cbl{u_d = \overline{u_{\mathrm{gr}}(t)}}
+\]
+mit:
+\begin{itemize}
+\item $u_{\mathrm{gr}}(t)$: momentane gleichgerichtete Spannung.
+\end{itemize}
+
+Stromwelligkeit:
+\[
+\cbl{\Delta i_d \approx \frac{\Delta u_d}{\omega L}}
+\]
+
+Typische Konsequenzen:
+\begin{itemize}
+\item Nahezu konstanter Gleichstrom:
+\[
+\cbl{i_d(t) \approx I_d = \text{konstant}}
+\]
+\item Rechteckförmige Netzströme bei Mehrpuls-Gleichrichtern.
+\item Geringere Oberschwingungen als bei C-Glättung.
+\item Besserer Leistungsfaktor:
+\[
+\cbl{\lambda \uparrow}
+\]
+\end{itemize}
+
+\subsubsection*{LC-Glättung (Tiefpassfilter)}
+
+Die Kombination aus Serieninduktivität und Parallel-Kondensator
+bildet ein Tiefpassfilter für die Gleichspannung.
+
+Grenzfrequenz des Filters:
+\[
+\cbl{\omega_0 = \frac{1}{\sqrt{LC}}}
+\qquad
+f_0 = \frac{1}{2\pi\sqrt{LC}}
+\]
+
+Übertragungsverhalten:
+\[
+|H(j\omega)| \approx
+\begin{cases}
+1, & \omega \ll \omega_0, \\
+\downarrow, & \omega \gg \omega_0.
+\end{cases}
+\]
+
+Dämpfung der Ripple-Komponente:
+\[
+\cbl{\Delta u_d \propto |H(j\omega_r)|}
+\]
+mit:
+\begin{itemize}
+\item $\omega_r = 2\pi f_r$: Ripple-Kreisfrequenz.
+\end{itemize}
+
+Typische Konsequenzen:
+\begin{itemize}
+\item Sehr geringe Restwelligkeit der Gleichspannung.
+\item Gute Strom- und Spannungsqualität.
+\item Höherer Bauteilaufwand.
+\end{itemize}
+
+
+\subsection{Ziel der folgenden Kapitel}
+
+In den folgenden Kapiteln werden systematisch behandelt:
+
+\begin{itemize}
+\item Einpuls-Gleichrichter (M1U, M1C),
+\item Zweipuls-Gleichrichter (B2U, B2C),
+\item Dreiphasige Gleichrichter (B6U, B6C),
+\item Einfluss von Last, Steuerung und Netzinduktivität,
+\item Netzrückwirkungen und Harmonische.
+\end{itemize}
+
+Ziel ist eine einheitliche Beschreibung aller Gleichrichter
+auf Basis von:
+
+\begin{itemize}
+\item Pulszahl $p$,
+\item Steuerart (U/C),
+\item Leitwinkel $\alpha$, $\beta$,
+\item Mittelwert- und Verlustgleichungen.
+\end{itemize}
+
+
+\input{sections/05b_M1.tex}
+\input{sections/05c_B2.tex}
+\input{sections/05d_B6.tex}

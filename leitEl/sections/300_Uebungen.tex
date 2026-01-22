@@ -1,8 +1,9 @@
+\section{Übunsstützen}
 % =========================================================
-\section{Übung 1: Zeitbereichanalyse R--L Lasten}
+\subsection{Übung 1: Zeitbereichanalyse R--L Lasten}
 % =========================================================
 
-\subsection*{a) Zeitfunktion des Stromes $i_R(t)$ im stationären Betrieb}
+\subsubsection*{a) Zeitfunktion des Stromes $i_R(t)$ im stationären Betrieb}
 
 \paragraph{Gegeben}
 Periodische Umschaltung zweier Stromschalter $S_1$ und $S_2$ mit
@@ -82,7 +83,8 @@ Damit sind $i_\mathrm{min},i_\mathrm{max}$ eindeutig bestimmbar und $i_R(t)$ ist
 
 % ---------------------------------------------------------
 
-\subsection*{b) Mittelwert $\overline{i_R}$}
+
+\subsubsection*{b) Mittelwert $\overline{i_R}$}
 
 \paragraph{Gegeben}
 Stückweise Stromverlauf aus Teil a).
@@ -133,7 +135,8 @@ i_\mathrm{max}\frac{L}{R}\left(1-e^{-\frac{R}{L}t_\mathrm{aus}}\right)
 
 % ---------------------------------------------------------
 
-\subsection*{c) Effektivwert $I_{\mathrm{RMS}}$}
+
+\subsubsection*{c) Effektivwert $I_{\mathrm{RMS}}$}
 
 \paragraph{Gesucht}
 \[
@@ -185,7 +188,7 @@ A^2 t_\mathrm{ein}
 
 % ---------------------------------------------------------
 
-\subsection*{d) Spannungen $u_R(t)$ und $u_L(t)$}
+\subsubsection*{d) Spannungen $u_R(t)$ und $u_L(t)$}
 
 \paragraph{Gesucht}
 Zeitfunktionen $u_R(t)$, $u_L(t)$.
@@ -207,7 +210,7 @@ u_L(t)=-u_R(t)=-R i_{R2}(t).
 
 % ---------------------------------------------------------
 
-\subsection*{e) Simulation/Verifikation (LTspice/PLECS)}
+\subsubsection*{e) Simulation/Verifikation (LTspice/PLECS)}
 
 \paragraph{Lösungsweg}
 Parameter wie im Aufgabenblatt setzen, periodische Schalteransteuerung definieren,
@@ -218,10 +221,10 @@ mit den analytischen Ausdrücken aus a)–c) vergleichen.
 
 
 % =========================================================
-\section{Übung 2: Einpuls-Gleichrichter M1U }
+\subsection{Übung 2: Einpuls-Gleichrichter M1U }
 % =========================================================
 
-\subsection*{a) Zeitverlauf $u_2(t)$ und $u_R(t)$ für $t\in[0,60\,\mathrm{ms}]$}
+\subsubsection*{a) Zeitverlauf $u_2(t)$ und $u_R(t)$ für $t\in[0,60\,\mathrm{ms}]$}
 
 \paragraph{Gegeben}
 Einpuls-Gleichrichter M1U, Eingang
@@ -242,7 +245,7 @@ u_R(t)=
 \paragraph{Gesucht}
 Plot über 3 Perioden. (Rechenweg: Stückweise Definition oben.)
 
-\subsection*{b) Mittelwert und Effektivwert von $u_R(t)$}
+\subsubsection*{b) Mittelwert und Effektivwert von $u_R(t)$}
 
 \paragraph{Gesucht}
 \[
@@ -272,7 +275,7 @@ U_{R,\mathrm{RMS}}
 \boxed{\frac{\hat u_2}{2}}.
 \]
 
-\subsection*{c) Erste sechs Harmonische von $u_R(t)$}
+\subsubsection*{c) Erste sechs Harmonische von $u_R(t)$}
 
 \paragraph{Gesucht}
 Fourierreihe
@@ -329,10 +332,10 @@ b_1=\frac{\hat u_2}{2}
 
 
 % =========================================================
-\section{Übung 3: Zweipuls-Gleichrichter}
+\subsection{Übung 3: Zweipuls-Gleichrichter}
 % =========================================================
 
-\subsection*{a) Zeitverlauf $u_2(t)$ und $u_R(t)$ über drei Perioden}
+\subsubsection*{a) Zeitverlauf $u_2(t)$ und $u_R(t)$ über drei Perioden}
 
 \paragraph{Gegeben}
 Eingang:
@@ -358,7 +361,7 @@ u_R(t)=
 \quad\text{periodisch}.
 \]
 
-\subsection*{b) Mittelwert und Effektivwert von $u_R(t)$}
+\subsubsection*{b) Mittelwert und Effektivwert von $u_R(t)$}
 
 \paragraph{Gesucht}
 \[
@@ -386,7 +389,7 @@ U_{R,\mathrm{RMS}}
 \boxed{\frac{\hat u_2}{\sqrt{2}}}.
 \]
 
-\subsection*{c) Harmonische (Fourier-Koeffizienten)}
+\subsubsection*{c) Harmonische (Fourier-Koeffizienten)}
 
 \paragraph{Lösungsweg}
 Da $u_R(\alpha)=\hat u_2|\sin\alpha|$ gerade ist, gilt:
@@ -411,10 +414,10 @@ a_k=\frac{1}{\pi}\int_0^{2\pi}\hat u_2|\sin\alpha|\cos(k\alpha)\,d\alpha
 
 
 % =========================================================
-\section{Übung 4: Wechselstromsteller W1 (R-Last)}
+\subsection{Übung 4: Wechselstromsteller W1 (R-Last)}
 % =========================================================
 
-\subsection*{a) Zeitverlauf von $u_R(t)$ und $i_R(t)$ für $t\in[0,60\,\mathrm{ms}]$}
+\subsubsection*{a) Zeitverlauf von $u_R(t)$ und $i_R(t)$ für $t\in[0,60\,\mathrm{ms}]$}
 
 \paragraph{Gegeben}
 Wechselstromsteller (Phasenanschnitt) mit ohmscher Last $R$.
@@ -451,7 +454,7 @@ i_R(\beta)=\frac{u_R(\beta)}{R}.
 
 % ---------------------------------------------------------
 
-\subsection*{b) Mittelwert und Effektivwert von $u_R(t)$ und $i_R(t)$}
+\subsubsection*{b) Mittelwert und Effektivwert von $u_R(t)$ und $i_R(t)$}
 
 \paragraph{Gegeben}
 Stückweise Definition aus a), $\beta=\omega t$.
@@ -512,7 +515,7 @@ Für den Strom:
 
 % ---------------------------------------------------------
 
-\subsection*{c) Wirkleistung $P$ an der ohmschen Last}
+\subsubsection*{c) Wirkleistung $P$ an der ohmschen Last}
 
 \paragraph{Gesucht}
 Wirkleistung $P$.
@@ -536,7 +539,7 @@ P
 
 % ---------------------------------------------------------
 
-\subsection*{d) Fourierkoeffizienten von $i_R(t)$ (Spektrum)}
+\subsubsection*{d) Fourierkoeffizienten von $i_R(t)$ (Spektrum)}
 
 \paragraph{Gesucht}
 Fourierreihe von $i_R(\beta)$ und Struktur der Koeffizienten.
@@ -585,7 +588,7 @@ i_R(\beta)=\sum_{k=1}^{\infty} b_k \sin(k\beta).
 
 % ---------------------------------------------------------
 
-\subsection*{e) Blindleistung und Verzerrungsblindleistung}
+\subsubsection*{e) Blindleistung und Verzerrungsblindleistung}
 
 \paragraph{Gesucht}
 Grundschwingungsblindleistung und Verzerrungsblindleistung.
@@ -608,10 +611,10 @@ S = U_{\mathrm{RMS}} I_{\mathrm{RMS}},\qquad P=R I_{\mathrm{RMS}}^2,
 
 
 % =========================================================
-\section{Übung 5: Gleichstromsteller (Schalter) }
+\subsection{Übung 5: Gleichstromsteller (Schalter) }
 % =========================================================
 
-\subsection*{a) $i_L(t)$ und $u_R(t)$ über eine Schaltperiode}
+\subsubsection*{a) $i_L(t)$ und $u_R(t)$ über eine Schaltperiode}
 
 \paragraph{Gegeben}
 Gleichstromquelle $U_{DC}$, Schaltperiode $T_s=T_e+T_a$.
@@ -674,7 +677,7 @@ i_{\min}=i_{\max}e^{-T_a/\tau}
 
 % ---------------------------------------------------------
 
-\subsection*{b) Bestimmung einer Schaltzeit aus $i_{\min}$, $i_{\max}$ (typische Prüfungsform)}
+\subsubsection*{b) Bestimmung einer Schaltzeit aus $i_{\min}$, $i_{\max}$ (typische Prüfungsform)}
 
 \paragraph{Gegeben}
 $i_{\min}$ und $i_{\max}$ (aus Diagramm/Simulation).
@@ -693,10 +696,10 @@ Dann $T_e=T_s-T_a$ (falls $T_s$ gegeben).
 
 
 % =========================================================
-\section{Übung 6: PWM-Wechselrichter }
+\subsection{Übung 6: PWM-Wechselrichter }
 % =========================================================
 
-\subsection*{a) Herleitung von $i_L(t)$ und $u_L(t)$ in einem PWM-Intervall}
+\subsubsection*{a) Herleitung von $i_L(t)$ und $u_L(t)$ in einem PWM-Intervall}
 
 \paragraph{Gegeben}
 PWM-Schaltsignal erzeugt zeitlich wechselnde Lastspannung.
@@ -743,7 +746,7 @@ Je nach PWM-Zustand:
 
 % ---------------------------------------------------------
 
-\subsection*{b) Wodurch wird die Hauptfrequenz des Laststroms bestimmt?}
+\subsubsection*{b) Wodurch wird die Hauptfrequenz des Laststroms bestimmt?}
 
 \paragraph{Gesucht}
 Hauptfrequenz-Aussage.
@@ -762,7 +765,7 @@ Die Schaltfrequenz erzeugt Oberschwingungen und Ripple um Vielfache von $f_s$.
 
 % ---------------------------------------------------------
 
-\subsection*{c) Vergleich idealer und realer Laststrom (qualitativ)}
+\subsubsection*{c) Vergleich idealer und realer Laststrom (qualitativ)}
 
 \paragraph{Gesucht}
 Warum weicht realer PWM-Strom vom idealen ab?
@@ -778,10 +781,10 @@ Abweichungen entstehen durch:
 
 
 % =========================================================
-\section{Übung 7: Gesteuerter Gleichrichter + Gleichstrommaschine}
+\subsection{Übung 7: Gesteuerter Gleichrichter + Gleichstrommaschine}
 % =========================================================
 
-\subsection*{a) Warum läuft die Maschine unterhalb einer Winkelgrenze nicht sauber an?}
+\subsubsection*{a) Warum läuft die Maschine unterhalb einer Winkelgrenze nicht sauber an?}
 
 \paragraph{Gegeben}
 Gesteuerter Gleichrichter speist fremderregte Gleichstrommaschine.
@@ -815,7 +818,7 @@ und der Motor erzeugt kein stabiles Drehmoment, was zu Stillstand bzw. Schwingun
 
 % ---------------------------------------------------------
 
-\subsection*{b) Warum steigt $n$ mit $\alpha$ zuerst, erreicht ein Maximum und fällt dann wieder?}
+\subsubsection*{b) Warum steigt $n$ mit $\alpha$ zuerst, erreicht ein Maximum und fällt dann wieder?}
 
 \paragraph{Gegeben}
 Drehmoment:
@@ -858,7 +861,7 @@ ist $\beta$ drehzahlabhängig, was die nichtlineare Rückkopplung erklärt.
 
 % ---------------------------------------------------------
 
-\subsection*{c) Grenzbedingung für den Stromfluss}
+\subsubsection*{c) Grenzbedingung für den Stromfluss}
 
 \paragraph{Gesucht}
 Grenze zwischen Stromfluss und kein Stromfluss.

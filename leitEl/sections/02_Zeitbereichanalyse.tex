@@ -254,6 +254,40 @@ Während:
     \item Periodisch wiederholbarer Sägezahn mit Krümmung
 \end{itemize}
 
+\subsection{Allgemeiner R--L--C-Zweig im Zeitbereich}
+
+Grundgleichungen:
+\[
+u(t) = R i(t) + L \frac{di}{dt} + u_C(t)
+\]
+\[
+i_C(t) = C \frac{du_C}{dt}
+\]
+
+Zustände:
+\[
+x(t) = \begin{bmatrix} i(t) \\ u_C(t) \end{bmatrix}
+\]
+
+Sonderfälle:
+
+R--L:
+\[
+u(t) = R i + L \frac{di}{dt},
+\qquad \tau = \frac{L}{R}
+\]
+
+R--C:
+\[
+\frac{u}{R} + C \frac{du}{dt} = 0,
+\qquad \tau = R C
+\]
+
+Allgemeine Lösung (1. Ordnung):
+\[
+x(t) = x_\infty + (x(t_0)-x_\infty)e^{-(t-t_0)/\tau}
+\]
+
 \subsection{Einfluss der Parameter}
 
 \subsubsection{Induktivität $L$}

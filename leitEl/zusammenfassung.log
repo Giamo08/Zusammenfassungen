@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  21 JAN 2026 19:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  22 JAN 2026 17:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1222,176 +1222,100 @@ Package hyperref Info: Link coloring OFF on input line 43.
 
 <QR code requested for "https://github.com/Giamo08/Zusammenfassungen" in version 0-L.>
 <Copying the QR code for "https://github.com/Giamo08/Zusammenfassungen" in version 3-L as previously calculated.>
-LaTeX Font Info:    Trying to load font information for OT1+txr on input line 45.
+LaTeX Font Info:    Trying to load font information for OT1+txr on input line 44.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsya on input line 45.
+LaTeX Font Info:    Trying to load font information for U+txsya on input line 44.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsyb on input line 45.
+LaTeX Font Info:    Trying to load font information for U+txsyb on input line 44.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 45.
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 44.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 45.
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 44.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 45.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 44.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <17.28> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 45.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 44.
 
-contour: Using real outline for `\url {https://github.com/Giamo08/Zusammenfassungen}' on input line 45.
-(./sections/00_grundlagen_zeitkontinuierlicher_systeme.tex
+contour: Using real outline for `\url {https://github.com/Giamo08/Zusammenfassungen}' on input line 44.
+(./sections/01_Leistungshalbleiter.tex
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10.95> not available
 (Font)              Font shape `T1/txr/bx/n' tried instead on input line 2.
-LaTeX Font Info:    Font shape `T1/txr/b/n' in size <8> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 3.
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 12.
+LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10> not available
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 4.
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 11.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 19.
+LaTeX Font Info:    Font shape `T1/txr/b/n' in size <8> not available
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 11.
 
-contour: Using real outline for `1.1.1\ ' on input line 21.
-contour: Using real outline for `Eingang, Ausgang, Zustand' on input line 21.
-contour: Using real outline for `1.1.2\ ' on input line 29.
-contour: Using real outline for `Linearität' on input line 29.
-contour: Using real outline for `1.1.3\ ' on input line 37.
-contour: Using real outline for `Zeitinvarianz' on input line 37.
-contour: Using real outline for `1.1.4\ ' on input line 44.
-contour: Using real outline for `Kausalität' on input line 44.
-contour: Using real outline for `1.1.5\ ' on input line 48.
-contour: Using real outline for `Stabilität (praktisch relevant)' on input line 48.
-contour: Using real outline for `1.2.1\ ' on input line 56.
-contour: Using real outline for `Differentialgleichungen als Systemmodell' on input line 56.
-contour: Using real outline for `1.2.2\ ' on input line 65.
-contour: Using real outline for `Zustandsraumdarstellung' on input line 65.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 73.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 73.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 73.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 73.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 73.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 73.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 73.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 73.
-
-contour: Using real outline for `1.3.1\ ' on input line 75.
-contour: Using real outline for `$R$-$L$-System' on input line 75.
-contour: Using real outline for `1.3.2\ ' on input line 86.
-contour: Using real outline for `$R$-$C$-System' on input line 86.
-contour: Using real outline for `1.4.1\ ' on input line 103.
-contour: Using real outline for `Homogene Lösung (natürliche Antwort)' on input line 103.
-contour: Using real outline for `1.4.2\ ' on input line 110.
-contour: Using real outline for `Partikuläre Lösung (erzwungene Antwort)' on input line 110.
-contour: Using real outline for `1.4.3\ ' on input line 121.
-contour: Using real outline for `Gesamtlösung' on input line 121.
-contour: Using real outline for `1.4.4\ ' on input line 131.
-contour: Using real outline for `Initialbedingungen und Kontinuität' on input line 131.
-contour: Using real outline for `1.6.1\ ' on input line 160.
-contour: Using real outline for `Transient (Einschwingen)' on input line 160.
-contour: Using real outline for `1.6.2\ ' on input line 163.
-contour: Using real outline for `Stationär (eingeschwungen)' on input line 163.
-contour: Using real outline for `1.7.1\ ' on input line 175.
-contour: Using real outline for `Laplace-Transformation' on input line 175.
-contour: Using real outline for `1.7.2\ ' on input line 181.
-contour: Using real outline for `Übertragungsfunktion' on input line 181.
-contour: Using real outline for `1.7.3\ ' on input line 196.
-contour: Using real outline for `Impulsantwort und Faltung' on input line 196.
-contour: Using real outline for `1.8.1\ ' on input line 206.
-contour: Using real outline for `Mittelwert (DC-Anteil)' on input line 206.
-contour: Using real outline for `1.8.2\ ' on input line 212.
-contour: Using real outline for `Effektivwert (RMS)' on input line 212.
-[1
-
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-contour: Using real outline for `1.8.3\ ' on input line 218.
-contour: Using real outline for `Wirkleistung' on input line 218.
-) (./sections/001_Leistungshalbleiter.tex
-contour: Using real outline for `2.3.1\ ' on input line 61.
-contour: Using real outline for `Betriebszustände' on input line 61.
-contour: Using real outline for `2.3.2\ ' on input line 84.
-contour: Using real outline for `Statisches Durchlassmodell' on input line 84.
-<images/Didodekennlinie.png, id=1035, 835.62187pt x 410.03188pt>
+contour: Using real outline for `1.3.1\ ' on input line 73.
+contour: Using real outline for `Betriebszustände' on input line 73.
+contour: Using real outline for `1.3.2\ ' on input line 96.
+contour: Using real outline for `Statisches Durchlassmodell' on input line 96.
+<images/Didodekennlinie.png, id=710, 835.62187pt x 410.03188pt>
 File: images/Didodekennlinie.png Graphic file (type png)
 <use images/Didodekennlinie.png>
-Package pdftex.def Info: images/Didodekennlinie.png  used on input line 102.
+Package pdftex.def Info: images/Didodekennlinie.png  used on input line 120.
 (pdftex.def)             Requested size: 232.17616pt x 113.92596pt.
-<images/didodeunterschied.png, id=1037, 838.13126pt x 500.87125pt>
+<images/didodeunterschied.png, id=712, 838.13126pt x 500.87125pt>
 File: images/didodeunterschied.png Graphic file (type png)
 <use images/didodeunterschied.png>
-Package pdftex.def Info: images/didodeunterschied.png  used on input line 105.
+Package pdftex.def Info: images/didodeunterschied.png  used on input line 123.
 (pdftex.def)             Requested size: 232.17616pt x 138.74503pt.
-contour: Using real outline for `2.3.3\ ' on input line 108.
-contour: Using real outline for `Dynamisches Schaltverhalten' on input line 108.
-<images/rueckerhol.png, id=1038, 237.88875pt x 213.79875pt>
+contour: Using real outline for `1.3.3\ ' on input line 127.
+contour: Using real outline for `Dynamisches Schaltverhalten' on input line 127.
+<images/rueckerhol.png, id=713, 237.88875pt x 213.79875pt>
 File: images/rueckerhol.png Graphic file (type png)
 <use images/rueckerhol.png>
-Package pdftex.def Info: images/rueckerhol.png  used on input line 133.
+Package pdftex.def Info: images/rueckerhol.png  used on input line 155.
 (pdftex.def)             Requested size: 232.17616pt x 208.67313pt.
-contour: Using real outline for `2.4.1\ ' on input line 139.
-contour: Using real outline for `Vier-Schichten-Struktur und Zündprinzip' on input line 139.
-<images/thyristor.png, id=1039, 1306.8825pt x 569.12625pt>
+contour: Using real outline for `1.4.1\ ' on input line 166.
+contour: Using real outline for `Vier-Schichten-Struktur und Zündprinzip' on input line 166.
+<images/thyristor.png, id=714, 1306.8825pt x 569.12625pt>
 File: images/thyristor.png Graphic file (type png)
 <use images/thyristor.png>
-Package pdftex.def Info: images/thyristor.png  used on input line 164.
+Package pdftex.def Info: images/thyristor.png  used on input line 191.
 (pdftex.def)             Requested size: 232.17616pt x 101.10094pt.
-[2 <./images/Didodekennlinie.png> <./images/didodeunterschied.png> <./images/rueckerhol.png>]
-contour: Using real outline for `2.4.2\ ' on input line 168.
-contour: Using real outline for `Statisches Modell und Verluste' on input line 168.
-contour: Using real outline for `2.5.1\ ' on input line 191.
-contour: Using real outline for `Gate-gesteuerter Feldeffekttransistor' on input line 191.
-<images/MOSFET.png, id=1073, 466.74374pt x 220.825pt>
+contour: Using real outline for `1.4.2\ ' on input line 195.
+contour: Using real outline for `Statisches Modell und Verluste' on input line 195.
+[1
+
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc} <./images/Didodekennlinie.png> <./images/didodeunterschied.png> <./images/rueckerhol.png>]
+contour: Using real outline for `1.5.1\ ' on input line 226.
+contour: Using real outline for `Gate-gesteuerter Feldeffekttransistor' on input line 226.
+<images/MOSFET.png, id=743, 466.74374pt x 220.825pt>
 File: images/MOSFET.png Graphic file (type png)
 <use images/MOSFET.png>
-Package pdftex.def Info: images/MOSFET.png  used on input line 210.
+Package pdftex.def Info: images/MOSFET.png  used on input line 247.
 (pdftex.def)             Requested size: 232.17616pt x 109.84613pt.
-contour: Using real outline for `2.5.2\ ' on input line 214.
-contour: Using real outline for `Dynamisches Modell und Gate-Ladung' on input line 214.
-contour: Using real outline for `2.6.1\ ' on input line 233.
-contour: Using real outline for `Hybridstruktur MOS–Bipolar' on input line 233.
-<images/IGBT.png, id=1074, 220.825pt x 140.525pt>
+contour: Using real outline for `1.5.2\ ' on input line 251.
+contour: Using real outline for `Dynamisches Modell und Gate-Ladung' on input line 251.
+contour: Using real outline for `1.6.1\ ' on input line 278.
+contour: Using real outline for `Hybridstruktur MOS–Bipolar' on input line 278.
+<images/IGBT.png, id=744, 220.825pt x 140.525pt>
 File: images/IGBT.png Graphic file (type png)
 <use images/IGBT.png>
-Package pdftex.def Info: images/IGBT.png  used on input line 251.
+Package pdftex.def Info: images/IGBT.png  used on input line 296.
 (pdftex.def)             Requested size: 232.17616pt x 147.755pt.
-contour: Using real outline for `2.6.2\ ' on input line 255.
-contour: Using real outline for `Tail-Strom und Abschaltverluste' on input line 255.
+contour: Using real outline for `1.6.2\ ' on input line 300.
+contour: Using real outline for `Tail-Strom und Abschaltverluste' on input line 300.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <9> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 338.
-[3 <./images/thyristor.png> <./images/MOSFET.png> <./images/IGBT.png>]) (./sections/01_Zeitbereichanalse_R_L_Lasten.tex
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 386.
+[2 <./images/thyristor.png> <./images/MOSFET.png> <./images/IGBT.png>]) (./sections/02_Zeitbereichanalyse.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 2.
@@ -1408,499 +1332,478 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 2.
 
-contour: Using real outline for `3.1.1\ ' on input line 20.
+contour: Using real outline for `2.1.1\ ' on input line 20.
 contour: Using real outline for `Ideale Grundschaltung' on input line 20.
-contour: Using real outline for `3.1.2\ ' on input line 43.
+contour: Using real outline for `2.1.2\ ' on input line 43.
 contour: Using real outline for `Zwei Topologien pro Periode' on input line 43.
-contour: Using real outline for `3.2.1\ ' on input line 79.
+contour: Using real outline for `2.2.1\ ' on input line 79.
 contour: Using real outline for `Einschaltphase' on input line 79.
-contour: Using real outline for `3.2.2\ ' on input line 96.
+contour: Using real outline for `2.2.2\ ' on input line 96.
 contour: Using real outline for `Ausschaltphase' on input line 96.
-contour: Using real outline for `3.7.1\ ' on input line 187.
+contour: Using real outline for `2.7.1\ ' on input line 187.
 contour: Using real outline for `Stromrippel' on input line 187.
-contour: Using real outline for `3.7.2\ ' on input line 192.
+contour: Using real outline for `2.7.2\ ' on input line 192.
 contour: Using real outline for `Mittelwert des Stroms' on input line 192.
-contour: Using real outline for `3.7.3\ ' on input line 201.
+contour: Using real outline for `2.7.3\ ' on input line 201.
 contour: Using real outline for `Effektivwert des Stroms' on input line 201.
-[4]
-contour: Using real outline for `3.7.4\ ' on input line 213.
+contour: Using real outline for `2.7.4\ ' on input line 213.
 contour: Using real outline for `Lastspannungen' on input line 213.
-contour: Using real outline for `3.9.1\ ' on input line 260.
-contour: Using real outline for `Induktivität $L$' on input line 260.
-contour: Using real outline for `3.9.2\ ' on input line 266.
-contour: Using real outline for `Schaltfrequenz $f_s = 1/T_s$' on input line 266.
-contour: Using real outline for `3.9.3\ ' on input line 272.
-contour: Using real outline for `Widerstand $R$' on input line 272.
-) (./sections/02_Mittelwert_Effektivwert_und_Leistung.tex
-contour: Using real outline for `4.2.1\ ' on input line 35.
+[3]
+contour: Using real outline for `2.10.1\ ' on input line 294.
+contour: Using real outline for `Induktivität $L$' on input line 294.
+contour: Using real outline for `2.10.2\ ' on input line 300.
+contour: Using real outline for `Schaltfrequenz $f_s = 1/T_s$' on input line 300.
+contour: Using real outline for `2.10.3\ ' on input line 306.
+contour: Using real outline for `Widerstand $R$' on input line 306.
+) (./sections/03_Mittelwert_Effektivwert_Leistung.tex
+contour: Using real outline for `3.2.1\ ' on input line 35.
 contour: Using real outline for `Definition' on input line 35.
-contour: Using real outline for `4.2.2\ ' on input line 49.
-contour: Using real outline for `Typische Eigenschaften' on input line 49.
-contour: Using real outline for `4.3.1\ ' on input line 64.
-contour: Using real outline for `Definition' on input line 64.
-contour: Using real outline for `4.3.2\ ' on input line 78.
-contour: Using real outline for `Vergleich Mittelwert vs. Effektivwert' on input line 78.
-contour: Using real outline for `4.4.1\ ' on input line 91.
-contour: Using real outline for `Momentanleistung' on input line 91.
-contour: Using real outline for `4.4.2\ ' on input line 100.
-contour: Using real outline for `Wirkleistung' on input line 100.
-contour: Using real outline for `4.4.3\ ' on input line 107.
-contour: Using real outline for `Spezialfall: Ohmsche Last' on input line 107.
-[5]) (./sections/022_BuckBoost.tex
-<images/Buckconverter.png, id=1172, 680.04062pt x 259.97125pt>
+contour: Using real outline for `3.2.2\ ' on input line 42.
+contour: Using real outline for `Interpretation und Eigenschaften' on input line 42.
+contour: Using real outline for `3.3.1\ ' on input line 65.
+contour: Using real outline for `Definition' on input line 65.
+contour: Using real outline for `3.3.2\ ' on input line 72.
+contour: Using real outline for `Interpretation und Vergleich' on input line 72.
+contour: Using real outline for `3.4.1\ ' on input line 93.
+contour: Using real outline for `Momentanleistung' on input line 93.
+contour: Using real outline for `3.4.2\ ' on input line 101.
+contour: Using real outline for `Wirkleistung' on input line 101.
+contour: Using real outline for `3.4.3\ ' on input line 108.
+contour: Using real outline for `Spezialfall: Ohmsche Last' on input line 108.
+[4]
+contour: Using real outline for `3.6.1\ ' on input line 167.
+contour: Using real outline for `Grundfall: R--L-Last' on input line 167.
+contour: Using real outline for `3.6.2\ ' on input line 199.
+contour: Using real outline for `Lösung bei konstantem Spannungseingang' on input line 199.
+contour: Using real outline for `3.6.3\ ' on input line 223.
+contour: Using real outline for `Kontinuitätsbedingungen bei Schaltvorgängen' on input line 223.
+contour: Using real outline for `3.6.4\ ' on input line 242.
+contour: Using real outline for `Stückweise Betrieb bei Schaltperioden' on input line 242.
+contour: Using real outline for `3.6.5\ ' on input line 281.
+contour: Using real outline for `Stationär-periodischer Betrieb' on input line 281.
+contour: Using real outline for `3.6.6\ ' on input line 300.
+contour: Using real outline for `Stromrippel' on input line 300.
+contour: Using real outline for `3.6.7\ ' on input line 324.
+contour: Using real outline for `Mittelwert des Stroms' on input line 324.
+contour: Using real outline for `3.6.8\ ' on input line 341.
+contour: Using real outline for `Physikalische Kernaussagen' on input line 341.
+) (./sections/04_Buck_Boost.tex [5]
+<images/Buckconverter.png, id=875, 680.04062pt x 259.97125pt>
 File: images/Buckconverter.png Graphic file (type png)
 <use images/Buckconverter.png>
-Package pdftex.def Info: images/Buckconverter.png  used on input line 53.
+Package pdftex.def Info: images/Buckconverter.png  used on input line 138.
 (pdftex.def)             Requested size: 232.17616pt x 88.75797pt.
-<images/Buckconverter_verlauf.png, id=1173, 653.44125pt x 783.42688pt>
+<images/Buckconverter_verlauf.png, id=876, 653.44125pt x 783.42688pt>
 File: images/Buckconverter_verlauf.png Graphic file (type png)
 <use images/Buckconverter_verlauf.png>
-Package pdftex.def Info: images/Buckconverter_verlauf.png  used on input line 58.
+Package pdftex.def Info: images/Buckconverter_verlauf.png  used on input line 143.
 (pdftex.def)             Requested size: 232.17616pt x 278.3516pt.
-<images/Boostconv.png, id=1174, 656.4525pt x 322.70563pt>
+<images/Boostconv.png, id=877, 656.4525pt x 322.70563pt>
 File: images/Boostconv.png Graphic file (type png)
 <use images/Boostconv.png>
-Package pdftex.def Info: images/Boostconv.png  used on input line 85.
+Package pdftex.def Info: images/Boostconv.png  used on input line 194.
 (pdftex.def)             Requested size: 232.17616pt x 114.13536pt.
-<images/Boostconv_verlauf.png, id=1175, 681.04437pt x 784.43062pt>
+<images/Boostconv_verlauf.png, id=878, 681.04437pt x 784.43062pt>
 File: images/Boostconv_verlauf.png Graphic file (type png)
 <use images/Boostconv_verlauf.png>
-Package pdftex.def Info: images/Boostconv_verlauf.png  used on input line 89.
+Package pdftex.def Info: images/Boostconv_verlauf.png  used on input line 199.
 (pdftex.def)             Requested size: 232.17616pt x 267.42104pt.
- [6 <./images/Buckconverter.png> <./images/Buckconverter_verlauf.png>]
-<images/Buckboostconv.png, id=1198, 651.93562pt x 265.99374pt>
+<images/Buckboostconv.png, id=879, 651.93562pt x 265.99374pt>
 File: images/Buckboostconv.png Graphic file (type png)
 <use images/Buckboostconv.png>
-Package pdftex.def Info: images/Buckboostconv.png  used on input line 113.
+Package pdftex.def Info: images/Buckboostconv.png  used on input line 250.
 (pdftex.def)             Requested size: 232.17616pt x 94.7308pt.
-<images/Buckboostconv_verlauf.png, id=1199, 671.00688pt x 762.85pt>
+ [6 <./images/Buckconverter.png> <./images/Buckconverter_verlauf.png> <./images/Boostconv.png> <./images/Boostconv_verlauf.png>]
+<images/Buckboostconv_verlauf.png, id=901, 671.00688pt x 762.85pt>
 File: images/Buckboostconv_verlauf.png Graphic file (type png)
 <use images/Buckboostconv_verlauf.png>
-Package pdftex.def Info: images/Buckboostconv_verlauf.png  used on input line 117.
+Package pdftex.def Info: images/Buckboostconv_verlauf.png  used on input line 255.
 (pdftex.def)             Requested size: 232.17616pt x 263.95178pt.
-) (./sections/03a_systematik_gleichrichter.tex) (./sections/03b_LC_einfluss.tex
-contour: Using real outline for `6.3.1\ ' on input line 18.
-contour: Using real outline for `C-Glättung (Kondensator am Ausgang)' on input line 18.
-contour: Using real outline for `6.3.2\ ' on input line 51.
-contour: Using real outline for `L-Glättung (Drossel in Serie)' on input line 51.
-[7 <./images/Boostconv.png> <./images/Boostconv_verlauf.png> <./images/Buckboostconv.png> <./images/Buckboostconv_verlauf.png>]
-contour: Using real outline for `6.3.3\ ' on input line 84.
-contour: Using real outline for `LC-Glättung (Tiefpassfilter)' on input line 84.
-contour: Using real outline for `6.3.4\ ' on input line 109.
-contour: Using real outline for `Vergleich C-Glättung vs. L-Glättung' on input line 109.
-contour: Using real outline for `6.3.5\ ' on input line 123.
-contour: Using real outline for `Typische Prüfungsfälle' on input line 123.
-) (./sections/03_M1U.tex
-<images/M1U.png, id=1217, 840.13875pt x 343.78438pt>
+) (./sections/05a_Gleichrichter.tex
+contour: Using real outline for `C-Glättung (kapazitive Last)' on input line 77.
+contour: Using real outline for `L-Glättung (induktive Last)' on input line 117.
+[7 <./images/Buckboostconv.png> <./images/Buckboostconv_verlauf.png>]
+contour: Using real outline for `LC-Glättung (Tiefpassfilter)' on input line 159.
+(./sections/05b_M1.tex
+<images/M1U.png, id=924, 840.13875pt x 343.78438pt>
 File: images/M1U.png Graphic file (type png)
 <use images/M1U.png>
-Package pdftex.def Info: images/M1U.png  used on input line 8.
+Package pdftex.def Info: images/M1U.png  used on input line 5.
 (pdftex.def)             Requested size: 232.17616pt x 95.00523pt.
-<images/M1U_verlauf.png, id=1218, 923.45pt x 759.33687pt>
+<images/M1U_verlauf.png, id=925, 923.45pt x 759.33687pt>
 File: images/M1U_verlauf.png Graphic file (type png)
 <use images/M1U_verlauf.png>
-Package pdftex.def Info: images/M1U_verlauf.png  used on input line 43.
+Package pdftex.def Info: images/M1U_verlauf.png  used on input line 72.
 (pdftex.def)             Requested size: 232.17616pt x 190.91129pt.
-<images/M1C.png, id=1219, 504.88625pt x 239.39438pt>
+<images/M1C.png, id=926, 504.88625pt x 239.39438pt>
 File: images/M1C.png Graphic file (type png)
 <use images/M1C.png>
-Package pdftex.def Info: images/M1C.png  used on input line 98.
+Package pdftex.def Info: images/M1C.png  used on input line 79.
 (pdftex.def)             Requested size: 232.17616pt x 110.08621pt.
-) (./sections/04_B2U.tex
-<images/B2U.png, id=1220, 302.12875pt x 168.63pt>
+ [8 <./images/M1U.png> <./images/M1U_verlauf.png>]
+<images/M1C_verlauf.png, id=939, 637.38126pt x 633.36626pt>
+File: images/M1C_verlauf.png Graphic file (type png)
+<use images/M1C_verlauf.png>
+Package pdftex.def Info: images/M1C_verlauf.png  used on input line 157.
+(pdftex.def)             Requested size: 232.17616pt x 230.70804pt.
+) (./sections/05c_B2.tex
+<images/B2U.png, id=940, 302.12875pt x 168.63pt>
 File: images/B2U.png Graphic file (type png)
 <use images/B2U.png>
-Package pdftex.def Info: images/B2U.png  used on input line 8.
-(pdftex.def)             Requested size: 163.88954pt x 91.4731pt.
-
-
-Package multicol Warning: Floats and marginpars not allowed inside `multicols' environment!.
-
-
-Package multicol Warning: Floats and marginpars not allowed inside `multicols' environment!.
-
-[8 <./images/M1U.png> <./images/M1U_verlauf.png>]
-<images/B2U_verlauf.png, id=1238, 225.84375pt x 224.84pt>
+Package pdftex.def Info: images/B2U.png  used on input line 5.
+(pdftex.def)             Requested size: 232.17616pt x 129.5856pt.
+<images/B2U_verlauf.png, id=941, 225.84375pt x 224.84pt>
 File: images/B2U_verlauf.png Graphic file (type png)
 <use images/B2U_verlauf.png>
-Package pdftex.def Info: images/B2U_verlauf.png  used on input line 39.
+Package pdftex.def Info: images/B2U_verlauf.png  used on input line 76.
 (pdftex.def)             Requested size: 232.17616pt x 231.15894pt.
-) (./sections/05_B2C_gesteuert.tex
-<images/B1C.png, id=1239, 455.20062pt x 406.51875pt>
+<images/B1C.png, id=942, 455.20062pt x 406.51875pt>
 File: images/B1C.png Graphic file (type png)
 <use images/B1C.png>
-Package pdftex.def Info: images/B1C.png  used on input line 5.
+Package pdftex.def Info: images/B1C.png  used on input line 82.
 (pdftex.def)             Requested size: 232.17616pt x 207.34662pt.
-<images/B1C_Verlauf.png, id=1240, 445.665pt x 430.10687pt>
+ [9 <./images/M1C.png> <./images/M1C_verlauf.png> <./images/B2U.png> <./images/B2U_verlauf.png>]
+<images/B1C_Verlauf.png, id=953, 445.665pt x 430.10687pt>
 File: images/B1C_Verlauf.png Graphic file (type png)
 <use images/B1C_Verlauf.png>
-Package pdftex.def Info: images/B1C_Verlauf.png  used on input line 34.
+Package pdftex.def Info: images/B1C_Verlauf.png  used on input line 168.
 (pdftex.def)             Requested size: 232.17616pt x 224.07031pt.
-) (./sections/14_3Gleichrichter.tex
-<images/B6U.png, id=1241, 681.04437pt x 296.60812pt>
+) (./sections/05d_B6.tex
+<images/B6U.png, id=954, 681.04437pt x 296.60812pt>
 File: images/B6U.png Graphic file (type png)
 <use images/B6U.png>
-Package pdftex.def Info: images/B6U.png  used on input line 8.
+Package pdftex.def Info: images/B6U.png  used on input line 5.
 (pdftex.def)             Requested size: 177.54353pt x 77.32448pt.
-<images/B6U_verlauf.png, id=1242, 1184.92688pt x 681.54625pt>
+<images/B6U_verlauf.png, id=955, 1184.92688pt x 681.54625pt>
 File: images/B6U_verlauf.png Graphic file (type png)
 <use images/B6U_verlauf.png>
-Package pdftex.def Info: images/B6U_verlauf.png  used on input line 12.
+Package pdftex.def Info: images/B6U_verlauf.png  used on input line 77.
 (pdftex.def)             Requested size: 232.17616pt x 133.54056pt.
-<images/B6C.png, id=1243, 323.70938pt x 238.8925pt>
+<images/B6C.png, id=956, 323.70938pt x 238.8925pt>
 File: images/B6C.png Graphic file (type png)
 <use images/B6C.png>
-Package pdftex.def Info: images/B6C.png  used on input line 35.
+Package pdftex.def Info: images/B6C.png  used on input line 84.
 (pdftex.def)             Requested size: 177.54353pt x 131.0231pt.
- [9 <./images/M1C.png> <./images/B2U_verlauf.png> <./images/B1C.png> <./images/B1C_Verlauf.png> <./images/B6U.png>]
-<images/B6C_Verlauf.png, id=1257, 735.24687pt x 721.69624pt>
+ [10 <./images/B1C.png> <./images/B1C_Verlauf.png> <./images/B6U.png> <./images/B6U_verlauf.png>]
+<images/B6C_Verlauf.png, id=967, 735.24687pt x 721.69624pt>
 File: images/B6C_Verlauf.png Graphic file (type png)
 <use images/B6C_Verlauf.png>
-Package pdftex.def Info: images/B6C_Verlauf.png  used on input line 39.
+Package pdftex.def Info: images/B6C_Verlauf.png  used on input line 174.
 (pdftex.def)             Requested size: 232.17616pt x 227.89714pt.
-<images/kommutierung.png, id=1258, 687.56876pt x 1044.90375pt>
-File: images/kommutierung.png Graphic file (type png)
-<use images/kommutierung.png>
-Package pdftex.def Info: images/kommutierung.png  used on input line 63.
-(pdftex.def)             Requested size: 177.54353pt x 269.80313pt.
-
-
-Package multicol Warning: Floats and marginpars not allowed inside `multicols' environment!.
-
-
-Package multicol Warning: Floats and marginpars not allowed inside `multicols' environment!.
-
-<images/B6strom.png, id=1259, 294.09875pt x 172.645pt>
-File: images/B6strom.png Graphic file (type png)
-<use images/B6strom.png>
-Package pdftex.def Info: images/B6strom.png  used on input line 105.
-(pdftex.def)             Requested size: 191.20169pt x 112.24161pt.
-
-Package multicol Warning: Floats and marginpars not allowed inside `multicols' environment!.
-
-
-Package multicol Warning: Floats and marginpars not allowed inside `multicols' environment!.
-
-) (./sections/06_Wechselstromsteller.tex
-<images/Wechselstromschalter.png, id=1260, 532.48938pt x 554.07pt>
+)) (./sections/06_Steller.tex
+<images/Wechselstromschalter.png, id=968, 532.48938pt x 554.07pt>
 File: images/Wechselstromschalter.png Graphic file (type png)
 <use images/Wechselstromschalter.png>
-Package pdftex.def Info: images/Wechselstromschalter.png  used on input line 8.
+Package pdftex.def Info: images/Wechselstromschalter.png  used on input line 14.
 (pdftex.def)             Requested size: 232.17616pt x 241.58495pt.
-<images/Wechselstromsteller.png, id=1261, 486.81876pt x 442.15187pt>
+<images/Wechselstromsteller.png, id=969, 486.81876pt x 442.15187pt>
 File: images/Wechselstromsteller.png Graphic file (type png)
 <use images/Wechselstromsteller.png>
-Package pdftex.def Info: images/Wechselstromsteller.png  used on input line 29.
+Package pdftex.def Info: images/Wechselstromsteller.png  used on input line 44.
 (pdftex.def)             Requested size: 232.17616pt x 210.8744pt.
- [10 <./images/B6U_verlauf.png> <./images/B6C.png> <./images/B6C_Verlauf.png> <./images/Wechselstromschalter.png>]) (./sections/07_Gleichstromsteller.tex
-<images/Gleichstromsteller.png, id=1276, 689.57625pt x 297.61188pt>
-File: images/Gleichstromsteller.png Graphic file (type png)
-<use images/Gleichstromsteller.png>
-Package pdftex.def Info: images/Gleichstromsteller.png  used on input line 24.
-(pdftex.def)             Requested size: 232.17616pt x 100.2058pt.
-<images/Gleichstromsteller1Q.png, id=1277, 1028.34187pt x 528.47438pt>
+ [11 <./images/B6C.png> <./images/B6C_Verlauf.png> <./images/Wechselstromschalter.png>]
+contour: Using real outline for `6.3.1\ ' on input line 164.
+contour: Using real outline for `Grundgrössen und Definitionen' on input line 164.
+contour: Using real outline for `6.3.2\ ' on input line 201.
+contour: Using real outline for `R--L-Last im Zeitbereich' on input line 201.
+contour: Using real outline for `6.3.3\ ' on input line 245.
+contour: Using real outline for `Induktorspannung und Mittelwertbedingung' on input line 245.
+contour: Using real outline for `6.3.4\ ' on input line 265.
+contour: Using real outline for `Stromrippel und Betriebsarten' on input line 265.
+contour: Using real outline for `6.3.5\ ' on input line 312.
+contour: Using real outline for `Schalter- und Diodenbelastung' on input line 312.
+[12 <./images/Wechselstromsteller.png>]
+contour: Using real outline for `6.3.6\ ' on input line 351.
+contour: Using real outline for `Einquadrantensteller (1Q)' on input line 351.
+<images/Gleichstromsteller1Q.png, id=995, 1028.34187pt x 528.47438pt>
 File: images/Gleichstromsteller1Q.png Graphic file (type png)
 <use images/Gleichstromsteller1Q.png>
-Package pdftex.def Info: images/Gleichstromsteller1Q.png  used on input line 112.
+Package pdftex.def Info: images/Gleichstromsteller1Q.png  used on input line 354.
 (pdftex.def)             Requested size: 232.17616pt x 119.31285pt.
-<images/Gleichstromsteller2Q.png, id=1278, 1062.46938pt x 649.92813pt>
+contour: Using real outline for `6.3.7\ ' on input line 375.
+contour: Using real outline for `Zweiquadrantensteller (2Q)' on input line 375.
+<images/Gleichstromsteller2Q.png, id=996, 1062.46938pt x 649.92813pt>
 File: images/Gleichstromsteller2Q.png Graphic file (type png)
 <use images/Gleichstromsteller2Q.png>
-Package pdftex.def Info: images/Gleichstromsteller2Q.png  used on input line 141.
+Package pdftex.def Info: images/Gleichstromsteller2Q.png  used on input line 378.
 (pdftex.def)             Requested size: 232.17616pt x 142.02267pt.
-<images/Gleichstromsteller4Q.png, id=1279, 1167.36125pt x 636.3775pt>
+contour: Using real outline for `6.3.8\ ' on input line 405.
+contour: Using real outline for `Vierquadrantensteller (4Q)' on input line 405.
+<images/Gleichstromsteller4Q.png, id=997, 1167.36125pt x 636.3775pt>
 File: images/Gleichstromsteller4Q.png Graphic file (type png)
 <use images/Gleichstromsteller4Q.png>
-Package pdftex.def Info: images/Gleichstromsteller4Q.png  used on input line 165.
+Package pdftex.def Info: images/Gleichstromsteller4Q.png  used on input line 408.
 (pdftex.def)             Requested size: 232.17616pt x 126.56439pt.
- [11 <./images/Wechselstromsteller.png> <./images/Gleichstromsteller.png> <./images/Gleichstromsteller1Q.png> <./images/Gleichstromsteller2Q.png>]) (./sections/08_Gleichstrommaschine.tex
-<images/Grundaufbau_gleistrommaschiene.png, id=1296, 579.16376pt x 502.87875pt>
+contour: Using real outline for `6.3.9\ ' on input line 438.
+contour: Using real outline for `Bezug zur Gleichstrommaschine' on input line 438.
+) (./sections/07_Gleichstrommaschine.tex
+<images/Grundaufbau_gleistrommaschiene.png, id=998, 579.16376pt x 502.87875pt>
 File: images/Grundaufbau_gleistrommaschiene.png Graphic file (type png)
 <use images/Grundaufbau_gleistrommaschiene.png>
-Package pdftex.def Info: images/Grundaufbau_gleistrommaschiene.png  used on input line 20.
+Package pdftex.def Info: images/Grundaufbau_gleistrommaschiene.png  used on input line 46.
 (pdftex.def)             Requested size: 232.17616pt x 201.59299pt.
 
-contour: Using real outline for `12.1.1\ ' on input line 23.
-contour: Using real outline for `Vereinfachtes Ersatzschaltbild' on input line 23.
-<images/gleichstrommasciene.png, id=1297, 717.68124pt x 251.94125pt>
+contour: Using real outline for `7.1.1\ ' on input line 50.
+contour: Using real outline for `Vereinfachtes Ersatzschaltbild' on input line 50.
+<images/gleichstrommasciene.png, id=999, 717.68124pt x 251.94125pt>
 File: images/gleichstrommasciene.png Graphic file (type png)
 <use images/gleichstrommasciene.png>
-Package pdftex.def Info: images/gleichstrommasciene.png  used on input line 25.
+Package pdftex.def Info: images/gleichstrommasciene.png  used on input line 52.
 (pdftex.def)             Requested size: 232.17616pt x 81.50319pt.
-contour: Using real outline for `12.2.1\ ' on input line 40.
-contour: Using real outline for `Elektrische Gleichung' on input line 40.
-contour: Using real outline for `12.2.2\ ' on input line 46.
-contour: Using real outline for `Gegenspannung' on input line 46.
-contour: Using real outline for `12.2.3\ ' on input line 59.
-contour: Using real outline for `Drehmomentgleichung' on input line 59.
-[12 <./images/Gleichstromsteller4Q.png> <./images/Grundaufbau_gleistrommaschiene.png> <./images/gleichstrommasciene.png>]) (./sections/09_Drezahlregelung.tex
+[13 <./images/Gleichstromsteller1Q.png> <./images/Gleichstromsteller2Q.png> <./images/Gleichstromsteller4Q.png> <./images/Grundaufbau_gleistrommaschiene.png>]
+contour: Using real outline for `7.3.1\ ' on input line 100.
+contour: Using real outline for `Elektrische Gleichung' on input line 100.
+contour: Using real outline for `7.3.2\ ' on input line 111.
+contour: Using real outline for `Mechanische Gleichung' on input line 111.
+contour: Using real outline for `7.3.3\ ' on input line 124.
+contour: Using real outline for `Leistungsbeziehungen' on input line 124.
+contour: Using real outline for `7.4.1\ ' on input line 163.
+contour: Using real outline for `Strom als Funktion von Spannung und Drehzahl' on input line 163.
+contour: Using real outline for `7.7.1\ ' on input line 274.
+contour: Using real outline for `Kennwerte' on input line 274.
+contour: Using real outline for `7.7.2\ ' on input line 286.
+contour: Using real outline for `Normierte Kennlinie' on input line 286.
+[14 <./images/gleichstrommasciene.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 101.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 101.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 101.
-
-[13]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 120.
+(hyperref)                removing `math shift' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 120.
+(hyperref)                removing `subscript' on input line 319.
 
-contour: Using real outline for `13.7.1\ ' on input line 134.
-contour: Using real outline for `Leerlauf' on input line 134.
-contour: Using real outline for `13.7.2\ ' on input line 141.
-contour: Using real outline for `Kurzschluss / Blockieren' on input line 141.
-) (./sections/10_einphasiger_wechselrichter.tex
-<images/1PWechselrichter.png, id=1350, 971.12813pt x 583.68062pt>
-File: images/1PWechselrichter.png Graphic file (type png)
-<use images/1PWechselrichter.png>
-Package pdftex.def Info: images/1PWechselrichter.png  used on input line 20.
-(pdftex.def)             Requested size: 232.17616pt x 139.54292pt.
-<images/1PWechselrichter_verlauf.png, id=1351, 1168.86688pt x 715.17188pt>
-File: images/1PWechselrichter_verlauf.png Graphic file (type png)
-<use images/1PWechselrichter_verlauf.png>
-Package pdftex.def Info: images/1PWechselrichter_verlauf.png  used on input line 49.
-(pdftex.def)             Requested size: 232.17616pt x 142.0497pt.
- [14 <./images/1PWechselrichter.png> <./images/1PWechselrichter_verlauf.png>]
-contour: Using real outline for `14.6.1\ ' on input line 148.
-contour: Using real outline for `Rechteckbetrieb' on input line 148.
-contour: Using real outline for `14.6.2\ ' on input line 156.
-contour: Using real outline for `PWM-Betrieb' on input line 156.
-) (./sections/11_Harmonische_Spektralanalyse.tex
-contour: Using real outline for `15.3.1\ ' on input line 56.
-contour: Using real outline for `Phasenanschnitt (Wechselstromsteller, B2C)' on input line 56.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 319.
+
+contour: Using real outline for `7.11.1\ ' on input line 360.
+contour: Using real outline for `Stabilitätskriterium' on input line 360.
+contour: Using real outline for `7.13.1\ ' on input line 411.
+contour: Using real outline for `Gleichstromsteller (Chopper, CCM)' on input line 411.
+contour: Using real outline for `7.13.2\ ' on input line 423.
+contour: Using real outline for `Gesteuerter Gleichrichter (z.B. B2C/B6C)' on input line 423.
+) (./sections/08_Harmonische_Spektralanalyse.tex [15]
+contour: Using real outline for `8.4.1\ ' on input line 92.
+contour: Using real outline for `Phasenanschnitt (Wechselstromsteller, B2C)' on input line 92.
 File: images/Wechselstromsteller.png Graphic file (type png)
 <use images/Wechselstromsteller.png>
-Package pdftex.def Info: images/Wechselstromsteller.png  used on input line 57.
+Package pdftex.def Info: images/Wechselstromsteller.png  used on input line 93.
 (pdftex.def)             Requested size: 232.17616pt x 210.8744pt.
-<images/Wechselstromsteller_Verlauf.png, id=1381, 564.1075pt x 556.0775pt>
+<images/Wechselstromsteller_Verlauf.png, id=1076, 564.1075pt x 556.0775pt>
 File: images/Wechselstromsteller_Verlauf.png Graphic file (type png)
 <use images/Wechselstromsteller_Verlauf.png>
-Package pdftex.def Info: images/Wechselstromsteller_Verlauf.png  used on input line 61.
+Package pdftex.def Info: images/Wechselstromsteller_Verlauf.png  used on input line 97.
 (pdftex.def)             Requested size: 232.17616pt x 228.87569pt.
-contour: Using real outline for `15.3.2\ ' on input line 71.
-contour: Using real outline for `Rechteckwechselrichter' on input line 71.
-contour: Using real outline for `15.3.3\ ' on input line 85.
-contour: Using real outline for `PWM-Wechselrichter' on input line 85.
-contour: Using real outline for `15.5.1\ ' on input line 112.
-contour: Using real outline for `Total Harmonic Distortion (THD)' on input line 112.
-[15 <./images/Wechselstromsteller_Verlauf.png>]
-contour: Using real outline for `15.5.2\ ' on input line 132.
-contour: Using real outline for `Verzerrungsfaktor' on input line 132.
-) (./sections/12_PWM.tex
-<images/sinuspwm.png, id=1403, 383.4325pt x 132.495pt>
+contour: Using real outline for `8.4.2\ ' on input line 107.
+contour: Using real outline for `Rechteckwechselrichter' on input line 107.
+contour: Using real outline for `8.4.3\ ' on input line 121.
+contour: Using real outline for `PWM-Wechselrichter' on input line 121.
+contour: Using real outline for `8.6.1\ ' on input line 148.
+contour: Using real outline for `Total Harmonic Distortion (THD)' on input line 148.
+contour: Using real outline for `8.6.2\ ' on input line 168.
+contour: Using real outline for `Verzerrungsfaktor' on input line 168.
+[16 <./images/Wechselstromsteller_Verlauf.png>]) (./sections/09_PWM.tex
+<images/sinuspwm.png, id=1097, 383.4325pt x 132.495pt>
 File: images/sinuspwm.png Graphic file (type png)
 <use images/sinuspwm.png>
-Package pdftex.def Info: images/sinuspwm.png  used on input line 7.
+Package pdftex.def Info: images/sinuspwm.png  used on input line 19.
 (pdftex.def)             Requested size: 232.17616pt x 80.22946pt.
-<images/specpwm.png, id=1404, 838.13126pt x 301.125pt>
+<images/specpwm.png, id=1098, 838.13126pt x 301.125pt>
 File: images/specpwm.png Graphic file (type png)
 <use images/specpwm.png>
-Package pdftex.def Info: images/specpwm.png  used on input line 67.
+Package pdftex.def Info: images/specpwm.png  used on input line 79.
 (pdftex.def)             Requested size: 232.17616pt x 83.41383pt.
-) (./sections/13_3Wechselrichter.tex
-<images/3PWechselrichter.png, id=1405, 941.01563pt x 640.3925pt>
+) (./sections/10_Wechselrichter.tex
+contour: Using real outline for `10.1.1\ ' on input line 34.
+contour: Using real outline for `Grundschaltung: H-Brücke' on input line 34.
+<images/1PWechselrichter.png, id=1099, 971.12813pt x 583.68062pt>
+File: images/1PWechselrichter.png Graphic file (type png)
+<use images/1PWechselrichter.png>
+Package pdftex.def Info: images/1PWechselrichter.png  used on input line 36.
+(pdftex.def)             Requested size: 232.17616pt x 139.54292pt.
+[17 <./images/sinuspwm.png> <./images/specpwm.png>]
+contour: Using real outline for `10.1.2\ ' on input line 49.
+contour: Using real outline for `Rechteckbetrieb' on input line 49.
+<images/1PWechselrichter_verlauf.png, id=1128, 1168.86688pt x 715.17188pt>
+File: images/1PWechselrichter_verlauf.png Graphic file (type png)
+<use images/1PWechselrichter_verlauf.png>
+Package pdftex.def Info: images/1PWechselrichter_verlauf.png  used on input line 53.
+(pdftex.def)             Requested size: 232.17616pt x 142.0497pt.
+contour: Using real outline for `10.1.3\ ' on input line 82.
+contour: Using real outline for `Fourier-Entwicklung' on input line 82.
+contour: Using real outline for `10.1.4\ ' on input line 104.
+contour: Using real outline for `Strom bei R--L-Last' on input line 104.
+contour: Using real outline for `10.1.5\ ' on input line 127.
+contour: Using real outline for `PWM-Betrieb (Sinus-PWM)' on input line 127.
+contour: Using real outline for `10.1.6\ ' on input line 151.
+contour: Using real outline for `Leistungsfluss' on input line 151.
+contour: Using real outline for `10.1.7\ ' on input line 168.
+contour: Using real outline for `Spezialfälle' on input line 168.
+contour: Using real outline for `10.2.1\ ' on input line 193.
+contour: Using real outline for `Grundschaltung' on input line 193.
+<images/3PWechselrichter.png, id=1129, 941.01563pt x 640.3925pt>
 File: images/3PWechselrichter.png Graphic file (type png)
 <use images/3PWechselrichter.png>
-Package pdftex.def Info: images/3PWechselrichter.png  used on input line 7.
+Package pdftex.def Info: images/3PWechselrichter.png  used on input line 195.
 (pdftex.def)             Requested size: 232.17616pt x 157.99683pt.
- [16 <./images/sinuspwm.png> <./images/specpwm.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 12.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 12.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\circ' on input line 12.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 12.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\circ' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 22.
-
-) (./sections/15_Direktumrichter.tex
-<images/direktumrichtergrund.png, id=1438, 1084.05pt x 362.35374pt>
+contour: Using real outline for `10.2.2\ ' on input line 212.
+contour: Using real outline for `Grundschwingung' on input line 212.
+contour: Using real outline for `10.2.3\ ' on input line 224.
+contour: Using real outline for `R--L-Last pro Phase' on input line 224.
+[18 <./images/1PWechselrichter.png> <./images/1PWechselrichter_verlauf.png> <./images/3PWechselrichter.png>]
+contour: Using real outline for `10.2.4\ ' on input line 247.
+contour: Using real outline for `Leistung im symmetrischen Betrieb' on input line 247.
+) (./sections/11_Direktumrichter.tex
+<images/direktumrichtergrund.png, id=1157, 1084.05pt x 362.35374pt>
 File: images/direktumrichtergrund.png Graphic file (type png)
 <use images/direktumrichtergrund.png>
-Package pdftex.def Info: images/direktumrichtergrund.png  used on input line 9.
+Package pdftex.def Info: images/direktumrichtergrund.png  used on input line 24.
 (pdftex.def)             Requested size: 232.17616pt x 77.60596pt.
-<images/direktumrichter_matrix.png, id=1439, 307.1475pt x 164.615pt>
+<images/direktumrichter_matrix.png, id=1158, 307.1475pt x 164.615pt>
 File: images/direktumrichter_matrix.png Graphic file (type png)
 <use images/direktumrichter_matrix.png>
-Package pdftex.def Info: images/direktumrichter_matrix.png  used on input line 41.
+Package pdftex.def Info: images/direktumrichter_matrix.png  used on input line 75.
 (pdftex.def)             Requested size: 232.17616pt x 124.43552pt.
-<images/direktumrichter_kommutierung.png, id=1440, 381.425pt x 133.49875pt>
+<images/direktumrichter_kommutierung.png, id=1159, 381.425pt x 133.49875pt>
 File: images/direktumrichter_kommutierung.png Graphic file (type png)
 <use images/direktumrichter_kommutierung.png>
-Package pdftex.def Info: images/direktumrichter_kommutierung.png  used on input line 69.
+Package pdftex.def Info: images/direktumrichter_kommutierung.png  used on input line 187.
 (pdftex.def)             Requested size: 232.17616pt x 81.26096pt.
-) (./sections/100_fourierreihen.tex [17 <./images/3PWechselrichter.png> <./images/direktumrichtergrund.png> <./images/direktumrichter_matrix.png> <./images/direktumrichter_kommutierung.png>]
-contour: Using real outline for `19.2.1\ ' on input line 57.
-contour: Using real outline for `Umrechnung der Fourierkoeffizienten' on input line 57.
-contour: Using real outline for `19.3.1\ ' on input line 72.
-contour: Using real outline for `Symmetrie von Funktionen' on input line 72.
-contour: Using real outline for `19.3.2\ ' on input line 102.
-contour: Using real outline for `Linearität' on input line 102.
-contour: Using real outline for `19.3.3\ ' on input line 110.
-contour: Using real outline for `Zeitstreckung / -stauchung / -spiegelung ("Ähnlichkeit")' on input line 110.
-contour: Using real outline for `19.3.4\ ' on input line 117.
-contour: Using real outline for `Zeitverschiebung' on input line 117.
-contour: Using real outline for `19.4.1\ ' on input line 133.
-contour: Using real outline for `Optimalität der Fourierreihe' on input line 133.
-contour: Using real outline for `19.4.2\ ' on input line 147.
-contour: Using real outline for `Bessel'sche Ungleichung' on input line 147.
-contour: Using real outline for `19.4.3\ ' on input line 153.
-contour: Using real outline for `Satz von Parseval' on input line 153.
-contour: Using real outline for `19.4.4\ ' on input line 160.
-contour: Using real outline for `Konvergenz im Mittel' on input line 160.
-contour: Using real outline for `19.4.5\ ' on input line 170.
-contour: Using real outline for `Konvergenz der Fourierkoeffizienten' on input line 170.
-contour: Using real outline for `19.4.6\ ' on input line 183.
-contour: Using real outline for `Konvergenzgeschwindingkeit der Fourierkoeffizienten' on input line 183.
-contour: Using real outline for `19.4.7\ ' on input line 191.
-contour: Using real outline for `Punktweise Konvergenz (Satz von Dirichlet)' on input line 191.
-contour: Using real outline for `Beispiel: Summenberechnung mit Fourierreihe' on input line 213.
-<images/gibbs.PNG, id=1467, 482.80376pt x 152.57pt>
-File: images/gibbs.PNG Graphic file (type png)
-<use images/gibbs.PNG>
-Package pdftex.def Info: images/gibbs.PNG  used on input line 238.
-(pdftex.def)             Requested size: 232.17616pt x 73.37012pt.
-) (./sections/200_Mathe.tex
-contour: Using real outline for `20.1.1\ ' on input line 23.
+ [19 <./images/direktumrichtergrund.png> <./images/direktumrichter_matrix.png>]) (./sections/100_Mathe.tex
+contour: Using real outline for `12.1.1\ ' on input line 23.
 contour: Using real outline for `Elementare Funktionen' on input line 23.
-[18]
-contour: Using real outline for `20.1.2\ ' on input line 39.
+contour: Using real outline for `12.1.2\ ' on input line 39.
 contour: Using real outline for `Lineare Regeln' on input line 39.
-contour: Using real outline for `20.1.3\ ' on input line 47.
+contour: Using real outline for `12.1.3\ ' on input line 47.
 contour: Using real outline for `Produktregel' on input line 47.
-contour: Using real outline for `20.1.4\ ' on input line 53.
+contour: Using real outline for `12.1.4\ ' on input line 53.
 contour: Using real outline for `Quotientenregel' on input line 53.
-contour: Using real outline for `20.1.5\ ' on input line 60.
+contour: Using real outline for `12.1.5\ ' on input line 60.
 contour: Using real outline for `Kettenregel' on input line 60.
-contour: Using real outline for `20.3.1\ ' on input line 90.
+contour: Using real outline for `12.3.1\ ' on input line 90.
 contour: Using real outline for `Elementare Integrale' on input line 90.
-contour: Using real outline for `20.3.2\ ' on input line 104.
+contour: Using real outline for `12.3.2\ ' on input line 104.
 contour: Using real outline for `Lineare Regeln' on input line 104.
-contour: Using real outline for `20.7.1\ ' on input line 167.
+contour: Using real outline for `12.7.1\ ' on input line 167.
 contour: Using real outline for `Grundidentitäten' on input line 167.
-contour: Using real outline for `20.7.2\ ' on input line 177.
+contour: Using real outline for `12.7.2\ ' on input line 177.
 contour: Using real outline for `Winkeladdition' on input line 177.
-contour: Using real outline for `20.7.3\ ' on input line 187.
+contour: Using real outline for `12.7.3\ ' on input line 187.
 contour: Using real outline for `Doppelwinkel' on input line 187.
-contour: Using real outline for `20.7.4\ ' on input line 195.
+contour: Using real outline for `12.7.4\ ' on input line 195.
 contour: Using real outline for `Halbwinkel' on input line 195.
-contour: Using real outline for `20.9.1\ ' on input line 233.
+[20 <./images/direktumrichter_kommutierung.png>]
+contour: Using real outline for `12.9.1\ ' on input line 233.
 contour: Using real outline for `Euler-Formel' on input line 233.
-contour: Using real outline for `20.9.2\ ' on input line 247.
+contour: Using real outline for `12.9.2\ ' on input line 247.
 contour: Using real outline for `Komplexe Sinusdarstellung' on input line 247.
-contour: Using real outline for `20.10.1\ ' on input line 260.
+contour: Using real outline for `12.10.1\ ' on input line 260.
 contour: Using real outline for `Grundformen' on input line 260.
-[19 <./images/gibbs.PNG>]
-contour: Using real outline for `20.10.2\ ' on input line 274.
+contour: Using real outline for `12.10.2\ ' on input line 274.
 contour: Using real outline for `Konjugation' on input line 274.
-contour: Using real outline for `20.10.3\ ' on input line 282.
+contour: Using real outline for `12.10.3\ ' on input line 282.
 contour: Using real outline for `Multiplikation und Division' on input line 282.
-contour: Using real outline for `20.10.4\ ' on input line 290.
+contour: Using real outline for `12.10.4\ ' on input line 290.
 contour: Using real outline for `Real- und Imaginärteil' on input line 290.
-contour: Using real outline for `20.11.1\ ' on input line 301.
+contour: Using real outline for `12.11.1\ ' on input line 301.
 contour: Using real outline for `Ableiten im Zeitbereich' on input line 301.
-contour: Using real outline for `20.11.2\ ' on input line 307.
+contour: Using real outline for `12.11.2\ ' on input line 307.
 contour: Using real outline for `Impedanzen' on input line 307.
-contour: Using real outline for `20.11.3\ ' on input line 317.
+contour: Using real outline for `12.11.3\ ' on input line 317.
 contour: Using real outline for `Serien- und Parallelschaltung' on input line 317.
-contour: Using real outline for `20.15.1\ ' on input line 386.
-contour: Using real outline for `Definition' on input line 386.
-contour: Using real outline for `20.15.2\ ' on input line 395.
-contour: Using real outline for `Wichtige Grundtransformierte' on input line 395.
-contour: Using real outline for `20.15.3\ ' on input line 421.
-contour: Using real outline for `Linearität' on input line 421.
-contour: Using real outline for `20.15.4\ ' on input line 427.
-contour: Using real outline for `Ableitungssatz' on input line 427.
-contour: Using real outline for `20.15.5\ ' on input line 439.
-contour: Using real outline for `Integralsatz' on input line 439.
-contour: Using real outline for `20.15.6\ ' on input line 445.
-contour: Using real outline for `Zeitverschiebung (Heaviside)' on input line 445.
-contour: Using real outline for `20.15.7\ ' on input line 451.
-contour: Using real outline for `Frequenzverschiebung' on input line 451.
-contour: Using real outline for `20.15.8\ ' on input line 457.
-contour: Using real outline for `Faltung' on input line 457.
-contour: Using real outline for `20.15.9\ ' on input line 465.
-contour: Using real outline for `Initial- und Finalwertsatz' on input line 465.
-contour: Using real outline for `20.15.10\ ' on input line 475.
-contour: Using real outline for `Inverse Laplace (Standardstrategien)' on input line 475.
-contour: Using real outline for `20.16.1\ ' on input line 492.
-contour: Using real outline for `Pol-Nullstellen-Darstellung' on input line 492.
-contour: Using real outline for `20.16.2\ ' on input line 498.
-contour: Using real outline for `Zeitkonstante und Eckfrequenz' on input line 498.
-contour: Using real outline for `20.17.1\ ' on input line 512.
-contour: Using real outline for `Standardform' on input line 512.
-contour: Using real outline for `20.17.2\ ' on input line 533.
-contour: Using real outline for `R--L-Kreis' on input line 533.
-contour: Using real outline for `20.17.3\ ' on input line 546.
-contour: Using real outline for `R--C-Kreis' on input line 546.
-contour: Using real outline for `20.18.1\ ' on input line 564.
-contour: Using real outline for `Standardform' on input line 564.
-[20]
-contour: Using real outline for `20.18.2\ ' on input line 576.
-contour: Using real outline for `Dämpfungsfälle' on input line 576.
-contour: Using real outline for `20.18.3\ ' on input line 589.
-contour: Using real outline for `Freie Schwingung (homogene Lösung)' on input line 589.
-contour: Using real outline for `20.18.4\ ' on input line 608.
-contour: Using real outline for `Serien-RLC (Stromdynamik)' on input line 608.
-contour: Using real outline for `20.18.5\ ' on input line 620.
-contour: Using real outline for `Parallele-RLC (Spannungsdynamik)' on input line 620.
-contour: Using real outline for `20.18.6\ ' on input line 632.
-contour: Using real outline for `Laplace-Lösung von DGLs' on input line 632.
-contour: Using real outline for `20.18.7\ ' on input line 643.
-contour: Using real outline for `Standardübertragungsfunktionen' on input line 643.
-) (./sections/300_ETformeln.tex
-contour: Using real outline for `21.1.1\ ' on input line 13.
+contour: Using real outline for `12.12.1\ ' on input line 340.
+contour: Using real outline for `Orthagonalitätsbeziehungen Basisfunktionen' on input line 340.
+contour: Using real outline for `12.12.2\ ' on input line 363.
+contour: Using real outline for `Berechnung der Fourier-Koeffizienten' on input line 363.
+contour: Using real outline for `12.12.3\ ' on input line 396.
+contour: Using real outline for `Sätze zur Berechnung der Koeffizienten' on input line 396.
+contour: Using real outline for `12.12.4\ ' on input line 477.
+contour: Using real outline for `Beispiele: Fourier-Koeffizienten' on input line 477.
+[21]
+Overfull \hbox (1.37305pt too wide) detected at line 732
+\OML/txmi/m/it/8 a[] \OT1/txr/m/n/8 = [] [][] \OML/txmi/m/it/8 f\OT1/txr/m/n/8 (\OML/txmi/m/it/8 t\OT1/txr/m/n/8 ) [](\OML/txmi/m/it/8 n![]t\OT1/txr/m/n/8 ) \OML/txmi/m/it/8 dt \OT1/txr/m/n/8 = [] []
+ []
+
+[22] [23]
+contour: Using real outline for `12.15.1\ ' on input line 1094.
+contour: Using real outline for `Definition' on input line 1094.
+contour: Using real outline for `12.15.2\ ' on input line 1103.
+contour: Using real outline for `Wichtige Grundtransformierte' on input line 1103.
+contour: Using real outline for `12.15.3\ ' on input line 1129.
+contour: Using real outline for `Linearität' on input line 1129.
+contour: Using real outline for `12.15.4\ ' on input line 1135.
+contour: Using real outline for `Ableitungssatz' on input line 1135.
+contour: Using real outline for `12.15.5\ ' on input line 1147.
+contour: Using real outline for `Integralsatz' on input line 1147.
+contour: Using real outline for `12.15.6\ ' on input line 1153.
+contour: Using real outline for `Zeitverschiebung (Heaviside)' on input line 1153.
+contour: Using real outline for `12.15.7\ ' on input line 1159.
+contour: Using real outline for `Frequenzverschiebung' on input line 1159.
+contour: Using real outline for `12.15.8\ ' on input line 1165.
+contour: Using real outline for `Faltung' on input line 1165.
+contour: Using real outline for `12.15.9\ ' on input line 1173.
+contour: Using real outline for `Initial- und Finalwertsatz' on input line 1173.
+contour: Using real outline for `12.15.10\ ' on input line 1183.
+contour: Using real outline for `Inverse Laplace (Standardstrategien)' on input line 1183.
+contour: Using real outline for `12.16.1\ ' on input line 1200.
+contour: Using real outline for `Pol-Nullstellen-Darstellung' on input line 1200.
+contour: Using real outline for `12.16.2\ ' on input line 1206.
+contour: Using real outline for `Zeitkonstante und Eckfrequenz' on input line 1206.
+contour: Using real outline for `12.17.1\ ' on input line 1220.
+contour: Using real outline for `Standardform' on input line 1220.
+contour: Using real outline for `12.17.2\ ' on input line 1241.
+contour: Using real outline for `R--L-Kreis' on input line 1241.
+contour: Using real outline for `12.17.3\ ' on input line 1254.
+contour: Using real outline for `R--C-Kreis' on input line 1254.
+contour: Using real outline for `12.18.1\ ' on input line 1272.
+contour: Using real outline for `Standardform' on input line 1272.
+contour: Using real outline for `12.18.2\ ' on input line 1284.
+contour: Using real outline for `Dämpfungsfälle' on input line 1284.
+contour: Using real outline for `12.18.3\ ' on input line 1297.
+contour: Using real outline for `Freie Schwingung (homogene Lösung)' on input line 1297.
+contour: Using real outline for `12.18.4\ ' on input line 1316.
+contour: Using real outline for `Serien-RLC (Stromdynamik)' on input line 1316.
+contour: Using real outline for `12.18.5\ ' on input line 1328.
+contour: Using real outline for `Parallele-RLC (Spannungsdynamik)' on input line 1328.
+[24]
+contour: Using real outline for `12.18.6\ ' on input line 1340.
+contour: Using real outline for `Laplace-Lösung von DGLs' on input line 1340.
+contour: Using real outline for `12.18.7\ ' on input line 1351.
+contour: Using real outline for `Standardübertragungsfunktionen' on input line 1351.
+contour: Using real outline for `12.19.1\ ' on input line 1389.
+contour: Using real outline for `1. Typ der Differentialgleichung identifizieren' on input line 1389.
+contour: Using real outline for `12.19.2\ ' on input line 1411.
+contour: Using real outline for `2. Homogene Lösung $u_{\mathrm {hom}}$' on input line 1411.
+contour: Using real outline for `12.19.3\ ' on input line 1460.
+contour: Using real outline for `3. Partikuläre Lösung $u_{\mathrm {part}}$' on input line 1460.
+contour: Using real outline for `12.19.4\ ' on input line 1495.
+contour: Using real outline for `4. Gesamtlösung und Konstanten' on input line 1495.
+contour: Using real outline for `12.19.5\ ' on input line 1513.
+contour: Using real outline for `Standardlösungen aus der Leistungselektronik' on input line 1513.
+[25]
+contour: Using real outline for `12.19.6\ ' on input line 1856.
+contour: Using real outline for `Typische Prüfungsregeln' on input line 1856.
+) (./sections/200_ET.tex
+contour: Using real outline for `13.1.1\ ' on input line 13.
 contour: Using real outline for `Strom, Spannung, Leistung' on input line 13.
-contour: Using real outline for `21.1.2\ ' on input line 27.
+contour: Using real outline for `13.1.2\ ' on input line 27.
 contour: Using real outline for `Passives Vorzeichenkonzept' on input line 27.
-contour: Using real outline for `21.2.1\ ' on input line 38.
+contour: Using real outline for `13.2.1\ ' on input line 38.
 contour: Using real outline for `Knoten- und Maschensatz' on input line 38.
-contour: Using real outline for `21.2.2\ ' on input line 46.
+[26]
+contour: Using real outline for `13.2.2\ ' on input line 46.
 contour: Using real outline for `Leiterwerte und Widerstände' on input line 46.
-contour: Using real outline for `21.2.3\ ' on input line 54.
+contour: Using real outline for `13.2.3\ ' on input line 54.
 contour: Using real outline for `Serien- und Parallelschaltung' on input line 54.
-contour: Using real outline for `21.3.1\ ' on input line 65.
+contour: Using real outline for `13.3.1\ ' on input line 65.
 contour: Using real outline for `Widerstand' on input line 65.
-contour: Using real outline for `21.3.2\ ' on input line 73.
+contour: Using real outline for `13.3.2\ ' on input line 73.
 contour: Using real outline for `Induktivität' on input line 73.
-contour: Using real outline for `21.3.3\ ' on input line 86.
+contour: Using real outline for `13.3.3\ ' on input line 86.
 contour: Using real outline for `Kapazität' on input line 86.
-contour: Using real outline for `21.4.1\ ' on input line 102.
+contour: Using real outline for `13.4.1\ ' on input line 102.
 contour: Using real outline for `Sinusgrössen' on input line 102.
-contour: Using real outline for `21.4.2\ ' on input line 121.
+contour: Using real outline for `13.4.2\ ' on input line 121.
 contour: Using real outline for `Phasor-Notation' on input line 121.
 contour: Using real outline for `$U$' on input line 123.
 contour: Using real outline for `$U$' on input line 123.
@@ -1910,9 +1813,9 @@ contour: Using real outline for `$I$' on input line 125.
 contour: Using real outline for `$I$' on input line 125.
 contour: Using real outline for `$I$' on input line 125.
 contour: Using real outline for `$I$' on input line 125.
-contour: Using real outline for `21.4.3\ ' on input line 129.
+contour: Using real outline for `13.4.3\ ' on input line 129.
 contour: Using real outline for `Impedanzen' on input line 129.
-contour: Using real outline for `21.4.4\ ' on input line 150.
+contour: Using real outline for `13.4.4\ ' on input line 150.
 contour: Using real outline for `Komplexe Leistung' on input line 150.
 contour: Using real outline for `$S$' on input line 152.
 contour: Using real outline for `$S$' on input line 152.
@@ -1926,167 +1829,179 @@ contour: Using real outline for `$I$' on input line 152.
 contour: Using real outline for `$I$' on input line 152.
 contour: Using real outline for `$I$' on input line 152.
 contour: Using real outline for `$I$' on input line 152.
-[21]
-contour: Using real outline for `21.6.1\ ' on input line 190.
+contour: Using real outline for `13.6.1\ ' on input line 190.
 contour: Using real outline for `Grundgrössen' on input line 190.
-contour: Using real outline for `21.6.2\ ' on input line 211.
+contour: Using real outline for `13.6.2\ ' on input line 211.
 contour: Using real outline for `Ampèresches Gesetz' on input line 211.
-contour: Using real outline for `21.6.3\ ' on input line 222.
+contour: Using real outline for `13.6.3\ ' on input line 222.
 contour: Using real outline for `Magnetische Spannung, Durchflutung' on input line 222.
-contour: Using real outline for `21.6.4\ ' on input line 230.
+contour: Using real outline for `13.6.4\ ' on input line 230.
 contour: Using real outline for `Reluktanz und magnetischer Widerstand' on input line 230.
-contour: Using real outline for `21.6.5\ ' on input line 248.
+contour: Using real outline for `13.6.5\ ' on input line 248.
 contour: Using real outline for `Induktivität aus Magnetkreis' on input line 248.
-contour: Using real outline for `21.6.6\ ' on input line 258.
+contour: Using real outline for `13.6.6\ ' on input line 258.
 contour: Using real outline for `Luftspalt (dominant)' on input line 258.
-contour: Using real outline for `21.6.7\ ' on input line 269.
+contour: Using real outline for `13.6.7\ ' on input line 269.
 contour: Using real outline for `Energie und Kraft im Magnetfeld' on input line 269.
-contour: Using real outline for `21.6.8\ ' on input line 286.
+contour: Using real outline for `13.6.8\ ' on input line 286.
 contour: Using real outline for `Induzierte Spannung (Faraday)' on input line 286.
-contour: Using real outline for `21.7.1\ ' on input line 299.
+contour: Using real outline for `13.7.1\ ' on input line 299.
 contour: Using real outline for `Idealer Trafo' on input line 299.
-contour: Using real outline for `21.7.2\ ' on input line 326.
+contour: Using real outline for `13.7.2\ ' on input line 326.
 contour: Using real outline for `Induktivitäten und Kopplung' on input line 326.
-contour: Using real outline for `21.8.1\ ' on input line 339.
+[27]
+contour: Using real outline for `13.8.1\ ' on input line 339.
 contour: Using real outline for `Spannungen (symmetrisch)' on input line 339.
-contour: Using real outline for `21.8.2\ ' on input line 358.
+contour: Using real outline for `13.8.2\ ' on input line 358.
 contour: Using real outline for `Leistung im Drehstromsystem' on input line 358.
-contour: Using real outline for `21.8.3\ ' on input line 370.
+contour: Using real outline for `13.8.3\ ' on input line 370.
 contour: Using real outline for `Stern/Dreieck' on input line 370.
-contour: Using real outline for `21.9.1\ ' on input line 389.
+contour: Using real outline for `13.9.1\ ' on input line 389.
 contour: Using real outline for `Elektrische und mechanische Winkelgeschwindigkeit' on input line 389.
-contour: Using real outline for `21.9.2\ ' on input line 397.
+contour: Using real outline for `13.9.2\ ' on input line 397.
 contour: Using real outline for `Synchronmaschine (Grundbeziehungen)' on input line 397.
-contour: Using real outline for `21.9.3\ ' on input line 407.
+contour: Using real outline for `13.9.3\ ' on input line 407.
 contour: Using real outline for `Asynchronmaschine (Schlupf)' on input line 407.
-contour: Using real outline for `21.9.4\ ' on input line 415.
+contour: Using real outline for `13.9.4\ ' on input line 415.
 contour: Using real outline for `Gleichstrommaschine (Kernformeln)' on input line 415.
-contour: Using real outline for `21.10.1\ ' on input line 428.
+contour: Using real outline for `13.10.1\ ' on input line 428.
 contour: Using real outline for `Lorentzkraft' on input line 428.
-contour: Using real outline for `21.10.2\ ' on input line 443.
+contour: Using real outline for `13.10.2\ ' on input line 443.
 contour: Using real outline for `Leistungsfluss (Poynting)' on input line 443.
-) (./sections/400_DGL.tex
-contour: Using real outline for `22.1.1\ ' on input line 23.
-contour: Using real outline for `1. Ordnung (typisch R--L, R--C)' on input line 23.
-[22]
-contour: Using real outline for `22.1.2\ ' on input line 29.
-contour: Using real outline for `2. Ordnung (typisch RLC, mechanische Systeme)' on input line 29.
-contour: Using real outline for `22.1.3\ ' on input line 35.
-contour: Using real outline for `Stückweise DGL (Umrichterbetrieb)' on input line 35.
-contour: Using real outline for `22.3.1\ ' on input line 62.
-contour: Using real outline for `Standardform' on input line 62.
-contour: Using real outline for `22.3.2\ ' on input line 70.
-contour: Using real outline for `Lösungsstruktur' on input line 70.
-contour: Using real outline for `22.3.3\ ' on input line 83.
-contour: Using real outline for `Wichtiger Spezialfall: Konstantanregung $u(t)=U$' on input line 83.
-contour: Using real outline for `22.7.1\ ' on input line 169.
-contour: Using real outline for `Standardform' on input line 169.
-contour: Using real outline for `22.7.2\ ' on input line 182.
-contour: Using real outline for `Homogene Lösung über charakteristische Gleichung' on input line 182.
-contour: Using real outline for `22.7.3\ ' on input line 199.
-contour: Using real outline for `Fälle' on input line 199.
-contour: Using real outline for `22.7.4\ ' on input line 219.
-contour: Using real outline for `Partikuläre Lösung' on input line 219.
-contour: Using real outline for `22.9.1\ ' on input line 249.
-contour: Using real outline for `Workflow' on input line 249.
-contour: Using real outline for `22.9.2\ ' on input line 260.
-contour: Using real outline for `Merksätze' on input line 260.
-contour: Using real outline for `22.9.3\ ' on input line 268.
-contour: Using real outline for `Beispiel: 1. Ordnung per Laplace' on input line 268.
-contour: Using real outline for `22.10.1\ ' on input line 298.
-contour: Using real outline for `Vorgehen' on input line 298.
-[23]) (./sections/500_Uebungen.tex
-Overfull \hbox (26.15567pt too wide) detected at line 184
+) (./sections/300_Uebungen.tex
+contour: Using real outline for `a) Zeitfunktion des Stromes $i_R(t)$ im stationären Betrieb' on input line 7.
+contour: Using real outline for `b) Mittelwert $\overline {i_R}$' on input line 88.
+contour: Using real outline for `c) Effektivwert $I_{\mathrm {RMS}}$' on input line 140.
+[28]
+Overfull \hbox (26.15567pt too wide) detected at line 187
 []
  []
 
-[24]
-Overfull \hbox (11.72604pt too wide) detected at line 287
+contour: Using real outline for `d) Spannungen $u_R(t)$ und $u_L(t)$' on input line 192.
+contour: Using real outline for `e) Simulation/Verifikation (LTspice/PLECS)' on input line 214.
+contour: Using real outline for `a) Zeitverlauf $u_2(t)$ und $u_R(t)$ für $t\in [0,60\,\mathrm {ms}]$' on input line 228.
+contour: Using real outline for `b) Mittelwert und Effektivwert von $u_R(t)$' on input line 249.
+contour: Using real outline for `c) Erste sechs Harmonische von $u_R(t)$' on input line 279.
+
+Overfull \hbox (11.72604pt too wide) detected at line 290
 \OML/txmi/m/it/8 a[] \OT1/txr/m/n/8 = [] [][] \OML/txmi/m/it/8 u[]\OT1/txr/m/n/8 (\OML/txmi/m/it/8 \OT1/txr/m/n/8 ) \OML/txmi/m/it/8 d;  a[] \OT1/txr/m/n/8 = [] [][] \OML/txmi/m/it/8 u[]\OT1/txr/m/n/8 (\OML/txmi/m/it/8 \OT1/txr/m/n/8 ) [](\OML/txmi/m/it/8 k\OT1/txr/m/n/8 ) \OML/txmi/m/it/8 d;  b[] \OT1/txr/m/n/8 = [] [][] \OML/txmi/m/it/8 u[]\OT1/txr/m/n/8 (\OML/txmi/m/it/8 \OT1/txr/m/n/8 ) [](\OML/txmi/m/it/8 k\OT1/txr/m/n/8 ) \OML/txmi/m/it/8 d:
  []
 
 
-Overfull \hbox (2.67697pt too wide) detected at line 313
+Overfull \hbox (2.67697pt too wide) detected at line 316
 \OML/txmi/m/it/8 a[] \OT1/txr/m/n/8 = [] [][] [] \OML/txmi/m/it/8  []\OT1/txr/m/n/8 (\OML/txmi/m/it/8 k\OT1/txr/m/n/8 ) \OML/txmi/m/it/8 d \OT1/txr/m/n/8 = [] [] [] []\OML/txmi/m/it/8 k;  a[] \OT1/txr/m/n/8 = 0 []\OML/txmi/m/it/8 k:
  []
 
 
-Overfull \hbox (65.86041pt too wide) detected at line 326
+Overfull \hbox (65.86041pt too wide) detected at line 329
 []\OML/txmi/m/it/8 :
  []
 
-[25] [26]) (./sections/600_Schnellentscheidung.tex
-contour: Using real outline for `30.1.1\ ' on input line 12.
+contour: Using real outline for `a) Zeitverlauf $u_2(t)$ und $u_R(t)$ über drei Perioden' on input line 339.
+contour: Using real outline for `b) Mittelwert und Effektivwert von $u_R(t)$' on input line 365.
+contour: Using real outline for `c) Harmonische (Fourier-Koeffizienten)' on input line 393.
+contour: Using real outline for `a) Zeitverlauf von $u_R(t)$ und $i_R(t)$ für $t\in [0,60\,\mathrm {ms}]$' on input line 421.
+[29]
+contour: Using real outline for `b) Mittelwert und Effektivwert von $u_R(t)$ und $i_R(t)$' on input line 458.
+contour: Using real outline for `c) Wirkleistung $P$ an der ohmschen Last' on input line 519.
+contour: Using real outline for `d) Fourierkoeffizienten von $i_R(t)$ (Spektrum)' on input line 543.
+contour: Using real outline for `e) Blindleistung und Verzerrungsblindleistung' on input line 592.
+contour: Using real outline for `a) $i_L(t)$ und $u_R(t)$ über eine Schaltperiode' on input line 618.
+contour: Using real outline for `b) Bestimmung einer Schaltzeit aus $i_{\min }$, $i_{\max }$ (typische Prüfungsform)' on input line 681.
+
+Overfull \hbox (21.36954pt too wide) in paragraph at lines 681--681
+||   [][]| 
+ []
+
+contour: Using real outline for `a) Herleitung von $i_L(t)$ und $u_L(t)$ in einem PWM-Intervall' on input line 703.
+[30]
+contour: Using real outline for `b) Wodurch wird die Hauptfrequenz des Laststroms bestimmt?' on input line 750.
+contour: Using real outline for `c) Vergleich idealer und realer Laststrom (qualitativ)' on input line 769.
+contour: Using real outline for `a) Warum läuft die Maschine unterhalb einer Winkelgrenze nicht sauber an?' on input line 788.
+
+Overfull \hbox (55.7435pt too wide) in paragraph at lines 788--788
+||   [][]| 
+ []
+
+contour: Using real outline for `b) Warum steigt $n$ mit $\alpha $ zuerst, erreicht ein Maximum und fällt dann wieder?' on input line 822.
+
+Overfull \hbox (58.03352pt too wide) in paragraph at lines 822--822
+||   [][]| 
+ []
+
+contour: Using real outline for `c) Grenzbedingung für den Stromfluss' on input line 865.
+) (./sections/400_Schnellentscheidung.tex
+contour: Using real outline for `15.1.1\ ' on input line 12.
 contour: Using real outline for `Grundrelationen' on input line 12.
-contour: Using real outline for `30.1.2\ ' on input line 25.
+contour: Using real outline for `15.1.2\ ' on input line 25.
 contour: Using real outline for `Zeitkonstante und Einschwingen' on input line 25.
-contour: Using real outline for `30.2.1\ ' on input line 40.
+contour: Using real outline for `15.2.1\ ' on input line 40.
 contour: Using real outline for `Schnellregeln' on input line 40.
-contour: Using real outline for `30.2.2\ ' on input line 53.
+contour: Using real outline for `15.2.2\ ' on input line 53.
 contour: Using real outline for `Leistung' on input line 53.
-contour: Using real outline for `30.2.3\ ' on input line 64.
+contour: Using real outline for `15.2.3\ ' on input line 64.
 contour: Using real outline for `Nichtsinusförmig' on input line 64.
-contour: Using real outline for `30.3.1\ ' on input line 78.
+contour: Using real outline for `15.3.1\ ' on input line 78.
 contour: Using real outline for `Grundlogik' on input line 78.
-contour: Using real outline for `30.3.2\ ' on input line 87.
+contour: Using real outline for `15.3.2\ ' on input line 87.
 contour: Using real outline for `Verluste' on input line 87.
-contour: Using real outline for `30.3.3\ ' on input line 102.
+contour: Using real outline for `15.3.3\ ' on input line 102.
 contour: Using real outline for `Thermik' on input line 102.
-contour: Using real outline for `30.3.4\ ' on input line 115.
+[31]
+contour: Using real outline for `15.3.4\ ' on input line 115.
 contour: Using real outline for `Induktive Last' on input line 115.
-contour: Using real outline for `30.4.1\ ' on input line 125.
+contour: Using real outline for `15.4.1\ ' on input line 125.
 contour: Using real outline for `Systematik' on input line 125.
-contour: Using real outline for `30.4.2\ ' on input line 135.
+contour: Using real outline for `15.4.2\ ' on input line 135.
 contour: Using real outline for `Einfluss von Zündwinkel $\alpha $' on input line 135.
-contour: Using real outline for `30.4.3\ ' on input line 143.
+contour: Using real outline for `15.4.3\ ' on input line 143.
 contour: Using real outline for `C-Glättung vs L-Glättung' on input line 143.
-contour: Using real outline for `30.4.4\ ' on input line 152.
+contour: Using real outline for `15.4.4\ ' on input line 152.
 contour: Using real outline for `Kommutierungsüberlappung' on input line 152.
-[27]
-contour: Using real outline for `30.4.5\ ' on input line 159.
+contour: Using real outline for `15.4.5\ ' on input line 159.
 contour: Using real outline for `Harmonische' on input line 159.
-contour: Using real outline for `30.6.1\ ' on input line 183.
+contour: Using real outline for `15.6.1\ ' on input line 183.
 contour: Using real outline for `1-Quadrant (Buck-artig)' on input line 183.
-contour: Using real outline for `30.6.2\ ' on input line 191.
+contour: Using real outline for `15.6.2\ ' on input line 191.
 contour: Using real outline for `2- und 4-Quadrant' on input line 191.
-contour: Using real outline for `30.7.1\ ' on input line 201.
+contour: Using real outline for `15.7.1\ ' on input line 201.
 contour: Using real outline for `Buck' on input line 201.
-contour: Using real outline for `30.7.2\ ' on input line 209.
+contour: Using real outline for `15.7.2\ ' on input line 209.
 contour: Using real outline for `Boost' on input line 209.
-contour: Using real outline for `30.7.3\ ' on input line 216.
+contour: Using real outline for `15.7.3\ ' on input line 216.
 contour: Using real outline for `Betriebsart' on input line 216.
-contour: Using real outline for `30.12.1\ ' on input line 263.
+contour: Using real outline for `15.12.1\ ' on input line 263.
 contour: Using real outline for `Kernaussagen' on input line 263.
-contour: Using real outline for `30.12.2\ ' on input line 269.
+contour: Using real outline for `15.12.2\ ' on input line 269.
 contour: Using real outline for `Ankerspannung' on input line 269.
-contour: Using real outline for `30.12.3\ ' on input line 276.
+contour: Using real outline for `15.12.3\ ' on input line 276.
 contour: Using real outline for `Lastmoment' on input line 276.
-contour: Using real outline for `30.12.4\ ' on input line 282.
+contour: Using real outline for `15.12.4\ ' on input line 282.
 contour: Using real outline for `Feld' on input line 282.
-contour: Using real outline for `30.12.5\ ' on input line 289.
+contour: Using real outline for `15.12.5\ ' on input line 289.
 contour: Using real outline for `Anlauf' on input line 289.
-) [28] (./zusammenfassung.aux <Reading QR code for "https://github.com/Giamo08/Zusammenfassungen" at level 3-L from aux file.>
+) [32] (./zusammenfassung.aux <Reading QR code for "https://github.com/Giamo08/Zusammenfassungen" at level 3-L from aux file.>
 )
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `zusammenfassung.out' has not changed.
-(rerunfilecheck)             Checksum: D88FBD9876CCA2481CA2E03B70DFB5C5;51627.
+(rerunfilecheck)             Checksum: F0A53BB0CEA58974DC5A44FCEBF61B76;39928.
  ) 
 Here is how much of TeX's memory you used:
- 66422 strings out of 474116
- 1623546 string characters out of 5743681
- 2605781 words of memory out of 5000000
- 86836 multiletter control sequences out of 15000+600000
+ 66125 strings out of 474116
+ 1617853 string characters out of 5743681
+ 2579781 words of memory out of 5000000
+ 86714 multiletter control sequences out of 15000+600000
  655349 words of font info for 230 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,16n,148p,1110b,2884s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txbsy.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txexa.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zusammenfassung.pdf (28 pages, 4257965 bytes).
+ 88i,16n,148p,1110b,2675s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on zusammenfassung.pdf (32 pages, 4343051 bytes).
 PDF statistics:
- 2146 PDF objects out of 2487 (max. 8388607)
- 1972 compressed objects within 20 object streams
- 948 named destinations out of 1000 (max. 500000)
- 2140 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1762 PDF objects out of 2073 (max. 8388607)
+ 1599 compressed objects within 16 object streams
+ 797 named destinations out of 1000 (max. 500000)
+ 1605 words of extra memory for PDF output out of 10000 (max. 10000000)
 

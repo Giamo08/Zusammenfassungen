@@ -14,6 +14,18 @@ Sie ist zentral für die Bewertung von \textbf{Verlusten}, \textbf{Filterbedarf}
     \item Spektrum qualitativ interpretieren
     \item Verzerrungskennzahlen korrekt berechnen
 \end{itemize}
+\subsection*{Definition der verwendeten Grössen}
+
+\begin{itemize}
+    \item $U_{n,\mathrm{RMS}}$: Effektivwert der Harmonischen Ordnung $n$,
+    \item $U_{1,\mathrm{RMS}}$: Effektivwert der Grundschwingung,
+    \item $U_{\mathrm{RMS}}$: Gesamt-Effektivwert,
+    \item $f_1$: Grundfrequenz,
+    \item $f_c$: Schaltfrequenz,
+    \item $\varphi_1$: Phasenwinkel der Grundschwingung,
+    \item $\mathrm{THD}$: Total Harmonic Distortion,
+    \item $\nu$: Verzerrungsfaktor.
+\end{itemize}
 
 \subsection{Ursprung der Harmonischen}
 
@@ -28,6 +40,30 @@ In Umrichtern entstehen Harmonische durch:
 Grundprinzip:
 \[
 \cbl{\text{Jedes periodische, nichtsinusförmige Signal } \Rightarrow \text{ Summe aus Sinusschwingungen}.}
+\]
+
+\subsection{Allgemeine Harmonische und Spektralanalyse}
+
+Fourier-Reihe:
+\[
+x(t) = a_0 + \sum_{k=1}^\infty 
+\big( a_k \cos k\omega t + b_k \sin k\omega t \big)
+\]
+
+Grundfrequenz:
+\[
+f_1 = \frac{1}{T}
+\]
+
+Effektivwert aus Spektrum:
+\[
+X_{\mathrm{rms}}^2 = \sum_{k=1}^\infty X_{k,\mathrm{rms}}^2
+\]
+
+Dominante Harmonische bei PWM:
+\[
+f = m f_c \pm n f_1,
+\qquad m,n \in \mathbb{N}
 \]
 
 \subsection{Fourier-Zerlegung}
@@ -176,6 +212,11 @@ Bei R-L-Last:
 \]
 
 \paragraph{Stromharmonische bei R-L-Last}
+Übertragungsfunktion der R--L-Last:
+\[
+\boxed{H(j\omega) = \frac{1}{R + j\omega L}}
+\]
+Stromamplitude der $n$-ten Harmonischen:
 \[
 I_n = \frac{U_n}{\sqrt{R^2 + (n\omega L)^2}}
 \]

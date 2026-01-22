@@ -3,19 +3,22 @@
 \subsection{Rolle der Leistungshalbleiter im Energiesystem}
 
 Leistungshalbleiter dienen der verlustarmen, schnellen und steuerbaren Umsetzung elektrischer Energie.
-Sie arbeiten im Gegensatz zu linearen Bauelementen ausschliesslich in den Zuständen:
+Im Gegensatz zu linearen Bauelementen arbeiten sie nicht im kontinuierlichen Arbeitsbereich,
+sondern ausschliesslich als Schalter mit diskreten Zuständen.
+
+Sie besitzen drei Betriebszustände:
 \begin{itemize}
-\item \textbf{leitend} (niedriger Spannungsabfall),
-\item \textbf{sperrend} (hohe Sperrspannung),
-\item \textbf{umschaltend} (Übergangszustand).
+\item \textbf{leitend}: Stromfluss mit niedrigem Spannungsabfall,
+\item \textbf{sperrend}: Blockieren der angelegten Spannung bis zur maximalen Sperrspannung,
+\item \textbf{umschaltend}: Übergangsphase zwischen leitend und sperrend.
 \end{itemize}
 
 Damit realisieren sie:
 \begin{itemize}
-\item Gleichrichtung,
-\item Phasenanschnitt,
-\item Taktbetrieb (PWM),
-\item Umrichtung von Spannung, Strom und Frequenz.
+\item Gleichrichtung von Wechsel- zu Gleichspannung,
+\item Phasenanschnitt zur Leistungssteuerung,
+\item Taktbetrieb bei Gleichstromstellern (PWM),
+\item Umrichtung von Spannung, Strom und Frequenz in Umrichtern.
 \end{itemize}
 
 Grundlegende Kenngrössen:
@@ -23,39 +26,48 @@ Grundlegende Kenngrössen:
 U_{RRM},\quad I_{F},\quad U_F,\quad t_{on},\ t_{off},\quad P_{cond},\ P_{sw}.
 \]
 
+Dabei bezeichnet $U_{RRM}$ die maximal zulässige Sperrspannung, $I_F$ den maximalen Durchlassstrom
+und $U_F$ den Spannungsabfall im leitenden Zustand.
+Die Zeiten $t_{on}$ und $t_{off}$ bestimmen die Dauer der Schaltvorgänge.
+$P_{cond}$ beschreibt die Leitverluste, $P_{sw}$ die Schaltverluste.
+
 \subsection{Physikalische Grundlagen der Halbleiterbauelemente}
 
-Alle Leistungshalbleiter beruhen auf pn-Übergängen.
+Alle Leistungshalbleiter beruhen auf pn-Übergängen, deren elektrisches Verhalten
+durch Dotierung und Feldverteilung bestimmt wird.
 
-Sperrbetrieb:
+Im Sperrbetrieb blockiert der pn-Übergang den Stromfluss:
 \[
 i \approx 0,\qquad u \le U_{RRM}
 \]
 
-Durchlassbetrieb:
+Im Durchlassbetrieb ist der pn-Übergang leitend:
 \[
 i \gg 0,\qquad u \approx U_{on}
 \]
 
 Die maximale Sperrspannung wird bestimmt durch:
 \begin{itemize}
-\item Dicke der Sperrschicht,
-\item Dotierung,
-\item Feldverteilung im pn-Übergang.
+\item die Dicke der Sperrschicht,
+\item die Dotierung der Halbleiterzonen,
+\item die elektrische Feldverteilung im pn-Übergang.
 \end{itemize}
 
 Thermische Belastung:
 \[
 \boxed{T_j = T_{amb} + R_{th} \cdot P_V}
 \]
-mit:
-\begin{itemize}
-\item $T_j$: Sperrschichttemperatur,
-\item $R_{th}$: thermischer Widerstand,
-\item $P_V$: Verlustleistung.
-\end{itemize}
+
+Dabei ist $T_j$ die Sperrschichttemperatur, $T_{amb}$ die Umgebungstemperatur,
+$R_{th}$ der thermische Widerstand zwischen Sperrschicht und Umgebung
+und $P_V$ die im Bauelement entstehende Verlustleistung.
+Die Einhaltung von $T_j < T_{j,\max}$ ist zwingend für einen sicheren Betrieb.
 
 \subsection{Diode als Leistungsschalter}
+
+Die Leistungsdiode ist ein ungesteuertes Halbleiterbauelement mit zwei stabilen Zuständen.
+Sie leitet Strom in Durchlassrichtung und blockiert in Sperrrichtung.
+Sie wird vor allem in Gleichrichtern, Freilaufpfaden und als Schutzbauelement eingesetzt.
 
 \subsubsection{Betriebszustände}
 
@@ -87,10 +99,16 @@ Reales Modell:
 \boxed{u_D = U_{D0} + r_D \, i_D}
 \]
 
+Hier ist $U_{D0}$ der konstante Durchlassspannungsabfall und $r_D$ der differentielle Widerstand
+im leitenden Zustand.
+
 Verlustleistung:
 \[
 \boxed{P_D = U_{D0} \, I_{D,\mathrm{avg}} + r_D \, I_{D,\mathrm{RMS}}^2}
 \]
+
+Dabei ist $I_{D,\mathrm{avg}}$ der Mittelwert des Diodenstroms
+und $I_{D,\mathrm{RMS}}$ der Effektivwert.
 
 Interpretation:
 \begin{itemize}
@@ -104,9 +122,10 @@ Interpretation:
 \begin{center}
     \includegraphics[width=0.85\linewidth]{images/didodeunterschied.png}
 \end{center}
+
 \subsubsection{Dynamisches Schaltverhalten}
 
-Beim Übergang von Durchlass nach Sperre wird Ladung aus der Sperrschicht entfernt.
+Beim Übergang von Durchlass nach Sperre muss gespeicherte Ladung aus der Sperrschicht entfernt werden.
 
 Rückerholstrom:
 \[
@@ -123,10 +142,13 @@ Zusätzliche Schaltverluste:
 \boxed{P_{sw,D} \approx f_s \, U_R \, Q_{rr}}
 \]
 
+Dabei ist $Q_{rr}$ die gespeicherte Ladung, $f_s$ die Schaltfrequenz
+und $U_R$ die anliegende Sperrspannung.
+
 Physikalische Bedeutung:
 \begin{itemize}
-\item grosse $Q_{rr}$ $\Rightarrow$ hohe Verluste,
-\item schnelle Dioden notwendig für hohe $f_s$.
+\item grosse $Q_{rr}$ $\Rightarrow$ hohe Schaltverluste,
+\item schnelle Dioden notwendig bei hohen $f_s$.
 \end{itemize}
 
 \begin{center}
@@ -134,6 +156,11 @@ Physikalische Bedeutung:
 \end{center}
 
 \subsection{Thyristor (SCR)}
+
+Der Thyristor ist ein gesteuerter, selbsthaltender Leistungsschalter mit PNPN-Struktur.
+Er wird durch einen kurzen Gate-Strom gezündet und bleibt leitend,
+solange der Anodenstrom oberhalb des Haltestroms liegt.
+Ein aktives Abschalten ist nicht möglich.
 
 \subsubsection{Vier-Schichten-Struktur und Zündprinzip}
 
@@ -170,6 +197,8 @@ Abschalten nur durch:
 \boxed{u_T = U_{T0} + r_T \, i_T}
 \]
 
+Hier ist $U_{T0}$ der konstante Durchlassabfall und $r_T$ der differentielle Widerstand.
+
 \[
 \boxed{P_T = U_{T0} \, I_{T,\mathrm{avg}} + r_T \, I_{T,\mathrm{RMS}}^2}
 \]
@@ -179,13 +208,19 @@ Zusätzliche Kenngrössen:
 \frac{di}{dt}_{\max},\qquad \frac{du}{dt}_{\max}
 \]
 
+Diese Grenzwerte begrenzen die zulässige Strom- und Spannungssteilheit beim Zünden.
+
 Bedeutung:
 \begin{itemize}
-\item Begrenzen Zündstromanstieg,
+\item Begrenzen den Zündstromanstieg,
 \item Schutz durch Snubber notwendig.
 \end{itemize}
 
 \subsection{Leistungs-MOSFET}
+
+Der Leistungs-MOSFET ist ein spannungsgesteuerter Halbleiterschalter.
+Er wird über das Gate eingeschaltet und benötigt keinen Gate-Strom im stationären Zustand.
+Er eignet sich besonders für hohe Schaltfrequenzen.
 
 \subsubsection{Gate-gesteuerter Feldeffekttransistor}
 
@@ -193,6 +228,8 @@ Leitbedingung:
 \[
 \boxed{u_{GS} > U_{th}}
 \]
+
+Dabei ist $U_{th}$ die Gate-Schwellspannung.
 
 Im leitenden Zustand:
 \[
@@ -217,10 +254,14 @@ Gate-Ladung:
 Q_G = Q_{GS} + Q_{GD}
 \]
 
+Dabei ist $Q_G$ die gesamte zum Schalten notwendige Gate-Ladung.
+
 Schaltzeit:
 \[
 t_{on} \approx \frac{Q_G}{I_G}
 \]
+
+Hier bestimmt der verfügbare Gate-Strom $I_G$ die erreichbare Schaltgeschwindigkeit.
 
 Schaltverluste:
 \[
@@ -228,6 +269,10 @@ Schaltverluste:
 \]
 
 \subsection{IGBT}
+
+Der IGBT ist ein hybrides Bauelement aus MOS-Gate und bipolarer Stromleitung.
+Er verbindet die einfache Ansteuerung des MOSFET mit den geringen Leitverlusten bipolarer Bauelemente.
+Er wird vor allem bei mittleren Schaltfrequenzen und hohen Strömen eingesetzt.
 
 \subsubsection{Hybridstruktur MOS–Bipolar}
 
@@ -253,7 +298,7 @@ Durchlassmodell:
 
 \subsubsection{Tail-Strom und Abschaltverluste}
 
-Beim Abschalten verbleibt Speicherladung im Driftgebiet.
+Beim Abschalten verbleibt gespeicherte Ladung im Driftgebiet.
 
 Tail-Strom:
 \[
@@ -284,10 +329,11 @@ Leitverluste & klein & klein & klein bei klein $I$ & klein bei gross $I$ \\
 Speicherladung & ja & ja & nein & ja \\
 \end{tabular}
 \end{center}
+
 \subsection{Safe Operating Area (SOA)}
 
 Die Safe Operating Area beschreibt den zulässigen Arbeitsbereich eines Leistungshalbleiters
-im Strom–Spannungs–Diagramm.
+im Strom--Spannungs--Diagramm.
 
 Zulässige Grenzbedingungen:
 \[
@@ -306,11 +352,10 @@ Physikalische Bedeutung:
 \begin{itemize}
 \item Begrenzung durch Durchbruchspannung,
 \item Begrenzung durch thermische Überlast,
-\item Begrenzung durch sekundären Durchbruch (bipolare Bauelemente).
+\item Begrenzung durch sekundären Durchbruch.
 \end{itemize}
 
 Die Einhaltung der SOA ist zwingend für den sicheren Betrieb.
-
 
 \subsection{Zusammenfassung der Verlustmechanismen}
 
@@ -319,7 +364,9 @@ Gesamtverluste:
 \boxed{P_V = P_{cond} + P_{sw}}
 \]
 
-mit:
+Dabei beschreibt $P_{cond}$ die Verluste im leitenden Zustand
+und $P_{sw}$ die Verluste während der Schaltvorgänge.
+
 \[
 P_{cond} = U_0 I_{\mathrm{avg}} + r I_{\mathrm{RMS}}^2
 \]
@@ -331,6 +378,7 @@ Thermische Auslegung:
 \[
 T_j = T_{amb} + R_{th} P_V < T_{j,\max}.
 \]
+
 \subsection{Vereinfachte Schaltverlustrechnung}
 
 Bei näherungsweise linearem Spannungs- und Stromverlauf während des Schaltens gilt:
@@ -382,32 +430,3 @@ Grenzbedingung:
 \[
 \boxed{T_j < T_{j,\max}}
 \]
-\subsection{Vereinfachte Schaltverlustrechnung}
-
-Bei näherungsweise linearem Spannungs- und Stromverlauf während des Schaltens gilt:
-
-\paragraph{Einschaltverlust}
-
-\[
-\boxed{E_{on} \approx \frac{1}{2} U \, I \, t_{on}}
-\]
-
-\paragraph{Ausschaltverlust}
-
-\[
-\boxed{E_{off} \approx \frac{1}{2} U \, I \, t_{off}}
-\]
-
-Mittlere Schaltverluste:
-
-\[
-\boxed{
-P_{sw} = f_s \left(E_{on} + E_{off}\right)
-}
-\]
-
-Konsequenzen:
-\begin{itemize}
-\item $f_s \uparrow \Rightarrow P_{sw} \uparrow$
-\item $t_{on}, t_{off}$ klein $\Rightarrow$ geringe Verluste.
-\end{itemize}

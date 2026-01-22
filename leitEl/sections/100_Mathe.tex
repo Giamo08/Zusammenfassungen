@@ -1,0 +1,1880 @@
+\section{Mathematische Analyse -- Formelsammlung}
+
+Diese Section sammelt die \textbf{wichtigsten mathematischen Werkzeuge}
+für die Analyse in der Leistungselektronik:
+\textbf{Ableitungen}, \textbf{Integrale}, \textbf{Trigonometrie},
+\textbf{Exponentialfunktionen}, \textbf{Komplexrechnung},
+\textbf{Laplace-Transformation} und \textbf{Differentialgleichungen (RLC)}.
+Sie ist als \textbf{reine Nachschlage-Section} gedacht.
+
+\smallskip
+
+\textbf{Ziel:}
+\begin{itemize}
+    \item Schneller Zugriff auf Standardformeln
+    \item Fehlerfreie Umformungen in Prüfungen
+    \item Einheitliche Notation im ganzen Skript
+\end{itemize}
+
+% -------------------------------------------------
+\subsection{Grundlegende Ableitungsregeln}
+
+\subsubsection{Elementare Funktionen}
+
+\[
+\frac{d}{dx} c = 0
+\qquad
+\frac{d}{dx} x = 1
+\qquad
+\frac{d}{dx} x^n = n x^{n-1}
+\]
+
+\[
+\frac{d}{dx} \e^{x} = \e^{x}
+\qquad
+\frac{d}{dx} \ln x = \frac{1}{x}
+\]
+
+\subsubsection{Lineare Regeln}
+
+\[
+\frac{d}{dx} [f(x) + g(x)] = f'(x) + g'(x)
+\qquad
+\frac{d}{dx} [c \, f(x)] = c \, f'(x)
+\]
+
+\subsubsection{Produktregel}
+
+\[
+\cbl{\frac{d}{dx} [f(x) g(x)] = f'(x) g(x) + f(x) g'(x)}
+\]
+
+\subsubsection{Quotientenregel}
+
+\[
+\cbl{\frac{d}{dx} \left[ \frac{f(x)}{g(x)} \right]
+= \frac{f'(x) g(x) - f(x) g'(x)}{g(x)^2}}
+\]
+
+\subsubsection{Kettenregel}
+
+\[
+\cbl{\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)}
+\]
+
+% -------------------------------------------------
+\subsection{Ableitungen trigonometrischer Funktionen}
+
+\[
+\cbl{\frac{d}{dx} \sin x = \cos x}
+\qquad
+\cbl{\frac{d}{dx} \cos x = - \sin x}
+\]
+
+\[
+\frac{d}{dx} \tan x = \frac{1}{\cos^2 x}
+\qquad
+\frac{d}{dx} \cot x = - \frac{1}{\sin^2 x}
+\]
+
+\[
+\frac{d}{dx} \arcsin x = \frac{1}{\sqrt{1-x^2}}
+\qquad
+\frac{d}{dx} \arccos x = -\frac{1}{\sqrt{1-x^2}}
+\]
+
+% -------------------------------------------------
+\subsection{Grundlegende Integralregeln}
+
+\subsubsection{Elementare Integrale}
+
+\[
+\int c \, dx = c x + C
+\qquad
+\int x^n \, dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1)
+\]
+
+\[
+\int \frac{1}{x} \, dx = \ln |x| + C
+\qquad
+\int \e^{x} \, dx = \e^{x} + C
+\]
+
+\subsubsection{Lineare Regeln}
+
+\[
+\int [f(x) + g(x)] dx = \int f(x) dx + \int g(x) dx
+\qquad
+\int c f(x) dx = c \int f(x) dx
+\]
+
+% -------------------------------------------------
+\subsection{Integrale trigonometrischer Funktionen}
+
+\[
+\cbl{\int \sin x \, dx = - \cos x + C}
+\qquad
+\cbl{\int \cos x \, dx = \sin x + C}
+\]
+
+\[
+\int \tan x \, dx = - \ln |\cos x| + C
+\qquad
+\int \cot x \, dx = \ln |\sin x| + C
+\]
+
+\[
+\int \sin^2 x \, dx = \frac{x}{2} - \frac{\sin(2x)}{4} + C
+\qquad
+\int \cos^2 x \, dx = \frac{x}{2} + \frac{\sin(2x)}{4} + C
+\]
+
+\[
+\int \sin(ax) \, dx = -\frac{1}{a}\cos(ax) + C
+\qquad
+\int \cos(ax) \, dx = \frac{1}{a}\sin(ax) + C
+\]
+
+% -------------------------------------------------
+\subsection{Partielle Integration}
+
+\[
+\cbl{\int u \, dv = u v - \int v \, du}
+\]
+
+Beispiel:
+\[
+\int x \e^{x} dx = x \e^{x} - \int \e^{x} dx = (x-1) \e^{x} + C
+\]
+
+% -------------------------------------------------
+\subsection{Substitution}
+
+\[
+\cbl{u = g(x), \qquad du = g'(x) dx}
+\]
+
+Beispiel:
+\[
+\int \sin(3x) dx
+= -\frac{1}{3} \cos(3x) + C
+\]
+
+% -------------------------------------------------
+\subsection{Trigonometrische Identitäten}
+
+\subsubsection{Grundidentitäten}
+
+\[
+\cbl{\sin^2 x + \cos^2 x = 1}
+\qquad
+\cbl{1 + \tan^2 x = \frac{1}{\cos^2 x}}
+\qquad
+1 + \cot^2 x = \frac{1}{\sin^2 x}
+\]
+
+\subsubsection{Winkeladdition}
+
+\[
+\cbl{\sin(a \pm b) = \sin a \cos b \pm \cos a \sin b}
+\]
+
+\[
+\cbl{\cos(a \pm b) = \cos a \cos b \mp \sin a \sin b}
+\]
+
+\subsubsection{Doppelwinkel}
+
+\[
+\cbl{\sin(2x) = 2 \sin x \cos x}
+\qquad
+\cbl{\cos(2x) = \cos^2 x - \sin^2 x = 1 - 2 \sin^2 x = 2 \cos^2 x - 1}
+\]
+
+\subsubsection{Halbwinkel}
+
+\[
+\cbl{\sin^2\left(\frac{x}{2}\right) = \frac{1-\cos x}{2}}
+\qquad
+\cbl{\cos^2\left(\frac{x}{2}\right) = \frac{1+\cos x}{2}}
+\]
+
+% -------------------------------------------------
+\subsection{Produkt--Summen--Formeln}
+
+\[
+\cbl{\sin a \cos b = \frac{1}{2} [ \sin(a+b) + \sin(a-b) ]}
+\]
+
+\[
+\cbl{\cos a \cos b = \frac{1}{2} [ \cos(a+b) + \cos(a-b) ]}
+\]
+
+\[
+\cbl{\sin a \sin b = \frac{1}{2} [ \cos(a-b) - \cos(a+b) ]}
+\]
+
+\[
+\cbl{\sin a + \sin b = 2 \sin\left(\frac{a+b}{2}\right) \cos\left(\frac{a-b}{2}\right)}
+\]
+
+\[
+\cbl{\cos a + \cos b = 2 \cos\left(\frac{a+b}{2}\right) \cos\left(\frac{a-b}{2}\right)}
+\]
+
+\[
+\cbl{\cos a - \cos b = -2 \sin\left(\frac{a+b}{2}\right) \sin\left(\frac{a-b}{2}\right)}
+\]
+
+% -------------------------------------------------
+\subsection{Exponential- und Euler-Formeln}
+
+\subsubsection{Euler-Formel}
+
+\[
+\cbl{\e^{\jimg x} = \cos x + \jimg \sin x}
+\qquad
+\cbl{\e^{-\jimg x} = \cos x - \jimg \sin x}
+\]
+
+\[
+\cbl{\cos x = \frac{\e^{\jimg x} + \e^{-\jimg x}}{2}}
+\qquad
+\cbl{\sin x = \frac{\e^{\jimg x} - \e^{-\jimg x}}{2\jimg}}
+\]
+
+\subsubsection{Komplexe Sinusdarstellung}
+
+\[
+\cbl{\hat X \sin(\omega t + \varphi) = \Im\left\{ \hat X \e^{\jimg(\omega t + \varphi)} \right\}}
+\]
+
+\[
+\cbl{\hat X \cos(\omega t + \varphi) = \Re\left\{ \hat X \e^{\jimg(\omega t + \varphi)} \right\}}
+\]
+
+% -------------------------------------------------
+\subsection{Komplexrechnung}
+
+\subsubsection{Grundformen}
+
+\[
+\cbl{z = x + \jimg y}
+\qquad
+\cbl{z = r \e^{\jimg \varphi}}
+\]
+
+\[
+r = |z| = \sqrt{x^2 + y^2}
+\qquad
+\varphi = \arg(z)
+\]
+
+\subsubsection{Konjugation}
+
+\[
+\cbl{\overline{z} = x - \jimg y}
+\qquad
+\cbl{z \overline{z} = |z|^2}
+\]
+
+\subsubsection{Multiplikation und Division}
+
+\[
+\cbl{z_1 z_2 = r_1 r_2 \e^{\jimg (\varphi_1 + \varphi_2)}}
+\qquad
+\cbl{\frac{z_1}{z_2} = \frac{r_1}{r_2} \e^{\jimg (\varphi_1 - \varphi_2)}}
+\]
+
+\subsubsection{Real- und Imaginärteil}
+
+\[
+\cbl{\Re(z) = x}
+\qquad
+\cbl{\Im(z) = y}
+\]
+
+% -------------------------------------------------
+\subsection{Komplexe Wechselstromrechnung}
+
+\subsubsection{Ableiten im Zeitbereich}
+
+\[
+\cbl{\frac{d}{dt} \e^{\jimg \omega t} = \jimg \omega \e^{\jimg \omega t}}
+\]
+
+\subsubsection{Impedanzen}
+
+\[
+\cbl{Z_R = R}
+\qquad
+\cbl{Z_L = \jimg \omega L}
+\qquad
+\cbl{Z_C = \frac{1}{\jimg \omega C}}
+\]
+
+\subsubsection{Serien- und Parallelschaltung}
+
+\[
+\cbl{Z_{\mathrm{Serie}} = Z_1 + Z_2 + \dots}
+\]
+
+\[
+\cbl{\frac{1}{Z_{\mathrm{Par}}} = \frac{1}{Z_1} + \frac{1}{Z_2} + \dots}
+\]
+
+% -------------------------------------------------
+\subsection{Fourierreihen periodischer Funktionen}
+
+Darstellung einer \textbf{periodischen} Funktion $f(t)$ mit Periodendauer $T > 0$ durch eine Linearkombination von Sinus- und Kosinusfunktionen,
+deren Frequenzen ganzzahlige Vielfache der Kreisfrequenz (Winkelgeschwindigkeit) $\omega_f = \frac{2 \pi}{T} = 2 \pi v$ sind. 
+
+\smallskip
+
+\textbf{Hinweis:} In \cbl{blau} ist jeweils die komplexe Fourier-Theorie abgebildet.
+$$ \FR[f(t)] = \frac{a_0}{2} + \sum\limits _{n=1}^\infty \big[ a_n \cdot \cos(n \, \omega_f \, t) + b_n \cdot \sin(n \, \omega_f \, t) \big] $$
+$$ \cbl{\FR[f(t)] = \sum\limits _{k = -\infty}^\infty \: \big( c_k \cdot \e^{\jimg \, k \, \omega_f \, t} \big)} $$
+
+
+\subsubsection{Orthagonalitätsbeziehungen Basisfunktionen}
+
+\begin{tabular}{ll}
+    $\int \limits_{0}^{T} \cos(m \, \omega_f \, t) \cdot \cos(n \, \omega_f \, t) \, \diff t = 
+    \begin{cases}
+        T,              & m = n = 0 \\
+        \frac{T}{2},    & m = n > 0 \\
+        0,              & m \neq n
+    \end{cases}$ 
+    & $(m, \; n \in \mathbb{N}_0)$ \\
+    \\
+    $\int \limits_{0}^{T} \sin(m \, \omega_f \, t) \cdot \sin(n \, \omega_f \, t) \, \diff t =      		
+    \begin{cases}
+        \frac{T}{2},    & m = n     \\
+        0,              & m \neq n
+    \end{cases} $ 
+    & $(m, \; n \in \mathbb{N})$    \\
+    \\
+    $\int \limits_{0}^{T} \cos(m \, \omega_f \, t) \cdot \sin(n \, \omega_f \, t) \, \diff t = 0$ 	
+    & $(m \in \mathbb{N}_0, \; n \in \mathbb{N})$ 
+\end{tabular}
+
+
+\subsubsection{Berechnung der Fourier-Koeffizienten}
+
+\textbf{$\bm{\frac{a_0}{2}}$ entspricht dem Mittelwert (Gleichstromanteil) der Funktion $\bm{f(t)}$ auf dem \\
+Intervall [0 ; T)}
+
+\smallskip
+
+\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{l c l}
+    $a_n = \frac{2}{T} \cdot \int \limits_{0}^{T} f(t) \cdot \cos(n \, \omega_f \, t) \, \diff t$                           & $(n = 0, \, 1, \, 2, \, \ldots)$                                                                  \\
+    $b_n = \frac{2}{T} \cdot \int \limits_{0}^{T} f(t) \cdot \sin(n \, \omega_f \, t) \, \diff t$                           & $(n = 1, \, 2, \, 3, \, \ldots)$                                                                  \\	
+    $\cbl{c_n = \overline{c_{-n}} = \frac{1}{T} \int \limits_0^T f(t) \cdot \e^{- \jimg \, n \, \omega_f \, t} \, \diff t}$ & $\cbl{(n = 0, \, 1, \, 2, \, \ldots)}$    & \textrightarrow\ Für $n = 0: \, c_0 = \frac{a_0}{2}$
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\smallskip
+
+\crd{ \textrightarrow\ Trigo-Produkte in Integralen in SUMMEN umwandeln!!}
+
+
+\paragraph{Umrechnung der Fourierkoeffizienten}
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{ll}
+    $c_n = \overline{c_{-n}} = \frac{a_n - \jimg \, b_n }{2}$   & ($n = 0, \, 1, \, 2, \, \ldots \text{ wobei } b_0 = 0$)   \\
+    $a_n = 2 \, \RE(c_n) = c_n + c_{-n}$                        & ($n = 0, \, 1, \, 2, \, \ldots$)                          \\
+    $b_n = -2 \, \IM(c_n) = \jimg (c_n - c_{-n})$               & ($n = 1, \, 2, \, 3, \, \ldots$) 
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\columnbreak
+
+
+\subsubsection{Sätze zur Berechnung der Koeffizienten}
+
+\paragraph{Symmetrie von Funktionen}
+
+\begin{minipage}{0.48\linewidth}
+    \begin{tabular}{l | c | c}
+                    & gerade    & ungerade  \\ 
+        \hline
+        gerade      & gerade    & ungerade  \\
+        \hline
+        ungerade    & ungerade  & gerade    \\
+    \end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}{0.43\linewidth}
+    \begin{tabular}{ll}
+        gerade:     &  $f(-t) = f(t)$ \\
+        \\ 
+        ungerade:   & $f(-t) = - f(t)$ 
+    \end{tabular}
+\end{minipage}
+
+\smallskip
+
+\begin{tabular}{lll}
+    $f(t)$ gerade   & $b_n = 0$                 & $a_n = \frac{4}{T} \cdot \int \limits_{0}^{\frac{T}{2}} f(t) \cdot \cos(n \, \omega_f \, t) \, \diff t$   \\    \medskip
+                    & \cbl{$\IM(c_k) = 0$}      & \cbl{$c_n = \frac{a_n}{2}$ (reell)}                                                                       \\
+    $f(t)$ ungerade & $a_n = 0$                 & $b_n = \frac{4}{T} \cdot \int \limits_{0}^{\frac{T}{2}} f(t) \cdot \sin(n \, \omega_f \, t) \, \diff t$   \\	
+                    & \cbl{$\RE(c_k) = 0$}      & \cbl{$c_n = \jimg \frac{b_n}{2}$ (imaginär)}
+\end{tabular}
+    
+
+\paragraph{Linearität}
+
+$f(x)$ mit Koeffizienten $a_n^{(f)} , \, b_n^{(f)}$ \qquad $g(x)$ mit Koeffizienten $a_n^{(g)} , \, b_n^{(g)}$ \\
+\textrightarrow\ $h(t) = r \cdot f(t) + s \cdot g(t)$ mit festem $s, \, r \in \mathbb{R}$
+
+$$ a_n^{(h)} = r \cdot a_n^{(f)} + s \cdot a_n^{(g)} \qquad \qquad b_n^{(h)} = r \cdot b_n^{(f)} + s \cdot b_n^{(g)} $$
+
+
+\paragraph{Zeitstreckung / -stauchung / -spiegelung ("Ähnlichkeit")}
+
+$g(t) = f(r \cdot t)$ mit $0 \neq r \in \mathbb{R}$ \qquad \cor{$\omega_g = \frac{2 \pi}{T_g}$ in Basisfunktionen!}
+
+$$ a_n^{(g)} = a_n^{(f)} \qquad \qquad b_n^{(g)} = \sgn(r) \cdot b_n^{(f)} $$
+
+\paragraph{Zeitverschiebung}
+$g(t) = f(t + t_0)$
+
+\smallskip
+
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{ll}
+    $ a_n^{(g)} = \cos(n \, \omega_f \, t_0) \cdot a_n^{(f)} + \sin(n \, \omega_f \, t_0) \cdot b_n^{(f)}$      & $n = 0$ \quad [mit $b_0 = 0, \, 1, \, 2, \, \ldots$]  \\ 
+    $ b_n^{(g)} = -\sin(n \, \omega_f \, t_0) \cdot a_n^{(f)} + \cos(n \, \omega_f \, t_0) \cdot  b_n^{(f)}$    & $n = 1, \, 2, \, 3, \, \ldots$                        \\	
+    $ \cbl{c_k^{(g)} = \e^{\jimg \, k \, \omega_f \, t_0} \cdot c_k^{(f)}}$                                     & $\cbl{k  =1, \, 2, \, 3, \, \ldots}$
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\paragraph{Orthogonalitätsintegrale (Fourier-Kern)}
+
+\[
+\cbl{\int_0^T \cos(m \omega t)\cos(n \omega t)\,dt =
+\begin{cases}
+T, & m=n=0 \\
+\frac{T}{2}, & m=n>0 \\
+0, & m\neq n
+\end{cases}}
+\]
+
+\[
+\cbl{\int_0^T \sin(m \omega t)\sin(n \omega t)\,dt =
+\begin{cases}
+\frac{T}{2}, & m=n \\
+0, & m\neq n
+\end{cases}}
+\]
+
+\[
+\cbl{\int_0^T \sin(m \omega t)\cos(n \omega t)\,dt = 0}
+\]
+\subsubsection{Beispiele: Fourier-Koeffizienten}
+
+In allen Beispielen gilt:
+\[
+\omega_f=\frac{2\pi}{T}, 
+\qquad
+a_n=\frac{2}{T}\int_{-T/2}^{T/2} f(t)\cos(n\omega_f t)\,dt,
+\qquad
+b_n=\frac{2}{T}\int_{-T/2}^{T/2} f(t)\sin(n\omega_f t)\,dt.
+\]
+
+Hilfsintegrale (werden unten direkt verwendet):
+\[
+\int \sin(\alpha t)\sin(\beta t)\,dt
+=\frac{1}{2}\int\left[\cos((\alpha-\beta)t)-\cos((\alpha+\beta)t)\right]dt
+\]
+\[
+\int \cos(\alpha t)\cos(\beta t)\,dt
+=\frac{1}{2}\int\left[\cos((\alpha-\beta)t)+\cos((\alpha+\beta)t)\right]dt
+\]
+\[
+\int \sin(\alpha t)\cos(\beta t)\,dt
+=\frac{1}{2}\int\left[\sin((\alpha+\beta)t)+\sin((\alpha-\beta)t)\right]dt
+\]
+
+% ============================================================
+\paragraph{A) Ungerade Funktionen ($a_n = 0$)}
+
+Definition:
+\[
+f(-t)=-f(t)
+\quad\Rightarrow\quad
+\boxed{a_n=0}
+\quad\text{und}\quad
+b_n=\frac{4}{T}\int_0^{T/2} f(t)\sin(n\omega_f t)\,dt.
+\]
+
+% -----------------------------
+\subparagraph{U1 (einfach): $f(t)=\sin(\omega_f t)$}
+
+Symmetrie: ungerade $\Rightarrow a_n=0$.
+
+Berechnung von $b_n$:
+\[
+b_n=\frac{4}{T}\int_0^{T/2}\sin(\omega_f t)\sin(n\omega_f t)\,dt
+\]
+
+Orthogonalität:
+\[
+\int_0^{T/2}\sin(\omega_f t)\sin(n\omega_f t)\,dt=
+\begin{cases}
+\frac{T}{4}, & n=1\\
+0, & n\neq 1
+\end{cases}
+\]
+
+Damit:
+\[
+\boxed{b_1=\frac{4}{T}\cdot\frac{T}{4}=1},
+\qquad
+\boxed{b_{n\neq 1}=0},
+\qquad
+\boxed{a_n=0}.
+\]
+
+% -----------------------------
+\subparagraph{U2 (mittel): Sägezahn $f(t)=\dfrac{2}{T}t$ auf $[-T/2,T/2]$}
+
+Definition:
+\[
+f(t)=\frac{2}{T}t,\qquad t\in[-T/2,T/2],\quad \text{periodisch}
+\]
+Ungerade $\Rightarrow a_n=0$.
+
+Berechnung:
+\[
+b_n=\frac{4}{T}\int_0^{T/2}\frac{2}{T}t\sin(n\omega_f t)\,dt
+=\frac{8}{T^2}\int_0^{T/2} t\sin(n\omega_f t)\,dt
+\]
+
+Partielle Integration:
+\[
+\int t\sin(kt)\,dt=-\frac{t\cos(kt)}{k}+\frac{\sin(kt)}{k^2}
+\]
+mit $k=n\omega_f$.
+
+Also:
+\[
+\int_0^{T/2} t\sin(n\omega_f t)\,dt=
+\left[-\frac{t\cos(n\omega_f t)}{n\omega_f}+\frac{\sin(n\omega_f t)}{(n\omega_f)^2}\right]_0^{T/2}
+\]
+
+Einsetzen der Grenzen:
+\[
+\sin\!\left(n\omega_f \frac{T}{2}\right)=\sin(n\pi)=0,
+\qquad
+\cos\!\left(n\omega_f \frac{T}{2}\right)=\cos(n\pi)=(-1)^n
+\]
+
+Damit:
+\[
+\int_0^{T/2} t\sin(n\omega_f t)\,dt
+=
+-\frac{(T/2)(-1)^n}{n\omega_f}
+\]
+
+Also:
+\[
+b_n=\frac{8}{T^2}\left(-\frac{T}{2}\frac{(-1)^n}{n\omega_f}\right)
+=-\frac{4}{T}\frac{(-1)^n}{n\omega_f}
+\]
+
+Mit $\omega_f=\frac{2\pi}{T}$ folgt:
+\[
+\boxed{
+b_n=-\frac{4}{T}\frac{(-1)^n}{n}\cdot\frac{T}{2\pi}
+=
+-\frac{2}{\pi}\frac{(-1)^n}{n}
+=
+\frac{2}{\pi}\frac{(-1)^{n+1}}{n}
+}
+\]
+\[
+\boxed{a_n=0}
+\]
+
+% -----------------------------
+\subparagraph{U3 (schwierig): stückweise linear ungerade (Dreiecksignal)}
+
+Definition auf $[-T/2,T/2]$ (Amplitude $A$):
+\[
+f(t)=
+\begin{cases}
+\frac{2A}{T}t + A, & -\frac{T}{2}\le t < 0\\[4pt]
+-\frac{2A}{T}t + A, & 0\le t \le \frac{T}{2}
+\end{cases}
+\]
+Diese Funktion ist \textbf{ungerade?} Prüfen:
+Für $t>0$ gilt $f(-t)=\frac{2A}{T}(-t)+A = -\frac{2A}{T}t + A = f(t)$.
+Das wäre \textbf{gerade}, nicht ungerade.
+
+Damit korrigiert ungerades Dreieck (Null in $t=0$):
+\[
+f(t)=
+\begin{cases}
+\frac{2A}{T}t, & 0\le t\le \frac{T}{2}\\[4pt]
+\frac{2A}{T}t, & -\frac{T}{2}\le t<0
+\end{cases}
+\quad \text{(das ist linear und ungerade, entspricht Sägezahn)}
+\]
+
+Für ein \textbf{echtes ungerades Dreieck} (spitz bei $\pm T/4$) nimmt man z.B.:
+\[
+f(t)=
+\begin{cases}
+\frac{4A}{T}t, & 0\le t<\frac{T}{4}\\[4pt]
+-\frac{4A}{T}t+2A, & \frac{T}{4}\le t\le \frac{T}{2}
+\end{cases}
+\quad \text{und ungerade fortsetzen}
+\]
+
+Dann:
+\[
+a_n=0,\qquad
+b_n=\frac{4}{T}\left(
+\int_0^{T/4}\frac{4A}{T}t\sin(n\omega_f t)\,dt
++
+\int_{T/4}^{T/2}\left(-\frac{4A}{T}t+2A\right)\sin(n\omega_f t)\,dt
+\right)
+\]
+
+Hinweis: Beide Integrale werden mit partieller Integration gelöst (wie in U2).
+Das Ergebnis zeigt typischerweise ein $\sim 1/n^2$-Abklingen (typisch für Dreieck).
+
+% ============================================================
+\paragraph{B) Gerade Funktionen ($b_n = 0$)}
+
+Definition:
+\[
+f(-t)=f(t)
+\quad\Rightarrow\quad
+\boxed{b_n=0}
+\quad\text{und}\quad
+a_n=\frac{4}{T}\int_0^{T/2} f(t)\cos(n\omega_f t)\,dt.
+\]
+
+% -----------------------------
+\subparagraph{G1 (einfach): $f(t)=\cos(\omega_f t)$}
+
+Gerade $\Rightarrow b_n=0$.
+
+\[
+a_n=\frac{4}{T}\int_0^{T/2}\cos(\omega_f t)\cos(n\omega_f t)\,dt
+\]
+
+Orthogonalität:
+\[
+\int_0^{T/2}\cos(\omega_f t)\cos(n\omega_f t)\,dt=
+\begin{cases}
+\frac{T}{4}, & n=1\\
+0, & n\neq 1
+\end{cases}
+\]
+
+Damit:
+\[
+\boxed{a_1=1},\qquad \boxed{a_{n\neq 1}=0},\qquad \boxed{b_n=0}.
+\]
+
+% -----------------------------
+\subparagraph{G2 (mittel): $f(t)=\sin^2(\omega_f t)$}
+
+Gerade, weil $\sin^2$ gerade ist.
+
+Umformung:
+\[
+\sin^2(\omega_f t)=\frac{1}{2}\big(1-\cos(2\omega_f t)\big)
+\]
+
+Vergleich mit Fourier-Reihe:
+\[
+f(t)=\frac{a_0}{2}+a_2\cos(2\omega_f t)
+\]
+
+Damit:
+\[
+\boxed{\frac{a_0}{2}=\frac{1}{2}\Rightarrow a_0=1},
+\qquad
+\boxed{a_2=-\frac{1}{2}},
+\qquad
+\boxed{a_{n\neq 0,2}=0},
+\qquad
+\boxed{b_n=0}.
+\]
+
+% -----------------------------
+\subparagraph{G3 (schwierig): gerade Rechteckfunktion mit Rechenweg}
+
+Definition (Amplitude $A$):
+\[
+f(t)=
+\begin{cases}
+A, & |t|<\frac{T}{4}\\
+-A, & \frac{T}{4}<|t|<\frac{T}{2}
+\end{cases}
+\quad \text{periodisch}
+\]
+
+Gerade $\Rightarrow b_n=0$.
+
+\[
+a_n=\frac{4}{T}\int_0^{T/2} f(t)\cos(n\omega_f t)\,dt
+=\frac{4}{T}\left(
+\int_0^{T/4} A\cos(n\omega_f t)\,dt
++\int_{T/4}^{T/2} (-A)\cos(n\omega_f t)\,dt
+\right)
+\]
+
+\[
+a_n=\frac{4A}{T}\left(
+\int_0^{T/4}\cos(n\omega_f t)\,dt
+-\int_{T/4}^{T/2}\cos(n\omega_f t)\,dt
+\right)
+\]
+
+Mit
+\[
+\int \cos(n\omega_f t)\,dt=\frac{1}{n\omega_f}\sin(n\omega_f t)
+\]
+
+folgt:
+\[
+a_n=\frac{4A}{T}\cdot\frac{1}{n\omega_f}
+\left[
+\sin\!\left(n\omega_f\frac{T}{4}\right)-\sin(0)
+-\Big(\sin(n\omega_f\frac{T}{2})-\sin(n\omega_f\frac{T}{4})\Big)
+\right]
+\]
+
+\[
+a_n=\frac{4A}{T}\cdot\frac{1}{n\omega_f}
+\left[
+2\sin\!\left(n\omega_f\frac{T}{4}\right)-\sin\!\left(n\omega_f\frac{T}{2}\right)
+\right]
+\]
+
+Einsetzen:
+\[
+n\omega_f\frac{T}{4}=n\frac{2\pi}{T}\frac{T}{4}=\frac{n\pi}{2},
+\qquad
+n\omega_f\frac{T}{2}=n\pi
+\Rightarrow \sin(n\pi)=0
+\]
+
+Damit:
+\[
+\boxed{
+a_n=\frac{4A}{T}\cdot\frac{1}{n\omega_f}\cdot 2\sin\!\left(\frac{n\pi}{2}\right)
+}
+\]
+
+Mit $\omega_f=\frac{2\pi}{T}$:
+\[
+\boxed{
+a_n=\frac{4A}{n\pi}\sin\!\left(\frac{n\pi}{2}\right),
+\qquad
+b_n=0
+}
+\]
+
+\paragraph{C) Weder gerade noch ungerade ($a_n$ und $b_n$)}
+
+Wenn keine Symmetrie vorliegt, müssen \textbf{beide} Koeffizientenfamilien berechnet werden:
+
+\[
+a_n=\frac{2}{T}\int_{-T/2}^{T/2} f(t)\cos(n\omega_f t)\,dt,
+\qquad
+b_n=\frac{2}{T}\int_{-T/2}^{T/2} f(t)\sin(n\omega_f t)\,dt.
+\]
+
+Es gibt \textbf{keine Vereinfachung} durch Symmetrie.  
+Jeder Koeffizient muss explizit integriert werden.
+
+% -------------------------------------------------
+\subparagraph{N1 (einfach): $f(t)=\sin(\omega_f t)+\cos(\omega_f t)$}
+
+Zerlegung in Basisfunktionen:
+\[
+f(t)=\sin(\omega_f t)+\cos(\omega_f t)
+\]
+
+Vergleich mit Fourier-Ansatz:
+\[
+f(t)=a_1\cos(\omega_f t)+b_1\sin(\omega_f t)
+\]
+
+Direkt ablesbar:
+\[
+\boxed{a_1=1},\qquad \boxed{b_1=1},
+\qquad
+\boxed{a_{n\neq 1}=0},\qquad \boxed{b_{n\neq 1}=0}.
+\]
+
+Interpretation:
+\begin{itemize}
+    \item Beide Koeffizienten ungleich null.
+    \item Keine Symmetrie vorhanden.
+    \item Reine Grundschwingung mit Phasenverschiebung.
+\end{itemize}
+
+% -------------------------------------------------
+\subparagraph{N2 (mittel): Phasenverschobener Sinus $f(t)=A\sin(\omega_f t+\varphi)$}
+
+Ausgangsfunktion:
+\[
+f(t)=A\sin(\omega_f t+\varphi)
+\]
+
+Trigonometrische Zerlegung:
+\[
+\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta
+\]
+
+Damit:
+\[
+f(t)=A\sin(\omega_f t)\cos\varphi + A\cos(\omega_f t)\sin\varphi
+\]
+
+Vergleich mit Fourier-Reihe:
+\[
+f(t)=a_1\cos(\omega_f t)+b_1\sin(\omega_f t)
+\]
+
+Ablesen der Koeffizienten:
+\[
+\boxed{a_1=A\sin\varphi},\qquad
+\boxed{b_1=A\cos\varphi}
+\]
+\[
+\boxed{a_{n\neq 1}=0},\qquad \boxed{b_{n\neq 1}=0}.
+\]
+
+Interpretation:
+\begin{itemize}
+    \item Phase $\varphi$ verteilt Energie auf $a_1$ und $b_1$.
+    \item Amplitude:
+    \[
+    \sqrt{a_1^2+b_1^2}=A
+    \]
+    \item Phasenlage:
+    \[
+    \tan\varphi=\frac{a_1}{b_1}
+    \]
+\end{itemize}
+
+% -------------------------------------------------
+\subparagraph{N3 (schwierig): Halbwellen-gleichgerichteter Sinus – vollständige Rechnung}
+
+Definition mit $\theta=\omega_f t$, Periode $2\pi$:
+\[
+f(\theta)=
+\begin{cases}
+\sin\theta, & 0<\theta<\pi\\
+0, & \pi<\theta<2\pi
+\end{cases}
+\]
+
+Hier gilt:
+\[
+f(-\theta)\neq f(\theta),
+\qquad
+f(-\theta)\neq -f(\theta)
+\]
+also \textbf{keine Symmetrie}.
+
+Allgemeine Koeffizienten (Periode $2\pi$):
+\[
+a_n=\frac{1}{\pi}\int_0^{2\pi} f(\theta)\cos(n\theta)\,d\theta,
+\qquad
+b_n=\frac{1}{\pi}\int_0^{2\pi} f(\theta)\sin(n\theta)\,d\theta.
+\]
+
+Da $f(\theta)=0$ für $\pi<\theta<2\pi$:
+\[
+a_n=\frac{1}{\pi}\int_0^{\pi} \sin\theta\cos(n\theta)\,d\theta,
+\qquad
+b_n=\frac{1}{\pi}\int_0^{\pi} \sin\theta\sin(n\theta)\,d\theta.
+\]
+
+% -----------------------------
+\paragraph{Berechnung von $a_n$}
+
+Produkt-zu-Summe:
+\[
+\sin\theta\cos(n\theta)=\frac{1}{2}
+\Big[\sin((n+1)\theta)+\sin((1-n)\theta)\Big]
+\]
+
+Damit:
+\[
+a_n=\frac{1}{2\pi}\int_0^{\pi}
+\Big[\sin((n+1)\theta)+\sin((1-n)\theta)\Big]\,d\theta
+\]
+
+Integration:
+\[
+\int \sin(k\theta)\,d\theta=-\frac{1}{k}\cos(k\theta)
+\]
+
+\[
+a_n=\frac{1}{2\pi}
+\left[
+-\frac{\cos((n+1)\theta)}{n+1}
+-\frac{\cos((1-n)\theta)}{1-n}
+\right]_0^{\pi}
+\]
+
+Auswertung der Kosinus-Terme:
+\[
+\cos((n+1)\pi)=(-1)^{n+1},\qquad
+\cos((1-n)\pi)=(-1)^{1-n}
+\]
+
+Nach Einsetzen und Vereinfachung erhält man:
+\[
+\boxed{
+a_n=
+\begin{cases}
+0, & n \text{ ungerade} \\[6pt]
+\dfrac{2}{\pi}\,\dfrac{1}{1-n^2}, & n \text{ gerade}
+\end{cases}
+}
+\]
+
+Insbesondere:
+\[
+\boxed{a_0=\frac{2}{\pi}} \quad \text{(DC-Anteil)}
+\]
+
+% -----------------------------
+\paragraph{Berechnung von $b_n$}
+
+Produkt-zu-Summe:
+\[
+\sin\theta\sin(n\theta)=\frac{1}{2}
+\Big[\cos((n-1)\theta)-\cos((n+1)\theta)\Big]
+\]
+
+Damit:
+\[
+b_n=\frac{1}{2\pi}\int_0^{\pi}
+\Big[\cos((n-1)\theta)-\cos((n+1)\theta)\Big]\,d\theta
+\]
+
+Integration:
+\[
+\int \cos(k\theta)\,d\theta=\frac{1}{k}\sin(k\theta)
+\]
+
+\[
+b_n=\frac{1}{2\pi}
+\left[
+\frac{\sin((n-1)\theta)}{n-1}
+-\frac{\sin((n+1)\theta)}{n+1}
+\right]_0^{\pi}
+\]
+
+Da:
+\[
+\sin(k\pi)=0 \quad \forall k\in\mathbb{Z}
+\]
+
+folgt:
+\[
+\boxed{
+b_n=
+\begin{cases}
+\dfrac{1}{2}, & n=1 \\[6pt]
+0, & n\neq 1
+\end{cases}
+}
+\]
+
+% -----------------------------
+\paragraph{Endergebnis für den halbwellen-gleichgerichteten Sinus}
+
+Fourier-Reihe:
+\[
+f(\theta)=\frac{a_0}{2}
++\sum_{n=1}^\infty a_n\cos(n\theta)
++\sum_{n=1}^\infty b_n\sin(n\theta)
+\]
+
+mit:
+\[
+\boxed{a_0=\frac{2}{\pi}}
+\]
+\[
+\boxed{
+a_n=
+\begin{cases}
+\dfrac{2}{\pi}\,\dfrac{1}{1-n^2}, & n \text{ gerade}\\[6pt]
+0, & n \text{ ungerade}
+\end{cases}
+}
+\]
+\[
+\boxed{
+b_1=\frac{1}{2},\qquad
+b_{n\neq 1}=0
+}
+\]
+
+Interpretation:
+\begin{itemize}
+    \item DC-Anteil vorhanden ($a_0\neq 0$).
+    \item Sowohl Kosinus- als auch Sinusanteile treten auf.
+    \item Typischer Prüfungsfall für „weder gerade noch ungerade“.
+\end{itemize}
+
+
+% ============================================================
+\paragraph{Zusammenfassung}
+
+\begin{itemize}
+    \item Ungerade $\Rightarrow a_n=0$, nur $b_n$.
+    \item Gerade $\Rightarrow b_n=0$, nur $a_n$.
+    \item Weder noch $\Rightarrow$ beide vorhanden.
+    \item Symmetrie spart die Hälfte der Integrale und eliminiert ganze Koeffizientenfamilien.
+\end{itemize}
+
+\paragraph{Merksätze (Final)}
+
+\begin{itemize}
+    \item Jede Funktion lässt sich in gerade und ungerade Anteile zerlegen.
+    \item Symmetrie spart bis zu 50\% der Integrale.
+    \item Zeitverschiebung erzeugt gleichzeitig $a_n$ und $b_n$.
+    \item DC-Offset beeinflusst nur $a_0$.
+    \item Rechteck, PWM, Gleichrichtung sind immer \textbf{weder gerade noch ungerade}.
+\end{itemize}
+
+
+% -------------------------------------------------
+\subsection{Grenzwerte und Reihen}
+
+\[
+\cbl{\lim_{x \to 0} \frac{\sin x}{x} = 1}
+\qquad
+\cbl{\lim_{x \to 0} \frac{1 - \cos x}{x^2} = \frac{1}{2}}
+\]
+
+\[
+\cbl{\e^{x} = \sum_{n=0}^{\infty} \frac{x^n}{n!}}
+\qquad
+\cbl{\sin x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}}
+\qquad
+\cbl{\cos x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!}}
+\]
+
+% -------------------------------------------------
+\subsection{Bestimmte Integrale über Perioden}
+
+\[
+\cbl{\int_0^T \sin(n \omega t)\,dt = 0}
+\qquad
+\cbl{\int_0^T \cos(n \omega t)\,dt = 0}
+\]
+
+\[
+\cbl{\int_0^T \sin^2(n \omega t)\,dt = \frac{T}{2}}
+\qquad
+\cbl{\int_0^T \cos^2(n \omega t)\,dt = \frac{T}{2}}
+\]
+
+% =================================================
+\subsection{Laplace-Transformation}
+
+\subsubsection{Definition}
+
+Für eine zeitkontinuierliche Funktion $f(t)$ (typisch $t\ge 0$):
+\[
+\cbl{\mathcal{L}\{f(t)\} = F(s) = \int_{0}^{\infty} f(t)\, \e^{-st}\,dt}
+\qquad
+s = \sigma + \jimg \omega
+\]
+
+\subsubsection{Wichtige Grundtransformierte}
+
+\[
+\mathcal{L}\{1\} = \frac{1}{s}
+\qquad
+\mathcal{L}\{t\} = \frac{1}{s^2}
+\qquad
+\mathcal{L}\{t^n\} = \frac{n!}{s^{n+1}}
+\]
+
+\[
+\cbl{\mathcal{L}\{\e^{at}\} = \frac{1}{s-a}}
+\]
+
+\[
+\cbl{\mathcal{L}\{\sin(\omega t)\} = \frac{\omega}{s^2+\omega^2}}
+\qquad
+\cbl{\mathcal{L}\{\cos(\omega t)\} = \frac{s}{s^2+\omega^2}}
+\]
+
+\[
+\mathcal{L}\{\sinh(\omega t)\} = \frac{\omega}{s^2-\omega^2}
+\qquad
+\mathcal{L}\{\cosh(\omega t)\} = \frac{s}{s^2-\omega^2}
+\]
+
+\subsubsection{Linearität}
+
+\[
+\cbl{\mathcal{L}\{a f(t) + b g(t)\} = aF(s) + bG(s)}
+\]
+
+\subsubsection{Ableitungssatz}
+
+\[
+\cbl{\mathcal{L}\left\{\frac{df}{dt}\right\} = sF(s) - f(0)}
+\]
+
+\[
+\cbl{\mathcal{L}\left\{\frac{d^2f}{dt^2}\right\} = s^2F(s) - s f(0) - f'(0)}
+\]
+
+\crd{\textrightarrow\ Anfangswerte gehen als Terme in den Zähler. Häufige Prüfungsfalle.}
+
+\subsubsection{Integralsatz}
+
+\[
+\cbl{\mathcal{L}\left\{\int_0^t f(\tau)\,d\tau\right\} = \frac{1}{s} F(s)}
+\]
+
+\subsubsection{Zeitverschiebung (Heaviside)}
+
+\[
+\cbl{\mathcal{L}\{f(t-t_0)u(t-t_0)\} = \e^{-s t_0} F(s)}
+\]
+
+\subsubsection{Frequenzverschiebung}
+
+\[
+\cbl{\mathcal{L}\{\e^{at} f(t)\} = F(s-a)}
+\]
+
+\subsubsection{Faltung}
+
+\[
+\cbl{(f*g)(t) = \int_0^t f(\tau)g(t-\tau)\,d\tau}
+\qquad
+\cbl{\mathcal{L}\{f*g\} = F(s)G(s)}
+\]
+
+\subsubsection{Initial- und Finalwertsatz}
+
+\[
+\cbl{f(0^+) = \lim_{s\to\infty} sF(s)}
+\qquad
+\cbl{f(\infty) = \lim_{s\to 0} sF(s)}
+\]
+
+\crd{\textrightarrow\ Finalwertsatz nur gültig, wenn alle Pole von $sF(s)$ in der linken Halbebene liegen.}
+
+\subsubsection{Inverse Laplace (Standardstrategien)}
+
+\begin{itemize}
+    \item Partialbruchzerlegung
+    \item Tabellenrücktransformation
+    \item Verschiebungssätze (Zeit, Frequenz)
+    \item Quadratische Ergänzung für $s^2+\omega^2$
+\end{itemize}
+
+% =================================================
+\subsection{Übertragungsfunktionen und Systemdarstellung}
+
+Für lineare zeitinvariante Systeme (LTI):
+\[
+\cbl{H(s) = \frac{Y(s)}{X(s)}}
+\]
+
+\subsubsection{Pol-Nullstellen-Darstellung}
+
+\[
+\cbl{H(s)=K \frac{(s-z_1)(s-z_2)\dots}{(s-p_1)(s-p_2)\dots}}
+\]
+
+\subsubsection{Zeitkonstante und Eckfrequenz}
+
+Erste Ordnung:
+\[
+\cbl{H(s)=\frac{1}{1+s\tau}}
+\qquad
+\cbl{\omega_c = \frac{1}{\tau}}
+\qquad
+\cbl{f_c = \frac{1}{2\pi\tau}}
+\]
+
+% =================================================
+\subsection{Differentialgleichungen 1. Ordnung (R--L / R--C)}
+
+\subsubsection{Standardform}
+
+\[
+\cbl{\tau \frac{dy}{dt} + y = K \, u(t)}
+\]
+
+Homogene Lösung:
+\[
+\cbl{y_h(t) = C \e^{-t/\tau}}
+\]
+
+Partikuläre Lösung (Konstantanregung $u(t)=U$):
+\[
+\cbl{y_p(t)=K U}
+\]
+
+Gesamtlösung:
+\[
+\cbl{y(t) = K U + \big(y(0)-K U\big)\e^{-t/\tau}}
+\]
+
+\subsubsection{R--L-Kreis}
+
+\[
+\cbl{L\frac{di}{dt} + Ri = u(t)}
+\qquad
+\cbl{\tau = \frac{L}{R}}
+\]
+
+Sprung $u(t)=U$:
+\[
+\cbl{i(t) = \frac{U}{R}\left(1-\e^{-t/\tau}\right) + i(0)\e^{-t/\tau}}
+\]
+
+\subsubsection{R--C-Kreis}
+
+\[
+\cbl{RC\frac{du_C}{dt} + u_C = u(t)}
+\qquad
+\cbl{\tau = RC}
+\]
+
+Sprung $u(t)=U$:
+\[
+\cbl{u_C(t) = U\left(1-\e^{-t/\tau}\right) + u_C(0)\e^{-t/\tau}}
+\]
+
+\crd{\textrightarrow\ Bei Induktivitäten ist $i(t)$ stetig, bei Kapazitäten ist $u_C(t)$ stetig.}
+
+% =================================================
+\subsection{Differentialgleichungen 2. Ordnung (RLC-Systeme)}
+
+\subsubsection{Standardform}
+
+\[
+\cbl{\frac{d^2y}{dt^2} + 2\zeta\omega_0 \frac{dy}{dt} + \omega_0^2 y = K \omega_0^2 u(t)}
+\]
+
+\[
+\cbl{\omega_0 = \sqrt{\frac{1}{LC}}}
+\qquad
+\cbl{\zeta = \frac{R}{2}\sqrt{\frac{C}{L}}}
+\]
+
+\subsubsection{Dämpfungsfälle}
+
+\begin{itemize}
+    \item \textbf{Unterdämpft:} $0<\zeta<1$ (schwingend)
+    \item \textbf{Kritisch gedämpft:} $\zeta=1$
+    \item \textbf{Überdämpft:} $\zeta>1$
+\end{itemize}
+
+Unterdämpfte Eigenfrequenz:
+\[
+\cbl{\omega_d = \omega_0\sqrt{1-\zeta^2}}
+\]
+
+\subsubsection{Freie Schwingung (homogene Lösung)}
+
+Unterdämpft:
+\[
+\cbl{y_h(t)=\e^{-\zeta\omega_0 t}\left(C_1\cos(\omega_d t)+C_2\sin(\omega_d t)\right)}
+\]
+
+Überdämpft:
+\[
+\cbl{y_h(t)=C_1\e^{s_1 t}+C_2\e^{s_2 t}}
+\qquad
+s_{1,2}=-\omega_0\left(\zeta\pm\sqrt{\zeta^2-1}\right)
+\]
+
+Kritisch:
+\[
+\cbl{y_h(t)=(C_1 + C_2 t)\e^{-\omega_0 t}}
+\]
+
+\subsubsection{Serien-RLC (Stromdynamik)}
+
+KVL:
+\[
+\cbl{u(t)=Ri(t)+L\frac{di}{dt}+\frac{1}{C}\int i(t)\,dt}
+\]
+
+Differenziert:
+\[
+\cbl{\frac{d^2 i}{dt^2} + \frac{R}{L}\frac{di}{dt} + \frac{1}{LC}i = \frac{1}{L}\frac{du}{dt}}
+\]
+
+\subsubsection{Parallele-RLC (Spannungsdynamik)}
+
+KCL:
+\[
+i(t)=\frac{u(t)}{R}+C\frac{du}{dt}+\frac{1}{L}\int u(t)\,dt
+\]
+
+Differenziert:
+\[
+\cbl{\frac{d^2 u}{dt^2} + \frac{1}{RC}\frac{du}{dt} + \frac{1}{LC}u = \frac{1}{C}\frac{di}{dt}}
+\]
+
+\subsubsection{Laplace-Lösung von DGLs}
+
+Vorgehen:
+\begin{enumerate}
+    \item DGL aufstellen (KVL/KCL)
+    \item Laplace anwenden (Ableitungssätze)
+    \item Nach $Y(s)$ auflösen
+    \item Partialbrüche
+    \item Rücktransformation
+\end{enumerate}
+
+\subsubsection{Standardübertragungsfunktionen}
+
+\paragraph{Tiefpass 1. Ordnung}
+\[
+\cbl{H(s)=\frac{1}{1+s\tau}}
+\]
+
+\paragraph{Bandpass / Resonanz 2. Ordnung (Normalform)}
+\[
+\cbl{H(s)=\frac{\omega_0^2}{s^2+2\zeta\omega_0 s+\omega_0^2}}
+\]
+
+% -------------------------------------------------
+\subsection{Konzeptionelles Vorgehen: lineare Differentialgleichungen}
+
+In praktisch allen Aufgaben der Leistungselektronik folgt die Lösung derselben Struktur:
+\[
+u(x) = u_{\mathrm{hom}}(x) + u_{\mathrm{part}}(x),
+\qquad
+L[u] = g(x)
+\Rightarrow
+\begin{cases}
+L[u_{\mathrm{hom}}] = 0, \\
+L[u_{\mathrm{part}}] = g(x).
+\end{cases}
+\]
+
+Dabei gilt:
+\begin{itemize}
+    \item $u_{\mathrm{hom}}$: Eigenverhalten des Systems (ohne Quelle),
+    \item $u_{\mathrm{part}}$: Antwort auf die Anregung $g(x)$,
+    \item Rand- und Anfangsbedingungen bestimmen die physikalisch zulässige Lösung.
+\end{itemize}
+
+Diese Zerlegung ist der \textbf{Standardalgorithmus} für alle linearen DGL in Umrichter-, R--L-, R--C- und Maschinenproblemen.
+
+% -------------------------------------------------
+
+\subsubsection{1. Typ der Differentialgleichung identifizieren}
+
+Gegeben ist typischerweise eine lineare DGL mit konstanten Koeffizienten:
+\[
+a_n u^{(n)} + \dots + a_1 u' + a_0 u = g(x).
+\]
+
+Klassifikation:
+\begin{itemize}
+    \item \textbf{Homogen:} $g(x) = 0$ (freies Einschwingen, Ausschwingen).
+    \item \textbf{Inhomogen:} $g(x) \neq 0$ (Quelle vorhanden).
+    \item Ordnung = höchste Ableitung $n$.
+\end{itemize}
+
+In der Leistungselektronik dominieren:
+\begin{itemize}
+    \item 1. Ordnung: R--L, R--C,
+    \item 2. Ordnung: L--C, gedämpfte Schwingkreise, Maschinenmodelle.
+\end{itemize}
+
+% -------------------------------------------------
+
+\subsubsection{2. Homogene Lösung $u_{\mathrm{hom}}$}
+
+Für konstante Koeffizienten wird angesetzt:
+\[
+u(x) = e^{\lambda x}.
+\]
+
+Einsetzen liefert die charakteristische Gleichung:
+\[
+a_n \lambda^n + \dots + a_1 \lambda + a_0 = 0.
+\]
+
+Standardfälle:
+
+\paragraph{1. Ordnung}
+\[
+u' + a u = 0 
+\quad \Rightarrow \quad 
+u_{\mathrm{hom}} = C e^{-a x}.
+\]
+
+\paragraph{2. Ordnung, zwei reelle Nullstellen $\lambda_1,\lambda_2$}
+\[
+u_{\mathrm{hom}} = C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}.
+\]
+
+\paragraph{2. Ordnung, doppelte Nullstelle $\lambda$}
+\[
+u_{\mathrm{hom}} = (C_1 + C_2 x) e^{\lambda x}.
+\]
+
+\paragraph{2. Ordnung, komplexe Nullstellen $\lambda = \alpha \pm j \beta$}
+\[
+u_{\mathrm{hom}} = e^{\alpha x} \left( C_1 \cos(\beta x) + C_2 \sin(\beta x) \right).
+\]
+
+Physikalische Auswahl:
+\begin{itemize}
+    \item Wachsende Exponentialterme werden verworfen, wenn Stabilität oder Endlichkeit gefordert ist.
+    \item Bei Schaltvorgängen gelten Kontinuitätsbedingungen:
+    \[
+    i_L(t^-) = i_L(t^+), 
+    \qquad
+    u_C(t^-) = u_C(t^+).
+    \]
+\end{itemize}
+
+% -------------------------------------------------
+
+\subsubsection{3. Partikuläre Lösung $u_{\mathrm{part}}$}
+
+Der Ansatz richtet sich nach der Form von $g(x)$.
+
+Typische Quellen in der Leistungselektronik:
+
+\begin{itemize}
+    \item Konstante Spannung: $g(x) = U_0$
+    \[
+    u_{\mathrm{part}} = A.
+    \]
+    \item Exponentielle Quelle: $g(x) = e^{a x}$
+    \[
+    u_{\mathrm{part}} = A e^{a x}.
+    \]
+    \item Sinusförmige Quelle: $g(x) = \sin(\omega x), \cos(\omega x)$
+    \[
+    u_{\mathrm{part}} = A \cos(\omega x) + B \sin(\omega x).
+    \]
+    \item Gedämpfter Sinus: $g(x) = e^{a x} \sin(\omega x)$
+    \[
+    u_{\mathrm{part}} = e^{a x} \left( A \cos(\omega x) + B \sin(\omega x) \right).
+    \]
+\end{itemize}
+
+Resonanzregel:
+
+Ist der Ansatz bereits Teil von $u_{\mathrm{hom}}$, dann:
+\[
+u_{\mathrm{part}} \rightarrow x^s \cdot u_{\mathrm{part}},
+\]
+wobei $s$ der Vielfachheitsgrad der Nullstelle ist.
+
+% -------------------------------------------------
+
+\subsubsection{4. Gesamtlösung und Konstanten}
+
+Die Gesamtlösung lautet immer:
+\[
+u(x) = u_{\mathrm{hom}}(x) + u_{\mathrm{part}}(x).
+\]
+
+Die Konstanten $C_i$ werden bestimmt durch:
+\begin{itemize}
+    \item Anfangswerte: $u(0)$, $u'(0)$,
+    \item Übergangsbedingungen bei Schaltvorgängen,
+    \item Periodizitätsbedingung im stationären Schaltbetrieb:
+    \[
+    x(t) = x(t + T_s).
+    \]
+\end{itemize}
+
+% -------------------------------------------------
+\subsubsection{Standardlösungen aus der Leistungselektronik}
+
+Diese Standardlösungen decken den Kern fast aller Zeitbereichsaufgaben ab:
+Einschalten, Ausschwingen, stückweise Anregung (PWM/Chopper), periodischer Betrieb sowie
+die wichtigsten Kennwerte (Endwert, Zeitkonstante, Ripple-Näherung).
+
+% -------------------------------------------------
+
+\paragraph{R--L-Kreis: Grundgleichung und Kenngrössen}
+
+Grundgleichung:
+\[
+\boxed{
+u(t)=R\,i(t)+L\,\frac{di(t)}{dt}
+}
+\]
+
+Bedeutung der Variablen:
+\begin{itemize}
+\item $u(t)$: angelegte Spannung am R--L-Zweig
+\item $i(t)$: Strom durch Widerstand und Induktivität
+\item $R$: Widerstand
+\item $L$: Induktivität
+\end{itemize}
+
+Zeitkonstante:
+\[
+\boxed{\tau=\frac{L}{R}}
+\]
+
+Induktorspannung und Widerstandsspannung:
+\[
+\boxed{u_L(t)=L\frac{di(t)}{dt}},\qquad \boxed{u_R(t)=R\,i(t)}
+\]
+
+Kontinuität bei Schaltvorgängen:
+\[
+\boxed{i(t^-)=i(t^+)}
+\]
+
+% -------------------------------------------------
+
+\paragraph{R--L-Kreis: Einschalten einer konstanten Spannung (Step Response)}
+
+DGL:
+\[
+L\frac{di}{dt}+R\,i=U_0
+\]
+
+Allgemeine Lösung:
+\[
+\boxed{
+i(t)=I_\infty + \left(i(0)-I_\infty\right)e^{-t/\tau}
+}
+\]
+
+mit Endwert:
+\[
+\boxed{I_\infty=\frac{U_0}{R}}
+\]
+
+Wichtige Spezialfälle:
+\begin{itemize}
+\item Einschalten aus Stromnull ($i(0)=0$):
+\[
+\boxed{i(t)=\frac{U_0}{R}\left(1-e^{-t/\tau}\right)}
+\]
+\item Einschalten mit beliebigem Anfangsstrom $i(0)=i_0$:
+\[
+\boxed{i(t)=\frac{U_0}{R}+\left(i_0-\frac{U_0}{R}\right)e^{-t/\tau}}
+\]
+\end{itemize}
+
+Spannungsverläufe:
+\[
+\boxed{u_R(t)=R\,i(t)},\qquad 
+\boxed{u_L(t)=U_0-u_R(t)=U_0-R\,i(t)}
+\]
+
+Startwert bei Step:
+\[
+\boxed{u_L(0^+)=U_0-R\,i(0)}
+\]
+Interpretation: Der Induktor übernimmt zu Beginn den Spannungshub.
+
+% -------------------------------------------------
+
+\paragraph{R--L-Kreis: Ausschwingen (Quelle weg)}
+
+DGL:
+\[
+L\frac{di}{dt}+R\,i=0
+\]
+
+Lösung:
+\[
+\boxed{i(t)=i(0)\,e^{-t/\tau}}
+\]
+
+Energie im Induktor:
+\[
+\boxed{W_L(t)=\frac{1}{2}L\,i^2(t)}
+\]
+Interpretation: Energie wird über $R$ in Wärme umgesetzt.
+
+% -------------------------------------------------
+
+\paragraph{R--L-Kreis: Sinusförmige Anregung (stationär)}
+
+DGL:
+\[
+u(t)=\hat U\sin(\omega t)
+\]
+
+Im eingeschwungenen Zustand:
+\[
+\boxed{i(t)=\hat I\sin(\omega t-\varphi)}
+\]
+
+mit:
+\[
+\boxed{\hat I=\frac{\hat U}{\sqrt{R^2+(\omega L)^2}}}
+\qquad
+\boxed{\tan\varphi=\frac{\omega L}{R}}
+\]
+
+Effektivwerte:
+\[
+\boxed{U_{\mathrm{RMS}}=\frac{\hat U}{\sqrt{2}}},
+\qquad
+\boxed{I_{\mathrm{RMS}}=\frac{\hat I}{\sqrt{2}}}
+\]
+
+Wirkleistung (R--L):
+\[
+\boxed{P=U_{\mathrm{RMS}}\,I_{\mathrm{RMS}}\cos\varphi}
+\qquad
+\boxed{\cos\varphi=\frac{R}{\sqrt{R^2+(\omega L)^2}}}
+\]
+
+% -------------------------------------------------
+
+\paragraph{R--C-Kreis: Grundgleichung und Kenngrössen}
+
+Grundgleichungen:
+\[
+\boxed{i_C(t)=C\frac{du_C(t)}{dt}}
+\qquad
+\boxed{u(t)=u_R(t)+u_C(t)=R\,i(t)+u_C(t)}
+\]
+
+Bedeutung der Variablen:
+\begin{itemize}
+\item $u_C(t)$: Kondensatorspannung
+\item $i(t)$: Strom durch $R$ und $C$ (Serienschaltung)
+\item $C$: Kapazität
+\end{itemize}
+
+Zeitkonstante:
+\[
+\boxed{\tau=RC}
+\]
+
+Kontinuität bei Schaltvorgängen:
+\[
+\boxed{u_C(t^-)=u_C(t^+)}
+\]
+
+% -------------------------------------------------
+
+\paragraph{R--C-Kreis: Aufladen (Step Response)}
+
+DGL (Serien-RC mit Eingang $U_0$):
+\[
+RC\frac{du_C}{dt}+u_C=U_0
+\]
+
+Lösung:
+\[
+\boxed{
+u_C(t)=U_0+\left(u_C(0)-U_0\right)e^{-t/\tau}
+}
+\]
+
+Spezialfall $u_C(0)=0$:
+\[
+\boxed{u_C(t)=U_0\left(1-e^{-t/\tau}\right)}
+\]
+
+Strom:
+\[
+i(t)=C\frac{du_C}{dt}
+\Rightarrow
+\boxed{i(t)=\frac{U_0-u_C(t)}{R}}
+\]
+
+Bei $u_C(0)=0$:
+\[
+\boxed{i(t)=\frac{U_0}{R}e^{-t/\tau}}
+\]
+
+% -------------------------------------------------
+
+\paragraph{R--C-Kreis: Entladen}
+
+DGL:
+\[
+RC\frac{du_C}{dt}+u_C=0
+\]
+
+Lösung:
+\[
+\boxed{u_C(t)=u_C(0)\,e^{-t/\tau}}
+\]
+
+Strom (Vorzeichen je nach Bezug):
+\[
+\boxed{i(t)=-\frac{u_C(t)}{R}}
+\]
+
+Energie im Kondensator:
+\[
+\boxed{W_C(t)=\frac{1}{2}C\,u_C^2(t)}
+\]
+
+% -------------------------------------------------
+
+\paragraph{Stückweise Anregung (PWM/Chopper): R--L im EIN/AUS-Betrieb}
+
+Schaltperiode:
+\[
+\boxed{T_s=\frac{1}{f_s}}
+\qquad
+\boxed{d=\frac{t_{\mathrm{on}}}{T_s}}
+\]
+
+EIN-Intervall ($u=U_{DC}$):
+\[
+L\frac{di}{dt}+R\,i=U_{DC}
+\Rightarrow
+\boxed{
+i_{\mathrm{on}}(t)=\frac{U_{DC}}{R}+\left(i_{\min}-\frac{U_{DC}}{R}\right)e^{-t/\tau}
+}
+\]
+
+AUS-Intervall ($u=0$):
+\[
+L\frac{di}{dt}+R\,i=0
+\Rightarrow
+\boxed{
+i_{\mathrm{off}}(t)=i_{\max}e^{-t/\tau}
+}
+\]
+
+mit:
+\[
+\boxed{i_{\max}=i_{\mathrm{on}}(t_{\mathrm{on}})},
+\qquad
+\boxed{i_{\min}=i_{\mathrm{off}}(t_{\mathrm{off}})}
+\]
+
+Stationär-periodische Bedingung:
+\[
+\boxed{i_{\min}=i_{\max}e^{-t_{\mathrm{off}}/\tau}}
+\]
+
+Damit folgt auch:
+\[
+\boxed{i_{\max}=\frac{U_{DC}}{R}\cdot
+\frac{1-e^{-t_{\mathrm{on}}/\tau}}{1-e^{-(t_{\mathrm{on}}+t_{\mathrm{off}})/\tau}}
+}
+\]
+\[
+\boxed{i_{\min}=i_{\max}e^{-t_{\mathrm{off}}/\tau}}
+\]
+
+Ripple:
+\[
+\boxed{\Delta i=i_{\max}-i_{\min}}
+\]
+
+Näherung für $T_s\ll\tau$ (kleines Ripple):
+\[
+\boxed{\Delta i\approx\frac{(U_{DC}-\overline{u})\,t_{\mathrm{on}}}{L}}
+\qquad
+\text{mit}\quad
+\boxed{\overline{u}=d\,U_{DC}}
+\]
+
+% -------------------------------------------------
+
+\paragraph{Gedämpfter Schwingkreis (2. Ordnung): Standardform}
+
+Standardform:
+\[
+\boxed{
+y''+2\zeta\omega_0 y'+\omega_0^2 y=0
+}
+\]
+
+Parameter:
+\begin{itemize}
+\item $\omega_0$: ungedämpfte Eigenkreisfrequenz
+\item $\zeta$: Dämpfungsgrad
+\item $y(t)$: Zustandsgrösse (z.B.\ Kondensatorspannung oder Induktorstrom)
+\end{itemize}
+
+Unterdämpfung ($\zeta<1$):
+\[
+\boxed{
+y(t)=e^{-\zeta\omega_0 t}\left(C_1\cos(\omega_d t)+C_2\sin(\omega_d t)\right)
+}
+\qquad
+\boxed{\omega_d=\omega_0\sqrt{1-\zeta^2}}
+\]
+
+Kritische Dämpfung ($\zeta=1$):
+\[
+\boxed{y(t)=(C_1+C_2 t)e^{-\omega_0 t}}
+\]
+
+Überdämpfung ($\zeta>1$):
+\[
+\boxed{y(t)=C_1 e^{\lambda_1 t}+C_2 e^{\lambda_2 t}}
+\]
+
+mit:
+\[
+\boxed{\lambda_{1,2}=-\omega_0\left(\zeta\pm\sqrt{\zeta^2-1}\right)}
+\]
+
+% -------------------------------------------------
+
+\paragraph{Prüfungs-Kernchecks (immer kurz machen)}
+
+\begin{itemize}
+\item Zeitkonstante: $\tau=L/R$ oder $\tau=RC$ sofort bestimmen.
+\item Kontinuität: $i_L$ stetig, $u_C$ stetig.
+\item Endwert: $t\to\infty$ prüfen ($e^{-t/\tau}\to 0$).
+\item Stationär im Schaltbetrieb: Periodenbedingung $x(t)=x(t+T_s)$.
+\item Ripple klein falls $T_s\ll\tau$.
+\end{itemize}
+
+\subsubsection{Typische Prüfungsregeln}
+
+\begin{itemize}
+    \item 1. Ordnung $\Rightarrow$ immer exponentielles Verhalten mit Zeitkonstante $\tau$.
+    \item Induktorstrom und Kondensatorspannung sind stetig.
+    \item Stationär bedeutet periodisch, nicht konstant.
+    \item Nach etwa $5\tau$ ist ein Einschwingvorgang praktisch abgeschlossen.
+    \item Wachsende Exponentialterme sind physikalisch unzulässig.
+\end{itemize}
+
+\subsection{Typische Merksätze (Analyse-Kern)}
+
+\begin{itemize}
+    \item Kettenregel, Produktregel, trigonometrische Identitäten sicher beherrschen.
+    \item Laplace macht aus DGLs algebraische Gleichungen.
+    \item $i_L(t)$ und $u_C(t)$ sind stetig.
+    \item Polstellen bestimmen Stabilität und Zeitverhalten.
+\end{itemize}
+\subsection{Typische Fehlerquellen}
+
+\begin{itemize}
+    \item Anfangswerte bei Laplace-Ableitung vergessen.
+    \item Finalwertsatz ohne Polprüfung verwendet.
+    \item Vorzeichenfehler bei $\cos'(x)$ und bei KVL/KCL.
+    \item $u_C$ bzw. $i_L$ als sprungfähig angenommen.
+\end{itemize}

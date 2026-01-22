@@ -13,7 +13,7 @@ wie sie in Gleichrichtern, Stellern und Wechselrichtern auftreten.
     \item Anwendung auf stückweise definierte Zeitverläufe aus Übungen
 \end{itemize}
 
-\subsection{Periodische Signale und Grundbegriffe}
+\subsection{Grundlagen: Periodische Signale}
 
 Ein Signal $x(t)$ heisst \textbf{periodisch} mit Periodendauer $T$, wenn gilt:
 \[
@@ -38,6 +38,8 @@ Der \textbf{Zeitmittelwert} (Mittelwert) eines periodischen Signals $x(t)$ ist d
 \cbl{\overline{x} = \frac{1}{T} \int_{0}^{T} x(t)\,\diff t.}
 \]
 
+\subsubsection{Interpretation und Eigenschaften}
+
 Interpretation:
 \begin{itemize}
     \item Entspricht dem \textbf{Gleichanteil} des Signals.
@@ -45,8 +47,7 @@ Interpretation:
     \item Bei Spannung: DC-Anteil der Ausgangsspannung eines Gleichrichters.
 \end{itemize}
 
-\subsubsection{Typische Eigenschaften}
-
+Typische Eigenschaften:
 \begin{itemize}
     \item Symmetrische Wechselgrössen: $\overline{x}=0$.
     \item Gleichgerichtete Signale: $\overline{x}>0$.
@@ -67,6 +68,8 @@ Der \textbf{Effektivwert} eines periodischen Signals $x(t)$ ist definiert als:
 \cbl{x_{\mathrm{RMS}} = \sqrt{\frac{1}{T} \int_{0}^{T} x^2(t)\,\diff t}.}
 \]
 
+\subsubsection{Interpretation und Vergleich}
+
 Interpretation:
 \begin{itemize}
     \item Entspricht dem \textbf{Gleichwert}, der in einem Widerstand \textbf{die gleiche Verlustleistung} erzeugt.
@@ -74,8 +77,7 @@ Interpretation:
     \item Grundlage für Dimensionierung von Leitern, Bauteilen und Verlusten.
 \end{itemize}
 
-\subsubsection{Vergleich Mittelwert vs. Effektivwert}
-
+Vergleich Mittelwert vs. Effektivwert:
 \begin{itemize}
     \item Mittelwert: lineare Mittelung.
     \item Effektivwert: quadratische Mittelung.
@@ -85,7 +87,7 @@ Interpretation:
     \]
 \end{itemize}
 
-\subsection{Momentanleistung und Wirkleistung}
+\subsection{Leistung: Momentanleistung und Wirkleistung}
 
 \subsubsection{Momentanleistung}
 
@@ -93,7 +95,6 @@ Für allgemeine Spannungen und Ströme:
 \[
 \cbl{p(t) = u(t)\, i(t).}
 \]
-
 Diese Grösse schwankt zeitlich, auch im stationären Betrieb.
 
 \subsubsection{Wirkleistung}
@@ -116,7 +117,7 @@ Interpretation:
     \item Unabhängig von der Signalform.
 \end{itemize}
 
-\subsection{Berechnung bei stückweise definierten Signalen}
+\subsection{Rechenworkflow für stückweise definierte Signale}
 
 In vielen Übungen ist $x(t)$ stückweise gegeben:
 \[
@@ -147,10 +148,208 @@ Dann gilt:
 
 \crd{\textrightarrow\ Bei stückweisen Verläufen immer korrekt die Zeitintervalle trennen.}
 
+\subsection{Zeitbereichsmodellierung bei Schaltbetrieb (R--L, R--C)}
+
+In der Leistungselektronik entstehen durch Schalter \textbf{stückweise definierte Zeitverläufe}.
+In jedem Schaltintervall gilt eine lineare Differentialgleichung niedriger Ordnung.
+
+Ziel:
+\begin{itemize}
+    \item Zeitverlauf von Strom und Spannung bestimmen,
+    \item Einschwingvorgänge analysieren,
+    \item Mittelwert, Effektivwert und Ripple berechnen,
+    \item stationär-periodischen Betrieb beschreiben.
+\end{itemize}
+
+% -------------------------------------------------
+
+\subsubsection{Grundfall: R--L-Last}
+
+Grundgleichung:
+\[
+\boxed{
+u(t) = R\, i(t) + L\, \frac{di(t)}{dt}
+}
+\]
+
+Dabei:
+\begin{itemize}
+    \item $u(t)$: angelegte Spannung,
+    \item $i(t)$: Laststrom,
+    \item $R$: Widerstand,
+    \item $L$: Induktivität.
+\end{itemize}
+
+Zeitkonstante:
+\[
+\boxed{
+\tau = \frac{L}{R}
+}
+\]
+
+Physikalische Bedeutung:
+\begin{itemize}
+    \item Nach $t=\tau$: ca.\ 63\% des Endwerts erreicht.
+    \item Nach $t \approx 5\tau$: praktisch eingeschwungen.
+\end{itemize}
+
+% -------------------------------------------------
+
+\subsubsection{Lösung bei konstantem Spannungseingang}
+
+Für konstantes $u(t)=U_0$:
+
+\[
+\boxed{
+i(t) = \frac{U_0}{R} + \left( i(0) - \frac{U_0}{R} \right) e^{-t/\tau}
+}
+\]
+
+Dabei:
+\begin{itemize}
+    \item $i(0)$: Anfangsstrom,
+    \item $\frac{U_0}{R}$: stationärer Endstrom.
+\end{itemize}
+
+Interpretation:
+\begin{itemize}
+    \item Exponentielles Einschwingen.
+    \item Geschwindigkeit durch $\tau$ bestimmt.
+\end{itemize}
+
+% -------------------------------------------------
+
+\subsubsection{Kontinuitätsbedingungen bei Schaltvorgängen}
+
+Bei idealen Bauteilen gilt:
+
+\[
+\boxed{i_L(t^-) = i_L(t^+)}
+\qquad
+\boxed{u_C(t^-) = u_C(t^+)}
+\]
+
+Bedeutung:
+\begin{itemize}
+    \item Induktorstrom ist stetig.
+    \item Kondensatorspannung ist stetig.
+    \item Diese Bedingungen liefern die Anfangswerte für jedes neue Intervall.
+\end{itemize}
+
+% -------------------------------------------------
+
+\subsubsection{Stückweise Betrieb bei Schaltperioden}
+
+Typisch im Chopper oder PWM:
+
+EIN-Intervall:
+\[
+L \frac{di}{dt} + R i = U_{DC}
+\]
+
+AUS-Intervall:
+\[
+L \frac{di}{dt} + R i = 0
+\]
+
+Lösungen:
+
+EIN:
+\[
+\boxed{
+i(t) = \frac{U_{DC}}{R} + \left( i_{\min} - \frac{U_{DC}}{R} \right) e^{-(t-t_e)/\tau}
+}
+\]
+
+AUS:
+\[
+\boxed{
+i(t) = i_{\max} \, e^{-(t-t_a)/\tau}
+}
+\]
+
+Dabei:
+\begin{itemize}
+    \item $t_e$: Einschaltzeitpunkt,
+    \item $t_a$: Ausschaltzeitpunkt,
+    \item $i_{\min}$, $i_{\max}$: Stromgrenzen pro Periode.
+\end{itemize}
+
+% -------------------------------------------------
+
+\subsubsection{Stationär-periodischer Betrieb}
+
+Im eingeschwungenen Schaltbetrieb gilt:
+
+\[
+\boxed{
+i(t) = i(t + T_s)
+}
+\]
+
+mit:
+\begin{itemize}
+    \item $T_s$: Schaltperiode.
+\end{itemize}
+
+Diese Periodenbedingung erlaubt die Bestimmung von $i_{\min}$ und $i_{\max}$.
+
+% -------------------------------------------------
+
+\subsubsection{Stromrippel}
+
+Definition:
+\[
+\boxed{
+\Delta i = i_{\max} - i_{\min}
+}
+\]
+
+Näherung bei grossem $L$:
+\[
+\boxed{
+\Delta i \approx \frac{(U_{DC} - \overline{u}) \, d T_s}{L}
+}
+\]
+
+Dabei:
+\begin{itemize}
+    \item $d$: Tastgrad,
+    \item $\overline{u}$: gemittelte Ausgangsspannung.
+\end{itemize}
+
+% -------------------------------------------------
+
+\subsubsection{Mittelwert des Stroms}
+
+\[
+\boxed{
+I_{\mathrm{av}} = \frac{1}{T_s} \int_0^{T_s} i(t)\, dt
+}
+\]
+
+Für kleines Ripple:
+\[
+\boxed{
+I_{\mathrm{av}} \approx \frac{i_{\max} + i_{\min}}{2}
+}
+\]
+
+% -------------------------------------------------
+
+\subsubsection{Physikalische Kernaussagen}
+
+\begin{itemize}
+    \item Zeitkonstante bestimmt Einschwinggeschwindigkeit.
+    \item Kontinuität bestimmt Anfangswerte nach jedem Schalten.
+    \item Stationär bedeutet periodisch, nicht konstant.
+    \item Mittelwert bestimmt Drehmoment, Leistung, Arbeitspunkt.
+    \item Ripple bestimmt Verluste und Dimensionierung.
+\end{itemize}
+
 \subsection{Bezug zu Fourier-Reihen}
 
 Für ein periodisches Signal mit Fourierkoeffizienten gilt (Parseval):
-
 \[
 \cbl{X_{\mathrm{RMS}}^2 = \frac{a_0^2}{2} + \sum_{n=1}^\infty \left( a_n^2 + b_n^2 \right).}
 \]
@@ -161,50 +360,8 @@ Interpretation:
     \item Harmonische tragen direkt zur Verlustleistung bei.
 \end{itemize}
 
-\subsection{Skizze 1: Nichtsinusförmiger periodischer Strom}
 
-\begin{center}
-\begin{tikzpicture}[scale=1]
-\draw[->] (0,0) -- (8,0) node[right] {$t$};
-\draw[->] (0,0) -- (0,3) node[above] {$i(t)$};
-
-\draw (0,1) -- (2,2.5) -- (4,1) -- (6,2.5) -- (8,1);
-
-\draw[dashed] (0,1) -- (8,1) node[right] {$\overline{i}$};
-\draw[dashed] (0,2) -- (8,2) node[right] {$i_{\mathrm{RMS}}$};
-
-\draw (4,0) node[below] {$T/2$};
-\draw (8,0) node[below] {$T$};
-\end{tikzpicture}
-\end{center}
-
-\textbf{Aussage:}
-\begin{itemize}
-    \item Mittelwert ist die horizontale Mittel-Linie.
-    \item Effektivwert liegt darüber.
-\end{itemize}
-
-\subsection{Skizze 2: Quadratbildung für Effektivwert}
-
-\begin{center}
-\begin{tikzpicture}[scale=1]
-\draw[->] (0,0) -- (8,0) node[right] {$t$};
-\draw[->] (0,0) -- (0,3) node[above] {$x^2(t)$};
-
-\draw (0,0.5) -- (2,2.5) -- (4,0.5) -- (6,2.5) -- (8,0.5);
-
-\draw[dashed] (0,1.5) -- (8,1.5) node[right] {$\overline{x^2}$};
-\end{tikzpicture}
-\end{center}
-
-\textbf{Aussage:}
-\begin{itemize}
-    \item Zuerst quadrieren.
-    \item Dann mitteln.
-    \item Dann Wurzel ziehen.
-\end{itemize}
-
-\subsection{Skizze 3: Leistung bei ohmscher Last}
+\subsection{Skizze : Leistung bei ohmscher Last}
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -246,3 +403,4 @@ Interpretation:
     \item Bei Leistung: $p(t)=u(t)i(t)$ bilden und mitteln.
     \item Plausibilität prüfen: $x_{\mathrm{RMS}} \ge |\overline{x}|$.
 \end{enumerate}
+
