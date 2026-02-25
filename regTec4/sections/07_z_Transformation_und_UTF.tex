@@ -1,0 +1,388 @@
+
+\section{z-Transformation / Zeitdiskrete Übertragungsfunktion}
+
+\subsection{Folgen (und deren z-Transformation)}{230}
+
+Eine zeitliche Folge $f(k)$ bricht typischerweise nicht ab und wird folgendermassen beschrieben:
+
+\vspace{-0.2cm}
+
+$$ f(k) = \{1, \, a, \, a^2, \, a^3, \, \ldots \} = a^k \qquad \text{für } k \geq 0 \quad k \text{ ganzzahlig} $$
+
+
+\subsubsection{Spezielle Folgen: Abbrechende Folgen}
+
+Bei einer abbrechenden Folge liegen \textbf{alle Pole bei Null}. \\
+Man spricht in diesem Fall von einem \textbf{FIR-Filter} (Finite Response Filter)
+
+
+\example{Abbrechende Folge und deren z-Transformierte}
+
+\vspace{-0.2cm}
+
+$$ f(k) = \left\{ f(0), \, f(1), \, f(2), \, f(3), \, 0, \, 0, \, 0, \, \ldots  \right\} $$
+
+\vspace{-0.2cm}
+
+$$ F(z) = f(0) + \frac{f(1)}{z} + \frac{f(2)}{z^2} + \frac{f(3)}{z^3} = \frac{f(0) \, z^3 + f(1) \, z^2 + f(2) \, z + f(3)}{z^3}$$
+
+
+
+\subsection{z-Transformation -- Definition}{232}
+
+Die Überführung eine Folge in den Frequenzbereich erfolgt mittels z-Tranaformation und ist definiert als
+
+\vspace{-0.2cm}
+
+$$ \boxed{ F(z) = \mathcal{Z}\{f(k)\} = \sum\limits_{k=0}^{\infty} f(k) \cdot z^{-k} \quad \text{mit der komplexen Variablen } z } $$
+
+
+\textrightarrow\ Häufig werden \textbf{Tabellen} und die \textbf{Eigenschaften} der z-Transformation verwendet \\
+\textrightarrow\ Siehe \ref{zTransformierte einger Funktionen} und \ref{Eigenschaften der z-Transformation}
+
+
+
+\subsection{z-Transformierte einiger Funktionen}{232}
+\label{zTransformierte einger Funktionen}
+
+Alle Folgen $f(k)$ sind nur für für $k \geq 0$ und ganzzahlige $k$ definiert.
+
+\smallskip
+
+\begin{minipage}[t]{0.44\columnwidth}
+    \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{c c c}
+            \toprule
+            $\bm{f(k)}$                             & $\laplace$    & $\bm{F(z)}$                                       \\
+            \midrule
+            $\delta(k)$                             & $\laplace$    & $1$                                               \\
+            \midrule
+            $\varepsilon(k)$                        & $\laplace$    & $\frac{z}{z-1}$                                   \\
+            \midrule
+            $k$                                     & $\laplace$    & $\frac{z}{(z-1)^2}$                               \\
+            \midrule            
+            $k^2$                                   & $\laplace$    & $\frac{z(z+1)}{(z-1)^3}$                          \\
+            \midrule
+            $a^k$                                   & $\laplace$    & $\frac{z}{z-a}$                                   \\
+            \bottomrule
+        \end{tabular}
+        \renewcommand{\arraystretch}{1}
+    \end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.54\columnwidth}
+    \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{c c c}
+            \toprule
+            $\bm{f(k)}$                             & $\laplace$    & $\bm{F(z)}$                                           \\
+            \midrule
+            $\cos(bk)$                              & $\laplace$    & $\frac{z(z - \cos(b))}{z^2 - 2z \cos(b) + 1}$         \\
+            \midrule
+            $\sin(bk)$                              & $\laplace$    & $\frac{z \sin(b)}{z^2 - 2z \cos(b) + 1}$              \\
+            \midrule
+            $k \cdot a^k$                           & $\laplace$    & $\frac{az}{(z-a)^2}$                                  \\
+            \midrule
+            $k \cdot \cos(bk)$                      & $\laplace$    & $\frac{z(z - a \,\cos(b))}{z^2 - 2az \cos(b) + a^2}$  \\
+            \midrule
+            $k \cdot \sin(bk)$                      & $\laplace$    & $\frac{z a \sin(b)}{z^2 - 2az \cos(b) + a^2}$         \\
+            \bottomrule
+        \end{tabular}
+        \renewcommand{\arraystretch}{1}
+    \end{center}
+\end{minipage}
+
+\smallskip
+
+\textbf{Hinweis:} $\varepsilon(k)$ ist eine Folge von $1$ern \\
+\textbf{Hinweis:} Oft wird $\frac{F(z)}{z}$ in der Tabelle gefunden
+
+
+\subsection{Eigenschaften der z-Transformation}{235}
+\label{Eigenschaften der z-Transformation}
+
+\resizebox{\columnwidth}{!}{
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Zeitbereich}                                                        & \textbf{Bildbereich}                          & \textbf{Operation im Zeitbereich}     \\
+        \midrule
+        $a_1 f_1(k) + a_2 f_2(k)$                                                   & $a_1 F_1(z) + a_2 F_2(z)$                     & Superposition                         \\
+        \midrule
+        $f(k+1)$                                                                    & $z F(z) - z \, f(0)$                          & Linksverschiebung...                  \\
+        \midrule
+        $f(k+2)$                                                                    & $z^2 F(z) - z^2 f(0) - z f(1)$          & ...mehrfach angewendet                \\
+        \midrule
+        $f(k-m) \quad m \geq 0$                                                     & $\frac{1}{z^m} F(z)$                          & Rechtsverschiebung                    \\
+        \midrule
+        $\sum\limits_{\nu=0}^k f(\nu)$                                              & $\frac{z}{z-1} F(z)$                          & Partialsummen                         \\
+        \midrule
+        $\sum\limits_{\nu=0}^k f_1(\nu) \cdot f_2(k - \nu)$                         & $F_1(z) \cdot F_2(z)$                         & Faltung                               \\
+        \bottomrule
+    \end{tabular}
+}
+
+
+\subsubsection{Grenzwertsätze der z-Transformation}{235}
+
+\textbf{Achtung:} Grenzwertsätze dürfen nur angewendet werden, wenn Grenzwerte existieren! \\
+\textrightarrow\ In der Regelungstechnik eigentlich immer gegeben...
+
+\begin{center}
+    \begin{tabular}{l c ll}
+        \toprule
+        \textbf{Zeitbereich}                &       & \textbf{Bildbereich}                                      & \textbf{Bezeichnung}      \\
+        \midrule
+        $f(0)$                              & $=$   & $\lim\limits_{z \to \infty} F(z)$                         & Anfangswerttheorem        \\
+        \midrule
+        $\lim\limits_{k \to \infty} f(k)$   & $=$   & $\lim\limits_{z \to 1} \left[ (z-1) \cdot F(z) \right]$   & Endwerttheorem            \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+
+\subsection{Rücktransformation}
+\label{Rücktransformation}
+
+Die Rücktransformation kann auf mehrere Arten erreicht werden:
+
+\smallskip
+
+\begin{enumerate}
+    \item Direktes benutzen von Tabellen in Rückwärtsrichtung
+    \item Zerlegung von $F(z)$ in einfachere, tabellierte Ausdrücke \textrightarrow\ Partialbruchzerlegung
+    \item Polynomdivision bzw. Reihenentwicklung von $f(z)$ in negativen Potenzen von $z$
+    \item (Allgemeine Umkehroperation zur Definition der z-Transformation)
+\end{enumerate}
+
+\smallskip 
+
+\textbf{Bemerkung zu 2.:} Statt $F(z)$ zu zerlegen wird der Ausdruck $\frac{F(z)}{z} = s_1 + s_2 + \ldots$ zerlegt.
+Anschliessend werden die Ausdrücke $z \cdot s_i$ rücktransformiert, deren Summe $f(k)$ ergibt. \\
+Somit ist die Wahrscheinlicheit höher, den benötigten Term in der Tabelle zu finden. 
+
+
+
+\subsection{Beispiele zur z-Transformation}
+
+\example{Geometrische Folge im Frequenzbereich}
+
+Die geometrische Folge ist das Pendant zur zeitkontinuierlichen Exponentialfunktion.
+
+\vspace{-0.2cm}
+
+\[
+    F(z)    = \sum\limits_{k=0}^{\infty} a^k \cdot z^{-k} = \sum\limits_{k=0}^{\infty} a^k \cdot \left( \frac{a}{z} \right)^k
+            = 1 + \frac{a}{z} + \left( \frac{a}{z} \right)^2 + \left( \frac{a}{z} \right)^3 + \ldots 
+\]
+
+Durch eine geeignete Umformung kann die Folge anders dargestellt werden und anschliessend nach $F(z)$ aufgelöst werden.
+
+\vspace{-0.2cm}
+
+\[
+    F(z) - 1 = \frac{a}{z} \cdot F(z) \quad \Leftrightarrow \quad 
+    1 = F(z) \left( 1 - \frac{a}{z} \right) \quad \Leftrightarrow \quad 
+    F(z) = \frac{z}{z-a}
+\]
+
+
+\example{Periodische Folge}
+
+\vspace{-0.2cm}
+
+$$ f_5(k) = \{ \underbrace{0, \, 0, \, 0, \, 0, \,}_{n \text{ Glieder}} \underbrace{ h(0), \, h(1), \, \ldots, \, h(m-1)}_{m \text{ Glieder}}, \underbrace{ h(0), \, h(1), \, \ldots, \, h(m-1)}_{m \text{ Glieder}}, \, \ldots \} $$
+
+$$ F_5(z) = z^{-m} \cdot F_5(z) + z^{-n} \cdot H(z)  \qquad \Rightarrow\ \qquad F_5(z) = \frac{1}{z^n} \frac{z^m}{z^m -1} H(z) $$
+
+
+\textrightarrow\ $H(z)$ entspricht der z-Transformierten von $\left\{  h(0), \, h(1), \, \ldots, \, h(m-1) 
+, \, 0, \, 0, \, \ldots \right\}$
+
+
+\example{Ausgangssignal bestimmen}
+
+Der Ausgang entspricht der \textbf{Faltung} vom Eingangssignal und Impulsantwort: 
+$$ y(k) = u(k) * g(k) $$
+Bei jedem Schritt $k$ wird die Impulsantwort mit dem aktuellen $u(k)$ 'skaliert' um $k$ Schritte nach rechts geschoben.
+
+\smallskip
+
+Für $u(k) = \{ 1, \, 0, \, 1, \, 0 , \, 0, \, \ldots \}$ und $g(k) = \{ 6, \, -2, \, -2, \, -2 , \, 0, \, 0, \, \ldots \}$ soll das Ausgangssignal $y(k)$ berechnet werden.
+
+\begin{ctabular}{r l c c c c c c c}
+    $u(0) \cdot g(k) =$     & $\{ 6,$   & $-2,$ & $-2,$ & $-2,$ & $0,$  & $0,$  & $0,$  & $\ldots \}$   \\
+    $u(1) \cdot g(k-1) =$   & $\{ 0,$   & $0,$  & $0,$  & $0,$  & $0,$  & $0,$  & $0,$  & $\ldots \}$   \\
+    $u(2) \cdot g(k-2) =$   & $\{ 0,$   & $0,$  & $6,$  & $-2,$ & $-2,$ & $-2,$ & $0,$  & $\ldots \}$   \\
+    $y(k) =$                & $\{ 6,$   & $-2,$ & $4,$  & $-4,$ & $-2,$ & $-2,$ & $0,$  & $\ldots \}$   \\
+\end{ctabular}
+
+
+
+\example{Lösen einer linearen Differenzengleichung im Bildbereich}
+
+Wie eine Differentialgleichung mittels Laplace-Transformation wird auch eine Differenzengleichung mittels z-Transformation in drei Schritten gelöst:
+
+\smallskip
+
+\begin{enumerate}
+    \item Überführung der Differenzengleichung (DG) in den Bildbereich (\textrightarrow\ z-Transformation)
+    \item Lösen des resultierenden algebraischen Ausdrucks
+    \item Rücktransformation von $Y(z)$ in den Zeitbereich (\textrightarrow\ siehe Abschnitt \ref{Rücktransformation})
+\end{enumerate}
+
+
+$$ \text{Differenzengleichung:} \qquad  a_1 \cdot y(k+1) + a_0 \cdot y(k) = b_0 \cdot u(k) $$
+
+\vspace{-0.2cm}
+
+$$ \bm{1.} \quad a_1 \cdot z \cdot Y(z) - a_1 \cdot z \cdot y(0) + a_0 \cdot Y(z) = b_0 \cdot U(z) $$
+$$ \bm{2.} \quad Y(z) = \frac{b_0}{a_0 + a_1 \cdot z} \cdot U(z) + \frac{z}{a_0 + a_1 \cdot z} \cdot y(0) \quad \underrightarrow{\bm{3.} \text{ Tabellen}} \quad y(z) $$ 
+
+
+\subsection{Zeitdiskrete Übertragungsfunktion}{238-239}
+
+Die \textbf{zeitdiskrete Übertragungsfunktion} $\bm{G(z)}$ beschreibt das Verhalten zwischen Ausgang und Eingang eines diskreten 
+Systems und ergibt sich aus der Differenzengleichung im Zeitbereich.
+
+\vspace{-0.4cm}
+
+$$ G(z) = \frac{Y(z)}{U(z)} = \frac{b_m z^m + b_{m-1} z^{m-1} + \ldots + b_0}{z^n + a_{n-1} z^{n-1} + \ldots + a_0} = K \cdot \frac{(z - z_1) (z - z_2) \ldots (z - z_m)}{(z - p_1) (z - p_2) \ldots (z - p_n)} \quad (m \leq n)$$
+
+\textbf{Hinweis:} Für $m > n$ wäre $G(z)$ \textbf{akausal} und somit nicht realisierbar
+
+\smallskip
+
+\textrightarrow\ Gerechnet werden kann mit $G(z)$ gleich wie mit $G(s)$
+
+
+\subsubsection{DC-Gain}
+
+Der DC-Gain ist leicht anders definiert als bei der Laplace-Transformation
+
+\smallskip
+
+\begin{minipage}[t]{0.48\columnwidth}
+    \paragraph{z-Transformation}
+
+    \vspace{-0.2cm}
+
+    $$ \text{DC-Gain} = G(z) \Big|_{z=1} $$
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\columnwidth}
+    \paragraph{Laplace-Transformation}
+
+    \vspace{-0.2cm}
+
+    $$ \text{DC-Gain} = G(s) \Big|_{s=0} $$
+\end{minipage}
+
+
+
+\subsection{Stabilität einer zeitdiskreten Übertragungsfunktion}{240-241}
+
+Für die Untersuchung der Stabilität eines Systems wird der \textbf{Nenner $\bm{N(z)}$ der Übertragungsfunktion} $\bm{G(z)}$ betrachtet.
+
+\smallskip
+
+% SigSys2 mit Anpassungen
+Für \textbf{Grenzstabilität} gilt eine \textbf{UND-Verknüpfung} der aufgeführten Punkte. \\
+Für \textbf{Stabilität und Instabilität} gilt eine \textbf{ODER-Verknüpfung} der aufgeführten Punkte.
+
+\vspace{0.1cm}
+
+\begin{outline}
+    \1 \textbf{Stabil:} 
+        \2 Alle Polstellen innerhalb des Einheitskreises \textrightarrow\ $\abs{z} < 1$
+        \2 Keine Polstellen vorhanden 
+    \1 \textbf{Asymptotisch stabil:}
+        \2 Alle Polstellen innerhalb des Einheitskreises \textrightarrow\ $\abs{z} < 1$
+    \1 \textbf{Grenzstabil:} 
+        \2 \textbf{Keine} Polstellen ausserhalb des Einheitskreises \textrightarrow\ $\abs{z} > 1$
+        \2 Mindestens eine \textbf{einfache Polstelle} auf dem Einheitskreis \textrightarrow\ $\abs{z} = 1$
+        \2 \textbf{Keine doppelten} Polstellen auf dem Einheitskreis \textrightarrow\ $\abs{z} = 1$
+    \1 \textbf{Instabil:} 
+        \2 Mindestens eine Polstelle ausserhalb des Einheitskreises \textrightarrow\ $\abs{z} > 1$
+        \2 Mindestens eine \textbf{mehrfache Polstelle} auf dem Einheitskreis \textrightarrow\ $\abs{z} = 1$
+\end{outline}
+
+\smallskip
+
+\textbf{Hinweis:} 'Stabil' ist ein Synonym für 'asymptotisch stabil' \\
+\textbf{Hinweis:} Tustin erhält die Stabilitätseigenschaften eines Systems
+
+
+
+\subsubsection{Jury-Kriterium}{241}
+
+Als Pendant zum Routh-Kriterium im Laplace-Bereich existiert in der z-Ebene das Jury-Kriterium.
+Somit kann vereinfacht festgestellt werden, ob sich alle Pole des Polynoms $N(z)$ \textbf{innerhalb des Einheitskreises} befinden und das System somit \textbf{stabil} ist.
+
+\renewcommand{\arraystretch}{1.6}
+\begin{ctabular}{|c|c c|}
+    \hline
+    \textbf{Systemordnung}      & \multicolumn{2}{c|}{\textbf{Stabilitätsbedingungen für $\bm{N(z) = z^n + a_{n-1}z^{n-1} + \cdots + a_0$}}} \\
+    \hline
+    $n = 1$ & & $|a_0| < 1$ \\
+    \hline
+    $n = 2$ & 
+    $\begin{aligned}
+    a_0 + a_1 + 1 &> 0 \\
+    a_0 - a_1 + 1 &> 0
+    \end{aligned}$ & $|a_0| < 1$ \\
+    \hline
+    $n = 3$ & 
+    $\begin{aligned}
+    a_0 + a_1 + a_2 + 1 &> 0 \\
+    -a_0 + a_1 - a_2 + 1 &> 0
+    \end{aligned}$ & 
+    $\begin{aligned}
+    |a_0| &< 1 \\
+    a_0^2 - a_0 a_2 + a_1 &< 1
+    \end{aligned}$ \\
+    \hline
+\end{ctabular}
+\renewcommand{\arraystretch}{1}
+
+\vspace{-0.2cm}
+
+
+\subsection{Frequenzgang / Bodediagramm / Nyquistdiagramm}{241-243}
+
+Wie bei zeitkontinuierlichen Systemen ergibt sich der \textbf{Frequenzgang}, wenn die UTF $G(z)$ \textbf{entlang der Stabilitätsgrenze ausgewertet} wird.
+Die Stabilitätsgrenze ist der Einheitskreis, also alle Stellen $z = e^{\jimg \omega T}$
+
+\vspace{-0.2cm}
+
+$$ G(z) \Big|_{z = e^{\jimg \omega T}} = K \cdot \frac{(z - z_1) (z - z_2) \ldots (z - z_m)}{(z - p_1) (z - p_2) \ldots (z - p_n)} \Bigg|_{z = e^{\jimg \omega T}} $$
+
+Bodediagramm und Nyquistdiagramm können dann \textbf{ähnlich gezeichnet} werden wie bei zeitkontinuierlichen Systemen. 
+Es gelten allerdings folgende \textbf{Besonderheiten}:
+
+\smallskip
+
+\begin{outline}
+    \1 Darstellungsbereich der Diagramme eingeschränkt auf den Bereich $\omega \in \left[0, \, \omega_N \right]$
+        \2 Entspricht Frequenzgang entlang oberer Hälfte des Einheitskreises
+        \2 Untere Hälfte ist redundant
+    \1 Abtastzeit passend wählen
+        \2 Vor allem zu grosse Abtastzeiten führen zu grossen Abweichungen
+    \1 Im Bodediagramm existieren \textbf{keine Geradenapproximationen}
+    \1 Die Beuteilung der Stabilität wird am offenen Regelkreis durchgeführt
+\end{outline}
+
+
+\subsubsection{Darstellungsbereich}
+
+\begin{minipage}[c]{0.25\columnwidth}
+    $$ \omega_N = \frac{\omega_s}{2} $$
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.7\columnwidth}
+    \begin{tabular}{ll|ll}
+        $\omega_N$  & Nyquistfrequenz   & $\omega_s$  & Samplingfrequenz  \\
+    \end{tabular}
+\end{minipage}
+
+
