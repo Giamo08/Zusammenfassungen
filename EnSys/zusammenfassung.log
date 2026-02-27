@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  26 FEB 2026 15:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  27 FEB 2026 16:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/digSig2/zusammenfassung.tex
-(/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/digSig2/zusammenfassung.tex
+**/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/EnSys/zusammenfassung.tex
+(/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/EnSys/zusammenfassung.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/extsizes/extarticle.cls
@@ -1250,93 +1250,141 @@ LaTeX Font Info:    Font shape `T1/txr/b/n' in size <17.28> not available
 (Font)              Font shape `T1/txr/bx/n' tried instead on input line 47.
 
 contour: Using real outline for `\url {https://github.com/Giamo08/Zusammenfassungen}' on input line 47.
-(./sections/01_digitalFilterRealizations.tex
+(./sections/01_energiesysteme_strommarkt.tex
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10.95> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 2.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 5.
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 9.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/txfonts/ts1txr.fd
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 6.
+
+contour: Using real outline for `1.1.1\ ' on input line 8.
+contour: Using real outline for `Definition Energie' on input line 8.
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 18.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Font shape `T1/txr/b/n' in size <8> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 30.
-
-contour: Using real outline for `Spezialstruktur $1-z^{-N}$' on input line 153.
-<images/direct_form_I.png, id=125, 609.27625pt x 506.89375pt>
-File: images/direct_form_I.png Graphic file (type png)
-<use images/direct_form_I.png>
-Package pdftex.def Info: images/direct_form_I.png  used on input line 201.
-(pdftex.def)             Requested size: 232.17616pt x 193.16304pt.
-<images/direct_form_II.png, id=127, 401.5pt x 208.78pt>
-File: images/direct_form_II.png Graphic file (type png)
-<use images/direct_form_II.png>
-Package pdftex.def Info: images/direct_form_II.png  used on input line 239.
-(pdftex.def)             Requested size: 232.17616pt x 120.73566pt.
-<images/transposed_form.png, id=128, 981.6675pt x 592.2125pt>
-File: images/transposed_form.png Graphic file (type png)
-<use images/transposed_form.png>
-Package pdftex.def Info: images/transposed_form.png  used on input line 265.
-(pdftex.def)             Requested size: 232.17616pt x 140.06456pt.
+contour: Using real outline for `1.1.2\ ' on input line 27.
+contour: Using real outline for `Definition Leistung' on input line 27.
+contour: Using real outline for `1.2.1\ ' on input line 51.
+contour: Using real outline for `Lageenergie (potentielle Energie)' on input line 51.
+contour: Using real outline for `1.2.2\ ' on input line 69.
+contour: Using real outline for `Bewegungsenergie (kinetische Energie)' on input line 69.
+contour: Using real outline for `1.2.3\ ' on input line 85.
+contour: Using real outline for `Rotationsenergie' on input line 85.
+contour: Using real outline for `1.2.4\ ' on input line 110.
+contour: Using real outline for `Federenergie' on input line 110.
+contour: Using real outline for `1.3.1\ ' on input line 128.
+contour: Using real outline for `Wärmeenergie' on input line 128.
+contour: Using real outline for `1.4.1\ ' on input line 148.
+contour: Using real outline for `Elektrische Arbeit' on input line 148.
+contour: Using real outline for `1.4.2\ ' on input line 162.
+contour: Using real outline for `Kondensatorenergie' on input line 162.
+contour: Using real outline for `1.4.3\ ' on input line 177.
+contour: Using real outline for `Spulenenergie' on input line 177.
+contour: Using real outline for `1.5.1\ ' on input line 195.
+contour: Using real outline for `Hubleistung' on input line 195.
+contour: Using real outline for `1.5.2\ ' on input line 206.
+contour: Using real outline for `Drehleistung' on input line 206.
+<images/Kapazität_Leistung.png, id=119, 644.4075pt x 439.6425pt>
+File: images/Kapazität_Leistung.png Graphic file (type png)
+<use images/Kapazität_Leistung.png>
+Package pdftex.def Info: images/Kapazität_Leistung.png  used on input line 268.
+(pdftex.def)             Requested size: 218.518pt x 149.08067pt.
+<images/speicher.png, id=121, 630.355pt x 353.32pt>
+File: images/speicher.png Graphic file (type png)
+<use images/speicher.png>
+Package pdftex.def Info: images/speicher.png  used on input line 271.
+(pdftex.def)             Requested size: 218.518pt x 122.48317pt.
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc} <./images/direct_form_I.png> <./images/direct_form_II.png>]
-<images/cascade_form.png, id=161, 555.07375pt x 500.87125pt>
-File: images/cascade_form.png Graphic file (type png)
-<use images/cascade_form.png>
-Package pdftex.def Info: images/cascade_form.png  used on input line 320.
-(pdftex.def)             Requested size: 232.17616pt x 209.50085pt.
-) (./sections/02_digitalWaveformGenerators.tex
-<images/sinusgenerator.png, id=163, 537.00626pt x 363.3575pt>
-File: images/sinusgenerator.png Graphic file (type png)
-<use images/sinusgenerator.png>
-Package pdftex.def Info: images/sinusgenerator.png  used on input line 28.
-(pdftex.def)             Requested size: 218.518pt x 147.85756pt.
-LaTeX Font Info:    Font shape `T1/txr/b/n' in size <9> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 50.
-<images/cosinusgenerator.png, id=164, 392.46625pt x 216.81pt>
-File: images/cosinusgenerator.png Graphic file (type png)
-<use images/cosinusgenerator.png>
-Package pdftex.def Info: images/cosinusgenerator.png  used on input line 77.
-(pdftex.def)             Requested size: 218.518pt x 120.71803pt.
-<images/coupledform.png, id=165, 482.80376pt x 186.6975pt>
-File: images/coupledform.png Graphic file (type png)
-<use images/coupledform.png>
-Package pdftex.def Info: images/coupledform.png  used on input line 97.
-(pdftex.def)             Requested size: 218.518pt x 84.50023pt.
- [2 <./images/transposed_form.png> <./images/cascade_form.png> <./images/sinusgenerator.png>]
-<images/generatorstructure.png, id=190, 670.505pt x 562.1pt>
-File: images/generatorstructure.png Graphic file (type png)
-<use images/generatorstructure.png>
-Package pdftex.def Info: images/generatorstructure.png  used on input line 176.
-(pdftex.def)             Requested size: 218.518pt x 183.18637pt.
-<images/canonnicalform.png, id=191, 689.57625pt x 678.535pt>
-File: images/canonnicalform.png Graphic file (type png)
-<use images/canonnicalform.png>
-Package pdftex.def Info: images/canonnicalform.png  used on input line 204.
-(pdftex.def)             Requested size: 218.518pt x 215.01314pt.
- [3 <./images/cosinusgenerator.png> <./images/coupledform.png> <./images/generatorstructure.png> <./images/canonnicalform.png>]) [4] (./zusammenfassung.aux <Reading QR code for "https://github.com/Giamo08/Zusammenfassungen" at level 3-L from aux file.>
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+<images/jahresverlauf.png, id=168, 1156.32pt x 584.1825pt>
+File: images/jahresverlauf.png Graphic file (type png)
+<use images/jahresverlauf.png>
+Package pdftex.def Info: images/jahresverlauf.png  used on input line 292.
+(pdftex.def)             Requested size: 218.518pt x 110.38968pt.
+
+contour: Using real outline for `1.10.1\ ' on input line 296.
+contour: Using real outline for `Hydrologisches Jahr' on input line 296.
+contour: Using real outline for `1.10.2\ ' on input line 307.
+contour: Using real outline for `Ganzjahresbilanz' on input line 307.
+contour: Using real outline for `1.10.3\ ' on input line 322.
+contour: Using real outline for `Sommer- und Wintercharakteristik' on input line 322.
+contour: Using real outline for `1.10.4\ ' on input line 340.
+contour: Using real outline for `Winterlücke' on input line 340.
+contour: Using real outline for `1.10.5\ ' on input line 357.
+contour: Using real outline for `Rolle der Speicherkraftwerke' on input line 357.
+
+LaTeX Warning: Command \" invalid in math mode on input line 361.
+
+Missing character: There is no � in font txr!
+<images/belastungsverlauf.png, id=169, 639.38875pt x 727.71875pt>
+File: images/belastungsverlauf.png Graphic file (type png)
+<use images/belastungsverlauf.png>
+Package pdftex.def Info: images/belastungsverlauf.png  used on input line 373.
+(pdftex.def)             Requested size: 218.518pt x 248.70917pt.
+contour: Using real outline for `1.11.1\ ' on input line 377.
+contour: Using real outline for `Grundprinzip Lastverlauf' on input line 377.
+contour: Using real outline for `1.11.2\ ' on input line 393.
+contour: Using real outline for `Typischer Tagesverlauf' on input line 393.
+contour: Using real outline for `1.11.3\ ' on input line 404.
+contour: Using real outline for `Erzeugungscharakteristik nach Technologie' on input line 404.
+contour: Using real outline for `1.11.4\ ' on input line 442.
+contour: Using real outline for `Systemische Bedeutung' on input line 442.
+contour: Using real outline for `1.11.5\ ' on input line 452.
+contour: Using real outline for `Systematische Einordnung von Speichertechnologien' on input line 452.
+contour: Using real outline for `1.11.6\ ' on input line 465.
+contour: Using real outline for `Pumpspeicher als Referenztechnologie' on input line 465.
+<images/Energie.png, id=170, 1284.8pt x 737.75626pt>
+File: images/Energie.png Graphic file (type png)
+<use images/Energie.png>
+Package pdftex.def Info: images/Energie.png  used on input line 488.
+(pdftex.def)             Requested size: 218.518pt x 125.47319pt.
+[2 <./images/Kapazität_Leistung.png> <./images/speicher.png> <./images/jahresverlauf.png> <./images/belastungsverlauf.png>]
+contour: Using real outline for `1.13.1\ ' on input line 514.
+contour: Using real outline for `Charakteristika elektrischer Energie' on input line 514.
+contour: Using real outline for `1.13.2\ ' on input line 537.
+contour: Using real outline for `Primär- und Sekundärenergie' on input line 537.
+<images/Energiewirtschaft.png, id=197, 602.25pt x 363.3575pt>
+File: images/Energiewirtschaft.png Graphic file (type png)
+<use images/Energiewirtschaft.png>
+Package pdftex.def Info: images/Energiewirtschaft.png  used on input line 549.
+(pdftex.def)             Requested size: 218.518pt x 131.83984pt.
+contour: Using real outline for `1.15.1\ ' on input line 593.
+contour: Using real outline for `Merit-Order-Effekt durch erneuerbare Energien' on input line 593.
+contour: Using real outline for `1.15.2\ ' on input line 614.
+contour: Using real outline for `Residualnachfrage' on input line 614.
+contour: Using real outline for `1.15.3\ ' on input line 632.
+contour: Using real outline for `Extremsituationen' on input line 632.
+
+LaTeX Warning: Command \" invalid in math mode on input line 677.
+
+Missing character: There is no � in font txr!
+
+LaTeX Warning: Command \" invalid in math mode on input line 702.
+
+Missing character: There is no � in font txr!
+[3 <./images/Energie.png> <./images/Energiewirtschaft.png>]) (./sections/02_Wasserkraft_Hydraulick.tex) [4] (./zusammenfassung.aux <Reading QR code for "https://github.com/Giamo08/Zusammenfassungen" at level 3-L from aux file.>
 )
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `zusammenfassung.out' has not changed.
-(rerunfilecheck)             Checksum: 369F55B90DEAF15BA079D027BF61236C;5519.
+(rerunfilecheck)             Checksum: 422304C9DB295B81968801BC8D62B5E2;5373.
  ) 
 Here is how much of TeX's memory you used:
- 64163 strings out of 474116
- 1574807 string characters out of 5743681
- 2581919 words of memory out of 5000000
- 85543 multiletter control sequences out of 15000+600000
- 629969 words of font info for 166 fonts, out of 8000000 for 9000
+ 64120 strings out of 474116
+ 1574001 string characters out of 5743681
+ 2592922 words of memory out of 5000000
+ 85479 multiletter control sequences out of 15000+600000
+ 604731 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,12n,160p,1111b,1106s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,12n,160p,1109b,1168s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zusammenfassung.pdf (4 pages, 1033925 bytes).
+Output written on zusammenfassung.pdf (4 pages, 1276981 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
- 75 named destinations out of 1000 (max. 500000)
- 282 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 306 PDF objects out of 1000 (max. 8388607)
+ 266 compressed objects within 3 object streams
+ 113 named destinations out of 1000 (max. 500000)
+ 259 words of extra memory for PDF output out of 10000 (max. 10000000)
 

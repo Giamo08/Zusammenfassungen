@@ -1,8 +1,8 @@
-PWD /Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/digSig2
+PWD /Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/digSig2
 INPUT /usr/local/texlive/2024/texmf.cnf
 INPUT /usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/digSig2/zusammenfassung.tex
+INPUT /Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/digSig2/zusammenfassung.tex
 OUTPUT zusammenfassung.log
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/extsizes/extarticle.cls
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/extsizes/extarticle.cls

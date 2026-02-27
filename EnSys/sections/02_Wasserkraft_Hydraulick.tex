@@ -1,0 +1,167 @@
+\section{Wasserkraft – Hydraulische und energetische Grundlagen}
+
+% ------------------------------------------------------------
+\subsection{Kraftwerkstypen und Kennzahlen}
+
+Typen:
+\begin{itemize}
+\item Laufkraftwerk
+\item Speicherkraftwerk
+\item Pumpspeicherkraftwerk
+\item Umwälzkraftwerk
+\end{itemize}
+
+Volllaststunden:
+\[
+t_{VL} = \frac{E_{\text{Speicher}}}{P_{\text{Turbine}}}
+\]
+
+Leerungsfaktor:
+\[
+\text{LF} = \frac{\text{Zuflussmenge}}{\text{Speichervolumen}}
+\]
+
+% ------------------------------------------------------------
+\subsection{Wasserdargebot und Abflusscharakteristik}
+
+Abflussganglinie: $Q(t)$
+
+Abflussdauerkurve: sortierte Jahresabflüsse
+
+Definition:
+\[
+Q_x = \text{Abfluss, der an } x \text{ Tagen überschritten wird}
+\]
+
+Nutzwassermenge:
+\[
+Q = Q_B - Q_{\text{rest}}
+\]
+
+Restwasser gemäss Gesetz:
+\[
+Q_{\text{rest}} = f(Q_{347})
+\]
+
+% ------------------------------------------------------------
+\subsection{Bernoulli-Gleichung}
+
+Energieerhaltung:
+\[
+\frac{v^2}{2} + g z + \frac{p}{\rho} = \text{const}
+\]
+
+Höhengleichung:
+\[
+H = \frac{v^2}{2g} + z + \frac{p}{\rho g}
+\]
+
+Geschwindigkeit:
+\[
+v = \frac{Q}{A}
+\]
+
+% ------------------------------------------------------------
+\subsection{Hydraulische Verluste}
+
+Örtliche Verluste:
+\[
+h_v = \zeta \frac{v^2}{2g}
+\]
+
+Reibungsverluste (Strickler):
+\[
+H_{vr} =
+\frac{v^2 \cdot L}
+{K^2 \cdot R_h^{4/3}}
+\]
+
+Hydraulischer Radius:
+\[
+R_h = \frac{A}{P}
+\]
+
+Rechteck:
+\[
+R_h = \frac{b h}{b + 2h}
+\]
+
+Kreis:
+\[
+R_h = \frac{D}{4}
+\]
+
+Alternative (Moody):
+\[
+H_{vr} =
+\lambda \frac{v^2 L}{d \cdot 2g}
+\]
+
+Reynolds-Zahl:
+\[
+Re = \frac{v d}{\nu}
+\]
+
+Hydraulisch rauer Bereich:
+\[
+\frac{1}{\sqrt{\lambda}} =
+-2 \log \left( \frac{k}{3.71 d} \right)
+\]
+
+% ------------------------------------------------------------
+\subsection{Nettofallhöhe}
+
+\[
+H_n = H - \sum H_{vr} - \frac{v_u^2}{2g}
+\]
+
+Quadratische Verlustabhängigkeit:
+\[
+\sum H_{vr} = C Q^2
+\]
+
+\[
+H_n(Q) = H - C Q^2
+\]
+
+% ------------------------------------------------------------
+\subsection{Leistungsberechnung}
+
+Hydraulische Leistung:
+\[
+P_{hyd} = \rho Q g H_n
+\]
+
+Mechanische Leistung:
+\[
+P_{mech} = \eta_t P_{hyd}
+\]
+
+Elektrische Leistung:
+\[
+P_{el} = \eta_g \eta_t \rho Q g H_n
+\]
+
+% ------------------------------------------------------------
+\subsection{Energieproduktion}
+
+\[
+E = \int P_{el} dt
+\]
+
+Diskret:
+\[
+E \approx \sum P_{el,i} \Delta t
+\]
+
+Wesentliche Abhängigkeiten:
+\begin{itemize}
+\item Verluste $\propto Q^2$
+\item Leistung $\propto Q$
+\item Leistung $\propto H_n$
+\item Energie $\propto \int Q H_n dt$
+\end{itemize}
+
+
+
+
