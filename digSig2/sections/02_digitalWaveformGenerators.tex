@@ -288,6 +288,30 @@ Lineare Interpolation:
 y = (1-\alpha)w[k] + \alpha w[k+1]
 \]
 
+\subsubsection{Index Approximation}
+
+Für nicht-ganzzahlige Indizes i:
+
+Truncating down:
+\[
+k=\lfloor i \rfloor
+\]
+
+Truncating up:
+\[
+k=\lceil i \rceil
+\]
+
+Rounding:
+\[
+k=\text{round}(i)
+\]
+
+Lineare Interpolation:
+\[
+y=(1-\alpha)w[k]+\alpha w[k+1]
+\]
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Nyquist-Bedingung}
 

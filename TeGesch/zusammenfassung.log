@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  26 FEB 2026 15:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  8 JUN 2026 18:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1261,18 +1261,18 @@ File: ts1txr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <8> not available
 (Font)              Font shape `T1/txr/bx/n' tried instead on input line 48.
-<images/bruecke.png, id=84, 953.5625pt x 699.61375pt>
+<images/bruecke.png, id=341, 953.5625pt x 699.61375pt>
 File: images/bruecke.png Graphic file (type png)
 <use images/bruecke.png>
 Package pdftex.def Info: images/bruecke.png  used on input line 62.
 (pdftex.def)             Requested size: 218.518pt x 160.32063pt.
 ) (./sections/02_WeltComputer.tex
-<images/jacquardwebstuhl.png, id=87, 531.9875pt x 688.5725pt>
+<images/jacquardwebstuhl.png, id=344, 531.9875pt x 688.5725pt>
 File: images/jacquardwebstuhl.png Graphic file (type png)
 <use images/jacquardwebstuhl.png>
 Package pdftex.def Info: images/jacquardwebstuhl.png  used on input line 39.
 (pdftex.def)             Requested size: 218.518pt x 282.83138pt.
-<images/analyticalmachine.png, id=88, 753.81625pt x 623.32875pt>
+<images/analyticalmachine.png, id=345, 753.81625pt x 623.32875pt>
 File: images/analyticalmachine.png Graphic file (type png)
 <use images/analyticalmachine.png>
 Package pdftex.def Info: images/analyticalmachine.png  used on input line 43.
@@ -1282,33 +1282,183 @@ Package pdftex.def Info: images/analyticalmachine.png  used on input line 43.
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc} <./images/bruecke.png>]
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <9> not available
 (Font)              Font shape `T1/txr/bx/n' tried instead on input line 49.
-<images/univacwerbung.png, id=118, 466.74374pt x 632.3625pt>
+<images/univacwerbung.png, id=376, 466.74374pt x 632.3625pt>
 File: images/univacwerbung.png Graphic file (type png)
 <use images/univacwerbung.png>
 Package pdftex.def Info: images/univacwerbung.png  used on input line 123.
 (pdftex.def)             Requested size: 218.518pt x 296.05254pt.
- [2 <./images/jacquardwebstuhl.png> <./images/analyticalmachine.png> <./images/univacwerbung.png>]) [3] (./zusammenfassung.aux <Reading QR code for "https://github.com/Giamo08/Zusammenfassungen" at level 3-L from aux file.>
+ [2 <./images/jacquardwebstuhl.png> <./images/analyticalmachine.png> <./images/univacwerbung.png>]) (./sections/03_Raketentechnik.tex
+<images/rakete.png, id=395, 443.6575pt x 612.2875pt>
+File: images/rakete.png Graphic file (type png)
+<use images/rakete.png>
+Package pdftex.def Info: images/rakete.png  used on input line 78.
+(pdftex.def)             Requested size: 218.518pt x 301.5744pt.
+<images/von_Braun.png, id=396, 407.5225pt x 445.665pt>
+File: images/von_Braun.png Graphic file (type png)
+<use images/von_Braun.png>
+Package pdftex.def Info: images/von_Braun.png  used on input line 110.
+(pdftex.def)             Requested size: 218.518pt x 238.96904pt.
+ [3 <./images/rakete.png>]
+<images/JFK.png, id=410, 603.25375pt x 420.57124pt>
+File: images/JFK.png Graphic file (type png)
+<use images/JFK.png>
+Package pdftex.def Info: images/JFK.png  used on input line 141.
+(pdftex.def)             Requested size: 218.518pt x 152.34247pt.
+<images/All.png, id=411, 1134.2375pt x 638.385pt>
+File: images/All.png Graphic file (type png)
+<use images/All.png>
+Package pdftex.def Info: images/All.png  used on input line 250.
+(pdftex.def)             Requested size: 218.518pt x 122.97958pt.
+) (./sections/04_Industrialisierung.tex [4 <./images/von_Braun.png> <./images/JFK.png> <./images/All.png>]
+<images/st_gallen_1545.png, id=426, 840.13875pt x 621.32124pt>
+File: images/st_gallen_1545.png Graphic file (type png)
+<use images/st_gallen_1545.png>
+Package pdftex.def Info: images/st_gallen_1545.png  used on input line 84.
+(pdftex.def)             Requested size: 218.518pt x 161.60608pt.
+<images/spinning_jenny.png, id=427, 604.2575pt x 821.0675pt>
+File: images/spinning_jenny.png Graphic file (type png)
+<use images/spinning_jenny.png>
+Package pdftex.def Info: images/spinning_jenny.png  used on input line 113.
+(pdftex.def)             Requested size: 191.20169pt x 259.80278pt.
+<images/spinnerei_buchental.png, id=428, 494.84875pt x 882.29625pt>
+File: images/spinnerei_buchental.png Graphic file (type png)
+<use images/spinnerei_buchental.png>
+Package pdftex.def Info: images/spinnerei_buchental.png  used on input line 200.
+(pdftex.def)             Requested size: 218.518pt x 389.61168pt.
+ [5 <./images/st_gallen_1545.png> <./images/spinning_jenny.png>]
+<images/streik_st_gallen_1971.png, id=441, 524.96124pt x 732.7375pt>
+File: images/streik_st_gallen_1971.png Graphic file (type png)
+<use images/streik_st_gallen_1971.png>
+Package pdftex.def Info: images/streik_st_gallen_1971.png  used on input line 222.
+(pdftex.def)             Requested size: 163.88954pt x 228.75629pt.
+<images/schifflistickmaschine.png, id=442, 822.07124pt x 594.22pt>
+File: images/schifflistickmaschine.png Graphic file (type png)
+<use images/schifflistickmaschine.png>
+Package pdftex.def Info: images/schifflistickmaschine.png  used on input line 300.
+(pdftex.def)             Requested size: 218.518pt x 157.9481pt.
+<images/fabrikreglement_stickerei.png, id=443, 647.41875pt x 408.52625pt>
+File: images/fabrikreglement_stickerei.png Graphic file (type png)
+<use images/fabrikreglement_stickerei.png>
+Package pdftex.def Info: images/fabrikreglement_stickerei.png  used on input line 334.
+(pdftex.def)             Requested size: 163.88954pt x 103.41542pt.
+ [6 <./images/spinnerei_buchental.png> <./images/streik_st_gallen_1971.png> <./images/schifflistickmaschine.png> <./images/fabrikreglement_stickerei.png>]) (./sections/05_Eisenbahn.tex
+<images/dampflok_fortschritt.png, id=458, 686.565pt x 432.61626pt>
+File: images/dampflok_fortschritt.png Graphic file (type png)
+<use images/dampflok_fortschritt.png>
+Package pdftex.def Info: images/dampflok_fortschritt.png  used on input line 50.
+(pdftex.def)             Requested size: 218.518pt x 137.68748pt.
+<images/spanisch_broedli_bahn.png, id=459, 539.01375pt x 295.1025pt>
+File: images/spanisch_broedli_bahn.png Graphic file (type png)
+<use images/spanisch_broedli_bahn.png>
+Package pdftex.def Info: images/spanisch_broedli_bahn.png  used on input line 77.
+(pdftex.def)             Requested size: 218.518pt x 119.63742pt.
+<images/sbb_piktogramme.png, id=460, 650.43pt x 698.61pt>
+File: images/sbb_piktogramme.png Graphic file (type png)
+<use images/sbb_piktogramme.png>
+Package pdftex.def Info: images/sbb_piktogramme.png  used on input line 114.
+(pdftex.def)             Requested size: 245.83015pt x 264.03546pt.
+ [7 <./images/dampflok_fortschritt.png> <./images/spanisch_broedli_bahn.png> <./images/sbb_piktogramme.png>]
+<images/spinner_club.png, id=477, 781.92125pt x 412.54124pt>
+File: images/spinner_club.png Graphic file (type png)
+<use images/spinner_club.png>
+Package pdftex.def Info: images/spinner_club.png  used on input line 225.
+(pdftex.def)             Requested size: 191.20169pt x 100.8752pt.
+<images/wir_fahren_mit_takt.png, id=478, 445.665pt x 661.47125pt>
+File: images/wir_fahren_mit_takt.png Graphic file (type png)
+<use images/wir_fahren_mit_takt.png>
+Package pdftex.def Info: images/wir_fahren_mit_takt.png  used on input line 249.
+(pdftex.def)             Requested size: 150.23138pt x 222.97954pt.
+) (./sections/06_Mobile_Society.tex
+<images/gotthard_stau.png, id=479, 649.42625pt x 400.49625pt>
+File: images/gotthard_stau.png Graphic file (type png)
+<use images/gotthard_stau.png>
+Package pdftex.def Info: images/gotthard_stau.png  used on input line 53.
+(pdftex.def)             Requested size: 204.85985pt x 126.3342pt.
+<images/suburbia_autobahn.png, id=480, 709.65125pt x 350.30875pt>
+File: images/suburbia_autobahn.png Graphic file (type png)
+<use images/suburbia_autobahn.png>
+Package pdftex.def Info: images/suburbia_autobahn.png  used on input line 77.
+(pdftex.def)             Requested size: 218.518pt x 107.86763pt.
+ [8 <./images/spinner_club.png> <./images/wir_fahren_mit_takt.png> <./images/gotthard_stau.png> <./images/suburbia_autobahn.png>]
+<images/potsdamerplatz_1921.png, id=497, 783.92876pt x 502.87875pt>
+File: images/potsdamerplatz_1921.png Graphic file (type png)
+<use images/potsdamerplatz_1921.png>
+Package pdftex.def Info: images/potsdamerplatz_1921.png  used on input line 101.
+(pdftex.def)             Requested size: 204.85985pt x 131.41296pt.
+<images/autorennen_fruehes_20jh.png, id=498, 579.16376pt x 331.2375pt>
+File: images/autorennen_fruehes_20jh.png Graphic file (type png)
+<use images/autorennen_fruehes_20jh.png>
+Package pdftex.def Info: images/autorennen_fruehes_20jh.png  used on input line 122.
+(pdftex.def)             Requested size: 204.85985pt x 117.16304pt.
+<images/gilbreth_studie.png, id=499, 476.78125pt x 442.65375pt>
+File: images/gilbreth_studie.png Graphic file (type png)
+<use images/gilbreth_studie.png>
+Package pdftex.def Info: images/gilbreth_studie.png  used on input line 172.
+(pdftex.def)             Requested size: 191.20169pt x 177.51764pt.
+<images/ford_fliessband.png, id=500, 540.0175pt x 335.2525pt>
+File: images/ford_fliessband.png Graphic file (type png)
+<use images/ford_fliessband.png>
+Package pdftex.def Info: images/ford_fliessband.png  used on input line 198.
+(pdftex.def)             Requested size: 218.518pt x 135.65886pt.
+<images/fordlandia.png, id=501, 589.20125pt x 322.20375pt>
+File: images/fordlandia.png Graphic file (type png)
+<use images/fordlandia.png>
+Package pdftex.def Info: images/fordlandia.png  used on input line 229.
+(pdftex.def)             Requested size: 204.85985pt x 112.0257pt.
+<images/fressbalken_wuerenlos.png, id=502, 701.62125pt x 519.9425pt>
+File: images/fressbalken_wuerenlos.png Graphic file (type png)
+<use images/fressbalken_wuerenlos.png>
+Package pdftex.def Info: images/fressbalken_wuerenlos.png  used on input line 277.
+(pdftex.def)             Requested size: 218.518pt x 161.9342pt.
+ [9 <./images/potsdamerplatz_1921.png> <./images/autorennen_fruehes_20jh.png> <./images/gilbreth_studie.png> <./images/ford_fliessband.png> <./images/fordlandia.png>]) (./sections/07_neue_Mensch.tex
+<images/olympia_1936.png, id=520, 410.53375pt x 623.32875pt>
+File: images/olympia_1936.png Graphic file (type png)
+<use images/olympia_1936.png>
+Package pdftex.def Info: images/olympia_1936.png  used on input line 79.
+(pdftex.def)             Requested size: 150.23138pt x 228.09804pt.
+<images/monte_verita.png, id=521, 699.61375pt x 528.97626pt>
+File: images/monte_verita.png Graphic file (type png)
+<use images/monte_verita.png>
+Package pdftex.def Info: images/monte_verita.png  used on input line 109.
+(pdftex.def)             Requested size: 218.518pt x 165.21588pt.
+<images/sozialistisches_dorf.png, id=522, 543.02875pt x 757.83125pt>
+File: images/sozialistisches_dorf.png Graphic file (type png)
+<use images/sozialistisches_dorf.png>
+Package pdftex.def Info: images/sozialistisches_dorf.png  used on input line 138.
+(pdftex.def)             Requested size: 150.23138pt x 209.65887pt.
+ [10 <./images/fressbalken_wuerenlos.png> <./images/olympia_1936.png> <./images/monte_verita.png>]
+<images/wohnungsnot_moderner_wohnblock.png, id=536, 477.785pt x 394.47375pt>
+File: images/wohnungsnot_moderner_wohnblock.png Graphic file (type png)
+<use images/wohnungsnot_moderner_wohnblock.png>
+Package pdftex.def Info: images/wohnungsnot_moderner_wohnblock.png  used on input line 190.
+(pdftex.def)             Requested size: 232.17616pt x 191.6867pt.
+<images/frankfurter_kueche.png, id=537, 1043.9pt x 453.695pt>
+File: images/frankfurter_kueche.png Graphic file (type png)
+<use images/frankfurter_kueche.png>
+Package pdftex.def Info: images/frankfurter_kueche.png  used on input line 213.
+(pdftex.def)             Requested size: 245.83015pt x 106.83986pt.
+) [11 <./images/sozialistisches_dorf.png> <./images/wohnungsnot_moderner_wohnblock.png> <./images/frankfurter_kueche.png>] (./zusammenfassung.aux <Reading QR code for "https://github.com/Giamo08/Zusammenfassungen" at level 3-L from aux file.>
 )
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `zusammenfassung.out' has not changed.
-(rerunfilecheck)             Checksum: 99AE0B43CBB4ADF304F845B62E874273;4592.
+(rerunfilecheck)             Checksum: D118CC62EA09804DD0BAB1CAFDEE2714;21336.
  ) 
 Here is how much of TeX's memory you used:
- 64039 strings out of 474116
- 1572263 string characters out of 5743681
+ 64460 strings out of 474116
+ 1582244 string characters out of 5743681
  2587784 words of memory out of 5000000
- 85455 multiletter control sequences out of 15000+600000
+ 85730 multiletter control sequences out of 15000+600000
  612482 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,11n,160p,1111b,1065s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,12n,160p,1111b,1304s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zusammenfassung.pdf (3 pages, 14038197 bytes).
+Output written on zusammenfassung.pdf (11 pages, 66261879 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
- 51 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 620 PDF objects out of 1000 (max. 8388607)
+ 521 compressed objects within 6 object streams
+ 182 named destinations out of 1000 (max. 500000)
+ 829 words of extra memory for PDF output out of 10000 (max. 10000000)
 

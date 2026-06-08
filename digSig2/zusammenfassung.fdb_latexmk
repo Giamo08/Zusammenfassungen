@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1772117079.36723 "/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/digSig2/zusammenfassung.tex" "zusammenfassung.pdf" "zusammenfassung" 1772117081.4151 0
+["pdflatex"] 1772723162.37275 "/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/digSig2/zusammenfassung.tex" "zusammenfassung.pdf" "zusammenfassung" 1772723164.18948 0
   "/Users/gianmarconaf/Documents/Gian_Marco/Studium/zusammenfassungen/Zusammenfassungen/digSig2/zusammenfassung.tex" 1772013946.94466 2145 7ee427add2c1f701ddc78d1133117a5c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -346,9 +346,9 @@
   "images/transposed_form.png" 1771672777.24732 52576 9dee148662cbcef2bdea1d1abf54fece ""
   "preamble.tex" 1772117079.2349 33950 139af596c6c60d1e7a319f16bbc95a2e ""
   "sections/01_digitalFilterRealizations.tex" 1771673078.06964 6284 d34188e4ecdf8733944850a63253a916 ""
-  "sections/02_digitalWaveformGenerators.tex" 1772014603.50072 6339 8cbb894aec863a5e69c7206646b4f63c ""
-  "zusammenfassung.aux" 1772117081.31958 5780 642ca7830738b3282dafb34fe6f4a682 "pdflatex"
-  "zusammenfassung.out" 1772117081.32056 5519 369f55b90deaf15ba079d027bf61236c "pdflatex"
+  "sections/02_digitalWaveformGenerators.tex" 1772723160.40465 6591 95fb5ba4307f9cb0f7544f462aa6ff07 ""
+  "zusammenfassung.aux" 1772723164.10327 5909 1dd9a7b82ec93b367bb4852a8440ceae "pdflatex"
+  "zusammenfassung.out" 1772723164.10416 5519 8db0188e6fd562f7d93506310377fdc4 "pdflatex"
   "zusammenfassung.tex" 1772013946.94466 2145 7ee427add2c1f701ddc78d1133117a5c ""
   (generated)
   "zusammenfassung.aux"

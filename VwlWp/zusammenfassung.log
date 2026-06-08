@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  26 FEB 2026 16:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.20)  12 MAR 2026 16:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1261,17 +1261,17 @@ File: ts1txr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <8> not available
 (Font)              Font shape `T1/txr/bx/n' tried instead on input line 12.
-<images/hexagon.png, id=127, 781.92125pt x 474.77374pt>
+<images/hexagon.png, id=284, 781.92125pt x 474.77374pt>
 File: images/hexagon.png Graphic file (type png)
 <use images/hexagon.png>
 Package pdftex.def Info: images/hexagon.png  used on input line 26.
 (pdftex.def)             Requested size: 218.518pt x 132.68217pt.
-<images/kreislaufGueter.png, id=129, 888.31876pt x 524.96124pt>
+<images/kreislaufGueter.png, id=286, 888.31876pt x 524.96124pt>
 File: images/kreislaufGueter.png Graphic file (type png)
 <use images/kreislaufGueter.png>
 Package pdftex.def Info: images/kreislaufGueter.png  used on input line 54.
 (pdftex.def)             Requested size: 218.518pt x 129.13329pt.
-<images/erweiterterKreislauf.png, id=130, 844.15375pt x 610.28pt>
+<images/erweiterterKreislauf.png, id=287, 844.15375pt x 610.28pt>
 File: images/erweiterterKreislauf.png Graphic file (type png)
 <use images/erweiterterKreislauf.png>
 Package pdftex.def Info: images/erweiterterKreislauf.png  used on input line 57.
@@ -1285,7 +1285,7 @@ LaTeX Warning: Command \" invalid in math mode on input line 101.
 
 Missing character: There is no � in font txr!
 Missing character: There is no � in font txr!
-<images/vgr3blickwinkel.png, id=131, 1103.12125pt x 491.8375pt>
+<images/vgr3blickwinkel.png, id=288, 1103.12125pt x 491.8375pt>
 File: images/vgr3blickwinkel.png Graphic file (type png)
 <use images/vgr3blickwinkel.png>
 Package pdftex.def Info: images/vgr3blickwinkel.png  used on input line 127.
@@ -1293,53 +1293,84 @@ Package pdftex.def Info: images/vgr3blickwinkel.png  used on input line 127.
 [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc} <./images/hexagon.png> <./images/kreislaufGueter.png> <./images/erweiterterKreislauf.png> <./images/vgr3blickwinkel.png>]) (./sections/02_Wirtschaftswachstum.tex
-<images/bip_pro_Kopf.png, id=162, 1131.22626pt x 631.35875pt>
+<images/bip_pro_Kopf.png, id=319, 1131.22626pt x 631.35875pt>
 File: images/bip_pro_Kopf.png Graphic file (type png)
 <use images/bip_pro_Kopf.png>
 Package pdftex.def Info: images/bip_pro_Kopf.png  used on input line 19.
 (pdftex.def)             Requested size: 218.518pt x 121.95358pt.
-<images/wachstumstrend_konjunkturverlauf.png, id=163, 1131.22626pt x 635.37375pt>
+<images/wachstumstrend_konjunkturverlauf.png, id=320, 1131.22626pt x 635.37375pt>
 File: images/wachstumstrend_konjunkturverlauf.png Graphic file (type png)
 <use images/wachstumstrend_konjunkturverlauf.png>
 Package pdftex.def Info: images/wachstumstrend_konjunkturverlauf.png  used on input line 45.
 (pdftex.def)             Requested size: 218.518pt x 122.72913pt.
-<images/arbeitsproduktivitaet.png, id=165, 1048.91875pt x 677.53125pt>
+<images/arbeitsproduktivitaet.png, id=322, 1048.91875pt x 677.53125pt>
 File: images/arbeitsproduktivitaet.png Graphic file (type png)
 <use images/arbeitsproduktivitaet.png>
 Package pdftex.def Info: images/arbeitsproduktivitaet.png  used on input line 56.
 (pdftex.def)             Requested size: 218.518pt x 141.14854pt.
-<images/quelle_wachstum.png, id=166, 1135.24126pt x 677.53125pt>
+<images/quelle_wachstum.png, id=323, 1135.24126pt x 677.53125pt>
 File: images/quelle_wachstum.png Graphic file (type png)
 <use images/quelle_wachstum.png>
 Package pdftex.def Info: images/quelle_wachstum.png  used on input line 76.
 (pdftex.def)             Requested size: 218.518pt x 130.40707pt.
-<images/realesbip.png, id=167, 1096.095pt x 684.5575pt>
+<images/realesbip.png, id=324, 1096.095pt x 684.5575pt>
 File: images/realesbip.png Graphic file (type png)
 <use images/realesbip.png>
 Package pdftex.def Info: images/realesbip.png  used on input line 90.
 (pdftex.def)             Requested size: 218.518pt x 136.47035pt.
- [2 <./images/bip_pro_Kopf.png> <./images/wachstumstrend_konjunkturverlauf.png> <./images/arbeitsproduktivitaet.png> <./images/quelle_wachstum.png> <./images/realesbip.png>]) [3] (./zusammenfassung.aux <Reading QR code for "https://github.com/Giamo08/Zusammenfassungen" at level 3-L from aux file.>
+ [2 <./images/bip_pro_Kopf.png> <./images/wachstumstrend_konjunkturverlauf.png> <./images/arbeitsproduktivitaet.png> <./images/quelle_wachstum.png> <./images/realesbip.png>]) (./sections/03_Wohlstandsverteilung.tex
+<images/lorenzkurve.png, id=345, 1203.49625pt x 677.53125pt>
+File: images/lorenzkurve.png Graphic file (type png)
+<use images/lorenzkurve.png>
+Package pdftex.def Info: images/lorenzkurve.png  used on input line 48.
+(pdftex.def)             Requested size: 136.57323pt x 76.88579pt.
+
+contour: Using real outline for `3.4.1\ ' on input line 54.
+contour: Using real outline for `Lorenzkurve' on input line 54.
+contour: Using real outline for `3.4.2\ ' on input line 71.
+contour: Using real outline for `Gini-Koeffizient' on input line 71.
+<images/einkommensverteilung.png, id=346, 1245.65375pt x 758.835pt>
+File: images/einkommensverteilung.png Graphic file (type png)
+<use images/einkommensverteilung.png>
+Package pdftex.def Info: images/einkommensverteilung.png  used on input line 89.
+(pdftex.def)             Requested size: 191.20169pt x 116.4719pt.
+<images/vermögensverteilung.png, id=347, 1254.6875pt x 833.1125pt>
+File: images/vermögensverteilung.png Graphic file (type png)
+<use images/vermögensverteilung.png>
+Package pdftex.def Info: images/vermögensverteilung.png  used on input line 104.
+(pdftex.def)             Requested size: 191.20169pt x 126.9573pt.
+<images/vermoegen_schweiz.png, id=348, 1174.3875pt x 640.3925pt>
+File: images/vermoegen_schweiz.png Graphic file (type png)
+<use images/vermoegen_schweiz.png>
+Package pdftex.def Info: images/vermoegen_schweiz.png  used on input line 120.
+(pdftex.def)             Requested size: 191.20169pt x 104.26286pt.
+[3 <./images/lorenzkurve.png> <./images/einkommensverteilung.png> <./images/vermögensverteilung.png>]
+contour: Using real outline for `3.9.1\ ' on input line 151.
+contour: Using real outline for `Umverteilung über Einnahmen' on input line 151.
+contour: Using real outline for `3.9.2\ ' on input line 160.
+contour: Using real outline for `Umverteilung über Ausgaben' on input line 160.
+) (./sections/04_1Konjunktur.tex [4 <./images/vermoegen_schweiz.png>]) (./sections/05_Makrooekonomisches_Modell.tex [5]) [6] (./zusammenfassung.aux <Reading QR code for "https://github.com/Giamo08/Zusammenfassungen" at level 3-L from aux file.>
 )
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `zusammenfassung.out' has not changed.
-(rerunfilecheck)             Checksum: 1E57FFCEBB2752B1E50ADB4E8A4358EA;6549.
+(rerunfilecheck)             Checksum: A334CED3C75133CE9CD7898C43A18E1E;13837.
  ) 
 Here is how much of TeX's memory you used:
- 64082 strings out of 474116
- 1573568 string characters out of 5743681
+ 64267 strings out of 474116
+ 1576953 string characters out of 5743681
  2581807 words of memory out of 5000000
- 85484 multiletter control sequences out of 15000+600000
- 606702 words of font info for 119 fonts, out of 8000000 for 9000
+ 85569 multiletter control sequences out of 15000+600000
+ 613131 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,11n,160p,1109b,1056s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,12n,160p,1109b,1239s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zusammenfassung.pdf (3 pages, 6641205 bytes).
+Output written on zusammenfassung.pdf (6 pages, 13505988 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 213 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 500000)
- 290 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 503 PDF objects out of 1000 (max. 8388607)
+ 443 compressed objects within 5 object streams
+ 157 named destinations out of 1000 (max. 500000)
+ 622 words of extra memory for PDF output out of 10000 (max. 10000000)
 
