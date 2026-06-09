@@ -229,40 +229,41 @@
              {1ex}
 
 % section formatting
+
 \titleformat{\section}
-            % {\fontsize{9}{8}\selectfont\bfseries}
             {\Large\bfseries}
             {}
             {0mm}
-            {\tikz{
-                \node[fill=sectioncolor,            % fill color:       sectioncolor
-                      text=sectextcol,              % text color:       sectextcol
-                      text width=\columnwidth-4pt,  % text width:       columnwidth - 2x padding
-                      text depth=0pt,               % text depth:       0pt (needed so text stays vertically centered)
-                      minimum height=5mm,           % minimum height:   5mm
-                      inner sep=2pt,                % inner padding:    2pt
-                      align=left]                   % text alignment:   left
-                      {\thesection\ #1};}}
+            {%
+                \begingroup
+                \setlength{\fboxsep}{2pt}%
+                \colorbox{sectioncolor}{%
+                    \parbox{\dimexpr\columnwidth-2\fboxsep\relax}{%
+                        \color{sectextcol}\thesection\ #1%
+                    }%
+                }%
+                \endgroup
+            }
 
 \titleformat{numberless, name=\section}
-            % {\fontsize{9}{8}\selectfont\bfseries}
             {\Large\bfseries}
             {}
             {0mm}
-            {\tikz{
-                \node[fill=sectioncolor,            % fill color:       sectioncolor
-                      text=sectextcol,              % text color:       sectextcol
-                      text width=\columnwidth-4pt,  % text width:       columnwidth - 2x padding
-                      text depth=0pt,               % text depth:       0pt (needed so text stays vertically centered)
-                      minimum height=5mm,           % minimum height:   5mm
-                      inner sep=2pt,                % inner padding:    2pt
-                      align=left]                   % text alignment:   left
-                      {#1};}}
+            {%
+                \begingroup
+                \setlength{\fboxsep}{2pt}%
+                \colorbox{sectioncolor}{%
+                    \parbox{\dimexpr\columnwidth-2\fboxsep\relax}{%
+                        \color{sectextcol}#1%
+                    }%
+                }%
+                \endgroup
+            }
 
 \titlespacing{\section}
              {0mm}
              {.2ex}
-             {.2ex}
+             {1ex}
 
 
 % subsection formatting
@@ -270,28 +271,33 @@
             {\large\bfseries}
             {}
             {0mm}
-            {\phantomsection\tikz{
-                \node[fill=subsectioncolor,         % fill color:       subsectioncolor 
-                      text=subsectextcol,           % text color:       subsectextcol 
-                      text width=\columnwidth-4pt,  % text width:       columnwidth - 2x padding 
-                      text depth=0pt,               % text depth:       0pt (needed so text stays vertically centered)
-                      minimum height=5mm,           % minimum height:   5mm 
-                      inner sep=2pt,                % inner padding:    2pt 
-                      align=left]                   % text alignment:   left
-                      {\thesubsection\ #1};}}
+            {%
+                \phantomsection
+                \begingroup
+                \setlength{\fboxsep}{2pt}%
+                \colorbox{subsectioncolor}{%
+                    \parbox{\dimexpr\columnwidth-2\fboxsep\relax}{%
+                        \color{subsectextcol}\thesubsection\ #1%
+                    }%
+                }%
+                \endgroup
+            }
 
 \titleformat{numberless, name=\subsection}
             {\large\bfseries}
             {}
             {0mm}
-            {\phantomsection\tikz{
-                \node[fill=subsectioncolor,         % fill color:       subsectioncolor 
-                      text=subsectextcol,           % text color:       subsectextcol 
-                      text width=\columnwidth-4pt,  % text width:       columnwidth - 2x padding 
-                      minimum height=5mm,           % minimum height:   5mm 
-                      inner sep=2pt,                % inner padding:    2pt 
-                      align=left]                   % text alignment:   left
-                      {#1};}}
+            {%
+                \phantomsection
+                \begingroup
+                \setlength{\fboxsep}{2pt}%
+                \colorbox{subsectioncolor}{%
+                    \parbox{\dimexpr\columnwidth-2\fboxsep\relax}{%
+                        \color{subsectextcol}#1%
+                    }%
+                }%
+                \endgroup
+            }
 
 \titlespacing{\subsection}
              {0mm}
