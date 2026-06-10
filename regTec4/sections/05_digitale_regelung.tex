@@ -35,7 +35,51 @@ Ein Regelkreis mit digitalem Regler hat folgende Struktur:
     \item[-] Zeitquantisierung \textrightarrow\ Totzeit von ca. $50\, \%$ der Abtastzeit $T$ 
     \item[-] Rundungsfehler aufgrund von rechnerischer Zahlendarstellung   
 \end{itemize}
+%-----------------------------------------------------------------------------------------------------------------------------------
+\subsubsection{Diskretisierung eines Integrators}
 
+Kontinuierlich:
+
+\[
+G(s)=\frac1s
+\]
+
+Rechteck vorwärts:
+
+\[
+G(z)=\frac{T}{z-1}
+\]
+
+Rechteck rückwärts:
+
+\[
+G(z)=\frac{Tz}{z-1}
+\]
+
+Trapezregel (Tustin):
+
+\[
+G(z)=
+\frac{T}{2}
+\frac{z+1}{z-1}
+\]
+
+\para{Stabilität}
+
+Kontinuierlich:
+
+\[
+\Re(\lambda)<0
+\]
+
+Diskret:
+
+\[
+|z_i|<1
+\]
+
+(Pole innerhalb Einheitskreis)
+%-----------------------------------------------------------------------------------------------------------------------------------
 
 \subsection{Signale im digitalen Regelkreis}{184}
 \label{Signale im digitalen Regelkreis}

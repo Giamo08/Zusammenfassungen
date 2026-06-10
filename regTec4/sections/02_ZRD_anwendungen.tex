@@ -39,7 +39,27 @@ Für die freie Antwort ergeben sich aus der Theorie der Eigenwerte / Eigenvektor
         \2 $x_0$ wird in Richtung der Eigenvektoren $v_i$ zerlegt und jede dieser Komponenten folgt bei der zeitlichen Entwicklung dem Faktor $e^{\lambda_i t}$
 \end{outline}
 
+%-----------------------------------------------------------------------------------------------------------------------------------
+\para{Freie Antwort}
 
+Für
+
+\[
+u(t)=0
+\]
+
+ergibt sich
+
+\[
+x(t)=e^{At}x_0
+\]
+
+In Diagonalform gilt:
+
+\[
+x_i(t)=x_i(0)e^{\lambda_i t}
+\]
+%-----------------------------------------------------------------------------------------------------------------------------------
 
 \subsubsection{Impulsantwort $\boldsymbol{g(t)}$}
 
@@ -265,7 +285,7 @@ $$ \boxed{ \det(\lambda \cdot \bm{I} - \bm{A}) \overset{!}{=} 0 \qquad \rightarr
 dass alle Eigenwerte der Systemmatrix $\bm{A}$ des Systems einen negativen Realteil besitzen. \textrightarrow\ Pol-/Nullstellenkürzungen
 
 
-\columnbreak
+%\columnbreak
 
 
 \subsection{Steuerbarkeit}{185-187}
@@ -462,7 +482,23 @@ Ein System ist minimal, wenn...
 
 Zu einem nicht-minimalen System $(\bm{A}, \, \bm{B}, \, \bm{C})$ kann ein System $(\bm{A_M}, \, \bm{B_M}, \, \bm{C_M})$ tieferer Ordnung
 angegeben werden, das trotzdem \textbf{dieselbe UTF}(-Matrix) $G(s)$ hat.
+%------------------------------------------------------------------------------------------------------------------------------------
+\para{Pol-Nullstellen-Kürzung}
 
+Jede Pol-Nullstellen-Kürzung reduziert die minimale Ordnung um 1.
+
+\[
+G(s)
+=
+\frac{(s+a)N(s)}
+{(s+a)D(s)}
+=
+\frac{N(s)}
+{D(s)}
+\]
+
+Der gekürzte Zustand ist weder steuerbar noch beobachtbar.
+%-----------------------------------------------------------------------------------------------------------------------------------
 \subsubsection{Einfluss von Nichtminimalität}
 
 \begin{outline}
@@ -474,9 +510,11 @@ angegeben werden, das trotzdem \textbf{dieselbe UTF}(-Matrix) $G(s)$ hat.
             \textrightarrow\ \textbf{gravierend}, wenn Strecke deshalb nicht stabilisiert werden kann
         \2 Algorithmen / Softwarepakete funktionieren oft nicht korrekt, wenn System nicht minimal
 \end{outline}
+%-----------------------------------------------------------------------------------------------------------------------------------
+\para{Nicht-minimale Systeme}
 
-
-
+Nicht steuerbare oder nicht beobachtbare Zustände erscheinen in der Diagonalform als entkoppelte Zustände.
+%-----------------------------------------------------------------------------------------------------------------------------------
 \subsection{Normalformen}
 
 Kann ein SISO-System mit UTF $G(s)$ in eine der beschriebenen Normalformen gebracht werden, so hat das System gewisse Eigenschaften

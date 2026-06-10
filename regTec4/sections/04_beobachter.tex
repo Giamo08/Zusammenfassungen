@@ -31,8 +31,66 @@ $$
         h_1 &   h_2 & \ldots    & h_n 
 \end{bmatrix}^T
 $$
+%-----------------------------------------------------------------------------------------------------------------------------------
 
+\para{Beobachterfehler}
 
+\[
+e=x-\hat x
+\]
+
+\[
+\dot e=(A-HC)e
+\]
+
+Die Beobachterpole sind die Eigenwerte von
+
+\[
+A-HC
+\]
+
+\subsubsection{Reduzierter Beobachter}
+
+Wird ein Teil der Zustände direkt gemessen,
+müssen nur die übrigen Zustände geschätzt werden.
+
+Anzahl Beobachterzustände:
+
+\[
+n-q
+\]
+
+mit
+
+\[
+q=
+\text{Anzahl direkt gemessener Zustände}
+\]
+
+\para{Beobachter als Filter}
+
+Kleine Beobachterverstärkung:
+
+\[
+H \downarrow
+\]
+
+\textrightarrow\ weniger Messrauschen
+
+\textrightarrow\ langsamere Schätzung
+
+\vspace{0.1cm}
+
+Grosse Beobachterverstärkung:
+
+\[
+H \uparrow
+\]
+
+\textrightarrow\ schnellere Schätzung
+
+\textrightarrow\ mehr Messrauschen
+%-----------------------------------------------------------------------------------------------------------------------------------
 \subsection{Dualität: Steuerbarkeit -- Beobachtbarkeit}{205}
 
 Aufgrund der Dualität von Steuerbarkeit und Beobachtbarkeit sind viele Konzepte in den folgenden Abschnitten sehr ähnlich zu den Konzepten der Zustandsrückführung. \\

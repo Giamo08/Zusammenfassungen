@@ -270,6 +270,28 @@ Für $A v = \lambda v$ gilt:
 \item $|\lambda| < 1$: Stauchung
 \item $\lambda < 0$: Spiegelung
 \end{itemize}
+
+\para{Typische Zustandswahl}
+
+Translation:
+
+\[
+    x=
+    \begin{bmatrix}
+        s\\
+        \dot s
+    \end{bmatrix}
+\]
+
+Rotation:
+
+\[
+    x=
+    \begin{bmatrix}
+        \varphi\\
+        \dot\varphi
+    \end{bmatrix}
+\]
 %-----------------------------------------------
 
 \subsubsection{Positive Definitheit von Matritzen}
@@ -290,7 +312,42 @@ Eine Matrix $\bm{Q}$ ist positiv definit ($\bm{Q} > 0$), wenn
 \begin{minipage}[t]{0.48\columnwidth}
     \includegraphics[width=\columnwidth, align=t]{images/hauptminoren.pdf}
 \end{minipage}
+%==========================================================================================================
+\subsubsection{Lagrange-Verfahren}
 
+\[
+L=T-V
+\]
+
+\[
+\frac{d}{dt}
+\left(
+\frac{\partial L}{\partial \dot q_i}
+\right)
+-
+\frac{\partial L}{\partial q_i}
+=
+Q_i
+\]
+
+Ohne äussere Kräfte gilt:
+
+\[
+Q_i=0
+\]
+
+\vspace{0.1cm}
+
+\textbf{Vorgehen:}
+
+\begin{enumerate}
+    \item $T$ bestimmen
+    \item $V$ bestimmen
+    \item $L=T-V$
+    \item Lagrange-Gleichung anwenden
+    \item DGL $\rightarrow$ ZRD $\rightarrow$ Linearisierung
+\end{enumerate}
+%===============================================================================
 
 \subsubsection{Exponentialfunktion von Matritzen}
 \label{Exponentialfunktion von Matritzen}
@@ -396,7 +453,7 @@ $$ \boxed{ |K|_{\deci \bel} = 20 \, \deci \bel \cdot \log_{10} |K| \quad \Leftri
 \renewcommand{\arraystretch}{1}
 
 
-\columnbreak
+%\columnbreak
 
 \subsection{Laplace-Transformation}
 \label{Laplace-Transformation}
@@ -735,7 +792,7 @@ Aus $K = \theta_1 \cdot \theta_2 = \sqrt{1^2 + 3^2} \cdot \sqrt{1^2 + 3^2} = 10$
 \end{itemize}
 
 
-\columnbreak
+%\columnbreak
 
 \section{Matlab}
 
@@ -890,7 +947,7 @@ Ein Energiespeicher \textrightarrow\ System schwingt nicht
     $$ \boxed{ \text{Bsp: } RC \, \dot{u}(t) + u(t) = R \cdot i(t) }  $$
 \end{minipage}
 
-\columnbreak
+%\columnbreak
 
 
 \subsection[PT2-Glied]{$\text{PT}_2$-Glied}
@@ -1026,3 +1083,162 @@ Das Lead-Lag-Glied ist eine Serieschaltung aus Lead- und Lag-Glied.
     \includegraphics[width=0.9\columnwidth, align=t]{images/RegT1_grundglieder/lag-glied}
 \end{minipage}
 
+\section*{Prüfungscheck / Schnellreferenz}
+
+\subsection*{Steuerbarkeit}
+\[
+Q_S=[B \;\; AB \;\; A^2B \;\; \dots \;\; A^{n-1}B]
+\]
+
+Vollständig steuerbar:
+\[
+\mathrm{rang}(Q_S)=n
+\]
+
+Steuerbar:
+\[
+\det(Q_S)\neq0
+\]
+(SISO-Fall)
+
+\subsection*{Beobachtbarkeit}
+\[
+Q_B=
+\begin{bmatrix}
+C\\
+CA\\
+CA^2\\
+\vdots\\
+CA^{n-1}
+\end{bmatrix}
+\]
+
+Vollständig beobachtbar:
+\[
+\mathrm{rang}(Q_B)=n
+\]
+
+\subsection*{Minimalität}
+System minimal
+\[
+\Longleftrightarrow
+\]
+steuerbar \textbf{und} beobachtbar.
+
+\subsection*{Zustandsrückführung}
+\[
+u=-Kx+r
+\]
+
+Geschlossener Kreis:
+\[
+\dot x=(A-BK)x+Br
+\]
+
+Pole:
+\[
+\lambda(A-BK)
+\]
+
+Polvorgabe nur möglich falls:
+\[
+\mathrm{rang}(Q_S)=n
+\]
+
+\subsection*{Beobachter}
+\[
+\dot{\hat x}=A\hat x+Bu+H(y-\hat y)
+\]
+
+\[
+\hat y=C\hat x
+\]
+
+Beobachterpole:
+\[
+\lambda(A-HC)
+\]
+
+\subsection*{Transitionsmatrix}
+\[
+\Phi(t)=e^{At}
+\]
+
+\[
+A=\dot{\Phi}(0)
+\]
+
+Diagonalform:
+\[
+e^{\Lambda t}
+=
+\mathrm{diag}
+\left(
+e^{\lambda_1 t},
+\dots,
+e^{\lambda_n t}
+\right)
+\]
+
+\subsection*{Impulsantwort}
+Kontinuierlich:
+\[
+g(t)=Ce^{At}B+D\delta(t)
+\]
+
+Diskret:
+\[
+g(k)=CA^{k-1}B
+\qquad (k\ge 1)
+\]
+
+\subsection*{Stabilität}
+Zeitkontinuierlich:
+\[
+\mathrm{Re}(\lambda_i)<0
+\]
+
+Zeitdiskret:
+\[
+|\lambda_i|<1
+\]
+
+\subsection*{Trajektorienbilder}
+\begin{itemize}
+\item $\lambda<0$: Ursprung attraktiv
+\item $\lambda>0$: Ursprung abstossend
+\item $\lambda=\pm j\omega$: Kreisbewegung
+\item Jordanblock: Scherbewegung
+\end{itemize}
+
+\subsection*{Prüfungsklassiker}
+\begin{itemize}
+\item UTF $\leftrightarrow$ ZRD
+\item Blockdiagramm $\rightarrow$ ZRD
+\item Steuerbarkeit / Beobachtbarkeit
+\item Polvorgabe
+\item Transitionsmatrix
+\item Impulsantwort / Faltung
+\item ZOH-Diskretisierung
+\item Wurzelortskurve
+\end{itemize}
+
+\subsection*{Sofortwissen}
+
+\[
+G(s)=C(sI-A)^{-1}B+D
+\]
+
+\[
+\tilde A=PAP^{-1}
+\]
+
+\[
+\tilde B=PB
+\]
+
+\[
+\tilde C=CP^{-1}
+\]
+
+Eigenwerte bleiben bei der Ähnlichkeitstransformation unverändert.

@@ -169,6 +169,48 @@ Die drei (linearen) Gleichungen rechts können direkt in die ZRD gebracht werden
 
 \vspace{-0.3cm}
 
+%-----------------------------------------------------------------------------------------------------------------------------------
+\example{Feder-Masse-System}
+
+Kraftbilanz:
+
+\[
+m\ddot p = F_u-kp
+\]
+
+Zustände:
+
+\[
+x_1=p,
+\qquad
+x_2=\dot p
+\]
+
+ZRD:
+
+\[
+\dot x=
+\begin{bmatrix}
+0 & 1\\
+-\frac{k}{m} & 0
+\end{bmatrix}
+x+
+\begin{bmatrix}
+0\\
+\frac{1}{m}
+\end{bmatrix}
+u
+\]
+
+\[
+y=
+\begin{bmatrix}
+1 & 0
+\end{bmatrix}
+x
+\]
+%------------------------------------------------------------------------------------------------------------------------------------
+
 \subsection{Linearisierung einer ZRD}{168}
 \label{Linearisierung einer ZRD}
 
@@ -238,7 +280,17 @@ $$
         \textbf{Im AP sind alle Ableitungen $\bm{0}$} \textrightarrow\ $\dot{x} = f(x, u) \overset{!}{=} 0$
     \item ZRD durch Berechnung der Jacobi-Matzitzen linearisieren (Auswertung im AP)
 \end{enumerate}
+%=============================================================================================================================
+\para{Arbeitspunkt}
 
+Im Arbeitspunkt gilt:
+
+\[
+\dot{x}_0=f(x_0,u_0)=0
+\]
+
+\textrightarrow\ Alle Ableitungen auf Null setzen und nach $x_0$ bzw. $u_0$ auflösen.
+%===============================================================================================================================
 
 \subsection{Zustandsraumdarstellung aus UTF oder DGL}{169-170}
 \label{Zustandsraumdarstellung aus einer UTF oder DGL}
@@ -560,4 +612,36 @@ $$ \boxed{ \tilde{x} = \bm{P} x \qquad  \bm{\tilde{A}} = \bm{P A P^{-1}} \qquad 
     $$ \text{ \textrightarrow } \quad \tilde{x} = \begin{bmatrix} \tilde{x}_1 \\ \tilde{x}_2 \end{bmatrix} = \begin{bmatrix} x_2 \\ x_1 \end{bmatrix}
     = \underbrace{ \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} }_{ \bm{P} } \cdot \underbrace{ \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} }_{ x } $$
 \end{minipage}
+%-----------------------------------------------------------------------------------------------------------------------------------
+\para{Vertauschen von Zuständen}
 
+Für
+
+\[
+\tilde x=
+\begin{bmatrix}
+x_2\\
+x_1
+\end{bmatrix}
+\]
+
+gilt
+
+\[
+P=
+\begin{bmatrix}
+0&1\\
+1&0
+\end{bmatrix}
+\]
+
+und
+
+\[
+\tilde A=PAP^{-1},
+\qquad
+\tilde B=PB,
+\qquad
+\tilde C=CP^{-1}
+\]
+%-----------------------------------------------------------------------------------------------------------------------------------

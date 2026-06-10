@@ -42,8 +42,87 @@ $$ G_f(s) = \frac{Y(s)}{R(s)} = \bm{C} \cdot (s \bm{I} - \bm{A} + \bm{BK})^{-1} 
 
 Wenn vorausgesetzt wird, dass das System $(\bm{A}, \, \bm{B})$ \textbf{steuerbar} ist, können die \textbf{Pole des geschlossenen Regelkreises beliebig vorgegeben} werden. \\
 Dies kann mittels Polvorgabe (\ref{Polvorgabe}) oder LQR-Verfahren (\ref{LQR-Verfahren}) erreicht werden.
+%-----------------------------------------------------------------------------------------------------------------------------------
+\para{Geschlossener Kreis}
 
+Für
 
+\[
+u=-Kx
+\]
+
+ergibt sich
+
+\[
+\dot x=(A-BK)x
+\]
+
+Die Eigenwerte von
+
+\[
+A-BK
+\]
+
+sind die Pole des geschlossenen Regelkreises.
+
+\para{Polvorgabe}
+
+Polplatzierung mittels Zustandsrückführung ist nur möglich, wenn
+
+\[
+\mathrm{rang}(Q_s)=n
+\]
+
+gilt.
+
+\subsubsection{LQR-Regler}
+
+Kostenfunktion:
+
+\[
+J=
+\int_0^\infty
+(x^TQx+u^TRu)\,dt
+\]
+
+Gewichte:
+
+\[
+Q \rightarrow Zustände
+\]
+
+\[
+R \rightarrow Stellaufwand
+\]
+
+Regler:
+
+\[
+u=-Kx
+\]
+
+MATLAB:
+
+\[
+\texttt{k=lqr(A,B,Q,R)}
+\]
+
+\para{Vorverstärkung}
+
+\[
+u=-Kx+Lr
+\]
+
+\[
+A_{cl}=A-BK
+\]
+
+Die Pole des geschlossenen Kreises sind die Eigenwerte von
+
+\[
+A-BK
+\]
+%-----------------------------------------------------------------------------------------------------------------------------------
 \subsection{Eigenschaften von Zustandsrückführungen}
 
 Reglenentwurf mittels Polvorgabe und LQR-Verfahren haben folgende Eigenschaften:
@@ -303,7 +382,40 @@ $$ \boxed{ \bm{K} = \bm{R^{-1} B^T S} } $$
     \bottomrule
 \end{ctabular}
 
+%-----------------------------------------------------------------------------------------------------------------------------------
+\subsubsection{Zustandsregler mit PI-Zusatz}
 
+Integratorzustand:
+
+\[
+x_I=\int e(t)\,dt
+\]
+
+Erweiterter Zustandsvektor:
+
+\[
+x_{PI}
+=
+\begin{bmatrix}
+x\\
+x_I
+\end{bmatrix}
+\]
+
+Regler:
+
+\[
+u=-Kx-k_Ix_I
+\]
+
+Vorteil:
+
+\[
+e_\infty = 0
+\]
+
+für konstante Führungs- und Störgrössen.
+%-----------------------------------------------------------------------------------------------------------------------------------
 
 \subsection{Statische Erweiterungen der Zustandsrückführung}
 \label{Statische Erweiterungen der Zustandsrückführung}

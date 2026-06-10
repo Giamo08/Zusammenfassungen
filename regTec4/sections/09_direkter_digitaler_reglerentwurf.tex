@@ -25,9 +25,39 @@ $$ \text{Geschlossener Regelkreis} \quad  G_f(\cdot) = \frac{Y(\cdot)}{R(\cdot)}
         \2 Entweder alles in $z$ formuliert oder alles in $s$ formuliert
     \1 Zeitdiskrete Systeme müssen \textbf{dieselbe Abtastzeit} haben
 \end{outline}
+%-----------------------------------------------------------------------------------------------------------------------------------
+\subsubsection{Direkter digitaler Reglerentwurf}
 
+Vorgegeben:
 
+\[
+G_f(z)
+\]
 
+Gesucht:
+
+\[
+G_R(z)
+\]
+
+Mit
+
+\[
+G_f(z)
+=
+\frac{G_R(z)G_S(z)}
+{1+G_R(z)G_S(z)}
+\]
+
+ergibt sich
+
+\[
+G_R(z)
+=
+\frac{G_f(z)}
+{G_S(z)(1-G_f(z))}
+\]
+%-----------------------------------------------------------------------------------------------------------------------------------
 \subsection{ZOH-Diskretisierung -- Überblick}
 \label{ZOH-Diskretisierung -- Überblick}
 
