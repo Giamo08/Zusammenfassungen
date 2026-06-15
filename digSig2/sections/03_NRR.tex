@@ -1,0 +1,696 @@
+\section{Noise Reduction and Signal Enhancement (Chapter 8.3)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Grundproblem der Signalverbesserung}
+
+In der Praxis wird selten ein ideales Signal gemessen.
+
+Stattdessen erhält man:
+
+\[
+x(n)=s(n)+v(n)
+\]
+
+wobei
+
+\begin{itemize}
+\item $s(n)$ = gewünschtes Nutzsignal
+\item $v(n)$ = Störsignal (Noise)
+\end{itemize}
+
+Das Ziel aller Verfahren aus Kapitel 8.3 ist:
+
+\[
+y(n)\approx s(n)
+\]
+
+also:
+
+\begin{itemize}
+\item Nutzsignal erhalten
+\item Rauschen entfernen
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth]{images/noise_reduction_overview.png}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Prinzip der Noise Reduction}
+
+Viele Störungen besitzen andere Frequenzanteile als das Nutzsignal.
+
+Daher kann man geeignete Filter einsetzen.
+
+\begin{center}
+\includegraphics[width=0.8\linewidth]{images/signal_noise_spectrum.png}
+\end{center}
+
+Typische Beispiele:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c}
+Signal & Störung \\
+\hline
+ECG & 50/60 Hz Netzbrummen \\
+Sprache & Hochfrequentes Rauschen \\
+Radar & Zufälliges Messrauschen \\
+Sensoren & Quantisierungsrauschen \\
+\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Noise Reduction Ratio (NRR)}
+
+Die wichtigste Größe des gesamten Kapitels ist die
+
+\textbf{Noise Reduction Ratio (NRR)}.
+
+Sie beschreibt, wie viel Rauschleistung nach dem Filter übrig bleibt.
+
+Definition:
+
+\[
+NRR=
+\frac{\sigma_y^2}
+{\sigma_x^2}
+\]
+
+mit
+
+\[
+\sigma_x^2
+\]
+
+als Eingangsrauschleistung und
+
+\[
+\sigma_y^2
+\]
+
+als Ausgangsrauschleistung.
+
+Für weißes Rauschen gilt:
+
+\[
+NRR=
+\sum_{n=0}^{\infty} h^2(n)
+\]
+
+Alternativ:
+
+\[
+NRR=
+\frac{1}{2\pi}
+\int_{-\pi}^{\pi}
+|H(\omega)|^2 d\omega
+\]
+
+\paragraph{Interpretation}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c}
+NRR & Bedeutung \\
+\hline
+$NRR<1$ & Rauschen wird reduziert \\
+$NRR=1$ & keine Änderung \\
+$NRR>1$ & Rauschen wird verstärkt \\
+\end{tabular}
+\end{table}
+
+\paragraph{Prüfungsrelevant}
+
+Bei Aufgabe 8.26 soll gezeigt werden:
+
+\[
+\sigma_y^2=
+\sigma_x^2
+\sum h^2(n)
+\]
+
+Daraus folgt direkt die NRR.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Signal-to-Noise Ratio (SNR)}
+
+Ein weiteres wichtiges Maß ist das Signal-Rausch-Verhältnis:
+
+\[
+SNR=
+\frac{E[s^2(n)]}
+{E[v^2(n)]}
+\]
+
+Je größer die SNR, desto besser ist die Signalqualität.
+
+Zusammenhang:
+
+\[
+\frac{SNR_{out}}
+{SNR_{in}}
+==========
+
+\frac{1}{NRR}
+\]
+
+wenn das Nutzsignal durch den Filter unverändert bleibt.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Comb Filter}
+
+Comb Filter gehören zu den wichtigsten Filtern des Kapitels.
+
+Die Grundidee:
+
+Das Signal wird mit einer verzögerten Version kombiniert.
+
+\[
+y(n)=x(n)+x(n-D)
+\]
+
+oder
+
+\[
+y(n)=x(n)-x(n-D)
+\]
+
+\paragraph{Transferfunktion}
+
+\[
+H(z)=1+z^{-D}
+\]
+
+bzw.
+
+\[
+H(z)=1-z^{-D}
+\]
+
+\paragraph{Impulsantwort}
+
+\[
+h(n)=\delta(n)+\delta(n-D)
+\]
+
+oder
+
+\[
+h(n)=\delta(n)-\delta(n-D)
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Warum heißt er Comb Filter?}
+
+Setzt man
+
+\[
+z=e^{j\omega}
+\]
+
+ein, erhält man regelmäßig verteilte Maxima und Minima.
+
+Der Frequenzgang besitzt die Form:
+
+\begin{center}
+\includegraphics[width=0.7\linewidth]{images/comb_response.png}
+\end{center}
+
+Er erinnert an die Zähne eines Kamms.
+
+Daher:
+
+\[
+\text{Comb Filter}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Nullstellen eines Comb Filters}
+
+Für
+
+\[
+H(z)=1-z^{-D}
+\]
+
+ergibt sich:
+
+\[
+1-z^{-D}=0
+\]
+
+also:
+
+\[
+z^D=1
+\]
+
+Die Nullstellen liegen bei:
+
+\[
+z_k=e^{j2\pi k/D}
+\]
+
+\[
+k=0,\dots,D-1
+\]
+
+gleichmäßig auf dem Einheitskreis.
+
+\begin{center}
+\includegraphics[width=0.5\linewidth]{images/comb_zeros.png}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{NRR eines Comb Filters}
+
+Für
+
+\[
+H(z)=1-z^{-D}
+\]
+
+ist
+
+\[
+h(n)=\delta(n)-\delta(n-D)
+\]
+
+Somit:
+
+\[
+NRR
+===
+
+# 1^2+(-1)^2
+
+2
+\]
+
+Der Filter reduziert also kein weißes Rauschen.
+
+Dies ist ein häufiges Prüfungsresultat.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Lowpass Noise Reduction Filter}
+
+Ein einfacher Rauschfilter lautet:
+
+\[
+H(z)=
+\frac{b}
+{1-az^{-1}}
+\]
+
+mit
+
+\[
+0<a<1
+\]
+
+Impulsantwort:
+
+\[
+h(n)=ba^nu(n)
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Wahl des Parameters b}
+
+Soll ein Gleichsignal unverändert bleiben:
+
+\[
+H(1)=1
+\]
+
+Daraus folgt:
+
+\[
+b=1-a
+\]
+
+Dies ist das Ergebnis von Aufgabe 8.31.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{NRR des Lowpass-Filters}
+
+Einsetzen der Impulsantwort ergibt:
+
+\[
+NRR
+===
+
+\sum_{n=0}^{\infty}
+b^2 a^{2n}
+\]
+
+Geometrische Reihe:
+
+\[
+NRR=
+\frac{b^2}
+{1-a^2}
+\]
+
+Mit
+
+\[
+b=1-a
+\]
+
+folgt:
+
+\[
+NRR=
+\frac{1-a}
+{1+a}
+\]
+
+\paragraph{Interpretation}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c}
+a & NRR \\
+\hline
+0.2 & 0.67 \\
+0.5 & 0.33 \\
+0.9 & 0.053 \\
+0.99 & 0.005 \\
+\end{tabular}
+\end{table}
+
+Großes (a) bedeutet:
+
+\begin{itemize}
+\item bessere Rauschunterdrückung
+\item langsamere Reaktion
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Notch Filter}
+
+Ein Notch Filter entfernt gezielt eine einzelne Frequenz.
+
+Anwendung:
+
+\begin{itemize}
+\item 50 Hz Netzbrummen
+\item 60 Hz Netzbrummen
+\item Maschinenvibrationen
+\end{itemize}
+
+Frequenzgang:
+
+\begin{center}
+\includegraphics[width=0.7\linewidth]{images/notch_response.png}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Single Notch Filter}
+
+Die wichtigste Formel lautet:
+
+\[
+H(z)=
+b
+\frac{
+1-2\cos(\omega_0)z^{-1}+z^{-2}
+}
+{
+1-2b\cos(\omega_0)z^{-1}
++
+(2b-1)z^{-2}
+}
+\]
+
+\[
+\omega_0
+\]
+
+ist die Notch-Frequenz.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Q-Faktor eines Notch Filters}
+
+Die Breite der Kerbe wird durch den Q-Faktor beschrieben:
+
+\[
+Q=
+\frac{\omega_0}
+{\Delta\omega}
+\]
+
+mit
+
+\[
+\Delta\omega
+\]
+
+als 3-dB-Bandbreite.
+
+Daraus:
+
+\[
+\Delta\omega=
+\frac{\omega_0}{Q}
+\]
+
+\paragraph{Interpretation}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c}
+Q & Wirkung \\
+\hline
+klein & breite Kerbe \\
+groß & schmale Kerbe \\
+\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Signal Averaging}
+
+Signal Averaging wird verwendet, wenn mehrere identische Messungen vorhanden sind.
+
+Beispiel:
+
+\[
+x(n)=s(n)+v(n)
+\]
+
+Messung 1:
+
+\[
+s(n)+v_1(n)
+\]
+
+Messung 2:
+
+\[
+s(n)+v_2(n)
+\]
+
+usw.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mittelwertbildung}
+
+Bei N Messungen:
+
+\[
+\hat s(n)
+=========
+
+\frac1N
+\sum_{k=1}^{N}
+x_k(n)
+\]
+
+Da
+
+\[
+E[v(n)]=0
+\]
+
+verschwindet das Rauschen im Mittel.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Rauschreduktion durch Averaging}
+
+Die Standardabweichung reduziert sich zu:
+
+\[
+\sigma_{\hat v}
+===============
+
+\frac{\sigma_v}
+{\sqrt N}
+\]
+
+\paragraph{Beispiele}
+
+\[
+N=4
+\]
+
+\[
+\sigma_{\hat v}
+===============
+
+\frac{\sigma_v}{2}
+\]
+
+\[
+N=100
+\]
+
+\[
+\sigma_{\hat v}
+===============
+
+\frac{\sigma_v}{10}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Circular Buffer Averaging}
+
+Für Aufgabe 8.42 wird ein Circular Buffer verwendet.
+
+Aktualisierung:
+
+\[
+q_D=(q+D)\bmod(D+1)
+\]
+
+\[
+w[q]
+====
+
+w[q_D]
++
+x
+\]
+
+Ausgabe:
+
+\[
+y=
+\frac{w[q]}{N}
+\]
+
+Nur ein Buffer-Eintrag wird pro Sample verändert.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Savitzky-Golay Filter}
+
+Ein gewöhnlicher Moving-Average-Filter glättet zwar das Rauschen,
+verzerrt jedoch Peaks.
+
+Savitzky-Golay verwendet stattdessen lokale Polynomanpassung.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Grundidee}
+
+Betrachte ein Fenster:
+
+\[
+x(n-2)
+\quad
+x(n-1)
+\quad
+x(n)
+\quad
+x(n+1)
+\quad
+x(n+2)
+\]
+
+Nun wird ein Polynom angepasst:
+
+\[
+p(t)
+====
+
+a+bt+ct^2
+\]
+
+Das Polynom approximiert die Datenpunkte im Least-Squares-Sinn.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Vorteile von Savitzky-Golay}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c}
+Moving Average & Savitzky-Golay \\
+\hline
+Peaks werden kleiner & Peaks bleiben erhalten \\
+starke Glättung & moderate Glättung \\
+verzerrt Krümmungen & erhält Krümmungen \\
+\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Prüfungsrelevante Formelsammlung}
+
+\[
+x(n)=s(n)+v(n)
+\]
+
+\[
+NRR=
+\frac{\sigma_y^2}{\sigma_x^2}
+=============================
+
+\sum h^2(n)
+\]
+
+\[
+SNR=
+\frac{E[s^2]}{E[v^2]}
+\]
+
+\[
+H(z)=1\pm z^{-D}
+\]
+
+\[
+z_k=e^{j2\pi k/D}
+\]
+
+\[
+H(z)=
+\frac{b}
+{1-az^{-1}}
+\]
+
+\[
+NRR=
+\frac{1-a}{1+a}
+\]
+
+\[
+Q=
+\frac{\omega_0}{\Delta\omega}
+\]
+
+\[
+\sigma_{\hat v}
+===============
+
+\frac{\sigma_v}{\sqrt N}
+\]
+
+\[
+\hat s(n)
+=========
+
+\frac1N
+\sum x_k(n)
+\]
+
+\[
+y=(1-\alpha)w[k]+\alpha w[k+1]
+\]

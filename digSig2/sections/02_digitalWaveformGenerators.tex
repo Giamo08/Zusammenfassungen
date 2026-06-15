@@ -1,140 +1,230 @@
 \section{Digital Waveform Generators (Chapter 8.1)}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Warum benötigt man digitale Wellenformgeneratoren?}
+
+Ein DSP-System kann Signale nicht nur verarbeiten, sondern auch selbst erzeugen.
+
+Typische Anwendungen sind:
+
+\begin{itemize}
+\item Musiksynthesizer
+\item DTMF-Telefone
+\item Testsignale
+\item Radar- und Sonarsysteme
+\item Modulationsverfahren
+\end{itemize}
+
+Ziel ist die Erzeugung eines gewünschten Signals mit möglichst geringem Rechenaufwand.
+
+Grundsätzlich existieren zwei Methoden:
+
+\begin{enumerate}
+\item Rekursive Generatoren (filterbasiert)
+\item Speicherbasierte Generatoren (Wavetable)
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth]{images/generator_overview.png}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Grundidee digitaler Wellenformgeneratoren}
 
 Ziel ist die Erzeugung einer gewünschten diskreten Wellenform $h(n)$.
 
-Grundprinzip:
+Man entwirft ein System:
 
 \[
-\text{Entwirf ein System } H(z) \text{ mit Impulsantwort } h(n).
+H(z)
 \]
 
-Die gewünschte Wellenform kann auf zwei Arten erzeugt werden:
+dessen Impulsantwort genau der gewünschten Wellenform entspricht:
+
+\[
+h(n)
+\]
+
+Die gewünschte Wellenform kann erzeugt werden als:
 
 \begin{enumerate}
-\item Sample-by-sample als Impulsantwort eines Filters
-\item Als vorab berechnete Periode in einer Wavetable
+\item Impulsantwort eines Filters
+\item Wavetable mit gespeicherter Periode
 \end{enumerate}
 
-Falls das Signal periodisch ist (typischer Fall), genügt es, 
-eine Periode zu erzeugen und periodisch zu wiederholen.
+Ist das Signal periodisch, genügt es eine einzige Periode zu erzeugen und anschließend zyklisch zu wiederholen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Zusammenhang zwischen Polen und Schwingungen}
+
+Die wichtigste Erkenntnis dieses Kapitels lautet:
+
+\begin{quote}
+Jeder komplexe Pol erzeugt eine Schwingung.
+\end{quote}
+
+Ein Pol besitzt die Form
+
+\[
+p = Re^{j\omega_0}
+\]
+
+Dabei bestimmt
+
+\begin{itemize}
+\item der Radius $R$ die Dämpfung
+\item der Winkel $\omega_0$ die Frequenz
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.5\linewidth]{images/pole_radius.png}
+\end{center}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c}
+Radius & Wirkung \\
+\hline
+$R<1$ & gedämpfte Schwingung \\
+$R=1$ & konstante Schwingung \\
+$R>1$ & instabil \\
+\end{tabular}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Sinusgenerator mittels Polstellen auf dem Einheitskreis}
 
 \begin{center}
-    \includegraphics[width=0.8\linewidth]{images/sinusgenerator.png}
+\includegraphics[width=0.8\linewidth]{images/sinusgenerator.png}
 \end{center}
-Ein kausaler sinusförmiger Generator basiert auf einem 
-rekursiven Filter mit konjugiert komplexen Polen:
+
+Die Pole liegen bei
 
 \[
-p_{1,2} = R e^{\pm j\omega_0}
+p_{1,2}=Re^{\pm j\omega_0}
 \]
 
-Übertragungsfunktion:
+Die Übertragungsfunktion lautet:
 
 \[
-H(z) = \frac{R \sin(\omega_0) z^{-1}}
-{1 - 2R\cos(\omega_0) z^{-1} + R^2 z^{-2}}
+H(z)=
+\frac{
+R\sin(\omega_0)z^{-1}
+}{
+1-2R\cos(\omega_0)z^{-1}+R^2z^{-2}
+}
 \]
 
 Impulsantwort:
 
 \[
-h(n) = R^n \sin(\omega_0 n) u(n)
+h(n)=R^n\sin(\omega_0 n)u(n)
 \]
 
-\paragraph{Spezialfälle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Warum entstehen Sinus und Kosinus?}
 
-\begin{itemize}
-\item $0<R<1$ → gedämpfte Sinusschwingung
-\item $R=1$ → reine Sinusschwingung
-\item $R>1$ → instabil
-\end{itemize}
-
-\paragraph{Differenzgleichung}
+Grundlage ist die Euler-Formel:
 
 \[
-y(n) = 2R\cos(\omega_0)y(n-1)
-- R^2 y(n-2) + x(n)
+e^{j\omega n}
+=
+\cos(\omega n)
++
+j\sin(\omega n)
 \]
 
-Für einen Generator:
+Konjugiert komplexe Pole erzeugen deshalb automatisch:
 
 \[
-x(n)=\delta(n)
+R^n\cos(\omega n)
 \]
 
-und Anfangszustände = 0.
+und
+
+\[
+R^n\sin(\omega n)
+\]
+
+Deshalb basieren nahezu alle digitalen Oszillatoren auf komplex konjugierten Polen.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Kosinusgenerator}
 
 \begin{center}
-    \includegraphics[width=0.8\linewidth]{images/cosinusgenerator.png}
+\includegraphics[width=0.8\linewidth]{images/cosinusgenerator.png}
 \end{center}
 
-Analog ergibt sich:
-
 \[
-H(z) = \frac{1 - R\cos(\omega_0)z^{-1}}
-{1 - 2R\cos(\omega_0)z^{-1} + R^2 z^{-2}}
+H(z)=
+\frac{
+1-R\cos(\omega_0)z^{-1}
+}{
+1-2R\cos(\omega_0)z^{-1}+R^2z^{-2}
+}
 \]
 
 Impulsantwort:
 
 \[
-h(n)=R^n \cos(\omega_0 n)u(n)
+h(n)=R^n\cos(\omega_0n)u(n)
 \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Gekoppelte Realisierung (Coupled Form)}
 
 \begin{center}
-    \includegraphics[width=0.8\linewidth]{images/coupledform.png}
+\includegraphics[width=0.8\linewidth]{images/coupledform.png}
 \end{center}
 
-Setze:
+Definiere:
 
 \[
-a = R\cos(\omega_0)
+a=R\cos(\omega_0)
 \]
+
 \[
-b = R\sin(\omega_0)
+b=R\sin(\omega_0)
 \]
 
 Dann gilt:
 
 \[
-R^2 = a^2 + b^2
+R^2=a^2+b^2
 \]
 
-Die gekoppelte Struktur erzeugt gleichzeitig Sinus und Kosinus:
+Die Zustandsgrößen erfüllen:
 
 \[
-\begin{aligned}
-w_1(n) &= a w_1(n-1) - b w_2(n-1) \\
-w_2(n) &= b w_1(n-1) + a w_2(n-1)
-\end{aligned}
+w_1(n) = a w_1(n-1) + b w_2(n-1)
 \]
 
-Diese Struktur ist numerisch günstiger.
+\[
+w_2(n) = -b w_1(n-1) + a w_2(n-1)
+\]
+
+Diese Struktur erzeugt gleichzeitig Sinus und Kosinus.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Polstellenbetrachtung}
 
-Für $R=1$:
+Für
 
 \[
-p = e^{j\omega_0}
+R=1
 \]
 
-Polstellen liegen exakt auf dem Einheitskreis.
+liegen die Pole exakt auf dem Einheitskreis:
 
-Konsequenz:
+\[
+p=e^{j\omega_0}
+\]
+
+\begin{center}
+\includegraphics[width=0.5\linewidth]{images/unit_circle_poles.png}
+\end{center}
+
+Eigenschaften:
 
 \begin{itemize}
 \item Grenzstabil
@@ -145,169 +235,202 @@ Konsequenz:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Periodische Wellenformgeneratoren}
 
-Gegeben sei ein analog periodisches Signal mit Periode $T_D$.
-
-Abtastung mit $f_s$:
+Gegeben sei eine Periode mit Länge
 
 \[
-T_D = D T_s
+D
 \]
 
-mit ganzzahligem $D$.
-
-Fundamental:
-
-\[
-f_0 = \frac{1}{T_D} = \frac{f_s}{D}
-\]
-
-Es genügt, die Werte
+Dann genügt die Spezifikation
 
 \[
 h(0),h(1),...,h(D-1)
 \]
 
-zu spezifizieren.
+Die Grundfrequenz beträgt:
+
+\[
+f_0=\frac{f_s}{D}
+\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filterbasierte Periodenerzeugung}
 
 \begin{center}
-    \includegraphics[width=0.8\linewidth]{images/generatorstructure.png}
+\includegraphics[width=0.8\linewidth]{images/periodic_generator.png}
 \end{center}
-Ziel:
+
+Die zentrale Struktur lautet:
 
 \[
-H(z) = \frac{B(z)}{1 - z^{-D}}
+H(z)= \frac{B(z)}{1-z^{-D}}
 \]
 
-Da:
+Dabei gilt:
 
 \[
-\frac{1}{1 - z^{-D}} =
-\sum_{k=0}^{\infty} z^{-kD}
+\frac{1}{1-z^{-D}}= 1+z^{-D}+z^{-2D}+z^{-3D}+\dots
 \]
-
-entsteht eine periodische Impulsfolge.
 
 Interpretation:
 
 \begin{itemize}
-\item Rekursiver Teil erzeugt Impulszug
-\item FIR-Teil formt Impulse zur gewünschten Periode
+\item Feedback erzeugt periodische Wiederholung
+\item FIR-Teil formt die Periode
 \end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Direct vs Canonical Form}
-
-\begin{center}
-    \includegraphics[width=0.8\linewidth]{images/canonnicalform.png}
-\end{center}
-Direct Form:
-\begin{itemize}
-\item D Feedback-Delays
-\item D-1 Feedforward-Delays
-\end{itemize}
-
-Canonical Form:
-\begin{itemize}
-\item Gemeinsame Delay-Line
-\item Weniger Speicher
-\item Zirkuläre Struktur
-\end{itemize}
-
-Die Impulsantwort lädt zuerst die Delay-Line auf.
-Ab $n \ge D$ läuft das System periodisch.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Polstellen periodischer Generatoren}
 
-Aus:
+Die Pole ergeben sich aus:
 
 \[
-1 - z^{-D} = 0
+1-z^{-D}=0
 \]
 
-folgt:
+bzw.
 
 \[
-z^D = 1
+z^D=1
 \]
 
 Lösungen:
 
 \[
-z_k = e^{j\frac{2\pi k}{D}}, \quad k=0,...,D-1
+z_k=e^{j2\pi k/D}
 \]
 
-Dies sind die D-ten Einheitswurzeln.
+\[
+k=0,\dots,D-1
+\]
+
+\begin{center}
+\includegraphics[width=0.5\linewidth]{images/dth_roots.png}
+\end{center}
 
 Alle Pole liegen auf dem Einheitskreis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Direct Form und Canonical Form}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth]{images/direct_form.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth]{images/canonical_form.png}
+\end{center}
+
+Direct Form:
+
+\begin{itemize}
+\item viele Delays
+\item einfache Struktur
+\end{itemize}
+
+Canonical Form:
+
+\begin{itemize}
+\item minimale Anzahl Delays
+\item speichereffizient
+\item häufig in Aufgaben verwendet
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Wavetable Generator}
 
-Alternative:
+Alternative zur Filterrealisierung:
 
 Speichere eine Periode:
 
 \[
-w[0], w[1], ..., w[D-1]
+w[0],w[1],...,w[D-1]
 \]
 
-Zeiger $p$ läuft zirkulär:
+Der Zeiger läuft zyklisch:
 
 \[
-y(n) = w[p(n)]
+y(n)=w[p(n)]
 \]
 
 \[
-p(n+1) = (p(n) + c) \mod D
+p(n+1) = (p(n)+c)\bmod D
 \]
 
-Fundamentalfrequenz:
+\begin{center}
+\includegraphics[width=0.7\linewidth]{images/wavetable_pointer.png}
+\end{center}
+
+Die Frequenz ergibt sich zu:
 
 \[
-f = c \frac{f_s}{D}
+f=c\frac{f_s}{D}
 \]
 
-\paragraph{Ganzzahliges c}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Funktionsweise eines Wavetable-Generators}
 
-\begin{itemize}
-\item $c=1$ → Originalfrequenz
-\item $c=2$ → doppelte Frequenz
-\end{itemize}
+Eine Periode wird einmal gespeichert.
 
-\paragraph{Nicht-ganzzahliges c}
-
-Offset nicht ganzzahlig → Interpolation notwendig.
-
-Lineare Interpolation:
+Beispiel:
 
 \[
-y = (1-\alpha)w[k] + \alpha w[k+1]
+[0,0.7,1,0.7,0,-0.7,-1,-0.7]
 \]
 
-\subsubsection{Index Approximation}
+Der Pointer bewegt sich durch die Tabelle:
 
-Für nicht-ganzzahlige Indizes i:
+\[
+0 \rightarrow 1 \rightarrow 2 \rightarrow \dots
+\]
 
-Truncating down:
+Nach Erreichen des letzten Eintrags springt er zurück zum Anfang.
+
+Dadurch entsteht ein periodisches Signal.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Interpolation bei nichtganzzahligen Indizes}
+
+Für
+
+\[
+c=1.6
+\]
+
+entstehen Indizes:
+
+\[
+0, 1.6, 3.2, 4.8,\dots
+\]
+
+Diese liegen zwischen den gespeicherten Samples.
+
+\begin{center}
+\includegraphics[width=0.6\linewidth]{images/interpolation.png}
+\end{center}
+
+Methoden:
+
+\paragraph{Truncating Down}
+
 \[
 k=\lfloor i \rfloor
 \]
 
-Truncating up:
+\paragraph{Truncating Up}
+
 \[
 k=\lceil i \rceil
 \]
 
-Rounding:
+\paragraph{Rounding}
+
 \[
 k=\text{round}(i)
 \]
 
-Lineare Interpolation:
+\paragraph{Lineare Interpolation}
+
 \[
 y=(1-\alpha)w[k]+\alpha w[k+1]
 \]
@@ -315,45 +438,38 @@ y=(1-\alpha)w[k]+\alpha w[k+1]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Nyquist-Bedingung}
 
-Erforderlich:
+Für aliasfreie Erzeugung:
 
 \[
--\frac{f_s}{2} < f < \frac{f_s}{2}
+\frac{-f_s}{2}<f<\frac{f_s}{2}
 \]
 
-Da:
+Mit
 
 \[
-f = c\frac{f_s}{D}
+f=c\frac{f_s}{D}
 \]
 
-folgt:
+ergibt sich:
 
 \[
--\frac{D}{2} < c < \frac{D}{2}
+-\frac{D}{2}<c<\frac{D}{2}
 \]
-
-Negative $c$ erzeugt Phasendrehung (180°).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Vergleich Filter vs Wavetable}
+\subsection{Vergleich: Filtergenerator vs. Wavetable}
 
-Filterbasierter Generator:
-
-\begin{itemize}
-\item Elegant mathematisch
-\item Polstellenanalyse möglich
-\item Numerisch empfindlich bei $R=1$
-\end{itemize}
-
-Wavetable:
-
-\begin{itemize}
-\item Stabil
-\item Flexibel
-\item Interpolationsfehler möglich
-\item Speicherbedarf
-\end{itemize}
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c}
+Filtergenerator & Wavetable \\
+\hline
+wenig Speicher & benötigt Speicher \\
+Polanalyse möglich & sehr robust \\
+theoretisch elegant & praktisch weit verbreitet \\
+numerisch empfindlich & stabil \\
+\end{tabular}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{DTMF als Anwendung}
@@ -364,20 +480,27 @@ DTMF-Töne bestehen aus zwei Sinusfrequenzen:
 x(n)=\sin(\omega_1 n)+\sin(\omega_2 n)
 \]
 
-Erzeugbar durch:
+\begin{center}
+\includegraphics[width=0.8\linewidth]{images/dtmf_generator.png}
+\end{center}
+
+Realisierung:
 
 \begin{itemize}
-\item Zwei rekursive Sinusgeneratoren
-\item Zwei Wavetable-Lookups
+\item zwei Sinusgeneratoren
+\item oder zwei Wavetable-Lookups
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Zentrale Erkenntnisse}
 
 \begin{itemize}
-\item Sinusgeneratoren entstehen durch konjugiert komplexe Pole
-\item Periodische Generatoren entstehen durch $1/(1-z^{-D})$
-\item Pole liegen auf Einheitskreis → Grenzstabilität
-\item Wavetable ist praktische Alternative
-\item Frequenzsteuerung erfolgt über Schrittweite $c$
+\item Komplexe Pole erzeugen Schwingungen.
+\item Polwinkel bestimmt die Frequenz.
+\item Polradius bestimmt die Dämpfung.
+\item Periodische Generatoren basieren auf $1/(1-z^{-D})$.
+\item Alle Pole periodischer Generatoren liegen auf dem Einheitskreis.
+\item Wavetable-Generatoren speichern nur eine Periode.
+\item Die Frequenz wird über die Schrittweite $c$ eingestellt.
+\item Nichtganzzahlige Schrittweiten benötigen Interpolation.
 \end{itemize}
