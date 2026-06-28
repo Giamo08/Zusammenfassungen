@@ -1,0 +1,57 @@
+\begin{tikzpicture}
+
+\matrix (m) [row sep=2mm,column sep=7mm]
+{
+\node[dspnodeopen,dsp/label=above] (m00) {$x(n)$}; &
+\node[draw,minimum width=1.8cm,minimum height=1cm] (m01)
+{
+$\begin{array}{c}
+H_1(z)\\
+\text{SOS 1}
+\end{array}$
+}; &
+\node[coordinate] (m02) {}; &
+\node[draw,minimum width=1.8cm,minimum height=1cm] (m03)
+{
+$\begin{array}{c}
+H_2(z)\\
+\text{SOS 2}
+\end{array}$
+}; &
+\node[coordinate] (m04) {}; &
+\node[coordinate] (m05) {$\cdots$}; &
+\node[coordinate] (m06) {}; &
+\node[draw,minimum width=1.8cm,minimum height=1cm] (m07)
+{
+$\begin{array}{c}
+H_K(z)\\
+\text{SOS K}
+\end{array}$
+}; &
+\node[dspnodeopen,dsp/label=above] (m08) {$y(n)$};
+\\
+};
+
+\begin{scope}[start chain]
+
+\chainin(m00);
+
+\chainin(m01)[join=by dspconn];
+
+\chainin(m03)[join=by dspconn];
+
+\chainin(m05)[join=by dspconn];
+
+\chainin(m07)[join=by dspconn];
+
+\chainin(m08)[join=by dspconn];
+
+\end{scope}
+
+\draw (m01)--node[midway,above]{$v_1(n)$}(m03);
+
+\draw (m03)--node[midway,above]{$v_{2}(n)$}(m05);
+
+\draw (m05)--node[midway,above]{$v_{K-2}(n)$}(m07);
+
+\end{tikzpicture}

@@ -1,0 +1,63 @@
+\documentclass{scrartcl}
+
+\include{header/zusammenfassung}
+\include{header/hyperref}
+\include{header/listings}
+
+% tikz zeug
+\usepackage{etex}
+\usepackage{adjustbox}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\input{3dparty/tikz-dsp.sty}
+\usetikzlibrary{chains}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\DeclareMathOperator{\z}{\mathpzc{z}}
+\DeclareMathOperator{\NRR}{\text{NRR}}
+\DeclareMathOperator{\SNR}{\text{SNR}}
+\DeclareMathOperator{\DFT}{\text{DFT}}
+\DeclareMathOperator{\FFT}{\text{FFT}}
+
+\title{DigSig2}
+\author{H.Badertscher, J.Rast, R.Nestler, P.Riedel et al.}
+
+\begin{document}
+\selectlanguage{english}
+\setArrayStretch{2}
+\setcounter{tocdepth}{2}
+
+\begin{titlepage}
+	\maketitle
+	\vfill
+	\hspace{2cm}
+	\begin{minipage}{0.6\linewidth}
+		This summary follows the lectures of Prof. Dr. G. Schuster and the book 
+		''Introduction to Signal Processing`` by Sophocles J. Orfanidis. Most
+		figures and formulas are taken from there.	
+	\end{minipage}	
+\end{titlepage}
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\setArrayStretch{1.2}
+
+\begin{multicols}{2}
+\input{sections/DigitalFilterRealizations}
+\newpage
+\input{sections/SignalProcessingApplications}
+\newpage
+\input{sections/DFT_FFT_Algorithms}
+\end{multicols}
+\input{sections/FIR_DigitalFilterDesign}
+\input{sections/IIR_DigitalFilterDesign}
+\input{sections/InterpolationDecimationOversampling}
+
+% Appendix
+\newpage
+\input{sections/appendix}
+
+\end{document}
+

@@ -1,0 +1,329 @@
+
+\appendix
+
+\section{DFT Matrices}\label{app:DFT}
+
+\begin{align*}
+	W_2 = e^{-2\pi j / 2} = -1 \\
+	A_2 &= 
+		\begin{bmatrix}
+			1& 1 \\
+			1& W_2 \\
+		\end{bmatrix}
+		&&= 
+		\begin{bmatrix}
+			1& 1 \\
+			1& -1 \\
+		\end{bmatrix}	 \\
+	W_4 = e^{-2\pi j / 4} = \cos(\pi/2) - j\sin(\pi/2) = -j \\
+	A_4 &= 
+		\begin{bmatrix}
+			1& 1& 1& 1 \\
+			1& W_4& W_4^2& W_4^3 \\
+			1& W_4^2& W_4^4& W_4^6 \\
+			1& W_4^3& W_4^6& W_4^9 \\
+		\end{bmatrix}
+		&&=
+		\begin{bmatrix}
+			1& 1& 1& 1 \\
+			1& -j& -1& j \\
+			1& -1& 1& -1 \\
+			1& j& -1& -j \\
+		\end{bmatrix} \\
+	W_8 = e^{-2\pi j / 8} = \cos(\pi/4) - j\sin(\pi/4) = \frac{1-j}{\sqrt{2}} \\
+	A_8 &= 
+		\begin{bmatrix}
+			1 & 1 & 1 & \dots & 1 \\
+			1 & W_8 & W_8^2 & \dots & W_8^7 \\
+			1 & W_8^2 & W_8^4 & \dots & W_8^{14} \\
+			1 & W_8^3 & W_8^6 & \dots & W_8^{21} \\
+			\vdots & \vdots & \vdots & \ddots & \vdots \\
+			1 & W_8^7 & W_8^{14} & \vdots & W_8^{49} \\
+		\end{bmatrix}
+		%TODO wer lustich ist darf das gerne noch vervollständigen
+\end{align*}
+
+\[
+\begin{aligned}
+W_8^0&=1\\
+W_8^1&=\frac{1-j}{\sqrt2}\\
+W_8^2&=-j\\
+W_8^3&=-\frac{1+j}{\sqrt2}\\
+W_8^4&=-1\\
+W_8^5&=-\frac{1-j}{\sqrt2}\\
+W_8^6&=j\\
+W_8^7&=\frac{1+j}{\sqrt2}
+\end{aligned}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Common Pole / Zero Forms}
+
+The poles are obtained from the denominator
+
+\[
+D(z)=0,
+\]
+
+and the zeros from the numerator
+
+\[
+N(z)=0.
+\]
+
+For second-order polynomials the following standard forms occur frequently.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{5.4cm}|p{4.8cm}|p{5.8cm}|}
+\hline
+\textbf{Polynomial} &
+\textbf{Pole / Zero Location} &
+\textbf{Comments}
+\\ \hline
+
+$1-az^{-1}$
+
+&
+$z=a$
+
+&
+Real pole/zero.
+\\ \hline
+
+$1-2\cos(\omega_0)z^{-1}+z^{-2}$
+
+&
+$z=e^{\pm j\omega_0}$
+
+&
+Complex-conjugate zeros on the unit circle
+($|z|=1$).
+\\ \hline
+
+$1-2r\cos(\omega_0)z^{-1}+r^2z^{-2}$
+
+&
+$z=re^{\pm j\omega_0}$
+
+&
+Complex-conjugate poles/zeros with radius $r$.
+\\ \hline
+
+$1-2b\cos(\omega_0)z^{-1}
++(2b-1)z^{-2}$
+
+&
+Solve using the quadratic formula
+
+&
+Appears in notch and peak filters.
+\\ \hline
+
+\end{tabular}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Useful Identities}
+
+Euler's identity
+
+\[
+e^{j\omega}
+=
+\cos(\omega)+j\sin(\omega)
+\]
+
+implies
+
+\[
+e^{-j\omega}
+=
+\cos(\omega)-j\sin(\omega).
+\]
+
+Therefore
+
+\[
+\boxed{
+(z-e^{j\omega_0})
+(z-e^{-j\omega_0})
+=
+z^2-2\cos(\omega_0)z+1
+}
+\]
+
+or equivalently
+
+\[
+\boxed{
+1-2\cos(\omega_0)z^{-1}+z^{-2}
+=
+(1-e^{j\omega_0}z^{-1})
+(1-e^{-j\omega_0}z^{-1})
+}
+\]
+
+Similarly,
+
+\[
+\boxed{
+1-2r\cos(\omega_0)z^{-1}+r^2z^{-2}
+=
+(1-re^{j\omega_0}z^{-1})
+(1-re^{-j\omega_0}z^{-1})
+}
+\]
+
+Hence
+
+\[
+|z|=
+\begin{cases}
+1,&\text{unit circle}\\
+r,&\text{radius }r
+\end{cases}
+\]
+
+and
+
+\[
+\angle z=\pm\omega_0.
+\]
+
+\paragraph{Recognition Rules}
+
+\[
+1-2\cos(\omega_0)z^{-1}+z^{-2}
+\]
+
+↓
+
+- radius \(=1\)
+
+- angle \(=\pm\omega_0\)
+
+---
+
+\[
+1-2r\cos(\omega_0)z^{-1}+r^2z^{-2}
+\]
+
+↓
+
+- radius \(=r\)
+
+- angle \(=\pm\omega_0\)
+
+---
+
+\[
+1-az^{-1}
+\]
+
+↓
+
+- real pole/zero at \(z=a\)
+\section{Butterworth polynomials}\label{app:Butterworth}
+
+\begin{tabular}{|l|l|l|l|}
+	\hline
+	N & K & $\theta_1,\theta_2,\ldots,\theta_K$ & $D(s)$ \\ \hline
+	1 & 0 & & $1+s$ \\ \hline
+	2 & 1 & $\frac{3\pi}{4}$ & $(1 + 1.4142s + s^2)$ \\ \hline
+	3 & 1 & $\frac{4\pi}{6}$ & $(1+s)(1+s+s^2)$ \\ \hline
+	4 & 2 & $\frac{5\pi}{8}\:,\:\frac{7\pi}{8}$ & $(1+0.7654s+s^2)(1+1.8478s+s^2)$ \\ \hline
+	5 & 2 & $\frac{6\pi}{10}\:,\:\frac{8\pi}{10}$ & $(1+s)(1+0.6180s+s^2)(1+1.6180s+s^2)$ \\ \hline
+	6 & 3 & $\frac{7\pi}{12}\:,\:\frac{9\pi}{12}\:,\:\frac{11\pi}{12}$ & $(1+0.5176s+s^2)(1+1.4142s+s^2)(1+1.9319s+s^2)$ \\ \hline
+	7 & 3 & $\frac{8\pi}{14}\:,\:\frac{10\pi}{14}\:,\:\frac{12\pi}{14}$ & $(1+s)(1+0.4450s+s^2)(1+1.2470s+s^2)(1+1.8019s+s^2)$ \\ \hline
+\end{tabular}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Kaiser Window}
+
+\[
+\alpha=
+\begin{cases}
+0,&A<21\\[1mm]
+0.5842(A-21)^{0.4}
++0.07886(A-21),
+&
+21\le A\le50\\[1mm]
+0.1102(A-8.7),
+&
+A>50
+\end{cases}
+\]
+
+\vspace{2mm}
+
+\[
+D=
+\begin{cases}
+0.9222,&A<21\\
+\dfrac{A-7.95}{14.36},&A\ge21
+\end{cases}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Useful DSP Relations}
+
+\[
+\omega=\frac{2\pi f}{f_s}
+\]
+
+\[
+\Delta f=\frac{f_s}{N}
+\]
+
+\[
+f_s'=Lf_s
+\]
+
+\[
+f_s'=\frac{f_s}{M}
+\]
+
+\[
+z=\zeta^L
+\]
+
+\section{Useful Transform Pairs}
+\begin{tabular}{|l|l|}
+\hline
+Signal & Transform\\
+\hline
+$\delta(n)$ & $1$\\
+\hline
+$\delta(n-k)$ & $z^{-k}$\\
+\hline
+$u(n)$ &
+$\dfrac1{1-z^{-1}}$\\
+\hline
+$a^nu(n)$ &
+$\dfrac1{1-az^{-1}}$\\
+\hline
+$na^nu(n)$ &
+$\dfrac{az^{-1}}
+{(1-az^{-1})^2}$\\
+\hline
+\end{tabular}
+
+
+\section{Idiotenseite}\label{app:Idiotenseite}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+\input{idiotenseite/trigo/subsections/Winkelargumente}
+\input{idiotenseite/trigo/subsections/Quadrantenbeziehungen}
+\input{idiotenseite/trigo/subsections/Periodizitaet}
+\begin{multicols}{2}
+\input{idiotenseite/trigo/subsections/Additionstheoreme}
+\input{idiotenseite/trigo/subsections/DoppelHalbwinkel}
+\input{idiotenseite/trigo/subsections/Produkte}
+\input{idiotenseite/trigo/subsections/SummeDifferenzen}
+\input{idiotenseite/trigo/subsections/Euler}
+
+
+\end{multicols}
+\input{idiotenseite/diverses/subsections/KomplexeZahlen}
+\input{idiotenseite/diverses/subsections/DFTHilfen}
+\input{idiotenseite/diverses/subsections/Reihenentwicklung}
+

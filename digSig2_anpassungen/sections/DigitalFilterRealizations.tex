@@ -1,0 +1,191 @@
+%!TEX root = ../DigSig2.tex
+\section{Digital Filter Realizations\buch{Chapter 7}}
+
+\subsection{Direct Form\buchSeite{265}}
+\label{sec:directform}
+Also called \emph{direct form I}. Consider a second-order filter with
+transfer function
+\begin{equation*}
+	H(z) = \frac{N(z)}{D(z)}
+		 = \frac{b_0 + b_1z^{-1} + b_2z^{-2}}{1 + a_1z^{-1} + a_2z^{-2}}
+\end{equation*}
+with the I/O difference equation
+\begin{equation*}
+	y_n = -a_1 y_{n-1} - a_2 y_{n-2} + b_0 x_n + b_1 x_{n-1} + b_2 x_{n-2}
+\end{equation*}\\
+
+This results in the following block diagram: \\
+
+\begin{center}
+	\input{tikz/DirectForm}
+\end{center}
+
+and following sample processing algorithm:
+\begin{lstlisting}[mathescape]
+for $\text{each input sample}$ x do:
+  v$_0$ = x
+  w$_0$ = -a$_1$w$_1$-a$_2$w$_2$+b$_0$v$_0$+b$_1$v$_1$+b$_2$v$_2$
+  y = w$_0$
+  v$_2$ = v$_1$, w$_2$ = w$_1$
+  v$_1$ = v$_0$, w$_1$ = w$_0$
+\end{lstlisting}
+
+\paragraph{Filter Order}
+
+The order of a digital filter is equal to the highest power of $z^{-1}$
+appearing in the denominator polynomial.
+
+\[
+H(z)=\frac{N(z)}{D(z)}
+=\frac{b_0+b_1z^{-1}+\cdots+b_Lz^{-L}}
+{1+a_1z^{-1}+\cdots+a_Mz^{-M}}
+\]
+
+The filter order is therefore
+
+\[
+\boxed{\text{Order}=M.}
+\]
+
+The numerator may have a lower order than the denominator.
+
+\subsection{Canonical Form\buchSeite{271}}
+\label{sec:canonicalform}
+The most popular form. Also called \emph{direct form II}. It can be obtained from
+the \nameref{sec:directform} by splitting it up, introducing an intermediate signal $w(n)$ and reversing it.
+
+\begin{align*}
+	H(z) &= \frac{1}{D(z)} \cdot N(z) \\
+	w(n) &= x(n) - a_1 w(n-1) - a_2 w(n-2) \\
+	y(n) &= b_0 w(n) + b_1 w(n-1) + b_2 w(n-2) \\
+\end{align*}\\
+
+\begin{center}
+	\input{tikz/CanonicalForm}
+\end{center}
+
+\begin{lstlisting}[mathescape]
+for $\text{each input sample}$ x do:
+  w$_0$ = x - a$_1$w$_1$ - a$_2$w$_2$
+  y = b$_0$w$_0$ + b$_1$w$_1$ + b$_2$w$_2$
+  w$_2$ = w$_1$
+  w$_1$ = w$_0$
+\end{lstlisting}
+
+
+\subsection{Cascade Form\buchSeite{277}}
+\label{sec:cascadeform}
+For filters with real impulse responses (all $a_i$ and $b_i$ are real), the
+transfer function can be written by cascaded 2nd order sections (SOS).
+
+\begin{align*}
+	H(z) = \prod_{i=0}^{K-1}H_i(z) = \prod_{i=0}^{K-1}\frac
+	{b_{i0}+b_{i1}z^{-1}+b_{i2}z^{-2}}
+	{1+a_{i1}z^{-1}+a_{i2}z^{-2}} &&
+\end{align*}
+
+Usually the SOS are implemented in the canonical form. A first order term is
+implemented by setting the $z^{-2}$ term to zero. The advantage of the cascade
+form is the efficient implementation of 2nd order sections in DSPs.
+
+\paragraph{Block Diagram}
+
+The $K$ second-order sections are connected in series:
+
+\adjustbox{max width=0.9\linewidth}{
+    \input{tikz/CascadeForm}
+}
+
+Each second-order section is implemented in the canonical form (Direct Form II):
+
+\begin{center}
+    \input{tikz/CascadeSection}
+\end{center}
+
+For a first-order section, set
+
+\[
+a_{i2}=0,
+\qquad
+b_{i2}=0.
+\]
+
+\subsection{Cascade $\Leftrightarrow$ Canonical\buchSeite{284}}
+To find the \nameref{sec:cascadeform} of a filter, $D(z)$ and $N(z)$ are
+factored into 2nd order sections.
+
+\begin{align*}
+D(z) &= 1 + a_1 z^{-1} + a_2 z^{-2} + \dots + a_M z^{-M} &\\
+&=(1-p_1z^{-1})(1-p_2z^{-1}) \dots (1-p_Mz^{-1})&
+\end{align*}
+
+For real-valued roots, any two factors can be combined:
+\begin{equation*}
+	(1 - p_1 z^{-1}) (1 - p_2 z^{-1}) = (1 - (p_1 + p_2) z^{-1} + p_1 p_2 z^{-2})
+\end{equation*}
+
+Conjugate complex roots are paired (if the coefficients are real):
+\begin{equation*}
+	(1 - p_1 z^{-1}) (1 - p_1^* z^{-1}) = 1 - 2 \text{Re}(p_1) z^{-1} + |p_1|^2 z^{-2}
+\end{equation*}
+
+\subsection{Impulse Response of Periodic Filters}
+
+Many transfer functions in this chapter contain a denominator of the form
+
+\[
+1-z^{-D}.
+\]
+
+Using the geometric series,
+
+\[
+\boxed{
+\frac{1}{1-z^{-D}}
+=
+\sum_{k=0}^{\infty}z^{-kD}
+=
+1+z^{-D}+z^{-2D}+\cdots
+}
+\]
+
+the impulse response can be obtained without using partial fraction
+expansion.
+
+If
+
+\[
+H(z)=
+\frac{B(z)}
+{1-z^{-D}},
+\]
+
+then
+
+\[
+h(n)
+=
+b(n)
+*
+\sum_{k=0}^{\infty}\delta(n-kD),
+\]
+
+which means that the FIR impulse response $b(n)$ is repeated every $D$
+samples.
+
+Example:
+
+\[
+H(z)=
+\frac{1+2z^{-1}}
+{1-z^{-4}}
+\]
+
+results in
+
+\[
+h=
+[1,2,0,0,\;
+1,2,0,0,\;
+1,2,0,0,\ldots].
+\]
